@@ -30,7 +30,7 @@ function mytheme_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_control('site_title_bn_control', array(
-        'label'    => __('site_title_bn', 'mytheme'),
+        'label'    => __('Site Title (বাংলা)', 'mytheme'),
         'section'  => 'title_tagline',
         'settings' => 'site_title_bn',
         'type'     => 'text',
