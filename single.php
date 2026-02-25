@@ -1184,7 +1184,7 @@ $latest_news = new WP_Query(array(
                             <address>টাইমস মিডিয়া ভবন (৫ম তলা), ৩৮৭ তেজগাঁও শিল্প এলাকা, ঢাকা - ১২০৮</address>
                         </div>
                         <div class="col-lg-4 col-12">
-                            <h2 class="FSocialHeadLine">ফলো করুন <span>সমকাল</span>-এর খবর</h2>
+                            <h2 class="FSocialHeadLine">ফলো করুন <span><?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></span>-এর খবর</h2>
                             <div class="FSocialShare">
                                 <ul>
                                     <li><a href="https://www.facebook.com/TheDailySamakal" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
@@ -1200,7 +1200,7 @@ $latest_news = new WP_Query(array(
                                 title="<?php the_title(); ?>"
                                 alt="<?php the_title(); ?>" class="img-fluid img100">
                         </a>
-                            <h2 class="FCopyRight">© ২০০৫ - ২০২৬ <a href="https://samakal.com">সমকাল</a> কর্তৃক সর্বসত্ব ® সংরক্ষিত</h2>
+                            <h2 class="FCopyRight">© ২০০৫ - ২০২৬ <a href="https://samakal.com"><?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></a> কর্তৃক সর্বসত্ব ® সংরক্ষিত</h2>
                             <p class="d-none"><a href="https://www.emythmakers.com/" rel="nofollow" target="_blank">উন্নয়নে ইমিথমেকারস.কম</a></p>
                         </div>
                     </div>

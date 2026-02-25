@@ -23,6 +23,18 @@ function mytheme_customize_register($wp_customize) {
         'settings' => 'location',
         'type'     => 'text',
     ));
+
+    $wp_customize->add_setting('site_title_bn', array(
+        'default'           => 'সমকাল',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('site_title_bn_control', array(
+        'label'    => __('site_title_bn', 'mytheme'),
+        'section'  => 'title_tagline',
+        'settings' => 'site_title_bn',
+        'type'     => 'text',
+    ));
 }
 add_action('customize_register', 'mytheme_customize_register');
 
