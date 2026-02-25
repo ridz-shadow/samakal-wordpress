@@ -969,7 +969,7 @@ if ($categories) {
                                                 <div class="row">
                                                     <div class="col-lg-5 col-5">
                                                         <div class="CatNewsListImg">
-                                                            <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>" src="https://samakal.com/media/common/thumb-sm.gif" alt="<?php echo get_the_title(); ?>" title="<?php echo get_the_title(); ?>"
+                                                            <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="https://samakal.com/media/common/thumb-sm.gif" alt="<?php echo get_the_title(); ?>" title="<?php echo get_the_title(); ?>"
                                                                 class="img-fluid">
                                                         </div>
                                                     </div>
