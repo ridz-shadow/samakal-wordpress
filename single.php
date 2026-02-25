@@ -772,7 +772,7 @@
                 <div class="row detailsBodyRowGutter">
                     <div class="col-lg-9">
                         <div class="dheading">
-                            <h2 class="DShoulder"><?php echo esc_html(get_post_meta(get_the_ID(), '_post_subtitle', true)); ?></h2>
+                            <h2 class="DShoulder"><?php echo esc_html(get_post_meta(get_the_ID(), '_post_shoulder', true)); ?></h2>
                             <h1><?php the_title(); ?></h1>
                             <h2 class="DsubHead"><?php echo esc_html(get_post_meta(get_the_ID(), '_post_subHead', true)); ?></h2>
                         </div>
