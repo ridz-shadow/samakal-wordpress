@@ -946,6 +946,27 @@ echo strtr(get_the_date('d F Y').' | '.get_the_time('H:i'), ['0'=>'à§¦','1'=>'à§
                                     </div>
                                 </div>
                             </div>
+                            <?php
+$categories = wp_get_post_categories(get_the_ID());
+if ($categories) {
+    $related = new WP_Query(array(
+        'category__in'   => $categories,
+        'post__not_in'   => array(get_the_ID()),
+        'posts_per_page' => 4,
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+    ));
+
+    if ($related->have_posts()) {
+        echo '<h3>Related Posts</h3><ul class="related-posts">';
+        while ($related->have_posts()) : $related->the_post();
+            echo '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
+        endwhile;
+        echo '</ul>';
+        wp_reset_postdata();
+    }
+}
+?>
                             <div class="CatNewsListWrap">
                                 <div class="row gx-5">
                                     <div class="col-lg-6 CatBr">
