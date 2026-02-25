@@ -772,7 +772,10 @@
                 <div class="row detailsBodyRowGutter">
                     <div class="col-lg-9">
                         <div class="dheading">
-                            <h2 class="DShoulder">সুজনের পর্যবেক্ষণ</h2>
+                        <?php $subtitle = get_post_meta(get_the_ID(), '_post_subtitle', true);
+                        if($subtitle) { ?>
+                            <h2 class="DShoulder"><?php echo esc_html($subtitle); ?></h2>
+                        <?php } ?>
                             <h1>ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা</h1>
                             <h2 class="DsubHead"></h2>
                         </div>
