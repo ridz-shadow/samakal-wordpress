@@ -1069,6 +1069,8 @@ if ($categories) {
                                 </script>
                             </div>
                         </div>
+                        
+
                         <div class="DlastNews">
                             <div class="dlastHead">
                                 <a href="/latest/news">
@@ -1076,134 +1078,36 @@ if ($categories) {
                                 </a>
                             </div>
                             <div class="dAllListWrap">
+                            <?php
+$latest_news = new WP_Query(array(
+    'posts_per_page' => 8,
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+));
+
+    while ($latest_news->have_posts()) : $latest_news->the_post(); ?>
+
+    
                                 <div class="DlastNews-list">
-                                    <a href="https://samakal.com/bangladesh/article/340205/%E0%A6%8B%E0%A6%A3%E0%A6%96%E0%A7%87%E0%A6%B2%E0%A6%BE%E0%A6%AA%E0%A6%BF-%E0%A6%93-%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A7%88%E0%A6%A4-%E0%A6%A8%E0%A6%BE%E0%A6%97%E0%A6%B0%E0%A6%BF%E0%A6%95%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%BF%E0%A6%A4%E0%A6%BE%E0%A6%B0-%E0%A6%B8%E0%A7%81%E0%A6%AF%E0%A7%8B%E0%A6%97-%E0%A6%A8%E0%A6%BF%E0%A6%B0%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%9A%E0%A6%A8%E0%A7%87-%E0%A6%89%E0%A6%B2%E0%A7%8D%E0%A6%B2%E0%A7%87%E0%A6%96%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%AF-%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%B0%E0%A7%8D%E0%A6%A5%E0%A6%A4%E0%A6%BE">
+                                    <a href="<?php echo get_permalink(); ?>">
                                         <div class="row gx-2">
                                             <div class="col-5">
                                                 <div class="dLastNewsImg">
-                                                    <img class="img-fluid" data-src="https://samakal.com/media/imgAll/2026February/THUMB/sujon-1772002167.jpg" src="https://samakal.com/media/common/thumb-sm.gif" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
+                                                    <img class="img-fluid" data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="https://samakal.com/media/common/thumb-sm.gif" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
                                                 </div>
                                             </div>
                                             <div class="col-7">
                                                 <div class="dLastNewsText">
-                                                    <h5><?php the_title(); ?></h5>
+                                                    <h5><?php echo get_the_title(); ?></h5>
                                                 </div>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="DlastNews-list">
-                                    <a href="https://samakal.com/bangladesh/article/340204/%E0%A6%AA%E0%A7%81%E0%A6%B2%E0%A6%BF%E0%A6%B6-%E0%A6%AE%E0%A6%B9%E0%A6%BE%E0%A6%AA%E0%A6%B0%E0%A6%BF%E0%A6%A6%E0%A6%B0%E0%A7%8D%E0%A6%B6%E0%A6%95%E0%A7%87%E0%A6%B0-%E0%A6%A6%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A6%BF%E0%A6%A4%E0%A7%8D%E0%A6%AC-%E0%A6%97%E0%A7%8D%E0%A6%B0%E0%A6%B9%E0%A6%A3-%E0%A6%95%E0%A6%B0%E0%A6%B2%E0%A7%87%E0%A6%A8-%E0%A6%86%E0%A6%B2%E0%A7%80-%E0%A6%B9%E0%A7%8B%E0%A6%B8%E0%A7%87%E0%A6%A8-%E0%A6%AB%E0%A6%95%E0%A6%BF%E0%A6%B0">
-                                        <div class="row gx-2">
-                                            <div class="col-5">
-                                                <div class="dLastNewsImg">
-                                                    <img class="img-fluid" data-src="https://samakal.com/media/imgAll/2026February/THUMB/police-igp-1772001363.jpg" src="https://samakal.com/media/common/thumb-sm.gif" alt="পুলিশ মহাপরিদর্শকের দায়িত্ব গ্রহণ করলেন আলী হোসেন ফকির" title="পুলিশ মহাপরিদর্শকের দায়িত্ব গ্রহণ করলেন আলী হোসেন ফকির">
-                                                </div>
-                                            </div>
-                                            <div class="col-7">
-                                                <div class="dLastNewsText">
-                                                    <h5>পুলিশ মহাপরিদর্শকের দায়িত্ব গ্রহণ করলেন আলী হোসেন ফকির</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="DlastNews-list">
-                                    <a href="https://samakal.com/lifestyle/article/340203/%E0%A6%87%E0%A6%AB%E0%A6%A4%E0%A6%BE%E0%A6%B0%E0%A7%87-%E0%A6%B8%E0%A7%8D%E0%A6%AC%E0%A6%B8%E0%A7%8D%E0%A6%A4%E0%A6%BF%E0%A6%B0-%E0%A6%AA%E0%A6%BE%E0%A6%A8%E0%A7%80%E0%A7%9F">
-                                        <div class="row gx-2">
-                                            <div class="col-5">
-                                                <div class="dLastNewsImg">
-                                                    <img class="img-fluid" data-src="https://samakal.com/media/imgAll/2026February/THUMB/pic-1-1772001348.jpg" src="https://samakal.com/media/common/thumb-sm.gif" alt="ইফতারে স্বস্তির পানীয়" title="ইফতারে স্বস্তির পানীয়">
-                                                </div>
-                                            </div>
-                                            <div class="col-7">
-                                                <div class="dLastNewsText">
-                                                    <h5>ইফতারে স্বস্তির পানীয়</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="DlastNews-list">
-                                    <a href="https://samakal.com/bangladesh/article/340202/%E0%A6%9C%E0%A7%81%E0%A6%A8%E0%A6%BF%E0%A7%9F%E0%A6%B0-%E0%A6%AC%E0%A7%83%E0%A6%A4%E0%A7%8D%E0%A6%A4%E0%A6%BF-%E0%A6%AA%E0%A6%B0%E0%A7%80%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE%E0%A6%B0-%E0%A6%AB%E0%A6%B2-%E0%A6%A6%E0%A7%81%E0%A6%AA%E0%A7%81%E0%A6%B0%E0%A7%87-%E0%A6%9C%E0%A6%BE%E0%A6%A8%E0%A6%BE-%E0%A6%AF%E0%A6%BE%E0%A6%AC%E0%A7%87-%E0%A6%AF%E0%A7%87%E0%A6%AD%E0%A6%BE%E0%A6%AC%E0%A7%87">
-                                        <div class="row gx-2">
-                                            <div class="col-5">
-                                                <div class="dLastNewsImg">
-                                                    <img class="img-fluid" data-src="https://samakal.com/media/imgAll/2026February/THUMB/junior-scholarship-1771996776.jpg" src="https://samakal.com/media/common/thumb-sm.gif" alt="জুনিয়র বৃত্তি পরীক্ষার ফল দুপুরে, জানা যাবে যেভাবে" title="জুনিয়র বৃত্তি পরীক্ষার ফল দুপুরে, জানা যাবে যেভাবে">
-                                                </div>
-                                            </div>
-                                            <div class="col-7">
-                                                <div class="dLastNewsText">
-                                                    <h5>জুনিয়র বৃত্তি পরীক্ষার ফল দুপুরে, জানা যাবে যেভাবে</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="DlastNews-list">
-                                    <a href="https://samakal.com/economics/article/340201/%E0%A6%AD%E0%A6%BE%E0%A6%B0%E0%A6%A4%E0%A7%87-%E0%A6%86%E0%A6%B0%E0%A6%93-%E0%A6%8F%E0%A6%95%E0%A6%9F%E0%A6%BF-%E0%A6%B6%E0%A6%BE%E0%A6%96%E0%A6%BE-%E0%A6%96%E0%A7%8B%E0%A6%B2%E0%A6%BE%E0%A6%B0-%E0%A6%85%E0%A6%A8%E0%A7%81%E0%A6%AE%E0%A7%8B%E0%A6%A6%E0%A6%A8-%E0%A6%AA%E0%A7%87%E0%A6%B2-%E0%A6%8F%E0%A6%AC%E0%A6%BF-%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%82%E0%A6%95">
-                                        <div class="row gx-2">
-                                            <div class="col-5">
-                                                <div class="dLastNewsImg">
-                                                    <img class="img-fluid" data-src="https://samakal.com/media/imgAll/2026February/THUMB/ab-bank-1771992094.jpg" src="https://samakal.com/media/common/thumb-sm.gif" alt="ভারতে আরও একটি শাখা খোলার অনুমোদন পেল এবি ব্যাংক" title="ভারতে আরও একটি শাখা খোলার অনুমোদন পেল এবি ব্যাংক">
-                                                </div>
-                                            </div>
-                                            <div class="col-7">
-                                                <div class="dLastNewsText">
-                                                    <h5>ভারতে আরও একটি শাখা খোলার অনুমোদন পেল এবি ব্যাংক</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="DlastNews-list">
-                                    <a href="https://samakal.com/bangladesh/article/340200/%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%B0%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE-%E0%A6%9A%E0%A7%81%E0%A6%95%E0%A7%8D%E0%A6%A4%E0%A6%BF%E0%A6%B0-%E0%A6%B8%E0%A7%81%E0%A6%B7%E0%A7%8D%E0%A6%A0%E0%A7%81-%E0%A6%AC%E0%A6%BE%E0%A6%B8%E0%A7%8D%E0%A6%A4%E0%A6%AC%E0%A6%BE%E0%A7%9F%E0%A6%A8-%E0%A6%95%E0%A6%B0%E0%A6%BE-%E0%A6%B9%E0%A6%AC%E0%A7%87">
-                                        <div class="row gx-2">
-                                            <div class="col-5">
-                                                <div class="dLastNewsImg">
-                                                    <img class="img-fluid" data-src="https://samakal.com/media/imgAll/2026February/THUMB/untitled-11-1771988260.jpg" src="https://samakal.com/media/common/thumb-sm.gif" alt="প্রতিরক্ষা চুক্তির সুষ্ঠু  বাস্তবায়ন করা হবে" title="প্রতিরক্ষা চুক্তির সুষ্ঠু  বাস্তবায়ন করা হবে">
-                                                </div>
-                                            </div>
-                                            <div class="col-7">
-                                                <div class="dLastNewsText">
-                                                    <h5>প্রতিরক্ষা চুক্তির সুষ্ঠু বাস্তবায়ন করা হবে</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="DlastNews-list">
-                                    <a href="https://samakal.com/capital/article/340199/%E0%A6%97%E0%A6%BE%E0%A6%A8-%E0%A6%A8%E0%A7%83%E0%A6%A4%E0%A7%8D%E0%A6%AF-%E0%A6%95%E0%A6%AC%E0%A6%BF%E0%A6%A4%E0%A6%BE%E0%A7%9F-%E0%A6%AD%E0%A6%BE%E0%A6%B7%E0%A6%BE%E0%A6%B6%E0%A6%B9%E0%A7%80%E0%A6%A6%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%B8%E0%A7%8D%E0%A6%AE%E0%A6%B0%E0%A6%A3">
-                                        <div class="row gx-2">
-                                            <div class="col-5">
-                                                <div class="dLastNewsImg">
-                                                    <img class="img-fluid" data-src="https://samakal.com/media/imgAll/2026February/THUMB/untitled-11-1771988140.jpg" src="https://samakal.com/media/common/thumb-sm.gif" alt="গান-নৃত্য-কবিতায় ভাষাশহীদদের স্মরণ" title="গান-নৃত্য-কবিতায় ভাষাশহীদদের স্মরণ">
-                                                </div>
-                                            </div>
-                                            <div class="col-7">
-                                                <div class="dLastNewsText">
-                                                    <h5>গান-নৃত্য-কবিতায় ভাষাশহীদদের স্মরণ</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="DlastNews-list">
-                                    <a href="https://samakal.com/bangladesh/article/340198/%E0%A6%B8%E0%A6%AE%E0%A7%9F%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A6%B0%E0%A7%80%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE%E0%A7%9F-%E0%A6%89%E0%A6%A4%E0%A7%8D%E0%A6%A4%E0%A7%80%E0%A6%B0%E0%A7%8D%E0%A6%A3-%E0%A6%85%E0%A6%AC%E0%A6%BF%E0%A6%B8%E0%A6%82%E0%A6%AC%E0%A6%BE%E0%A6%A6%E0%A6%BF%E0%A6%A4-%E0%A6%A8%E0%A7%87%E0%A6%A4%E0%A6%BE-%E0%A6%A4%E0%A6%BE%E0%A6%B0%E0%A7%87%E0%A6%95-%E0%A6%B0%E0%A6%B9%E0%A6%AE%E0%A6%BE%E0%A6%A8">
-                                        <div class="row gx-2">
-                                            <div class="col-5">
-                                                <div class="dLastNewsImg">
-                                                    <img class="img-fluid" data-src="https://samakal.com/media/imgAll/2026February/THUMB/untitled-11-1771988036.jpg" src="https://samakal.com/media/common/thumb-sm.gif" alt="সময়ের পরীক্ষায় উত্তীর্ণ অবিসংবাদিত নেতা তারেক রহমান" title="সময়ের পরীক্ষায় উত্তীর্ণ অবিসংবাদিত নেতা তারেক রহমান">
-                                                </div>
-                                            </div>
-                                            <div class="col-7">
-                                                <div class="dLastNewsText">
-                                                    <h5>সময়ের পরীক্ষায় উত্তীর্ণ অবিসংবাদিত নেতা তারেক রহমান</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+                                
+    <?php endwhile;
+    wp_reset_postdata();
+?>
                             </div>
                             <div class="DreadMoreBtn">
                                 <a href="https://samakal.com/latest/news">আরও পড়ুন <i
