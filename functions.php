@@ -27,12 +27,17 @@ function mytheme_customize_register($wp_customize) {
 add_action('customize_register', 'mytheme_customize_register');
 
 add_action('edit_form_after_title', function($post) {
-    $subtitle = get_post_meta($post->ID, '_post_subtitle', true);
-    echo '<div style="margin-bottom:10px;"><input type="text" name="post_subtitle" value="'.esc_attr($subtitle).'" style="width:100%; font-size:16px; padding:4px;" placeholder="Subtitle"></div>';
+    $shoulder = get_post_meta($post->ID, '_post_shoulder', true);
+    $subHead = get_post_meta($post->ID, '_post_subHead', true);
+    echo '<div style="margin-bottom:10px;"><input type="text" name="post_shoulder" value="'.esc_attr($shoulder).'" style="width:100%; font-size:16px; padding:4px;" placeholder="Shoulder"></div>';
+    echo '<div style="margin-bottom:10px;"><input type="text" name="post_subHead" value="'.esc_attr($subHead).'" style="width:100%; font-size:16px; padding:4px;" placeholder="Sub head"></div>';
 });
 
 add_action('save_post', function($post_id) {
-    if (array_key_exists('post_subtitle', $_POST)) {
-        update_post_meta($post_id, '_post_subtitle', sanitize_text_field($_POST['post_subtitle']));
+    if (array_key_exists('post_shoulder', $_POST)) {
+        update_post_meta($post_id, '_post_shoulder', sanitize_text_field($_POST['post_shoulder']));
+    }
+    if (array_key_exists('post_subHead', $_POST)) {
+        update_post_meta($post_id, '_post_subHead', sanitize_text_field($_POST['post_subHead']));
     }
 });

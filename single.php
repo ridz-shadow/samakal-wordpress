@@ -772,12 +772,9 @@
                 <div class="row detailsBodyRowGutter">
                     <div class="col-lg-9">
                         <div class="dheading">
-                        <?php $subtitle = get_post_meta(get_the_ID(), '_post_subtitle', true);
-                        if($subtitle) { ?>
-                            <h2 class="DShoulder"><?php echo esc_html($subtitle); ?></h2>
-                        <?php } ?>
-                            <h1>ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা</h1>
-                            <h2 class="DsubHead"></h2>
+                            <h2 class="DShoulder"><?php echo esc_html(get_post_meta(get_the_ID(), '_post_subtitle', true)); ?></h2>
+                            <h1><?php the_title(); ?></h1>
+                            <h2 class="DsubHead"><?php echo esc_html(get_post_meta(get_the_ID(), '_post_subHead', true)); ?></h2>
                         </div>
                         <div class="row MobileShow">
                             <div class="col-12">
