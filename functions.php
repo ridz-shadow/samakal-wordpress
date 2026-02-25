@@ -26,19 +26,13 @@ function mytheme_customize_register($wp_customize) {
 }
 add_action('customize_register', 'mytheme_customize_register');
 
-function add_subtitle_meta_box() {
-    add_meta_box('post_subtitle', 'Subtitle', 'subtitle_callback', 'post', 'normal', 'high');
-}
-add_action('add_meta_boxes', 'add_subtitle_meta_box');
-
-function subtitle_callback($post) {
+add_action('edit_form_after_title', function($post) {
     $subtitle = get_post_meta($post->ID, '_post_subtitle', true);
-    echo '<input type="text" style="width:100%" name="post_subtitle" value="'.esc_attr($subtitle).'">';
-}
+    echo '<div style="margin-bottom:10px;"><input type="text" name="post_subtitle" value="'.esc_attr($subtitle).'" style="width:100%; font-size:16px; padding:4px;" placeholder="Subtitle"></div>';
+});
 
-function save_subtitle($post_id) {
+add_action('save_post', function($post_id) {
     if (array_key_exists('post_subtitle', $_POST)) {
         update_post_meta($post_id, '_post_subtitle', sanitize_text_field($_POST['post_subtitle']));
     }
-}
-add_action('save_post', 'save_subtitle');
+});
