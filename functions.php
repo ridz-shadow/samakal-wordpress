@@ -26,7 +26,7 @@ function mytheme_customize_register($wp_customize) {
 }
 add_action('customize_register', 'mytheme_customize_register');
 
-add_action('edit_form_after_title', function($post) {
+add_action('edit_form_before_title', function($post) {
     $subtitle = get_post_meta($post->ID, '_post_subtitle', true);
     echo '<div style="margin-bottom:10px;"><input type="text" name="post_subtitle" value="'.esc_attr($subtitle).'" style="width:100%; font-size:16px; padding:4px;" placeholder="Subtitle"></div>';
 });
