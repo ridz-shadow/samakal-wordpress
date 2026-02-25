@@ -938,15 +938,7 @@ echo strtr(get_the_date('d F Y').' | '.get_the_time('H:i'), ['0'=>'০','1'=>'�
                         <div class="sharethis-wrap mt-4">
                             <div class="sharethis-inline-share-buttons"></div>
                         </div>
-                        <section class="CatNewsListArea">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="catSectionHeading">
-                                        <h2>আরও পড়ুন</h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php
+                        <?php
 $categories = wp_get_post_categories(get_the_ID());
 if ($categories) {
     $related = new WP_Query(array(
@@ -957,121 +949,53 @@ if ($categories) {
         'order'          => 'DESC',
     ));
 
-    if ($related->have_posts()) {
-        echo '<h3>Related Posts</h3><ul class="related-posts">';
-        while ($related->have_posts()) : $related->the_post();
-            echo '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
+    if ($related->have_posts()) { ?>
+                        <section class="CatNewsListArea">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="catSectionHeading">
+                                        <h2>আরও পড়ুন</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="CatNewsListWrap">
+                                <div class="row gx-5">
+                                    <?php 
+        while ($related->have_posts()) : $related->the_post(); ?>
+                                    <div class="col-lg-6 CatBr">
+                                        <a href="<?php echo get_permalink(); ?>">
+                                            <div class="CatNewsListContent">
+                                                <div class="row">
+                                                    <div class="col-lg-5 col-5">
+                                                        <div class="CatNewsListImg">
+                                                            <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" src="https://samakal.com/media/common/thumb-sm.gif" alt="<?php echo get_the_title(); ?>" title="<?php echo get_the_title(); ?>"
+                                                                class="img-fluid">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-7 col-7">
+                                                        <div class="CatNewsLisText">
+                                                            <div class="Desc">
+                                                                <h3 class="Title2"><?php echo get_the_title(); ?></h3>
+                                                                <span class="PublishTime"><i
+                                                                        class="fa-regular fa-clock"></i>
+                                                                    আপডেট
+                                                                    <?php echo strtr(get_the_date('d F Y').' | '.get_the_time('H:i'), ['0'=>'০','1'=>'১','2'=>'২','3'=>'৩','4'=>'৪','5'=>'৫','6'=>'৬','7'=>'৭','8'=>'৮','9'=>'৯']); ?>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <?php
         endwhile;
         echo '</ul>';
         wp_reset_postdata();
     }
 }
 ?>
-                            <div class="CatNewsListWrap">
-                                <div class="row gx-5">
-                                    <div class="col-lg-6 CatBr">
-                                        <a href="https://samakal.com/bangladesh/article/340204/%E0%A6%AA%E0%A7%81%E0%A6%B2%E0%A6%BF%E0%A6%B6-%E0%A6%AE%E0%A6%B9%E0%A6%BE%E0%A6%AA%E0%A6%B0%E0%A6%BF%E0%A6%A6%E0%A6%B0%E0%A7%8D%E0%A6%B6%E0%A6%95%E0%A7%87%E0%A6%B0-%E0%A6%A6%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A6%BF%E0%A6%A4%E0%A7%8D%E0%A6%AC-%E0%A6%97%E0%A7%8D%E0%A6%B0%E0%A6%B9%E0%A6%A3-%E0%A6%95%E0%A6%B0%E0%A6%B2%E0%A7%87%E0%A6%A8-%E0%A6%86%E0%A6%B2%E0%A7%80-%E0%A6%B9%E0%A7%8B%E0%A6%B8%E0%A7%87%E0%A6%A8-%E0%A6%AB%E0%A6%95%E0%A6%BF%E0%A6%B0">
-                                            <div class="CatNewsListContent">
-                                                <div class="row">
-                                                    <div class="col-lg-5 col-5">
-                                                        <div class="CatNewsListImg">
-                                                            <img data-src="https://samakal.com/media/imgAll/2026February/SM/police-igp-1772001363.jpg" src="https://samakal.com/media/common/thumb-sm.gif" alt="পুলিশ মহাপরিদর্শকের দায়িত্ব গ্রহণ করলেন আলী হোসেন ফকির" title="পুলিশ মহাপরিদর্শকের দায়িত্ব গ্রহণ করলেন আলী হোসেন ফকির"
-                                                                class="img-fluid">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-7 col-7">
-                                                        <div class="CatNewsLisText">
-                                                            <div class="Desc">
-                                                                <h3 class="Title2">পুলিশ মহাপরিদর্শকের দায়িত্ব গ্রহণ করলেন আলী হোসেন ফকির</h3>
-                                                                <span class="PublishTime"><i
-                                                                        class="fa-regular fa-clock"></i>
-                                                                    আপডেট
-                                                                    ২৫ ফেব্রুয়ারি ২০২৬ | ১২:৩৬
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-6 CatBr">
-                                        <a href="https://samakal.com/bangladesh/article/340202/%E0%A6%9C%E0%A7%81%E0%A6%A8%E0%A6%BF%E0%A7%9F%E0%A6%B0-%E0%A6%AC%E0%A7%83%E0%A6%A4%E0%A7%8D%E0%A6%A4%E0%A6%BF-%E0%A6%AA%E0%A6%B0%E0%A7%80%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE%E0%A6%B0-%E0%A6%AB%E0%A6%B2-%E0%A6%A6%E0%A7%81%E0%A6%AA%E0%A7%81%E0%A6%B0%E0%A7%87-%E0%A6%9C%E0%A6%BE%E0%A6%A8%E0%A6%BE-%E0%A6%AF%E0%A6%BE%E0%A6%AC%E0%A7%87-%E0%A6%AF%E0%A7%87%E0%A6%AD%E0%A6%BE%E0%A6%AC%E0%A7%87">
-                                            <div class="CatNewsListContent">
-                                                <div class="row">
-                                                    <div class="col-lg-5 col-5">
-                                                        <div class="CatNewsListImg">
-                                                            <img data-src="https://samakal.com/media/imgAll/2026February/SM/junior-scholarship-1771996776.jpg" src="https://samakal.com/media/common/thumb-sm.gif" alt="জুনিয়র বৃত্তি পরীক্ষার ফল দুপুরে, জানা যাবে যেভাবে" title="জুনিয়র বৃত্তি পরীক্ষার ফল দুপুরে, জানা যাবে যেভাবে"
-                                                                class="img-fluid">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-7 col-7">
-                                                        <div class="CatNewsLisText">
-                                                            <div class="Desc">
-                                                                <h3 class="Title2">জুনিয়র বৃত্তি পরীক্ষার ফল দুপুরে, জানা যাবে যেভাবে</h3>
-                                                                <span class="PublishTime"><i
-                                                                        class="fa-regular fa-clock"></i>
-                                                                    আপডেট
-                                                                    ২৫ ফেব্রুয়ারি ২০২৬ | ১২:১৮
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-6 CatBr">
-                                        <a href="https://samakal.com/bangladesh/article/340200/%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%B0%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE-%E0%A6%9A%E0%A7%81%E0%A6%95%E0%A7%8D%E0%A6%A4%E0%A6%BF%E0%A6%B0-%E0%A6%B8%E0%A7%81%E0%A6%B7%E0%A7%8D%E0%A6%A0%E0%A7%81-%E0%A6%AC%E0%A6%BE%E0%A6%B8%E0%A7%8D%E0%A6%A4%E0%A6%AC%E0%A6%BE%E0%A7%9F%E0%A6%A8-%E0%A6%95%E0%A6%B0%E0%A6%BE-%E0%A6%B9%E0%A6%AC%E0%A7%87">
-                                            <div class="CatNewsListContent">
-                                                <div class="row">
-                                                    <div class="col-lg-5 col-5">
-                                                        <div class="CatNewsListImg">
-                                                            <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771988260.jpg" src="https://samakal.com/media/common/thumb-sm.gif" alt="প্রতিরক্ষা চুক্তির সুষ্ঠু  বাস্তবায়ন করা হবে" title="প্রতিরক্ষা চুক্তির সুষ্ঠু  বাস্তবায়ন করা হবে" class="img-fluid">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-7 col-7">
-                                                        <div class="CatNewsLisText">
-                                                            <div class="Desc">
-                                                                <h3 class="Title2">প্রতিরক্ষা চুক্তির সুষ্ঠু বাস্তবায়ন করা হবে</h3>
-                                                                <span class="PublishTime"><i
-                                                                        class="fa-regular fa-clock"></i>
-                                                                    আপডেট
-                                                                    ২৫ ফেব্রুয়ারি ২০২৬ | ১২:১৯
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-6 CatBr">
-                                        <a href="https://samakal.com/bangladesh/article/340198/%E0%A6%B8%E0%A6%AE%E0%A7%9F%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A6%B0%E0%A7%80%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE%E0%A7%9F-%E0%A6%89%E0%A6%A4%E0%A7%8D%E0%A6%A4%E0%A7%80%E0%A6%B0%E0%A7%8D%E0%A6%A3-%E0%A6%85%E0%A6%AC%E0%A6%BF%E0%A6%B8%E0%A6%82%E0%A6%AC%E0%A6%BE%E0%A6%A6%E0%A6%BF%E0%A6%A4-%E0%A6%A8%E0%A7%87%E0%A6%A4%E0%A6%BE-%E0%A6%A4%E0%A6%BE%E0%A6%B0%E0%A7%87%E0%A6%95-%E0%A6%B0%E0%A6%B9%E0%A6%AE%E0%A6%BE%E0%A6%A8">
-                                            <div class="CatNewsListContent">
-                                                <div class="row">
-                                                    <div class="col-lg-5 col-5">
-                                                        <div class="CatNewsListImg">
-                                                            <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771988036.jpg" src="https://samakal.com/media/common/thumb-sm.gif" alt="সময়ের পরীক্ষায় উত্তীর্ণ অবিসংবাদিত নেতা তারেক রহমান" title="সময়ের পরীক্ষায় উত্তীর্ণ অবিসংবাদিত নেতা তারেক রহমান"
-                                                                class="img-fluid">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-7 col-7">
-                                                        <div class="CatNewsLisText">
-                                                            <div class="Desc">
-                                                                <h3 class="Title2">সময়ের পরীক্ষায় উত্তীর্ণ অবিসংবাদিত নেতা তারেক রহমান</h3>
-                                                                <span class="PublishTime"><i
-                                                                        class="fa-regular fa-clock"></i>
-                                                                    আপডেট
-                                                                    ২৫ ফেব্রুয়ারি ২০২৬ | ০৮:৫৩
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
                                 </div>
                             </div>
                         </section>
