@@ -48,11 +48,12 @@ add_action('after_setup_theme', function() {
 
 add_action('add_meta_boxes', function() {
     add_meta_box(
-        'custom_post_author',
-        'Custom Author',
+        'post_reporter',
+        'Reporter',
         function($post) {
-            $value = get_post_meta($post->ID, '_custom_post_author', true);
-            echo '<input type="text" name="custom_post_author" value="'.esc_attr($value).'" style="width:100%" required>';
+            wp_nonce_field('save_post_reporter', 'post_reporter_nonce');
+            $value = get_post_meta($post->ID, 'post_reporter', true);
+            echo '<input type="text" name="post_reporter" value="'.esc_attr($value).'" style="width:100%" required>';
         },
         'post',
         'side',
@@ -62,14 +63,14 @@ add_action('add_meta_boxes', function() {
 
 add_action('save_post', function($post_id) {
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if (!isset($_POST['post_reporter_nonce']) || !wp_verify_nonce($_POST['post_reporter_nonce'], 'save_post_reporter')) return;
 
-    if (array_key_exists('custom_post_author', $_POST)) {
-        $value = sanitize_text_field($_POST['custom_post_author']);
+    if (array_key_exists('post_reporter', $_POST)) {
+        $value = sanitize_text_field($_POST['post_reporter']);
         if (!empty($value)) {
-            update_post_meta($post_id, '_custom_post_author', $value);
+            update_post_meta($post_id, 'post_reporter', $value);
         } else {
-            wp_die('Custom Author field is required. <a href="javascript:history.back()">Go Back</a>');
+            wp_die('Reporter field is required. <a href="javascript:history.back()">Go Back</a>');
         }
     }
 });
-?>

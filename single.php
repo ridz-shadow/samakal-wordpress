@@ -815,7 +815,7 @@
                             <div class="col-lg-6 d-flex">
                                 <div class="align-self-stretch justify-content-center">
                                     <div class="writter">
-                                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_post_author', true)); ?></p>
+                                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'post_reporter', true)); ?></p>
                                     </div>
                                     <div class="dateAndTime">
                                         <p><i class="fa-regular fa-clock"></i> প্রকাশ: ২৫ ফেব্রুয়ারি ২০২৬ | ১২:৪৯ </p>
