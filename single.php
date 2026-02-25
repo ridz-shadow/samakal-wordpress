@@ -461,7 +461,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 d-flex align-items-center">
                         <div class="DateTimeBn">
-                            <p class="date"><i class="fa-solid fa-location-dot"></i> ঢাকা <i class="fa-sharp fa-solid fa-calendar-days"></i> বুধবার, ২৫ ফেব্রুয়ারি ২০২৬
+                            <p class="date"><i class="fa-solid fa-location-dot"></i> <?php echo esc_html(get_theme_mod('namedlocation', 'ঢাকা')); ?> <i class="fa-sharp fa-solid fa-calendar-days"></i> <?php echo strtr(date('l, d F Y'), ['0'=>'০','1'=>'১','2'=>'২','3'=>'৩','4'=>'৪','5'=>'৫','6'=>'৬','7'=>'৭','8'=>'৮','9'=>'৯']); ?>
                             </p>
 
                         </div>
