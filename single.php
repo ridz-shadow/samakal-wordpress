@@ -515,8 +515,8 @@
             <div class="DHeaderNav">
                 <div class="container">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <a href="https://samakal.com" class="StickyLogo" rel="home">
-                        <img src="https://samakal.com/frontend/media/common/logo.png" title="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS" alt="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS" class="img-fluid img100">
+                        <a href="<?php echo esc_url( home_url('/') ); ?>" class="StickyLogo" rel="home">
+                        <img src="<?php echo esc_url( ( function_exists('get_custom_logo') && has_custom_logo() ) ? wp_get_attachment_image_url( get_theme_mod('custom_logo'), 'full' ) : get_template_directory_uri() . '/images/logo.png' ); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" class="img-fluid img100">
                     </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -622,7 +622,7 @@
         </div>
         <div id="myHeader2">
             <div id="mobile-nav" class="MobileMenu MobileShow">
-                <div class="DMLogo d-flex h-100 align-items-center justify-content-center"><a href="https://samakal.com"><img src="https://samakal.com/frontend/media/common/logo.png" title="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS" alt="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS" class="img-fluid img100"></a></div>
+                <div class="DMLogo d-flex h-100 align-items-center justify-content-center"><a href="<?php echo esc_url( home_url('/') ); ?>"><img src="<?php echo esc_url( ( function_exists('get_custom_logo') && has_custom_logo() ) ? wp_get_attachment_image_url( get_theme_mod('custom_logo'), 'full' ) : get_template_directory_uri() . '/images/logo.png' ); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" class="img-fluid img100"></a></div>
                 <div class="d-flex  align-items-center justify-content-start"><span onclick="if (!window.__cfRLUnblockHandlers) return false; myMenuBtnChng()" id="menu-button" class="menu-button fas fa-bars" data-cf-modified-308d0d4576f1f362b9bffb9b-=""></span></div>
                 <div class=" d-flex h-100 align-items-center justify-content-end">
                     <div class="menu-search">
@@ -1352,9 +1352,9 @@
                                 </ul>
                             </div>
                             <a href="" class="Flogo" rel="home">
-                            <img src="https://samakal.com/frontend/media/common/logo.png"
-                                title="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS"
-                                alt="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS" class="img-fluid img100">
+                            <img src="<?php echo esc_url( ( function_exists('get_custom_logo') && has_custom_logo() ) ? wp_get_attachment_image_url( get_theme_mod('custom_logo'), 'full' ) : get_template_directory_uri() . '/images/logo.png' ); ?>"
+                                title="<?php the_title(); ?>"
+                                alt="<?php the_title(); ?>" class="img-fluid img100">
                         </a>
                             <h2 class="FCopyRight">© ২০০৫ - ২০২৬ <a href="https://samakal.com">সমকাল</a> কর্তৃক সর্বসত্ব ® সংরক্ষিত</h2>
                             <p class="d-none"><a href="https://www.emythmakers.com/" rel="nofollow" target="_blank">উন্নয়নে ইমিথমেকারস.কম</a></p>
