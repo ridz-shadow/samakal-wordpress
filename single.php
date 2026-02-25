@@ -794,7 +794,7 @@
                         <div class="DNewsImg">
                             <img class="img-fluid w-100" id="adf-overlay" data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/thumb-bg.gif"); ?>" id="adf-overlay" alt="<?php the_title(); ?>"
                                 title="<?php the_title(); ?>">
-                            <p><?php echo esc_html(wp_get_attachment_caption($thumb_id)); ?></p>
+                            <p><?php echo esc_html(wp_get_attachment_caption(get_post_thumbnail_id(get_the_ID()))); ?></p>
                         </div>
                         <div class="row MobileShow">
                             <div class="col-12">
