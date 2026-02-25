@@ -48,22 +48,28 @@ add_action('after_setup_theme', function() {
 
 add_action('add_meta_boxes', function() {
     add_meta_box(
-        'post_author_name', 
-        'Author', 
+        'custom_post_author',
+        'Custom Author',
         function($post) {
-            $value = get_post_meta($post->ID, '_post_author', true);
-            echo '<input type="text" name="post_author" value="'.esc_attr($value).'" style="width:100%" required>';
-        }, 
-        'post', 
-        'side', 
+            $value = get_post_meta($post->ID, '_custom_post_author', true);
+            echo '<input type="text" name="custom_post_author" value="'.esc_attr($value).'" style="width:100%" required>';
+        },
+        'post',
+        'side',
         'high'
     );
 });
 
 add_action('save_post', function($post_id) {
-    if (array_key_exists('post_author', $_POST) && !empty($_POST['post_author'])) {
-        update_post_meta($post_id, '_post_author', sanitize_text_field($_POST['post_author']));
-    } elseif (array_key_exists('post_author', $_POST) && empty($_POST['post_author'])) {
-        wp_die('Author field is required. <a href="javascript:history.back()">Go Back</a>');
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+
+    if (array_key_exists('custom_post_author', $_POST)) {
+        $value = sanitize_text_field($_POST['custom_post_author']);
+        if (!empty($value)) {
+            update_post_meta($post_id, '_custom_post_author', $value);
+        } else {
+            wp_die('Custom Author field is required. <a href="javascript:history.back()">Go Back</a>');
+        }
     }
 });
+?>
