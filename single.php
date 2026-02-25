@@ -775,8 +775,6 @@
         echo '<li class="breadcrumb-item"><a href="'.esc_url(get_category_link($category)).'">'.esc_html($category->name).'</a></li>';
     }
     ?>
-
-    <li class="breadcrumb-item active"><?php the_title(); ?></li>
 </ol>
                             </nav>
                         </div>
