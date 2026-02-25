@@ -759,12 +759,25 @@
                     <div class="col-lg-12">
                         <div class="breadcrumb-wrap">
                             <nav aria-label="breadcrumb" class="breadcrumbs large-font">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="/" role="button" tabindex="0"><i
-                                            class="fas fa-home"></i></a></li>
-                                    <li class="breadcrumb-item"><a href="/bangladesh">বাংলাদেশ</a></li>
+                            <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="<?php echo esc_url(home_url('/')); ?>" role="button" tabindex="0"><i class="fas fa-home"></i></a></li>
 
-                                </ol>
+    <?php
+    $categories = get_the_category();
+    if ($categories) {
+        $category = $categories[0]; // take the first category
+        $ancestors = get_ancestors($category->term_id, 'category');
+        $ancestors = array_reverse($ancestors);
+        foreach ($ancestors as $ancestor_id) {
+            $ancestor = get_category($ancestor_id);
+            echo '<li class="breadcrumb-item"><a href="'.esc_url(get_category_link($ancestor)).'">'.esc_html($ancestor->name).'</a></li>';
+        }
+        echo '<li class="breadcrumb-item"><a href="'.esc_url(get_category_link($category)).'">'.esc_html($category->name).'</a></li>';
+    }
+    ?>
+
+    <li class="breadcrumb-item active"><?php the_title(); ?></li>
+</ol>
                             </nav>
                         </div>
                     </div>
