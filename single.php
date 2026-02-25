@@ -22,7 +22,7 @@
     <meta name="description" content="অভিযুক্ত ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগকে ত্রয়োদশ জাতীয় সংসদ নির্বাচনের সবচেয়ে উল্লেখযোগ্য ব্যর্থতা হিসেবে চিহ্নিত করেছে সুশাসনের জন্য নাগরিক (সুজন)। সংগঠনটি বলেছে, অন্তত ৪৫ জন ঋণখেলাপি প্রার্থী, কোনো কোনো ক্ষেত্রে উচ্চ আদালতের স্থগিতাদেশ নিয়ে এবারের নির্বাচনে অংশগ্রহণের সুযোগ পেয়েছেন।">
     <meta name="keywords" content="">
     <meta property="og:site_name" content="SAMAKAL | সমকাল">
-    <meta property="og:title" content="ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা">
+    <meta property="og:title" content="<?php the_title(); ?>">
     <meta property="og:description" content="অভিযুক্ত ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগকে ত্রয়োদশ জাতীয় সংসদ নির্বাচনের সবচেয়ে উল্লেখযোগ্য ব্যর্থতা হিসেবে চিহ্নিত করেছে সুশাসনের জন্য নাগরিক (সুজন)। সংগঠনটি বলেছে, অন্তত ৪৫ জন ঋণখেলাপি প্রার্থী, কোনো কোনো ক্ষেত্রে উচ্চ আদালতের স্থগিতাদেশ নিয়ে এবারের নির্বাচনে অংশগ্রহণের সুযোগ পেয়েছেন।">
     <meta property="og:url" content="https://samakal.com/bangladesh/article/340205/%E0%A6%8B%E0%A6%A3%E0%A6%96%E0%A7%87%E0%A6%B2%E0%A6%BE%E0%A6%AA%E0%A6%BF-%E0%A6%93-%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A7%88%E0%A6%A4-%E0%A6%A8%E0%A6%BE%E0%A6%97%E0%A6%B0%E0%A6%BF%E0%A6%95%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%BF%E0%A6%A4%E0%A6%BE%E0%A6%B0-%E0%A6%B8%E0%A7%81%E0%A6%AF%E0%A7%8B%E0%A6%97-%E0%A6%A8%E0%A6%BF%E0%A6%B0%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%9A%E0%A6%A8%E0%A7%87-%E0%A6%89%E0%A6%B2%E0%A7%8D%E0%A6%B2%E0%A7%87%E0%A6%96%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%AF-%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%B0%E0%A7%8D%E0%A6%A5%E0%A6%A4%E0%A6%BE">
     <meta property="og:type" content="article">
@@ -31,7 +31,7 @@
     <meta name="twitter:domain" content="https://samakal.com" />
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="SAMAKAL | সমকাল">
-    <meta name="twitter:title" content="ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা">
+    <meta name="twitter:title" content="<?php the_title(); ?>">
     <meta name="twitter:description" content="অভিযুক্ত ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগকে ত্রয়োদশ জাতীয় সংসদ নির্বাচনের সবচেয়ে উল্লেখযোগ্য ব্যর্থতা হিসেবে চিহ্নিত করেছে সুশাসনের জন্য নাগরিক (সুজন)। সংগঠনটি বলেছে, অন্তত ৪৫ জন ঋণখেলাপি প্রার্থী, কোনো কোনো ক্ষেত্রে উচ্চ আদালতের স্থগিতাদেশ নিয়ে এবারের নির্বাচনে অংশগ্রহণের সুযোগ পেয়েছেন।">
     <meta name="twitter:url" content="https://samakal.com/bangladesh/article/340205/%E0%A6%8B%E0%A6%A3%E0%A6%96%E0%A7%87%E0%A6%B2%E0%A6%BE%E0%A6%AA%E0%A6%BF-%E0%A6%93-%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A7%88%E0%A6%A4-%E0%A6%A8%E0%A6%BE%E0%A6%97%E0%A6%B0%E0%A6%BF%E0%A6%95%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%BF%E0%A6%A4%E0%A6%BE%E0%A6%B0-%E0%A6%B8%E0%A7%81%E0%A6%AF%E0%A7%8B%E0%A6%97-%E0%A6%A8%E0%A6%BF%E0%A6%B0%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%9A%E0%A6%A8%E0%A7%87-%E0%A6%89%E0%A6%B2%E0%A7%8D%E0%A6%B2%E0%A7%87%E0%A6%96%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%AF-%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%B0%E0%A7%8D%E0%A6%A5%E0%A6%A4%E0%A6%BE">
     <meta name="twitter:image" content="https://samakal.com/media/imgAll/2026February/sujon-1772002167.jpg">
@@ -274,7 +274,7 @@
                 {
                     "@type": "ListItem",
                     "position": 3,
-                    "name": "ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা",
+                    "name": "<?php the_title(); ?>",
                     "item": "https://samakal.com/bangladesh/article/340205/%E0%A6%8B%E0%A6%A3%E0%A6%96%E0%A7%87%E0%A6%B2%E0%A6%BE%E0%A6%AA%E0%A6%BF-%E0%A6%93-%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A7%88%E0%A6%A4-%E0%A6%A8%E0%A6%BE%E0%A6%97%E0%A6%B0%E0%A6%BF%E0%A6%95%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%BF%E0%A6%A4%E0%A6%BE%E0%A6%B0-%E0%A6%B8%E0%A7%81%E0%A6%AF%E0%A7%8B%E0%A6%97-%E0%A6%A8%E0%A6%BF%E0%A6%B0%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%9A%E0%A6%A8%E0%A7%87-%E0%A6%89%E0%A6%B2%E0%A7%8D%E0%A6%B2%E0%A7%87%E0%A6%96%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%AF-%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%B0%E0%A7%8D%E0%A6%A5%E0%A6%A4%E0%A6%BE"
                 }
             ]
@@ -290,10 +290,10 @@
             "keywords": "",
             "mainEntityOfPage": {
                 "@type": "WebPage",
-                "name": "ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা",
+                "name": "<?php the_title(); ?>",
                 "@id": "https://samakal.com/bangladesh/article/340205/%E0%A6%8B%E0%A6%A3%E0%A6%96%E0%A7%87%E0%A6%B2%E0%A6%BE%E0%A6%AA%E0%A6%BF-%E0%A6%93-%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A7%88%E0%A6%A4-%E0%A6%A8%E0%A6%BE%E0%A6%97%E0%A6%B0%E0%A6%BF%E0%A6%95%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%BF%E0%A6%A4%E0%A6%BE%E0%A6%B0-%E0%A6%B8%E0%A7%81%E0%A6%AF%E0%A7%8B%E0%A6%97-%E0%A6%A8%E0%A6%BF%E0%A6%B0%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%9A%E0%A6%A8%E0%A7%87-%E0%A6%89%E0%A6%B2%E0%A7%8D%E0%A6%B2%E0%A7%87%E0%A6%96%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%AF-%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%B0%E0%A7%8D%E0%A6%A5%E0%A6%A4%E0%A6%BE"
             },
-            "headline": "ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা",
+            "headline": "<?php the_title(); ?>",
             "image": {
                 "@type": "ImageObject",
                 "url": "https://samakal.com/media/imgAll/2026February/sujon-1772002167.jpg",
@@ -304,7 +304,7 @@
             "dateModified": "",
             "author": {
                 "@type": "Person",
-                "name": "ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা"
+                "name": "<?php the_title(); ?>"
             },
             "publisher": {
                 "@type": "Organization",
@@ -792,9 +792,9 @@
                             </div>
                         </div>
                         <div class="DNewsImg">
-                            <img class="img-fluid w-100" id="adf-overlay" data-src="https://samakal.com/media/imgAll/2026February/sujon-1772002167.jpg" src="https://samakal.com/media/common/thumb-bg.gif" id="adf-overlay" alt="ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা"
-                                title="ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা">
-                            <p>‘সুজন-এর দৃষ্টিতে ত্রয়োদশ জাতীয় সংসদ নির্বাচন ও গণভোট-২০২৬’ শীর্ষক সংবাদ সম্মেলন</p>
+                            <img class="img-fluid w-100" id="adf-overlay" data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/thumb-bg.gif"); ?>" id="adf-overlay" alt="<?php the_title(); ?>"
+                                title="<?php the_title(); ?>">
+                            <p><?php echo esc_html(wp_get_attachment_caption($thumb_id)); ?></p>
                         </div>
                         <div class="row MobileShow">
                             <div class="col-12">
@@ -1141,12 +1141,12 @@
                                         <div class="row gx-2">
                                             <div class="col-5">
                                                 <div class="dLastNewsImg">
-                                                    <img class="img-fluid" data-src="https://samakal.com/media/imgAll/2026February/THUMB/sujon-1772002167.jpg" src="https://samakal.com/media/common/thumb-sm.gif" alt="ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা" title="ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা">
+                                                    <img class="img-fluid" data-src="https://samakal.com/media/imgAll/2026February/THUMB/sujon-1772002167.jpg" src="https://samakal.com/media/common/thumb-sm.gif" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
                                                 </div>
                                             </div>
                                             <div class="col-7">
                                                 <div class="dLastNewsText">
-                                                    <h5>ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা</h5>
+                                                    <h5><?php the_title(); ?></h5>
                                                 </div>
                                             </div>
                                         </div>
