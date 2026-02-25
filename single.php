@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <title>ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা </title>
+    <title><?php the_title(); ?></title>
     <meta http-equiv="refresh" content="">
     <meta name="author" content="SAMAKAL">
     <meta name="Developer" content="eMythMakers.com">
