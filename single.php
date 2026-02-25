@@ -468,7 +468,7 @@
                     </div>
                     <div class="col-lg-4 col-12 d-flex justify-content-center align-items-center">
                         <div class="DLogo">
-                            <a href="https://samakal.com" class="DLogo" rel="home"><img src="https://samakal.com/frontend/media/common/logo.png" title="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS" alt="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS" class="img-fluid img100"></a>
+                            <a href="<?php echo esc_url( home_url('/') ); ?>" class="DLogo" rel="home"><img src="<?php echo esc_url( if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) { the_custom_logo(); } else { get_template_directory_uri() . '/images/logo.png'; } ); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" class="img-fluid img100"></a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-12 d-flex justify-content-end align-items-center">
