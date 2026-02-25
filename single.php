@@ -818,7 +818,9 @@
                                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'post_reporter', true)); ?></p>
                                     </div>
                                     <div class="dateAndTime">
-                                        <p><i class="fa-regular fa-clock"></i> প্রকাশ: ২৫ ফেব্রুয়ারি ২০২৬ | ১২:৪৯ </p>
+                                        <p><i class="fa-regular fa-clock"></i> প্রকাশ: <?php 
+echo strtr(get_the_date('d F Y').' | '.get_the_time('H:i'), ['0'=>'০','1'=>'১','2'=>'২','3'=>'৩','4'=>'৪','5'=>'৫','6'=>'৬','7'=>'৭','8'=>'৮','9'=>'৯']);
+?> </p>
                                     </div>
 
                                 </div>
