@@ -41,3 +41,7 @@ add_action('save_post', function($post_id) {
         update_post_meta($post_id, '_post_subHead', sanitize_text_field($_POST['post_subHead']));
     }
 });
+
+add_action('after_setup_theme', function() {
+    add_theme_support('post-thumbnails');
+});
