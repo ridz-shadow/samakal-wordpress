@@ -88,6 +88,109 @@ function mytheme_customize_register($wp_customize) {
         'settings' => 'twitter_site_handle',
         'type'     => 'text',
     ));
+    
+
+    
+    
+    $wp_customize->add_setting( 'ga4_id', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control( 'ga4_id_control', array(
+        'label'    => __( 'Google Analytics 4 ID' ),
+        'section'  => 'title_tagline',
+        'settings' => 'ga4_id',
+        'type'     => 'text',
+    ));
+    
+    $wp_customize->add_setting( 'fb_pixel_id', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control( 'fb_pixel_id_control', array(
+        'label'    => __( 'Facebook Pixel ID' ),
+        'section'  => 'title_tagline',
+        'settings' => 'fb_pixel_id',
+        'type'     => 'text',
+    ));
+
+    // Define platforms and default URLs
+    $platforms = array(
+        'facebook'  => 'https://www.facebook.com/',
+        'twitter'   => 'https://x.com/',
+        'linkedin'  => 'https://www.linkedin.com/',
+        'youtube'   => 'https://www.youtube.com/',
+        'instagram' => 'https://www.instagram.com/',
+        'whatsapp'  => 'https://www.whatsapp.com/',
+    );
+
+    // Loop through each platform and add setting + control
+    foreach ( $platforms as $key => $default_url ) {
+
+        $wp_customize->add_setting( "social_{$key}_url", array(
+            'default'           => $default_url,
+            'sanitize_callback' => 'esc_url_raw',
+        ) );
+
+        $wp_customize->add_control( "social_{$key}_url_control", array(
+            'label'    => ucfirst($key) . ' URL',
+            'section'  => 'title_tagline',
+            'settings' => "social_{$key}_url",
+            'type'     => 'url',
+        ) );
+    }
+
+    // ---------------------------
+    // Header Button 1 (label + URL)
+    // ---------------------------
+    $wp_customize->add_setting( 'header_button_1_label', array(
+        'default'           => 'ই-পেপার',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'header_button_1_label_control', array(
+        'label'    => __('Button 1 Label', 'samakal'),
+        'section'  => 'title_tagline',
+        'settings' => 'header_button_1_label',
+        'type'     => 'text',
+    ) );
+
+    $wp_customize->add_setting( 'header_button_1_url', array(
+        'default'           => 'https://epaper.samakal.com/',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+    $wp_customize->add_control( 'header_button_1_url_control', array(
+        'label'    => __('Button 1 URL', 'samakal'),
+        'section'  => 'title_tagline',
+        'settings' => 'header_button_1_url',
+        'type'     => 'url',
+    ) );
+
+    // ---------------------------
+    // Header Button 2 (label + URL)
+    // ---------------------------
+    $wp_customize->add_setting( 'header_button_2_label', array(
+        'default'           => 'English',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'header_button_2_label_control', array(
+        'label'    => __('Button 2 Label', 'samakal'),
+        'section'  => 'title_tagline',
+        'settings' => 'header_button_2_label',
+        'type'     => 'text',
+    ) );
+
+    $wp_customize->add_setting( 'header_button_2_url', array(
+        'default'           => 'https://en.samakal.com/',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+    $wp_customize->add_control( 'header_button_2_url_control', array(
+        'label'    => __('Button 2 URL', 'samakal'),
+        'section'  => 'title_tagline',
+        'settings' => 'header_button_2_url',
+        'type'     => 'url',
+    ) );
 
 }
 add_action('customize_register', 'mytheme_customize_register');
@@ -140,3 +243,11 @@ add_action('save_post', function($post_id) {
         }
     }
 });
+
+function mytheme_register_menus() {
+    register_nav_menus( array(
+        'main_menu'   => __( 'Main Menu', 'mytheme' ),
+        'footer_menu' => __( 'Footer Menu', 'mytheme' ),
+    ) );
+}
+add_action( 'after_setup_theme', 'mytheme_register_menus' );

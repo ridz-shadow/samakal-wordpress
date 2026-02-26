@@ -320,7 +320,7 @@
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XJF1JX4FFL" type="text/javascript"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo esc_attr(get_theme_mod("ga4_id")); ?>" type="text/javascript"></script>
     <script type="text/javascript">
         window.dataLayer = window.dataLayer || [];
 
@@ -329,23 +329,11 @@
         }
         gtag('js', new Date());
 
-        gtag('config', 'G-XJF1JX4FFL');
+        gtag('config', '<?php echo esc_attr(get_theme_mod("ga4_id")); ?>');
     </script>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102760953-1" type="text/javascript"></script>
-    <script type="text/javascript">
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-102760953-1');
-    </script>
-
 
     <!-- Facebook Pixel Code -->
-    <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+    <script type="text/javascript">
         ! function(f, b, e, v, n, t, s) {
             if (f.fbq) return;
             n = f.fbq = function() {
@@ -364,92 +352,13 @@
             s.parentNode.insertBefore(t, s)
         }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '226625765941679');
+        fbq('init', '<?php echo esc_attr(get_theme_mod("fb_pixel_id")); ?>');
         fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=226625765941679&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=<?php echo esc_attr(get_theme_mod("fb_pixel_id")); ?>&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Facebook Pixel Code -->
-
-    <!-- google adsense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="308d0d4576f1f362b9bffb9b-text/javascript"></script>
-    <script type="308d0d4576f1f362b9bffb9b-text/javascript">
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-9442091006829624",
-            enable_page_level_ads: true
-        });
-    </script>
-
-    <script type="308d0d4576f1f362b9bffb9b-text/javascript" src="//nc.pubpowerplatform.io/w/5d37fd30-0fcf-45f3-b443-2a71afb67b52.js" async defer>
-    </script>
-    <script type="308d0d4576f1f362b9bffb9b-text/javascript">
-        var powerTag = powerTag || {};
-        powerTag.gdprShowConsentToolButton = false;
-    </script>
-    <script type="308d0d4576f1f362b9bffb9b-text/javascript" src="//nc.pubpowerplatform.io/ata/adv/5d37fd30-0fcf-45f3-b443-2a71afb67b52.js" async defer></script>
-    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" type="308d0d4576f1f362b9bffb9b-text/javascript"></script>
-    <script type="308d0d4576f1f362b9bffb9b-text/javascript">
-        window.googletag = window.googletag || {
-            cmd: []
-        };
-        googletag.cmd.push(function() {
-            googletag.defineSlot('/21871422770/article_middle2', [300, 250], 'div-gpt-ad-1757935077396-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/DNA_Leaderboard', [970, 90], 'div-gpt-ad-1697888274364-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/R1_Side', [300, 250], 'div-gpt-ad-1697888394875-0').addService(
-                googletag.pubads());
-            googletag.defineSlot('/21871422770/R2_Side', [300, 250], 'div-gpt-ad-1697888494002-0').addService(
-                googletag.pubads());
-            googletag.defineSlot('/21871422770/DNA_ArticleMiddle_1', [300, 250], 'div-gpt-ad-1697888616961-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/DNA_ArticleMiddle2', [300, 250], 'div-gpt-ad-1697888701274-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/R3_Side', [300, 250], 'div-gpt-ad-1697888851115-0').addService(
-                googletag.pubads());
-            googletag.defineSlot('/21871422770/R4_Side', [300, 250], 'div-gpt-ad-1697889007257-0').addService(
-                googletag.pubads());
-            googletag.defineSlot('/21871422770/B1_ArticleEnd', [728, 90], 'div-gpt-ad-1697889135472-0').addService(
-                googletag.pubads());
-            googletag.defineSlot('/21871422770/DNA_B2', [
-                [728, 90],
-                [970, 90]
-            ], 'div-gpt-ad-1697889579514-0').addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/DNA_B3', [
-                [728, 90],
-                [970, 90]
-            ], 'div-gpt-ad-1697889656858-0').addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/Leaderboard_mna', [320, 100], 'div-gpt-ad-1698673325064-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/BeforeImage', [320, 100], 'div-gpt-ad-1709441391296-0').addService(
-                googletag.pubads());
-            googletag.defineSlot('/21871422770/after_image', [320, 100], 'div-gpt-ad-1698673852249-0').addService(
-                googletag.pubads());
-            googletag.defineSlot('/21871422770/AfterImage', [
-                [728, 90],
-                [970, 90]
-            ], 'div-gpt-ad-1709357571803-0').addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/article_middle', [300, 250], 'div-gpt-ad-1711866792759-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/article_end3', [300, 250], 'div-gpt-ad-1698674282910-0').addService(
-                googletag.pubads());
-            googletag.defineSlot('/21871422770/before_aroporun', [300, 250], 'div-gpt-ad-1698674970056-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/before_rajniti', [300, 250], 'div-gpt-ad-1698675198540-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/Desktop_article_660x440', [660, 440], 'div-gpt-ad-1699508475990-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/Mobile_Articlepage_320x480', [320, 480],
-                'div-gpt-ad-1699508628010-0').addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/970x90sticky', [970, 90], 'div-gpt-ad-1707909428660-0').addService(
-                googletag.pubads());
-            googletag.defineSlot('/21871422770/320x50article', [320, 50], 'div-gpt-ad-1707909632051-0').addService(
-                googletag.pubads());
-            googletag.pubads().enableSingleRequest();
-            googletag.enableServices();
-        });
-    </script>
 
 </head>
 
@@ -477,17 +386,48 @@
                                     <div class="HeaderTopSocial">
                                         <div class="DSocialLink d-inline-block">
                                             <ul>
-                                                <li><a href="https://www.facebook.com/TheDailySamakal" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                                <li><a href="https://x.com/samakaltw" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                                <li><a href="https://www.linkedin.com/company/samakal" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                                <li><a href="https://www.youtube.com/@SamakalNews" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
-                                                <li><a href="https://www.instagram.com/daily_samakal/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                                                <li><a href="https://www.whatsapp.com/channel/0029VaQQR53KLaHr01KVgG3X" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                            <?php 
+    $social_platforms = array(
+        'facebook'  => 'fa-facebook-f',
+        'twitter'   => 'fa-x-twitter',
+        'linkedin'  => 'fa-linkedin-in',
+        'youtube'   => 'fa-youtube',
+        'instagram' => 'fa-instagram',
+        'whatsapp'  => 'fa-whatsapp',
+    );
+
+    foreach ( $social_platforms as $platform => $icon_class ) :
+        $url = get_theme_mod( "social_{$platform}_url" ); // get URL from customizer
+        if ( $url ) : ?>
+            <li>
+                <a href="<?php echo esc_url( $url ); ?>" target="_blank">
+                    <i class="fa-brands <?php echo esc_attr( $icon_class ); ?>"></i>
+                </a>
+            </li>
+        <?php endif;
+    endforeach;
+    ?>
                                             </ul>
                                         </div>
                                         <div class="HeaderVersionBtn d-inline-block">
-                                            <a href="https://epaper.samakal.com/" target="_blank">ই-পেপার</a>
-                                            <a href="https://en.samakal.com/" target="_blank">English</a>
+                                        <?php 
+    $btn1_label = get_theme_mod( 'header_button_1_label', '' );
+    $btn1_url   = get_theme_mod( 'header_button_1_url', '' );
+
+    $btn2_label = get_theme_mod( 'header_button_2_label', '' );
+    $btn2_url   = get_theme_mod( 'header_button_2_url', '' );
+
+    if ( $btn1_label && $btn1_url ) : ?>
+        <a href="<?php echo esc_url( $btn1_url ); ?>" target="_blank">
+            <?php echo esc_html( $btn1_label ); ?>
+        </a>
+    <?php endif; ?>
+
+    <?php if ( $btn2_label && $btn2_url ) : ?>
+        <a href="<?php echo esc_url( $btn2_url ); ?>" target="_blank">
+            <?php echo esc_html( $btn2_label ); ?>
+        </a>
+    <?php endif; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -500,9 +440,9 @@
         <div class="search_block Hide">
             <div class="container">
                 <div class="col-lg p-0">
-                    <form action="https://samakal.com/search" method="get" role="form">
+                    <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" role="form">
                         <div class="search_logo display-flex">
-                            <input type="text" name="q" placeholder="এখানে খুঁজুন...">
+                            <input type="text" name="s" placeholder="এখানে খুঁজুন...">
                             <button><i class="fa-solid fa-magnifying-glass"></i></button>
                             <a href="" class="close-search"><i class="fa-solid fa-xmark"></i></a>
                         </div>
@@ -728,7 +668,7 @@
                     <div class="d-flex justify-content-center mt-4">
                         <!-- /21871422770/DNA_Leaderboard -->
                         <div id='div-gpt-ad-1697888274364-0' style='min-width: 970px; min-height: 90px;'>
-                            <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+                            <script type="text/javascript">
                                 googletag.cmd.push(function() {
                                     googletag.display('div-gpt-ad-1697888274364-0');
                                 });
@@ -742,7 +682,7 @@
                     <div class="d-flex justify-content-center mt-4">
                         <!-- /21871422770/Leaderboard_mna -->
                         <div id='div-gpt-ad-1698673325064-0' style='min-width: 320px; min-height: 100px;'>
-                            <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+                            <script type="text/javascript">
                                 googletag.cmd.push(function() {
                                     googletag.display('div-gpt-ad-1698673325064-0');
                                 });
@@ -791,7 +731,7 @@
                                 <div class="d-flex justify-content-center mt-4 mb-2">
                                     <!-- /21871422770/BeforeImage -->
                                     <div id='div-gpt-ad-1709441391296-0' style='min-width: 320px; min-height: 100px;'>
-                                        <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+                                        <script type="text/javascript">
                                             googletag.cmd.push(function() {
                                                 googletag.display('div-gpt-ad-1709441391296-0');
                                             });
@@ -812,7 +752,7 @@
 
                                     <!-- /21871422770/after_image -->
                                     <div id='div-gpt-ad-1698673852249-0' style='min-width: 320px; min-height: 100px;'>
-                                        <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+                                        <script type="text/javascript">
                                             googletag.cmd.push(function() {
                                                 googletag.display('div-gpt-ad-1698673852249-0');
                                             });
@@ -848,7 +788,7 @@ echo strtr(get_the_date('d F Y').' | '.get_the_time('H:i'), ['0'=>'০','1'=>'�
                                         <a class="a2a_button_email"></a>
                                         <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
                                     </div>
-                                    <script async src="https://static.addtoany.com/menu/page.js" type="308d0d4576f1f362b9bffb9b-text/javascript"></script>
+                                    <script async src="https://static.addtoany.com/menu/page.js" type="text/javascript"></script>
                                     <!-- AddToAny END -->
                                 </div>
                             </div>
@@ -867,7 +807,7 @@ echo strtr(get_the_date('d F Y').' | '.get_the_time('H:i'), ['0'=>'০','1'=>'�
                                     <div class="DetailsAdd d-flex justify-content-center">
                                         <!-- /21871422770/DNA_ArticleMiddle_1 -->
                                         <div id='div-gpt-ad-1697888616961-0' style='min-width: 300px; min-height: 250px;'>
-                                            <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+                                            <script type="text/javascript">
                                                 googletag.cmd.push(function() {
                                                     googletag.display('div-gpt-ad-1697888616961-0');
                                                 });
@@ -881,7 +821,7 @@ echo strtr(get_the_date('d F Y').' | '.get_the_time('H:i'), ['0'=>'০','1'=>'�
                                     <div class="DetailsAdd d-flex justify-content-center">
                                         <!-- /21871422770/article_middle -->
                                         <div id='div-gpt-ad-1711866792759-0' style='min-width: 300px; min-height: 250px;'>
-                                            <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+                                            <script type="text/javascript">
                                                 googletag.cmd.push(function() {
                                                     googletag.display('div-gpt-ad-1711866792759-0');
                                                 });
@@ -904,7 +844,7 @@ echo strtr(get_the_date('d F Y').' | '.get_the_time('H:i'), ['0'=>'০','1'=>'�
                                     <div class="DetailsAdd d-flex justify-content-center">
                                         <!-- /21871422770/article_middle2 -->
                                         <div id='div-gpt-ad-1757935077396-0' style='min-width: 300px; min-height: 250px;'>
-                                            <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+                                            <script type="text/javascript">
                                                 googletag.cmd.push(function() {
                                                     googletag.display('div-gpt-ad-1757935077396-0');
                                                 });
@@ -916,7 +856,7 @@ echo strtr(get_the_date('d F Y').' | '.get_the_time('H:i'), ['0'=>'০','1'=>'�
                             <div class="row mt-3 mb-3 MobileHide">
                                 <div class="col-md-12">
                                     <div class="DetailsAdd d-flex justify-content-center">
-                                        <script id="ADL1022300250" type="308d0d4576f1f362b9bffb9b-text/javascript">
+                                        <script id="ADL1022300250" type="text/javascript">
                                             (function(uniqueid, sizex, sizey, element, document, jslink, adplaceid, siteid) {
                                                 var l = document.createElement(element);
                                                 l.setAttribute("src", jslink);
@@ -1013,7 +953,7 @@ if ($categories) {
                             <div class="col-12">
                                 <div class="d-flex justify-content-center mb-5">
                                     <div id='div-gpt-ad-1697889656858-0' style='min-width: 728px; min-height: 90px;'>
-                                        <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+                                        <script type="text/javascript">
                                             googletag.cmd.push(function() {
                                                 googletag.display('div-gpt-ad-1697889656858-0');
                                             });
@@ -1026,7 +966,7 @@ if ($categories) {
                             <div class="col-12">
                                 <div class="d-flex justify-content-center mb-5">
                                     <div id='div-gpt-ad-1698675198540-0' style='min-width: 300px; min-height: 250px;'>
-                                        <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+                                        <script type="text/javascript">
                                             googletag.cmd.push(function() {
                                                 googletag.display('div-gpt-ad-1698675198540-0');
                                             });
@@ -1040,7 +980,7 @@ if ($categories) {
                         <div class="dAddImg-wrap">
                             <div class="DRightSideAdd MobileHide mt-4">
                                 <div id='div-gpt-ad-1697888394875-0' style='min-width: 300px; min-height: 250px;'>
-                                    <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+                                    <script type="text/javascript">
                                         googletag.cmd.push(function() {
                                             googletag.display('div-gpt-ad-1697888394875-0');
                                         });
@@ -1051,7 +991,7 @@ if ($categories) {
                         <div class="dAddImg-wrap mt-4 MobileHide">
                             <div class="DRightSideAdd">
                                 <div id='div-gpt-ad-1697888851115-0' style='min-width: 300px; min-height: 250px;'>
-                                    <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+                                    <script type="text/javascript">
                                         googletag.cmd.push(function() {
                                             googletag.display('div-gpt-ad-1697888851115-0');
                                         });
@@ -1061,7 +1001,7 @@ if ($categories) {
                         </div>
                         <div class="DRightSideAdd mt-4 mb-2 MobileHide">
                             <div id='div-gpt-ad-1697889007257-0' style='min-width: 300px; min-height: 250px;'>
-                                <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+                                <script type="text/javascript">
                                     googletag.cmd.push(function() {
                                         googletag.display('div-gpt-ad-1697889007257-0');
                                     });
@@ -1123,7 +1063,7 @@ $latest_news = new WP_Query(array(
                 <div class="Main_Main_Content">
                     <div class="AdvertClass MobileHide text-center">
                         <div id='div-gpt-ad-1707909428660-0' style='min-width: 970px; min-height: 90px;'>
-                            <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+                            <script type="text/javascript">
                                 googletag.cmd.push(function() {
                                     googletag.display('div-gpt-ad-1707909428660-0');
                                 });
@@ -1132,7 +1072,7 @@ $latest_news = new WP_Query(array(
                     </div>
                     <div class="AdvertClass MobileShow text-center">
                         <div id='div-gpt-ad-1707909632051-0' style='min-width: 320px; min-height: 50px;'>
-                            <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+                            <script type="text/javascript">
                                 googletag.cmd.push(function() {
                                     googletag.display('div-gpt-ad-1707909632051-0');
                                 });
@@ -1186,12 +1126,12 @@ $latest_news = new WP_Query(array(
                             <h2 class="FSocialHeadLine">ফলো করুন <span><?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></span>-এর খবর</h2>
                             <div class="FSocialShare">
                                 <ul>
-                                    <li><a href="https://www.facebook.com/TheDailySamakal" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod("fb_page_url")); ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
                                     <li><a href="https://twitter.com/samakaltw" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="https://www.linkedin.com/company/samakal" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod("linkedin_url")); ?>" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                                     </li>
                                     <li><a href="https://www.youtube.com/channel/UCnetEdV8EwzGn36f3pq50ZA?sub_confirmation=1" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
-                                    <li><a href="https://www.instagram.com/daily_samakal/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod("instagram_url")); ?>" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
                                 </ul>
                             </div>
                             <a href="" class="Flogo" rel="home">
@@ -1208,10 +1148,10 @@ $latest_news = new WP_Query(array(
         </div>
     </footer>
     <div id="back_to_top" class="back_to_top on"><span class="go_up"><i class="fa-solid fa-arrow-up"></i></span></div>
-    <script type="308d0d4576f1f362b9bffb9b-text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
 
-    <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+    <script type="text/javascript">
         var ContentID = '340205';
         if (ContentID == '239727') {
             $(document).ready(function() {
@@ -1225,7 +1165,7 @@ $latest_news = new WP_Query(array(
             });
         }
     </script>
-    <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+    <script type="text/javascript">
         // Footer Sticky Ads
         jQuery(document).ready(function(e) {
             jQuery('#T4Tutorials_UP11_Close').click(function() {
@@ -1233,7 +1173,7 @@ $latest_news = new WP_Query(array(
             })
         });
     </script>
-    <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+    <script type="text/javascript">
         $(window).load(function() {
             $("main img").each(function(index) {
                 $(this).attr('src', $(this).attr('data-src'))
@@ -1247,9 +1187,9 @@ $latest_news = new WP_Query(array(
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" type="308d0d4576f1f362b9bffb9b-text/javascript"></script>
-    <script type="308d0d4576f1f362b9bffb9b-text/javascript" src="https://samakal.com/frontend/common/js/eMythMakers.js"></script>
-    <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" type="text/javascript"></script>
+    <script type="text/javascript" src="https://samakal.com/frontend/common/js/eMythMakers.js"></script>
+    <script type="text/javascript">
         $(function() {
             $("#btnIncrease").click(function() {
                 $(".dNewsDesc").children().each(function() {
