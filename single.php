@@ -798,20 +798,7 @@ echo strtr(get_the_date('d F Y').' | '.get_the_time('H:i'), ['0'=>'à§¦','1'=>'à§
                             <div class="row mt-3 mb-3 MobileHide">
                                 <div class="col-md-12">
                                     <div class="DetailsAdd d-flex justify-content-center">
-                                        <script id="ADL1022300250" type="text/javascript">
-                                            (function(uniqueid, sizex, sizey, element, document, jslink, adplaceid, siteid) {
-                                                var l = document.createElement(element);
-                                                l.setAttribute("src", jslink);
-                                                l.setAttribute("async", 'true');
-                                                l.setAttribute("type", "text/javascript");
-                                                var x = document.getElementById(uniqueid);
-                                                x.id = Math.random().toString(36).substr(2, 9);
-                                                x.appendChild(l, x);
-                                                l.onload = function() {
-                                                    ServeAdvertisement(siteid, adplaceid, x, sizex, sizey);
-                                                }
-                                            })("ADL1022300250", 300, 250, "script", document, "https://bangladesh-static.adfinix.com/adfinix.js", 605, 1022)
-                                        </script>
+                                        <!-- Advertisement -->
                                     </div>
                                 </div>
                             </div>
