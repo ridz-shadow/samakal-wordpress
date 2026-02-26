@@ -499,62 +499,33 @@ if ( isset( $locations[ $menu_name ] ) ) {
 ?>
                                 <li class="nav-item dropdown has-megamenu">
                                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">অন্যান্য</a>
-                                    <div class="dropdown-menu megamenu" role="menu">
-                                        <div class="row w-100 ">
-                                            <div class="col-md-3" style="flex: 0 0 20%;max-width: 20%;">
-                                                <ul class="nav flex-column">
-                                                    <li><a class="dropdown-item" href="/sub/chaturango">চতুরঙ্গ</a></li>
-                                                    <li><a class="dropdown-item" href="/sub/womensday">নারী দিবস</a></li>
-                                                    <li><a class="dropdown-item" href="/sahitto-o-sangskriti">সাহিত্য ও
-                                                        সংস্কৃতি</a></li>
-                                                    <li><a class="dropdown-item" href="/photogallery">ছবি</a></li>
-                                                    <li><a class="dropdown-item" href="/probas">প্রবাস</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3" style="flex: 0 0 20%;max-width: 20%;">
-                                                <ul class="nav flex-column">
-                                                    <li><a class="dropdown-item" href="/life-struggle">জীবন সংগ্রাম</a>
-                                                    </li>
-                                                    <li><a class="dropdown-item" href="/travel">ভ্রমণ</a></li>
-                                                    <li><a class="dropdown-item" href="/feature">ফিচার</a></li>
-                                                    <li><a class="dropdown-item" href="/sub/education">শিক্ষা</a></li>
-                                                    <li><a class="dropdown-item" href="/special-samakal">বিশেষ সমকাল</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3" style="flex: 0 0 20%;max-width: 20%;">
-                                                <ul class="nav flex-column">
-                                                    <li><a class="dropdown-item" href="/economics/industry-trade">শিল্প-বাণিজ্য</a></li>
-                                                    <li><a class="dropdown-item" href="/interview">সাক্ষাৎকার</a></li>
-                                                    <li><a class="dropdown-item" href="/technology">প্রযুক্তি</a></li>
-                                                    <li><a class="dropdown-item" href="/priyochattogram">প্রিয়
-                                                        চট্টগ্রাম</a></li>
-                                                    <li><a class="dropdown-item" href="/feature/kaler-kheya">কালের
-                                                        খেয়া</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3" style="flex: 0 0 20%;max-width: 20%;">
-                                                <ul class="nav flex-column">
-                                                    <li><a class="dropdown-item" href="/sub/stock-market">শেয়ারবাজার</a>
-                                                    </li>
-                                                    <li><a class="dropdown-item" href="/samakal-investigation">সমকাল
-                                                        অনুসন্ধান</a></li>
-                                                    <li><a class="dropdown-item" href="/offbit">অফবিট</a></li>
-                                                    <li><a class="dropdown-item" href="/archive">আর্কাইভ</a></li>
+                                    <?php
+$menu_name = 'mega_menu';
+$locations = get_nav_menu_locations();
+$menu = wp_get_nav_menu_object($locations[$menu_name]);
+$menu_items = wp_get_nav_menu_items($menu->term_id);
 
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3" style="flex: 0 0 20%;max-width: 20%;">
-                                                <ul class="nav flex-column">
-                                                    <li><a class="dropdown-item" href="/opinion">মতামত</a></li>
-                                                    <li><a class="dropdown-item" href="/chakri">চাকরি </a></li>
-                                                    <li><a class="dropdown-item" href="/shilpomoncho">শিল্পমঞ্চ</a></li>
-                                                    <li><a class="dropdown-item" href="/special-ayojon">বিশেষ আয়োজন</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+$columns = 5; // number of columns you want
+$chunks = array_chunk($menu_items, ceil(count($menu_items)/$columns));
+?>
+
+<div class="dropdown-menu megamenu" role="menu">
+    <div class="row w-100">
+        <?php foreach ($chunks as $column): ?>
+            <div class="col-md-3" style="flex: 0 0 20%; max-width: 20%;">
+                <ul class="nav flex-column">
+                    <?php foreach ($column as $item): ?>
+                        <li>
+                            <a class="dropdown-item" href="<?php echo esc_url($item->url); ?>">
+                                <?php echo esc_html($item->title); ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
                         </div>
                         </li>
                         <li class="nav-item menu-search">
