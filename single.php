@@ -574,7 +574,7 @@ $chunks = array_chunk($menu_items, ceil(count($menu_items)/$columns));
                     <li>
                         <div class="MobileDateArea">
                             <div class="MobileTopBtn">
-                            if ( $btn1_label && $btn1_url ) : ?>
+                           <?php if ( $btn1_label && $btn1_url ) : ?>
         <a href="<?php echo esc_url( $btn1_url ); ?>" target="_blank">
             <?php echo esc_html( $btn1_label ); ?>
         </a>
