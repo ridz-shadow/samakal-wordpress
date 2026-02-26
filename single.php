@@ -462,33 +462,41 @@
                     </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav">
-                                <li class="nav-item HomeBtn"><a class="nav-link" href="/latest/news">সর্বশেষ</a></li>
-                                <li class="nav-item HomeBtn"><a class="nav-link" href="/bangladesh">বাংলাদেশ</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/politics">রাজনীতি</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/economics">অর্থনীতি</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/international">বিশ্ব</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/sports">খেলা</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/entertainment">বিনোদন</a></li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="/whole-country" id="navbarDropdown" role="button" data-hover="dropdown" aria-expanded="false"> সারাদেশ </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="https://samakal.com/divisions/dhaka">ঢাকা</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="https://samakal.com/divisions/chattogram">চট্টগ্রাম</a></li>
-                                        <li><a class="dropdown-item" href="https://samakal.com/divisions/rajshahi">রাজশাহী</a></li>
-                                        <li><a class="dropdown-item" href="https://samakal.com/divisions/khulna">খুলনা</a></li>
-                                        <li><a class="dropdown-item" href="https://samakal.com/divisions/barishal">বরিশাল</a></li>
-                                        <li><a class="dropdown-item" href="https://samakal.com/divisions/sylhet">সিলেট</a></li>
-                                        <li><a class="dropdown-item" href="https://samakal.com/divisions/rangpur">রংপুর</a></li>
-                                        <li><a class="dropdown-item" href="https://samakal.com/divisions/mymensingh">ময়মনসিংহ</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item"><a class="nav-link" href="/crime">অপরাধ</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/opinion">মতামত</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/capital">রাজধানী</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/lifestyle">লাইফস্টাইল</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/feature/shoili">শৈলী</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/video-gallery">ভিডিও</a></li>
+                                <?php
+$menu_name = 'main_menu';
+$locations = get_nav_menu_locations();
+
+if ( isset( $locations[ $menu_name ] ) ) {
+    $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+    $menu_items = wp_get_nav_menu_items( $menu->term_id );
+
+    // Organize items by parent
+    $items_by_parent = array();
+    foreach ( $menu_items as $item ) {
+        $items_by_parent[ $item->menu_item_parent ][] = $item;
+    }
+
+    // Loop through top-level items
+    if ( ! empty( $items_by_parent[0] ) ) {
+        foreach ( $items_by_parent[0] as $parent_item ) {
+            $children = isset( $items_by_parent[ $parent_item->ID ] ) ? $items_by_parent[ $parent_item->ID ] : array();
+
+            if ( $children ) {
+                echo '<li class="nav-item dropdown">';
+                echo '<a class="nav-link dropdown-toggle" href="' . esc_url( $children[0]->url ) . '" id="navbarDropdown' . $parent_item->ID . '" role="button" data-hover="dropdown" aria-expanded="false">' . esc_html( $parent_item->title ) . '</a>';
+                echo '<ul class="dropdown-menu" aria-labelledby="navbarDropdown' . $parent_item->ID . '">';
+                foreach ( $children as $child ) {
+                    echo '<li><a class="dropdown-item" href="' . esc_url( $child->url ) . '">' . esc_html( $child->title ) . '</a></li>';
+                }
+                echo '</ul>';
+                echo '</li>';
+            } else {
+                echo '<li class="nav-item"><a class="nav-link" href="' . esc_url( $parent_item->url ) . '">' . esc_html( $parent_item->title ) . '</a></li>';
+            }
+        }
+    }
+}
+?>
                                 <li class="nav-item dropdown has-megamenu">
                                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">অন্যান্য</a>
                                     <div class="dropdown-menu megamenu" role="menu">
