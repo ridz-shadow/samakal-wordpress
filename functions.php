@@ -35,6 +35,60 @@ function mytheme_customize_register($wp_customize) {
         'settings' => 'site_title_bn',
         'type'     => 'text',
     ));
+
+    $wp_customize->add_setting( 'google_site_verification', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control( 'google_site_verification_control', array(
+        'label'    => __( 'Google Site Verification Code' ),
+        'section'  => 'title_tagline',
+        'settings' => 'google_site_verification',
+        'type'     => 'text',
+    ));
+
+    
+    $wp_customize->add_setting( 'fb_app_id', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control( 'fb_app_id_control', array(
+        'label'    => __( 'Facebook App ID' ),
+        'section'  => 'title_tagline',
+        'settings' => 'fb_app_id',
+        'type'     => 'text',
+    ));
+
+    
+    
+    $wp_customize->add_setting( 'fb_pages', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control( 'fb_pages_control', array(
+        'label'    => __( 'Facebook Pages' ),
+        'section'  => 'title_tagline',
+        'settings' => 'fb_pages',
+        'type'     => 'text',
+    ));
+
+    
+    
+    $wp_customize->add_setting( 'twitter_site_handle', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control( 'twitter_site_handle_control', array(
+        'label'    => __( 'Twitter Username' ),
+        'section'  => 'title_tagline',
+        'settings' => 'twitter_site_handle',
+        'type'     => 'text',
+    ));
+
 }
 add_action('customize_register', 'mytheme_customize_register');
 

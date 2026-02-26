@@ -7,38 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <title><?php the_title(); ?></title>
     <meta http-equiv="refresh" content="">
-    <meta name="author" content="SAMAKAL">
-    <meta name="Developer" content="eMythMakers.com">
+    <meta name="author" content="<?php bloginfo("name"); ?>">
+    <meta name="Developer" content="<?php echo esc_attr(wp_get_theme()->get("Author")); ?>">
     <meta name="resource-type" content="document">
-    <meta name="contact" content="news.samakal@gmail.com">
-    <meta name="copyright" content="Copyright (c) 2026. All Rights &reg; Reserved by https://samakal.com/">
-    <meta name="google-site-verification" content="NOzPnUslrJ-pUZ7hpwYRauspSRpKFQLQo82Az4KIqd8" />
+    <meta name="contact" content="<?php echo esc_attr(get_option("admin_email")); ?>">
+    <meta name="copyright" content="Copyright (c) <?php echo date("Y"); ?>. All Rights &reg; Reserved by <?php echo esc_url(home_url("/")); ?>">
+    <meta name="google-site-verification" content="<?php echo esc_attr(get_theme_mod("google_site_verification")); ?>" />
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
     <meta name="googlebot-news" content="index, follow">
     <meta name="msnbot" content="index, follow">
-    <meta property="fb:app_id" content="276108213069474">
-    <meta property="fb:pages" content="351757248257846">
-    <meta name="description" content="অভিযুক্ত ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগকে ত্রয়োদশ জাতীয় সংসদ নির্বাচনের সবচেয়ে উল্লেখযোগ্য ব্যর্থতা হিসেবে চিহ্নিত করেছে সুশাসনের জন্য নাগরিক (সুজন)। সংগঠনটি বলেছে, অন্তত ৪৫ জন ঋণখেলাপি প্রার্থী, কোনো কোনো ক্ষেত্রে উচ্চ আদালতের স্থগিতাদেশ নিয়ে এবারের নির্বাচনে অংশগ্রহণের সুযোগ পেয়েছেন।">
-    <meta name="keywords" content="">
-    <meta property="og:site_name" content="SAMAKAL | সমকাল">
+    <meta property="fb:app_id" content="<?php echo esc_attr(get_theme_mod("fb_app_id")); ?>">
+    <meta property="fb:pages" content="<?php echo esc_attr(get_theme_mod("fb_pages")); ?>">
+    <meta name="description" content="<?php echo esc_attr(wp_strip_all_tags(get_the_excerpt())); ?>">
+    <meta name="keywords" content="<?php echo esc_attr(get_post_meta(get_the_ID(), "keywords", true)); ?>">
+    <meta property="og:site_name" content="<?php bloginfo("name"); ?>">
     <meta property="og:title" content="<?php the_title(); ?>">
-    <meta property="og:description" content="অভিযুক্ত ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগকে ত্রয়োদশ জাতীয় সংসদ নির্বাচনের সবচেয়ে উল্লেখযোগ্য ব্যর্থতা হিসেবে চিহ্নিত করেছে সুশাসনের জন্য নাগরিক (সুজন)। সংগঠনটি বলেছে, অন্তত ৪৫ জন ঋণখেলাপি প্রার্থী, কোনো কোনো ক্ষেত্রে উচ্চ আদালতের স্থগিতাদেশ নিয়ে এবারের নির্বাচনে অংশগ্রহণের সুযোগ পেয়েছেন।">
-    <meta property="og:url" content="https://samakal.com/bangladesh/article/340205/%E0%A6%8B%E0%A6%A3%E0%A6%96%E0%A7%87%E0%A6%B2%E0%A6%BE%E0%A6%AA%E0%A6%BF-%E0%A6%93-%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A7%88%E0%A6%A4-%E0%A6%A8%E0%A6%BE%E0%A6%97%E0%A6%B0%E0%A6%BF%E0%A6%95%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%BF%E0%A6%A4%E0%A6%BE%E0%A6%B0-%E0%A6%B8%E0%A7%81%E0%A6%AF%E0%A7%8B%E0%A6%97-%E0%A6%A8%E0%A6%BF%E0%A6%B0%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%9A%E0%A6%A8%E0%A7%87-%E0%A6%89%E0%A6%B2%E0%A7%8D%E0%A6%B2%E0%A7%87%E0%A6%96%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%AF-%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%B0%E0%A7%8D%E0%A6%A5%E0%A6%A4%E0%A6%BE">
+    <meta property="og:description" content="<?php echo esc_attr(wp_strip_all_tags(get_the_excerpt())); ?>">
+    <meta property="og:url" content="<?php echo esc_url(get_permalink()); ?>">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://samakal.com/media/imgAll/2026February/sujon-1772002167.jpg">
+    <meta property="og:image" content="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), "full")); ?>">
     <meta property="og:locale" content="en_US">
-    <meta name="twitter:domain" content="https://samakal.com" />
+    <meta name="twitter:domain" content="<?php echo esc_url(home_url("/")); ?>" />
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="SAMAKAL | সমকাল">
+    <meta name="twitter:site" content="@<?php echo esc_attr(get_theme_mod("twitter_site_handle")); ?>">
     <meta name="twitter:title" content="<?php the_title(); ?>">
-    <meta name="twitter:description" content="অভিযুক্ত ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগকে ত্রয়োদশ জাতীয় সংসদ নির্বাচনের সবচেয়ে উল্লেখযোগ্য ব্যর্থতা হিসেবে চিহ্নিত করেছে সুশাসনের জন্য নাগরিক (সুজন)। সংগঠনটি বলেছে, অন্তত ৪৫ জন ঋণখেলাপি প্রার্থী, কোনো কোনো ক্ষেত্রে উচ্চ আদালতের স্থগিতাদেশ নিয়ে এবারের নির্বাচনে অংশগ্রহণের সুযোগ পেয়েছেন।">
-    <meta name="twitter:url" content="https://samakal.com/bangladesh/article/340205/%E0%A6%8B%E0%A6%A3%E0%A6%96%E0%A7%87%E0%A6%B2%E0%A6%BE%E0%A6%AA%E0%A6%BF-%E0%A6%93-%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A7%88%E0%A6%A4-%E0%A6%A8%E0%A6%BE%E0%A6%97%E0%A6%B0%E0%A6%BF%E0%A6%95%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%BF%E0%A6%A4%E0%A6%BE%E0%A6%B0-%E0%A6%B8%E0%A7%81%E0%A6%AF%E0%A7%8B%E0%A6%97-%E0%A6%A8%E0%A6%BF%E0%A6%B0%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%9A%E0%A6%A8%E0%A7%87-%E0%A6%89%E0%A6%B2%E0%A7%8D%E0%A6%B2%E0%A7%87%E0%A6%96%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%AF-%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%B0%E0%A7%8D%E0%A6%A5%E0%A6%A4%E0%A6%BE">
-    <meta name="twitter:image" content="https://samakal.com/media/imgAll/2026February/sujon-1772002167.jpg">
-    <meta name="twitter:site" content="@samakaltw" />
-    <meta name="twitter:creator" content="@samakaltw">
-    <link rel="image_src" href="https://samakal.com/media/imgAll/2026February/sujon-1772002167.jpg">
-    <link rel="canonical" href="https://samakal.com/bangladesh/article/340205/%E0%A6%8B%E0%A6%A3%E0%A6%96%E0%A7%87%E0%A6%B2%E0%A6%BE%E0%A6%AA%E0%A6%BF-%E0%A6%93-%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A7%88%E0%A6%A4-%E0%A6%A8%E0%A6%BE%E0%A6%97%E0%A6%B0%E0%A6%BF%E0%A6%95%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%BF%E0%A6%A4%E0%A6%BE%E0%A6%B0-%E0%A6%B8%E0%A7%81%E0%A6%AF%E0%A7%8B%E0%A6%97-%E0%A6%A8%E0%A6%BF%E0%A6%B0%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%9A%E0%A6%A8%E0%A7%87-%E0%A6%89%E0%A6%B2%E0%A7%8D%E0%A6%B2%E0%A7%87%E0%A6%96%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%AF-%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%B0%E0%A7%8D%E0%A6%A5%E0%A6%A4%E0%A6%BE">
+    <meta name="twitter:description" content="<?php echo esc_attr(wp_strip_all_tags(get_the_excerpt())); ?>">
+    <meta name="twitter:url" content="<?php echo esc_url(get_permalink()); ?>">
+    <meta name="twitter:image" content="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), "full")); ?>">
+    <meta name="twitter:creator" content="@<?php echo esc_attr(get_theme_mod("twitter_site_handle")); ?>">
+    <link rel="image_src" href="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), "full")); ?>">
+    <link rel="canonical" href="<?php echo esc_url(get_permalink()); ?>">
     <link type="image/x-icon" rel="shortcut icon" href="<?php echo esc_url(get_site_icon_url()); ?>">
     <link type="image/x-icon" rel="icon" href="<?php echo esc_url(get_site_icon_url()); ?>">
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo esc_url(get_site_icon_url(57)); ?>">
@@ -263,7 +262,7 @@
                     "@type": "ListItem",
                     "position": 1,
                     "name": "Home",
-                    "item": "https://samakal.com"
+                    "item": "<?php echo esc_url( home_url('/') ); ?>"
                 },
                 {
                     "@type": "ListItem",
@@ -275,7 +274,7 @@
                     "@type": "ListItem",
                     "position": 3,
                     "name": "<?php the_title(); ?>",
-                    "item": "https://samakal.com/bangladesh/article/340205/%E0%A6%8B%E0%A6%A3%E0%A6%96%E0%A7%87%E0%A6%B2%E0%A6%BE%E0%A6%AA%E0%A6%BF-%E0%A6%93-%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A7%88%E0%A6%A4-%E0%A6%A8%E0%A6%BE%E0%A6%97%E0%A6%B0%E0%A6%BF%E0%A6%95%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%BF%E0%A6%A4%E0%A6%BE%E0%A6%B0-%E0%A6%B8%E0%A7%81%E0%A6%AF%E0%A7%8B%E0%A6%97-%E0%A6%A8%E0%A6%BF%E0%A6%B0%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%9A%E0%A6%A8%E0%A7%87-%E0%A6%89%E0%A6%B2%E0%A7%8D%E0%A6%B2%E0%A7%87%E0%A6%96%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%AF-%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%B0%E0%A7%8D%E0%A6%A5%E0%A6%A4%E0%A6%BE"
+                    "item": "<?php echo esc_url(get_permalink()); ?>"
                 }
             ]
         }
@@ -284,19 +283,19 @@
         {
             "@context": "https://schema.org",
             "@type": "NewsArticle",
-            "url": "https://samakal.com/bangladesh/article/340205/%E0%A6%8B%E0%A6%A3%E0%A6%96%E0%A7%87%E0%A6%B2%E0%A6%BE%E0%A6%AA%E0%A6%BF-%E0%A6%93-%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A7%88%E0%A6%A4-%E0%A6%A8%E0%A6%BE%E0%A6%97%E0%A6%B0%E0%A6%BF%E0%A6%95%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%BF%E0%A6%A4%E0%A6%BE%E0%A6%B0-%E0%A6%B8%E0%A7%81%E0%A6%AF%E0%A7%8B%E0%A6%97-%E0%A6%A8%E0%A6%BF%E0%A6%B0%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%9A%E0%A6%A8%E0%A7%87-%E0%A6%89%E0%A6%B2%E0%A7%8D%E0%A6%B2%E0%A7%87%E0%A6%96%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%AF-%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%B0%E0%A7%8D%E0%A6%A5%E0%A6%A4%E0%A6%BE",
-            "articleBody": "অভিযুক্ত ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগকে ত্রয়োদশ জাতীয় সংসদ নির্বাচনের সবচেয়ে উল্লেখযোগ্য ব্যর্থতা হিসেবে চিহ্নিত করেছে সুশাসনের জন্য নাগরিক (সুজন)। সংগঠনটি বলেছে, অন্তত ৪৫ জন ঋণখেলাপি প্রার্থী, কোনো কোনো ক্ষেত্রে উচ্চ আদালতের স্থগিতাদেশ নিয়ে এবারের নির্বাচনে অংশগ্রহণের সুযোগ পেয়েছেন।",
+            "url": "<?php echo esc_url(get_permalink()); ?>",
+            "articleBody": "<?php echo esc_attr(wp_strip_all_tags(get_the_excerpt())); ?>",
             "articleSection": "বাংলাদেশ",
             "keywords": "",
             "mainEntityOfPage": {
                 "@type": "WebPage",
                 "name": "<?php the_title(); ?>",
-                "@id": "https://samakal.com/bangladesh/article/340205/%E0%A6%8B%E0%A6%A3%E0%A6%96%E0%A7%87%E0%A6%B2%E0%A6%BE%E0%A6%AA%E0%A6%BF-%E0%A6%93-%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A7%88%E0%A6%A4-%E0%A6%A8%E0%A6%BE%E0%A6%97%E0%A6%B0%E0%A6%BF%E0%A6%95%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%BF%E0%A6%A4%E0%A6%BE%E0%A6%B0-%E0%A6%B8%E0%A7%81%E0%A6%AF%E0%A7%8B%E0%A6%97-%E0%A6%A8%E0%A6%BF%E0%A6%B0%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%9A%E0%A6%A8%E0%A7%87-%E0%A6%89%E0%A6%B2%E0%A7%8D%E0%A6%B2%E0%A7%87%E0%A6%96%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%AF-%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%B0%E0%A7%8D%E0%A6%A5%E0%A6%A4%E0%A6%BE"
+                "@id": "<?php echo esc_url(get_permalink()); ?>"
             },
             "headline": "<?php the_title(); ?>",
             "image": {
                 "@type": "ImageObject",
-                "url": "https://samakal.com/media/imgAll/2026February/sujon-1772002167.jpg",
+                "url": "<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), "full")); ?>",
                 "height": 800,
                 "width": 450
             },
@@ -304,25 +303,25 @@
             "dateModified": "",
             "author": {
                 "@type": "Person",
-                "name": "<?php the_title(); ?>"
+                "name": "<?php echo esc_html(get_post_meta(get_the_ID(), 'post_reporter', true)); ?>"
             },
             "publisher": {
                 "@type": "Organization",
                 "name": "Samakal",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://samakal.com/frontend/media/common/logo.png",
+                    "url": "<?php echo esc_url( ( function_exists('get_custom_logo') && has_custom_logo() ) ? wp_get_attachment_image_url( get_theme_mod('custom_logo'), 'full' ) : get_template_directory_uri() . '/images/logo.png' ); ?>",
                     "width": 301,
                     "height": 47
                 }
             },
-            "description": "অভিযুক্ত ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগকে ত্রয়োদশ জাতীয় সংসদ নির্বাচনের সবচেয়ে উল্লেখযোগ্য ব্যর্থতা হিসেবে চিহ্নিত করেছে সুশাসনের জন্য নাগরিক (সুজন)। সংগঠনটি বলেছে, অন্তত ৪৫ জন ঋণখেলাপি প্রার্থী, কোনো কোনো ক্ষেত্রে উচ্চ আদালতের স্থগিতাদেশ নিয়ে এবারের নির্বাচনে অংশগ্রহণের সুযোগ পেয়েছেন।"
+            "description": "<?php echo esc_attr(wp_strip_all_tags(get_the_excerpt())); ?>"
         }
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XJF1JX4FFL" type="308d0d4576f1f362b9bffb9b-text/javascript"></script>
-    <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XJF1JX4FFL" type="text/javascript"></script>
+    <script type="text/javascript">
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
@@ -333,8 +332,8 @@
         gtag('config', 'G-XJF1JX4FFL');
     </script>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102760953-1" type="308d0d4576f1f362b9bffb9b-text/javascript"></script>
-    <script type="308d0d4576f1f362b9bffb9b-text/javascript">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102760953-1" type="text/javascript"></script>
+    <script type="text/javascript">
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
