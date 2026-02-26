@@ -192,6 +192,31 @@ function mytheme_customize_register($wp_customize) {
         'type'     => 'url',
     ) );
 
+    // ---------------------------
+    // Header Button 3 (label + URL)
+    // ---------------------------
+    $wp_customize->add_setting( 'header_button_3_label', array(
+        'default'           => 'লাইভ',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'header_button_3_label_control', array(
+        'label'    => __('Button 2 Label', 'samakal'),
+        'section'  => 'title_tagline',
+        'settings' => 'header_button_3_label',
+        'type'     => 'text',
+    ) );
+
+    $wp_customize->add_setting( 'header_button_3_url', array(
+        'default'           => 'https://en.samakal.com/live',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+    $wp_customize->add_control( 'header_button_3_url_control', array(
+        'label'    => __('Button 2 URL', 'samakal'),
+        'section'  => 'title_tagline',
+        'settings' => 'header_button_3_url',
+        'type'     => 'url',
+    ) );
+
 }
 add_action('customize_register', 'mytheme_customize_register');
 

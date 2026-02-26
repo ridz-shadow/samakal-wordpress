@@ -552,12 +552,9 @@ $chunks = array_chunk($menu_items, ceil(count($menu_items)/$columns));
                 <div class="search_block Hide">
                     <div class="container">
                         <div class="col-xl p-0">
-                            <form name="frmSearch" action="https://www.google.com" target="_blank" method="get">
+                            <form name="frmSearch" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
                                 <div class="search_logo display-flex">
-                                    <input type="hidden" name="cx" value="d540ac00b35dc4da6">
-                                    <input type="hidden" name="gsc.sort" value="date">
-                                    <input type="hidden" name="ie" value="utf-8">
-                                    <input type="text" name="q" id="search" class="form-control" value="" placeholder="অনুসন্ধান করুন">
+                                    <input type="text" name="s" id="search" class="form-control" value="" placeholder="অনুসন্ধান করুন">
                                     <button><i class="fa fa-search"></i></button>
                                     <a href="" class="close-search"><i class="fa fa-times"></i></a>
                                 </div>
@@ -570,16 +567,31 @@ $chunks = array_chunk($menu_items, ceil(count($menu_items)/$columns));
                         <div class="MobileDateArea">
                             <p class="date">
                                 <i class="fa fa-calendar" aria-hidden="true"></i>
-                                <span>বুধবার, ২৫ ফেব্রুয়ারি ২০২৬</span>
+                                <span><?php echo strtr(strftime('%A, %d %B %Y'), ['Saturday'=>'শনিবার','Sunday'=>'রবিবার','Monday'=>'সোমবার','Tuesday'=>'মঙ্গলবার','Wednesday'=>'বুধবার','Thursday'=>'বৃহস্পতিবার','Friday'=>'শুক্রবার','January'=>'জানুয়ারি','February'=>'ফেব্রুয়ারি','March'=>'মার্চ','April'=>'এপ্রিল','May'=>'মে','June'=>'জুন','July'=>'জুলাই','August'=>'আগস্ট','September'=>'সেপ্টেম্বর','October'=>'অক্টোবর','November'=>'নভেম্বর','December'=>'ডিসেম্বর','0'=>'০','1'=>'১','2'=>'২','3'=>'৩','4'=>'৪','5'=>'৫','6'=>'৬','7'=>'৭','8'=>'৮','9'=>'৯']); ?></span>
                             </p>
                         </div>
                     </li>
                     <li>
                         <div class="MobileDateArea">
                             <div class="MobileTopBtn">
-                                <a href="https://en.samakal.com/" target="_blank">English</a>
-                                <a href="#">লাইভ</a>
-                                <a href="https://epaper.samakal.com/" target="_blank">ই-পেপার</a>
+                            if ( $btn1_label && $btn1_url ) : ?>
+        <a href="<?php echo esc_url( $btn1_url ); ?>" target="_blank">
+            <?php echo esc_html( $btn1_label ); ?>
+        </a>
+    <?php endif; ?>
+
+    <?php if ( $btn2_label && $btn2_url ) : ?>
+        <a href="<?php echo esc_url( $btn2_url ); ?>" target="_blank">
+            <?php echo esc_html( $btn2_label ); ?>
+        </a>
+    <?php endif; ?>
+
+<?php if ( $btn3_label && $btn3_url ) : ?>
+    <a href="<?php echo esc_url( $btn3_url ); ?>" target="_blank">
+        <?php echo esc_html( $btn3_label ); ?>
+    </a>
+<?php endif; ?>
+
                             </div>
                         </div>
                     </li>
