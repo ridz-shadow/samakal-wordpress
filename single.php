@@ -596,58 +596,50 @@ $chunks = array_chunk($menu_items, ceil(count($menu_items)/$columns));
                         </div>
                     </li>
 
-                    <li><a href="/latest/news">সর্বশেষ</a></li>
-                    <li><a href="/bangladesh">বাংলাদেশ</a></li>
-                    <li><a href="/politics">রাজনীতি</a></li>
-                    <li><a href="/economics">অর্থনীতি</a></li>
-                    <li><a href="/international">বিশ্ব</a></li>
-                    <li><a href="/sports">খেলা</a></li>
-                    <li><a href="/entertainment">বিনোদন</a></li>
-                    <li class="parent">
-                        <a href="/whole-country">সারাদেশ</a>
-                        <ul class="SubMenuM">
-                            <li><a href="https://samakal.com/divisions/dhaka">ঢাকা</a></li>
-                            <li><a href="https://samakal.com/divisions/chattogram">চট্টগ্রাম</a></li>
-                            <li><a href="https://samakal.com/divisions/rajshahi">রাজশাহী</a></li>
-                            <li><a href="https://samakal.com/divisions/khulna">খুলনা</a></li>
-                            <li><a href="https://samakal.com/divisions/barishal">বরিশাল</a></li>
-                            <li><a href="https://samakal.com/divisions/sylhet">সিলেট</a></li>
-                            <li><a href="https://samakal.com/divisions/rangpur">রংপুর</a></li>
-                            <li><a href="https://samakal.com/divisions/mymensingh">ময়মনসিংহ</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="/crime">অপরাধ</a></li>
-                    <li><a href="/techlife">টেকলাইফ</a></li>
-                    <li><a href="/capital">রাজধানী</a></li>
-                    <li><a href="/lifestyle">লাইফস্টাইল</a></li>
-                    <li><a href="/feature/shoili">শৈলী</a></li>
-                    <li><a href="/feature/kaler-kheya">কালের খেয়া</a></li>
+
+                    <?php
+$menu_name = 'main_menu';
+$locations = get_nav_menu_locations();
+
+if ( isset( $locations[ $menu_name ] ) ) {
+    $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+    $menu_items = wp_get_nav_menu_items( $menu->term_id );
+
+    // Organize items by parent
+    $items_by_parent = array();
+    foreach ( $menu_items as $item ) {
+        $items_by_parent[ $item->menu_item_parent ][] = $item;
+    }
+
+    // Loop through top-level items
+    if ( ! empty( $items_by_parent[0] ) ) {
+        foreach ( $items_by_parent[0] as $parent_item ) {
+            $children = isset( $items_by_parent[ $parent_item->ID ] ) ? $items_by_parent[ $parent_item->ID ] : array();
+
+            if ( $children ) {
+                echo '<li class="parent">';
+                echo '<a href="' . esc_url( $children[0]->url ) . '">' . esc_html( $parent_item->title ) . '</a>';
+                echo '<ul class="SubMenuM">';
+                foreach ( $children as $child ) {
+                    echo '<li><a href="' . esc_url( $child->url ) . '">' . esc_html( $child->title ) . '</a></li>';
+                }
+                echo '</ul>';
+                echo '</li>';
+            } else {
+                echo '<li><a href="' . esc_url( $parent_item->url ) . '">' . esc_html( $parent_item->title ) . '</a></li>';
+            }
+        }
+    }
+}
+?>
                     <li class="parent">
                         <a href="#">অন্যান্য</a>
                         <ul class="SubMenuM">
-                            <li><a href="/sub/chaturango">চতুরঙ্গ</a></li>
-                            <li><a href="/sub/womensday">নারী দিবস</a></li>
-                            <li><a href="/sahitto-o-sangskriti">সাহিত্য ও সংস্কৃতি </a></li>
-                            <li><a href="/life-struggle">জীবন সংগ্রাম</a></li>
-                            <li><a href="/travel">ভ্রমণ</a></li>
-                            <li><a href="/feature">ফিচার</a></li>
-                            <li><a href="/probas">প্রবাস</a></li>
-                            <li><a href="/sub/industry-trade/">শিল্প-বাণিজ্য</a></li>
-                            <li><a href="/interview">সাক্ষাৎকার</a></li>
-                            <li><a href="/technology">প্রযুক্তি</a></li>
-                            <li><a href="/sub/stock-market">শেয়ারবাজার</a></li>
-                            <li><a href="/sub/education">শিক্ষা</a></li>
-                            <li><a href="/samakal-investigation">সমকাল অনুসন্ধান</a></li>
-                            <li><a href="/opinion">মতামত</a></li>
-                            <li><a href="/chakri">চাকরি</a></li>
-                            <li><a href="/shilpomoncho">শিল্পমঞ্চ</a></li>
-                            <li><a href="/special-ayojon">বিশেষ আয়োজন</a></li>
-                            <li><a href="/special-samakal">বিশেষ সমকাল</a></li>
+                        <?php foreach ($menu_items as $item): ?>
+                            <li><a href="<?php echo esc_url($item->url); ?>"><?php echo esc_html($item->title); ?></a></li>
+                        <?php endforeach; ?>
                         </ul>
                     </li>
-                    <li><a href="/photogallery">ছবি</a></li>
-                    <li><a href="/video-gallery">ভিডিও</a></li>
-                    <li><a href="/archive">আর্কাইভ</a></li>
                 </ul>
             </div>
         </div>
@@ -848,7 +840,7 @@ if ($categories) {
                                                 <div class="row">
                                                     <div class="col-lg-5 col-5">
                                                         <div class="CatNewsListImg">
-                                                            <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="https://samakal.com/media/common/thumb-sm.gif" alt="<?php echo get_the_title(); ?>" title="<?php echo get_the_title(); ?>"
+                                                            <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/thumb-sm.gif"); ?>" alt="<?php echo get_the_title(); ?>" title="<?php echo get_the_title(); ?>"
                                                                 class="img-fluid">
                                                         </div>
                                                     </div>
@@ -931,7 +923,7 @@ $latest_news = new WP_Query(array(
                                         <div class="row gx-2">
                                             <div class="col-5">
                                                 <div class="dLastNewsImg">
-                                                    <img class="img-fluid" data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="https://samakal.com/media/common/thumb-sm.gif" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
+                                                    <img class="img-fluid" data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/thumb-sm.gif"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
                                                 </div>
                                             </div>
                                             <div class="col-7">
@@ -948,7 +940,7 @@ $latest_news = new WP_Query(array(
 ?>
                             </div>
                             <div class="DreadMoreBtn">
-                                <a href="https://samakal.com/latest/news">আরও পড়ুন <i
+                                <a href="<?php echo esc_url( home_url('/latest/news') ); ?>">আরও পড়ুন <i
                                     class="fas fa-angle-double-right"></i></a>
                             </div>
                         </div>
@@ -980,16 +972,14 @@ $latest_news = new WP_Query(array(
             <div class="row">
                 <div class="footerTopSection">
                     <ul>
-                        <li><a href="/special-ayojon">বিশেষ আয়োজন</a></li>
-                        <li><a href="/sub/kaler-kheya">কালের খেয়া</a></li>
-                        <li><a href="#">ফেসবুক লাইভ</a></li>
-                        <li><a href="/advertise">বিজ্ঞাপন মূল্য তালিকা</a></li>
-                        <li><a href="/converter" target="_blank">ইউনিকোড কনভার্টার</a></li>
-                        <li><a href="/feature">ফিচার</a></li>
-                        <li><a href="/archive">আর্কাইভ</a></li>
-                        <li><a href="/photogallery">ছবি</a></li>
-                        <li><a href="/video-gallery">ভিডিও</a></li>
-                        <li><a href="https://epaper.samakal.com/">ই-পেপার</a></li>
+                    <?php
+$menu_name = 'footer_menu';
+$locations = get_nav_menu_locations();
+$menu = wp_get_nav_menu_object($locations[$menu_name]);
+$menu_items = wp_get_nav_menu_items($menu->term_id);
+foreach ($menu_items as $item): ?>
+                        <li><a href="<?php echo esc_url($item->url); ?>"><?php echo esc_html($item->title); ?></a></li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
                 <div class="footerMiddleSection">
@@ -1000,25 +990,18 @@ $latest_news = new WP_Query(array(
                             <p><a href="/">SAMAKAL ALL RIGHTS RESERVED</a></p>
                         </div>
                         <div class="col-lg-4 col-12">
-                            <h5>সম্পাদক : শাহেদ মুহাম্মদ আলী</h5>
-                            <h5>প্রকাশক : আবুল কালাম আজাদ</h5>
-                            <p>ফোন : <a href="tel:55029832-38">৫৫০২৯৮৩২-৩৮</a></p>
-                            <p>বিজ্ঞাপন : <a href="tel:+8801714080378">+৮৮০১৭১৪০৮০৩৭৮</a></p>
-                            <p>ই-মেইল: <a href="mailto:samakalad@gmail.com">samakalad@gmail.com</a>,
-                                <a href="mailto:marketingonline@samakal.com">marketingonline@samakal.com</a>
-                            </p>
-                            <address>টাইমস মিডিয়া ভবন (৫ম তলা), ৩৮৭ তেজগাঁও শিল্প এলাকা, ঢাকা - ১২০৮</address>
+                            <?php echo wp_kses_post( get_theme_mod('editorsline') ); ?>
                         </div>
                         <div class="col-lg-4 col-12">
                             <h2 class="FSocialHeadLine">ফলো করুন <span><?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></span>-এর খবর</h2>
                             <div class="FSocialShare">
                                 <ul>
-                                    <li><a href="<?php echo esc_attr(get_theme_mod("fb_page_url")); ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="https://twitter.com/samakaltw" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="<?php echo esc_attr(get_theme_mod("linkedin_url")); ?>" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_facebook_url")); ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_twitter_url")); ?>" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_linkedin_url")); ?>" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                                     </li>
-                                    <li><a href="https://www.youtube.com/channel/UCnetEdV8EwzGn36f3pq50ZA?sub_confirmation=1" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
-                                    <li><a href="<?php echo esc_attr(get_theme_mod("instagram_url")); ?>" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_youtube_url")); ?>?sub_confirmation=1" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_instagram_url")); ?>" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
                                 </ul>
                             </div>
                             <a href="" class="Flogo" rel="home">
@@ -1026,8 +1009,8 @@ $latest_news = new WP_Query(array(
                                 title="<?php the_title(); ?>"
                                 alt="<?php the_title(); ?>" class="img-fluid img100">
                         </a>
-                            <h2 class="FCopyRight">© ২০০৫ - ২০২৬ <a href="https://samakal.com"><?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></a> কর্তৃক সর্বসত্ব ® সংরক্ষিত</h2>
-                            <p class="d-none"><a href="https://www.emythmakers.com/" rel="nofollow" target="_blank">উন্নয়নে ইমিথমেকারস.কম</a></p>
+                            <h2 class="FCopyRight">© ২০০৫ - ২০২৬ <a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></a> কর্তৃক সর্বসত্ব ® সংরক্ষিত</h2>
+                            <p class="d-none"><a href="<?php echo esc_url( home_url('/') ); ?>" rel="nofollow" target="_blank">উন্নয়নে <?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></a></p>
                         </div>
                     </div>
                 </div>
@@ -1068,14 +1051,8 @@ $latest_news = new WP_Query(array(
         });
     </script>
 
-
-
-
-
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" type="text/javascript"></script>
-    <script type="text/javascript" src="https://samakal.com/frontend/common/js/eMythMakers.js"></script>
+    <script type="text/javascript" src="<?php echo esc_url(get_template_directory_uri() . "/frontend/common/js/eMythMakers.js"); ?>"></script>
     <script type="text/javascript">
         $(function() {
             $("#btnIncrease").click(function() {
@@ -1150,10 +1127,6 @@ $latest_news = new WP_Query(array(
             }
         });
     </script>
-    <!--Modal script Code Welcome Advert-->
-    <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="308d0d4576f1f362b9bffb9b-|49" defer></script>
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"97e9a538c9914fdd98360a02932c1edf","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
-        crossorigin="anonymous"></script>
 </body>
 
 </html>

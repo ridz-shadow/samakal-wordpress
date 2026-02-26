@@ -217,6 +217,26 @@ function mytheme_customize_register($wp_customize) {
         'type'     => 'url',
     ) );
 
+    $wp_customize->add_setting( 'editorsline', array(
+        'default'           => '<h5>সম্পাদক : শাহেদ মুহাম্মদ আলী</h5>
+    <h5>প্রকাশক : আবুল কালাম আজাদ</h5>
+    <p>ফোন : <a href="tel:55029832-38">৫৫০২৯৮৩২-৩৮</a></p>
+    <p>বিজ্ঞাপন : <a href="tel:+8801714080378">+৮৮০১৭১৪০৮০৩৭৮</a></p>
+    <p>ই-মেইল: 
+    <a href="mailto:samakalad@gmail.com">samakalad@gmail.com</a>, 
+    <a href="mailto:marketingonline@samakal.com">marketingonline@samakal.com</a>
+    </p>
+    <address>টাইমস মিডিয়া ভবন (৫ম তলা), ৩৮৭ তেজগাঁও শিল্প এলাকা, ঢাকা - ১২০৮</address>',
+        'sanitize_callback' => 'wp_kses_post',
+    ) );
+    
+    $wp_customize->add_control( 'editorsline_control', array(
+        'label'    => __("Editor's Line", 'samakal'),
+        'section'  => 'title_tagline',
+        'settings' => 'editorsline',
+        'type'     => 'textarea',
+    ) );
+
 }
 add_action('customize_register', 'mytheme_customize_register');
 
