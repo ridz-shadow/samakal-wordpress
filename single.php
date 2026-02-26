@@ -307,7 +307,7 @@
             },
             "publisher": {
                 "@type": "Organization",
-                "name": "Samakal",
+                "name": "<?php bloginfo("name"); ?>",
                 "logo": {
                     "@type": "ImageObject",
                     "url": "<?php echo esc_url( ( function_exists('get_custom_logo') && has_custom_logo() ) ? wp_get_attachment_image_url( get_theme_mod('custom_logo'), 'full' ) : get_template_directory_uri() . '/images/logo.png' ); ?>",
@@ -987,7 +987,7 @@ foreach ($menu_items as $item): ?>
                         <div class="col-lg-4 col-12">
                             <p><a href="/privacy">PRIVACY POLICY</a></p>
                             <p><a href="/terms">TERMS OF USE</a></p>
-                            <p><a href="/">SAMAKAL ALL RIGHTS RESERVED</a></p>
+                            <p><a href="/"><?php echo strtoupper( get_bloginfo('name') ); ?> ALL RIGHTS RESERVED</a></p>
                         </div>
                         <div class="col-lg-4 col-12">
                             <?php echo wp_kses_post( get_theme_mod('editorsline') ); ?>
