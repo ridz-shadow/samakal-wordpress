@@ -247,6 +247,7 @@ add_action('save_post', function($post_id) {
 function mytheme_register_menus() {
     register_nav_menus( array(
         'main_menu'   => __( 'Main Menu', 'mytheme' ),
+        'mega_menu'   => __( 'Mega Menu', 'mytheme' ),
         'footer_menu' => __( 'Footer Menu', 'mytheme' ),
     ) );
 }
