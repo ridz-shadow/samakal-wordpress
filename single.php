@@ -657,28 +657,14 @@ $chunks = array_chunk($menu_items, ceil(count($menu_items)/$columns));
             <div class="row MobileHide">
                 <div class="col-12">
                     <div class="d-flex justify-content-center mt-4">
-                        <!-- /21871422770/DNA_Leaderboard -->
-                        <div id='div-gpt-ad-1697888274364-0' style='min-width: 970px; min-height: 90px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1697888274364-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                 </div>
             </div>
             <div class="row MobileShow">
                 <div class="col-12">
                     <div class="d-flex justify-content-center mt-4">
-                        <!-- /21871422770/Leaderboard_mna -->
-                        <div id='div-gpt-ad-1698673325064-0' style='min-width: 320px; min-height: 100px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1698673325064-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                 </div>
             </div>
@@ -720,14 +706,7 @@ $chunks = array_chunk($menu_items, ceil(count($menu_items)/$columns));
                         <div class="row MobileShow">
                             <div class="col-12">
                                 <div class="d-flex justify-content-center mt-4 mb-2">
-                                    <!-- /21871422770/BeforeImage -->
-                                    <div id='div-gpt-ad-1709441391296-0' style='min-width: 320px; min-height: 100px;'>
-                                        <script type="text/javascript">
-                                            googletag.cmd.push(function() {
-                                                googletag.display('div-gpt-ad-1709441391296-0');
-                                            });
-                                        </script>
-                                    </div>
+                                    <!-- Advertisement -->
 
                                 </div>
                             </div>
@@ -741,14 +720,7 @@ $chunks = array_chunk($menu_items, ceil(count($menu_items)/$columns));
                             <div class="col-12">
                                 <div class="d-flex justify-content-center mt-4">
 
-                                    <!-- /21871422770/after_image -->
-                                    <div id='div-gpt-ad-1698673852249-0' style='min-width: 320px; min-height: 100px;'>
-                                        <script type="text/javascript">
-                                            googletag.cmd.push(function() {
-                                                googletag.display('div-gpt-ad-1698673852249-0');
-                                            });
-                                        </script>
-                                    </div>
+                                    <!-- Advertisement -->
                                 </div>
                             </div>
                         </div>
@@ -796,28 +768,14 @@ echo strtr(get_the_date('d F Y').' | '.get_the_time('H:i'), ['0'=>'à§¦','1'=>'à§
                             <div class="row mt-3 mb-3 MobileHide">
                                 <div class="col-md-12">
                                     <div class="DetailsAdd d-flex justify-content-center">
-                                        <!-- /21871422770/DNA_ArticleMiddle_1 -->
-                                        <div id='div-gpt-ad-1697888616961-0' style='min-width: 300px; min-height: 250px;'>
-                                            <script type="text/javascript">
-                                                googletag.cmd.push(function() {
-                                                    googletag.display('div-gpt-ad-1697888616961-0');
-                                                });
-                                            </script>
-                                        </div>
+                                        <!-- Advertisement -->
                                     </div>
                                 </div>
                             </div>
                             <div class="row mt-3 mb-3 MobileShow">
                                 <div class="col-md-12">
                                     <div class="DetailsAdd d-flex justify-content-center">
-                                        <!-- /21871422770/article_middle -->
-                                        <div id='div-gpt-ad-1711866792759-0' style='min-width: 300px; min-height: 250px;'>
-                                            <script type="text/javascript">
-                                                googletag.cmd.push(function() {
-                                                    googletag.display('div-gpt-ad-1711866792759-0');
-                                                });
-                                            </script>
-                                        </div>
+                                        <!-- Advertisement -->
                                     </div>
                                 </div>
                             </div>
@@ -833,14 +791,7 @@ echo strtr(get_the_date('d F Y').' | '.get_the_time('H:i'), ['0'=>'à§¦','1'=>'à§
                             <div class="row mt-3 mb-3 MobileShow">
                                 <div class="col-md-12">
                                     <div class="DetailsAdd d-flex justify-content-center">
-                                        <!-- /21871422770/article_middle2 -->
-                                        <div id='div-gpt-ad-1757935077396-0' style='min-width: 300px; min-height: 250px;'>
-                                            <script type="text/javascript">
-                                                googletag.cmd.push(function() {
-                                                    googletag.display('div-gpt-ad-1757935077396-0');
-                                                });
-                                            </script>
-                                        </div>
+                                        <!-- Advertisement -->
                                     </div>
                                 </div>
                             </div>
@@ -943,26 +894,14 @@ if ($categories) {
                         <div class="row MobileHide">
                             <div class="col-12">
                                 <div class="d-flex justify-content-center mb-5">
-                                    <div id='div-gpt-ad-1697889656858-0' style='min-width: 728px; min-height: 90px;'>
-                                        <script type="text/javascript">
-                                            googletag.cmd.push(function() {
-                                                googletag.display('div-gpt-ad-1697889656858-0');
-                                            });
-                                        </script>
-                                    </div>
+                                    <!-- Advertisement -->
                                 </div>
                             </div>
                         </div>
                         <div class="row MobileShow">
                             <div class="col-12">
                                 <div class="d-flex justify-content-center mb-5">
-                                    <div id='div-gpt-ad-1698675198540-0' style='min-width: 300px; min-height: 250px;'>
-                                        <script type="text/javascript">
-                                            googletag.cmd.push(function() {
-                                                googletag.display('div-gpt-ad-1698675198540-0');
-                                            });
-                                        </script>
-                                    </div>
+                                    <!-- Advertisement -->
                                 </div>
                             </div>
                         </div>
@@ -970,34 +909,16 @@ if ($categories) {
                     <div class="col-lg-3">
                         <div class="dAddImg-wrap">
                             <div class="DRightSideAdd MobileHide mt-4">
-                                <div id='div-gpt-ad-1697888394875-0' style='min-width: 300px; min-height: 250px;'>
-                                    <script type="text/javascript">
-                                        googletag.cmd.push(function() {
-                                            googletag.display('div-gpt-ad-1697888394875-0');
-                                        });
-                                    </script>
-                                </div>
+                                <!-- Advertisement -->
                             </div>
                         </div>
                         <div class="dAddImg-wrap mt-4 MobileHide">
                             <div class="DRightSideAdd">
-                                <div id='div-gpt-ad-1697888851115-0' style='min-width: 300px; min-height: 250px;'>
-                                    <script type="text/javascript">
-                                        googletag.cmd.push(function() {
-                                            googletag.display('div-gpt-ad-1697888851115-0');
-                                        });
-                                    </script>
-                                </div>
+                                <!-- Advertisement -->
                             </div>
                         </div>
                         <div class="DRightSideAdd mt-4 mb-2 MobileHide">
-                            <div id='div-gpt-ad-1697889007257-0' style='min-width: 300px; min-height: 250px;'>
-                                <script type="text/javascript">
-                                    googletag.cmd.push(function() {
-                                        googletag.display('div-gpt-ad-1697889007257-0');
-                                    });
-                                </script>
-                            </div>
+                            <!-- Advertisement -->
                         </div>
                         
 
@@ -1053,22 +974,10 @@ $latest_news = new WP_Query(array(
                 <a class="Exit" id="T4Tutorials_UP11_Close">Ã—</a>
                 <div class="Main_Main_Content">
                     <div class="AdvertClass MobileHide text-center">
-                        <div id='div-gpt-ad-1707909428660-0' style='min-width: 970px; min-height: 90px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1707909428660-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                     <div class="AdvertClass MobileShow text-center">
-                        <div id='div-gpt-ad-1707909632051-0' style='min-width: 320px; min-height: 50px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1707909632051-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                 </div>
             </div>
