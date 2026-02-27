@@ -3309,3 +3309,465 @@ endif;
                                             </div>
                                             <div class="Desc">
                                                 <h3 class="Title">ইফতারে ডিমের ফিঙ্গার</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 d-flex col-6">
+                                    <div class="DLifestyleTop2 align-self-stretch">
+                                        <a href="https://samakal.com/lifestyle/article/339770/ইফতারের-পর-অ্যাসিডিটি-হয়-যা-করবেন ">
+                                            <div class="">
+                                                <picture>
+                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/acidity-1771756475.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="ইফতারের পর অ্যাসিডিটি হয়? যা করবেন " title="ইফতারের পর অ্যাসিডিটি হয়? যা করবেন " class="img-fluid">
+                                                </picture>
+
+                                            </div>
+                                            <div class="Desc">
+                                                <h3 class="Title">ইফতারের পর অ্যাসিডিটি হয়? যা করবেন </h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="DPrayer skeleton">
+                            <div class="DPrayersBanner">
+                                <a href="#"><img class="img-fluid skeleton img100"
+                                    src="https://samakal.com/frontend/media/common/namaz.png" alt="Namaz"
+                                    title="Namaz"></a>
+                            </div>
+                            <div class="DPrayersTime table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>ফজর</td>
+                                            <td>০৫:১১ ভোর </td>
+                                        </tr>
+                                        <tr>
+                                            <td>যোহর</td>
+                                            <td>১২:১৫ দুপুর </td>
+                                        </tr>
+                                        <tr>
+                                            <td>আছর</td>
+                                            <td>৪:২০ বিকেল
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>মাগরিব</td>
+                                            <td>৬:০২ সন্ধ্যা
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>ইশা</td>
+                                            <td>৭:১৬ রাত
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p>ঢাকা, বুধবার, ২৫ ফেব্রুয়ারি ২০২৬</p>
+                            </div>
+                        </div>
+                        <div class="DRightSideAdd mt-3">
+                            <!-- /21871422770/Rajniti -->
+                            <div id='div-gpt-ad-1697884691760-0' style='min-width: 300px; min-height: 250px;'>
+                                <script type="text/javascript">
+                                    googletag.cmd.push(function() {
+                                        googletag.display('div-gpt-ad-1697884691760-0');
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="container MT-60">
+            <div class="row">
+                <div class="col-lg-6 col-12 Politics">
+                    <a href="/sub/kaler-kheya">
+                        <h2 class="SectionName">কালের খেয়া</h2>
+                    </a>
+                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <div class="DCategory4Top">
+                                <a href="https://samakal.com/kaler-kheya/article/339415/মোহমুগ্ধতা">
+                                    <div class="DImgZoomBlock ">
+                                        <picture>
+                                            <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771553250.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="মোহমুগ্ধতা" title="মোহমুগ্ধতা" class="img-fluid img100">
+                                        </picture>
+                                    </div>
+                                    <div class="Desc">
+                                        <h2 class="Title FW700"><span class="subHeading">পথ  চেয়ে আর কালগুনে / </span>মোহমুগ্ধতা</h2>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="DCategory5NewsList">
+                                <a href="https://samakal.com/kaler-kheya/article/339414/অপেক্ষার-নাম-হয়তো-রেনারভিও">
+                                    <div class="row">
+                                        <div class="col-lg-7 col-7">
+                                            <div class="Desc">
+                                                <h2 class="Title FW700"><span class="subHeading">প্রচ্ছদ / </span>অপেক্ষার নাম হয়তো রেনারভিও</h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-5">
+                                            <div class="DImgZoomBlock ">
+                                                <picture>
+                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/kalerkheya-1771553151.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="অপেক্ষার নাম হয়তো রেনারভিও" title="অপেক্ষার নাম হয়তো রেনারভিও" class="img-fluid img100">
+                                                </picture>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="DCategory5NewsList">
+                                <a href="https://samakal.com/kaler-kheya/article/339413/পূর্বী-নদীর-বাতিঘর">
+                                    <div class="row">
+                                        <div class="col-lg-7 col-7">
+                                            <div class="Desc">
+                                                <h2 class="Title FW700"><span class="subHeading">ধারাবাহিক / </span>পূর্বী নদীর বাতিঘর</h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-5">
+                                            <div class="DImgZoomBlock ">
+                                                <picture>
+                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771553102.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="পূর্বী নদীর বাতিঘর" title="পূর্বী নদীর বাতিঘর" class="img-fluid img100">
+                                                </picture>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="DCategory5NewsList">
+                                <a href="https://samakal.com/kaler-kheya/article/339412/কুঁড়েঘরে-বইগুলো-জড়ো-হয়েছিল">
+                                    <div class="row">
+                                        <div class="col-lg-7 col-7">
+                                            <div class="Desc">
+                                                <h2 class="Title FW700">কুঁড়েঘরে বইগুলো জড়ো হয়েছিল</h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-5">
+                                            <div class="DImgZoomBlock ">
+                                                <picture>
+                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771552937.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="কুঁড়েঘরে বইগুলো জড়ো হয়েছিল" title="কুঁড়েঘরে বইগুলো জড়ো হয়েছিল" class="img-fluid img100">
+                                                </picture>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 Politics">
+                    <a href="/crime">
+                        <h2 class="SectionName"> অপরাধ </h2>
+                    </a>
+                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <div class="DCategory4Top">
+                                <a href="https://samakal.com/crime/article/340181/দেশে-আট-বছরে-নতুন-১২-মাদক">
+                                    <div class="DImgZoomBlock ">
+                                        <picture>
+                                            <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771986532.jpg" src="https://samakal.com/media/common/img-400x250.jpg" alt="দেশে আট বছরে নতুন ১২ মাদক" title="দেশে আট বছরে নতুন ১২ মাদক" class="img-fluid img100">
+                                        </picture>
+
+                                    </div>
+                                    <div class="Desc">
+                                        <h2 class="Title FW700">দেশে আট বছরে নতুন ১২ মাদক</h2>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="DCategory5NewsList">
+                                <a href="https://samakal.com/crime/article/339954/মোহাম্মদপুরে-‘সমন্বয়ককে’-কোপাল-দুর্বৃত্তরা">
+                                    <div class="row">
+                                        <div class="col-lg-7 col-7">
+                                            <div class="Desc">
+                                                <h2 class="Title FW700">মোহাম্মদপুরে ‘সমন্বয়ককে’ কোপাল দুর্বৃত্তরা</h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-5">
+                                            <div class="DImgZoomBlock ">
+                                                <picture>
+                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/mohammadpur-1771858052.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="মোহাম্মদপুরে ‘সমন্বয়ককে’ কোপাল দুর্বৃত্তরা" title="মোহাম্মদপুরে ‘সমন্বয়ককে’ কোপাল দুর্বৃত্তরা" class="img-fluid img100">
+                                                </picture>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="DCategory5NewsList">
+                                <a href="https://samakal.com/crime/article/339864/অপরাধ-করলেই-গ্রেপ্তার-অনুমতি-লাগবে-না">
+                                    <div class="row">
+                                        <div class="col-lg-7 col-7">
+                                            <div class="Desc">
+                                                <h2 class="Title FW700">অপরাধ করলেই গ্রেপ্তার, অনুমতি লাগবে না</h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-5">
+                                            <div class="DImgZoomBlock ">
+                                                <picture>
+                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-31-1771827552.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="অপরাধ করলেই গ্রেপ্তার, অনুমতি লাগবে না" title="অপরাধ করলেই গ্রেপ্তার, অনুমতি লাগবে না" class="img-fluid img100">
+                                                </picture>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="DCategory5NewsList">
+                                <a href="https://samakal.com/crime/article/339590/হারবাল-উদ্যোক্তা-থেকে-ইয়াবা-মিনিল্যাবের-মালিক">
+                                    <div class="row">
+                                        <div class="col-lg-7 col-7">
+                                            <div class="Desc">
+                                                <h2 class="Title FW700">হারবাল উদ্যোক্তা থেকে ইয়াবা মিনিল্যাবের মালিক</h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-5">
+                                            <div class="DImgZoomBlock ">
+                                                <picture>
+                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/yeaba-1771656231.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="হারবাল উদ্যোক্তা থেকে ইয়াবা মিনিল্যাবের মালিক" title="হারবাল উদ্যোক্তা থেকে ইয়াবা মিনিল্যাবের মালিক" class="img-fluid img100">
+                                                </picture>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="video-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="SectionTitle mb-3 mt-4">
+                            <a href="/photogallery">
+                                <h3>ফটোগ্যালারি</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="video-big">
+                            <a href="https://samakal.com/photogallery/article/338184/ছবিতে-ভোটকেন্দ্রে-সংঘর্ষ-অনিয়ম">
+                                <div class="video-img-wrap">
+                                    <div class="video-overlay"></div>
+                                    <picture>
+                                        <img class="img-fluid w-100 h-100" data-src="https://samakal.com/media/imgAll/2026February/rajsahee-1770904652.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="মান-অভিমান শেষ, দুবাই যাচ্ছেন রাজ-পরী" title="মান-অভিমান শেষ, দুবাই যাচ্ছেন রাজ-পরী">
+                                    </picture>
+                                </div>
+                                <div class="Desc">
+                                    <h3 class="Title2">ছবিতে ভোটকেন্দ্রে সংঘর্ষ-অনিয়ম</h3>
+                                </div>
+                                <div class="video-icon"><i class="fas fa-image"></i></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="video-middel">
+                            <div class="row gx-2">
+                                <div class="col-lg-6">
+                                    <div class="video-middel-items">
+                                        <a href="https://samakal.com/photogallery/article/338172/ভোট-দেওয়ার-পর-উচ্ছ্বাস">
+                                            <div class="video-img-wrap">
+                                                <div class="video-overlay"></div>
+                                                <picture>
+                                                    <img class="img-fluid w-100 h-100" data-src="https://samakal.com/media/imgAll/2026February/SM/mamun-2-1770900813.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="ভোট দেওয়ার পর উচ্ছ্বাস" title="ভোট দেওয়ার পর উচ্ছ্বাস">
+                                                </picture>
+                                            </div>
+                                            <div class="Desc">
+                                                <h3 class="Title2">ভোট দেওয়ার পর উচ্ছ্বাস</h3>
+                                            </div>
+                                            <div class="video-icon"><i class="fas fa-image"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="video-middel-items">
+                                        <a href="https://samakal.com/photogallery/article/332691/মাদুরো-পরবর্তী-ভেনেজুয়েলায়-যা-চলছে-দেখুন-ছবিতে">
+                                            <div class="video-img-wrap">
+                                                <div class="video-overlay"></div>
+                                                <picture>
+                                                    <img class="img-fluid w-100 h-100" data-src="https://samakal.com/media/imgAll/2026January/SM/image-2026-01-06t171403289-1767700282.png" src="https://samakal.com/media/common/img-300x169.jpg" alt="মাদুরো পরবর্তী ভেনেজুয়েলায় যা চলছে, দেখুন ছবিতে" title="মাদুরো পরবর্তী ভেনেজুয়েলায় যা চলছে, দেখুন ছবিতে">
+                                                </picture>
+                                            </div>
+                                            <div class="Desc">
+                                                <h3 class="Title2">মাদুরো পরবর্তী ভেনেজুয়েলায় যা চলছে, দেখুন ছবিতে</h3>
+                                            </div>
+                                            <div class="video-icon"><i class="fas fa-image"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="video-middel-items">
+                                        <a href="https://samakal.com/photogallery/article/331082/দেশে-দেশে-বড়দিন-উদযাপনের-নানা-মুহূর্ত-দেখুন-ছবিতে">
+                                            <div class="video-img-wrap">
+                                                <div class="video-overlay"></div>
+                                                <picture>
+                                                    <img class="img-fluid w-100 h-100" data-src="https://samakal.com/media/imgAll/2025December/SM/image-2025-12-25t181026154-1766667030.png" src="https://samakal.com/media/common/img-300x169.jpg" alt="দেশে দেশে বড়দিন উদযাপনের নানা মুহূর্ত দেখুন ছবিতে" title="দেশে দেশে বড়দিন উদযাপনের নানা মুহূর্ত দেখুন ছবিতে">
+                                                </picture>
+                                            </div>
+                                            <div class="Desc">
+                                                <h3 class="Title2">দেশে দেশে বড়দিন উদযাপনের নানা মুহূর্ত দেখুন ছবিতে</h3>
+                                            </div>
+                                            <div class="video-icon"><i class="fas fa-image"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="video-middel-items">
+                                        <a href="https://samakal.com/photogallery/article/330352/ছবিতে-শরিফ-ওসমান-হাদির-জানাজা-ও-দাফন">
+                                            <div class="video-img-wrap">
+                                                <div class="video-overlay"></div>
+                                                <picture>
+                                                    <img class="img-fluid w-100 h-100" data-src="https://samakal.com/media/imgAll/2025December/SM/89-1766231129.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="ছবিতে শরিফ ওসমান হাদির জানাজা ও দাফন" title="ছবিতে শরিফ ওসমান হাদির জানাজা ও দাফন">
+                                                </picture>
+                                            </div>
+                                            <div class="Desc">
+                                                <h3 class="Title2">ছবিতে শরিফ ওসমান হাদির জানাজা ও দাফন</h3>
+                                            </div>
+                                            <div class="video-icon"><i class="fas fa-image"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="T4Tutorials_UP11" class="T4Tutorials">
+            <div class="T4Tutorials_UP">
+                <a class="Exit" id="T4Tutorials_UP11_Close">×</a>
+                <div class="Main_Main_Content">
+                    <!-- Desktop Ad -->
+                    <div class="AdvertClass MobileHide text-center">
+                        <div id='div-gpt-ad-1707909172890-0' style='min-width: 970px; min-height: 90px;'>
+                            <script type="text/javascript">
+                                googletag.cmd.push(function() {
+                                    googletag.display('div-gpt-ad-1707909172890-0');
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <!-- Mobile Ad -->
+                    <div class="AdvertClass MobileShow text-center">
+                        <div id='div-gpt-ad-1748845278096-0' style='min-width: 320px; min-height: 100px;'>
+                            <script type="text/javascript">
+                                googletag.cmd.push(function() {
+                                    googletag.display('div-gpt-ad-1748845278096-0');
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 14 Jan 26: Code is now more cleaner -->
+    <!--Modal Code Welcome Advert-->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="footerTopSection">
+                    <ul>
+                    <?php
+$menu_name = 'footer_menu';
+$locations = get_nav_menu_locations();
+$menu = wp_get_nav_menu_object($locations[$menu_name]);
+$menu_items = wp_get_nav_menu_items($menu->term_id);
+foreach ($menu_items as $item): ?>
+                        <li><a href="<?php echo esc_url($item->url); ?>"><?php echo esc_html($item->title); ?></a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <div class="footerMiddleSection">
+                    <div class="row">
+                        <div class="col-lg-4 col-12">
+                            <p><a href="/privacy">PRIVACY POLICY</a></p>
+                            <p><a href="/terms">TERMS OF USE</a></p>
+                            <p><a href="/"><?php echo strtoupper( get_bloginfo('name') ); ?> ALL RIGHTS RESERVED</a></p>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <?php echo wp_kses_post( get_theme_mod('editorsline') ); ?>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <h2 class="FSocialHeadLine">ফলো করুন <span><?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></span>-এর খবর</h2>
+                            <div class="FSocialShare">
+                                <ul>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_facebook_url")); ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_twitter_url")); ?>" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_linkedin_url")); ?>" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    </li>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_youtube_url")); ?>?sub_confirmation=1" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_instagram_url")); ?>" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                            <a href="" class="Flogo" rel="home">
+                            <img src="<?php echo esc_url( ( function_exists('get_custom_logo') && has_custom_logo() ) ? wp_get_attachment_image_url( get_theme_mod('custom_logo'), 'full' ) : get_template_directory_uri() . '/images/logo.png' ); ?>"
+                                title="<?php the_title(); ?>"
+                                alt="<?php the_title(); ?>" class="img-fluid img100">
+                        </a>
+                            <h2 class="FCopyRight">© ২০০৫ - ২০২৬ <a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></a> কর্তৃক সর্বসত্ব ® সংরক্ষিত</h2>
+                            <p class="d-none"><a href="<?php echo esc_url( home_url('/') ); ?>" rel="nofollow" target="_blank">উন্নয়নে <?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="back_to_top" class="back_to_top on"><span class="go_up"><i class="fa-solid fa-arrow-up"></i></span></div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        // Footer Sticky Ads
+        jQuery(document).ready(function() {
+            // Close button functionality
+            jQuery('#T4Tutorials_UP11_Close').click(function() {
+                jQuery('#T4Tutorials_UP11').hide();
+            });
+
+            // Ensure ads are loaded only for visible containers
+            if (jQuery('.MobileHide').is(':visible')) {
+                googletag.cmd.push(function() {
+                    googletag.display('div-gpt-ad-1707909172890-0');
+                });
+            }
+            if (jQuery('.MobileShow').is(':visible')) {
+                googletag.cmd.push(function() {
+                    googletag.display('div-gpt-ad-1748845278096-0');
+                });
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(window).load(function() {
+            $("main img").each(function(index) {
+                $(this).attr('src', $(this).attr('data-src'))
+            });
+        });
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" type="text/javascript"></script>
+    <script type="text/javascript" src="https://samakal.com/frontend/common/js/eMythMakers.js"></script>
+</body>
+
+</html>
