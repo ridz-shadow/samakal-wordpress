@@ -1196,10 +1196,10 @@ $lead_cat_id = get_theme_mod('lead_sidebar_category'); // Get selected category
 
 if ( $lead_cat_id ) :
 
-    // Fetch latest 5 posts from that category
+    // Fetch latest 2 posts from that category
     $lead_query = new WP_Query( array(
         'cat'            => $lead_cat_id,
-        'posts_per_page' => 5,
+        'posts_per_page' => 2,
     ) );
 
     if ( $lead_query->have_posts() ) : ?>
