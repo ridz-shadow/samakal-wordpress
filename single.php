@@ -755,11 +755,6 @@ echo strtr(get_the_date('d F Y').' | '.get_the_time('H:i'), ['0'=>'à§¦','1'=>'à§
                                 </div>
                             </div>
                         </div>
-                        <style>
-                            #contentDetails img {
-                                max-width: 100%;
-                            }
-                        </style>
                         <div class="dNewsDesc" id="contentDetails"><?php the_content(); ?></div>
                         <div class="DContentAdd">
                             <div class="row mt-3 mb-3 MobileHide">
