@@ -1168,49 +1168,35 @@ if ( isset( $locations[ $menu_name ] ) ) {
                     </div>
                     <div class="col-lg-3 col-12 mt-3">
                         <div class="DRightSideAdd MobileHide">
-                            <!-- /21871422770/DH_R1 -->
-                            <div id='div-gpt-ad-1697883068904-0' style='min-width: 300px; min-height: 250px;'>
-                                <script type="text/javascript">
-                                    googletag.cmd.push(function() {
-                                        googletag.display('div-gpt-ad-1697883068904-0');
-                                    });
-                                </script>
-                            </div>
+                            <!-- Advertisement -->
                         </div>
                         <div class="DRightSideAdd MobileShow">
-                            <!-- /21871422770/before_sompadokio -->
-                            <div id='div-gpt-ad-1698671912449-0' style='min-width: 300px; min-height: 250px;'>
-                                <script type="text/javascript">
-                                    googletag.cmd.push(function() {
-                                        googletag.display('div-gpt-ad-1698671912449-0');
-                                    });
-                                </script>
-                            </div>
+                            <!-- Advertisement -->
                         </div>
                         <div class="position-relative w-100 mt-2">
                             <img src="https://samakal.com/media/common/beacon.png" alt="beacon" title="beacon" class="img-fluid w-100">
                             <iframe src="https://widget.crictimes.org" style="width:100%;height:76%;position:absolute;bottom:0;left:0;right:0;border:none;padding:9px" frameborder="0" scrolling="no"></iframe>
                         </div>
                         <?php 
-$lead_cat_id = get_theme_mod('lead_sidebar_category'); // Get selected category
+$lead_sidebar_cat_id = get_theme_mod('lead_sidebar_category'); // Get selected category
 
-if ( $lead_cat_id ) :
+if ( $lead_sidebar_cat_id ) :
 
     // Fetch latest 2 posts from that category
-    $lead_query = new WP_Query( array(
-        'cat'            => $lead_cat_id,
+    $lead_sidebar_query = new WP_Query( array(
+        'cat'            => $lead_sidebar_cat_id,
         'posts_per_page' => 2,
     ) );
 
-    if ( $lead_query->have_posts() ) : ?>
+    if ( $lead_sidebar_query->have_posts() ) : ?>
         <div class="DEditorsPicksSec mt-3">
             <div class="DTitleStyle">
-                <a href="<?php echo esc_url( get_category_link( $lead_cat_id ) ); ?>">
+                <a href="<?php echo esc_url( get_category_link( $lead_sidebar_cat_id ) ); ?>">
                     <h3><i class="fa-solid fa-circle-half-stroke"></i><?php echo esc_html( get_cat_name( $lead_cat_id ) ); ?></h3>
                 </a>
             </div>
 
-            <?php while ( $lead_query->have_posts() ) : $lead_query->the_post(); ?>
+            <?php while ( $lead_sidebar_query->have_posts() ) : $lead_sidebar_query->the_post(); ?>
                 <div class="DEditorialListItem">
                     <a href="<?php the_permalink(); ?>">
                         <div class="row">
@@ -1218,10 +1204,7 @@ if ( $lead_cat_id ) :
                                 <div class="Desc">
                                     <p class="WriterName"><i class="fa fa-edit" aria-hidden="true"></i> <?php the_author(); ?></p>
                                     <h2 class="Title">
-                                        <span class="subHeading"><?php 
-                                            $cats = get_the_category();
-                                            if ( $cats ) { echo esc_html( $cats[0]->name ) . ' / '; } 
-                                        ?></span>
+                                        <span class="subHeading"><?php echo esc_html(get_post_meta(get_the_ID(), '_post_shoulder', true)); ?></span>
                                         <?php the_title(); ?>
                                     </h2>
                                 </div>
@@ -1251,16 +1234,7 @@ endif;
             <div class="row MobileHide">
                 <div class="col-12">
                     <div class="DHomeAdd970X90 d-flex justify-content-center mt-4 mb-2">
-                        <!-- /21871422770/DH_B1 -->
-
-                        <!-- /21871422770/DH_Banner2 -->
-                        <div id='div-gpt-ad-1765289091499-0' style='min-width: 970px; min-height: 90px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1765289091499-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                 </div>
             </div>
@@ -1354,14 +1328,7 @@ endif;
                 </div>
                 <div class="col-12 MobileShow">
                     <div class="d-flex justify-content-center mt-3">
-                        <!-- /21871422770/before_sorboses -->
-                        <div id='div-gpt-ad-1698672272990-0' style='min-width: 300px; min-height: 250px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1698672272990-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                 </div>
                 <div class="col-lg-4 col-12">
@@ -1517,14 +1484,7 @@ endif;
             <div class="row MobileHide">
                 <div class="col-12">
                     <div class="DHomeAdd970X90 d-flex justify-content-center mt-3">
-                        <!-- /21871422770/DH_B2 -->
-                        <div id='div-gpt-ad-1697883321914-0' style='min-width: 728px; min-height: 90px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1697883321914-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                 </div>
             </div>
@@ -1765,14 +1725,7 @@ endif;
             <div class="row MobileHide">
                 <div class="col-12">
                     <div class="DHomeAdd970X90 d-flex justify-content-center mt-4">
-                        <!-- /21871422770/BeforeSports -->
-                        <div id='div-gpt-ad-1697884211332-0' style='min-width: 728px; min-height: 90px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1697884211332-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                 </div>
             </div>
@@ -1928,14 +1881,7 @@ endif;
             <div class="row MobileShow">
                 <div class="col-12">
                     <div class="DHomeAdd970X90 d-flex justify-content-center mt-3">
-                        <!-- /21871422770/before_motamot -->
-                        <div id='div-gpt-ad-1698672412698-0' style='min-width: 300px; min-height: 250px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1698672412698-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                 </div>
             </div>
@@ -2071,14 +2017,7 @@ endif;
             <div class="row MobileShow">
                 <div class="col-12">
                     <div class="DHomeAdd970X90 d-flex justify-content-center mt-3">
-                        <!-- /21871422770/before_bangladesh -->
-                        <div id='div-gpt-ad-1698672638942-0' style='min-width: 300px; min-height: 250px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1698672638942-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                 </div>
             </div>
@@ -2415,14 +2354,7 @@ endif;
             <div class="row MobileHide">
                 <div class="col-12">
                     <div class="DHomeAdd970X90 d-flex justify-content-center mt-4">
-                        <!-- /21871422770/beforeOrthoniti -->
-                        <div id='div-gpt-ad-1697884469859-0' style='min-width: 728px; min-height: 90px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1697884469859-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                 </div>
             </div>
@@ -2763,38 +2695,17 @@ endif;
             <div class="row MobileHide">
                 <div class="col-lg-4">
                     <div class="DHomeAdd300X250 d-flex justify-content-center mt-5">
-                        <!-- /21871422770/beforeBenodon -->
-                        <div id='div-gpt-ad-1697883649760-0' style='min-width: 300px; min-height: 250px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1697883649760-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="DHomeAdd300X250 d-flex justify-content-center mt-5">
-                        <!-- /21871422770/beforeBinodon2 -->
-                        <div id='div-gpt-ad-1697883760018-0' style='min-width: 300px; min-height: 250px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1697883760018-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="DHomeAdd300X250 d-flex justify-content-center mt-5">
-                        <!-- /21871422770/beforeBinodon3 -->
-                        <div id='div-gpt-ad-1697883966593-0' style='min-width: 300px; min-height: 250px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1697883966593-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                 </div>
             </div>
@@ -2927,14 +2838,7 @@ endif;
                             </div>
                             <div class="DRightSideAdd mt-3 MobileHide">
                                 <a href="">
-                                    <!-- /21871422770/Binodon_corner -->
-                                    <div id='div-gpt-ad-1697884069966-0' style='min-width: 300px; min-height: 250px;'>
-                                        <script type="text/javascript">
-                                            googletag.cmd.push(function() {
-                                                googletag.display('div-gpt-ad-1697884069966-0');
-                                            });
-                                        </script>
-                                    </div>
+                                    <!-- Advertisement -->
                                 </a>
                             </div>
                         </div>
@@ -3372,14 +3276,7 @@ endif;
                             </div>
                         </div>
                         <div class="DRightSideAdd mt-3">
-                            <!-- /21871422770/Rajniti -->
-                            <div id='div-gpt-ad-1697884691760-0' style='min-width: 300px; min-height: 250px;'>
-                                <script type="text/javascript">
-                                    googletag.cmd.push(function() {
-                                        googletag.display('div-gpt-ad-1697884691760-0');
-                                    });
-                                </script>
-                            </div>
+                            <!-- Advertisement -->
                         </div>
                     </div>
                 </div>
