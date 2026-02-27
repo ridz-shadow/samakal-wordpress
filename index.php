@@ -1246,91 +1246,108 @@ endif;
         </div>
         <section class="container">
             <div class="row">
-                <div class="col-lg-8 col-12">
-                    <h2 class="SectionName">নির্বাচিত</h2>
-                    <div class="row">
-                        <div class="col-lg-6 col-12">
-                            <div class="SpecialEventTop">
-                                <a href="https://samakal.com/bangladesh/article/340186/ওষুধ-নিয়ে-প্রশ্ন-কার্যকারিতা-পরীক্ষা-হবে">
-                                    <div class="DImgZoomBlock .medium-video-icon">
-                                        <picture> <img data-src="https://samakal.com/media/imgAll/2026February/untitled-11-1771986965.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="ওষুধ নিয়ে প্রশ্ন, কার্যকারিতা পরীক্ষা হবে" title="ওষুধ নিয়ে প্রশ্ন, কার্যকারিতা পরীক্ষা হবে"
-                                                class="img-fluid img100">
-                                        </picture>
-                                        <div class="card-video-img"></div>
+            <?php 
+$after_lead_cat_id = get_theme_mod('after_lead'); // your customizer field
+
+if ( $after_lead_cat_id ) :
+
+    $after_lead_query = new WP_Query( array(
+        'cat'            => $after_lead_cat_id,
+        'posts_per_page' => 4, // total posts as per template
+    ) );
+
+    if ( $after_lead_query->have_posts() ) : ?>
+        <div class="col-lg-8 col-12">
+            <h2 class="SectionName"><?php echo esc_html( get_cat_name( $after_lead_cat_id ) ); ?></h2>
+            <div class="row">
+
+                <?php 
+                $post_index = 0;
+                while ( $after_lead_query->have_posts() ) : $after_lead_query->the_post(); 
+                    $post_index++;
+                    $category = get_the_category();
+                    $first_cat_name = $category ? $category[0]->name : '';
+
+                    // get post_shoulder meta
+                    $shoulder = get_post_meta(get_the_ID(), '_post_shoulder', true);
+                    $shoulder_text = $shoulder ? esc_html($shoulder) . ' / ' : '';
+                ?>
+
+                <?php if ( $post_index === 1 ) : ?>
+                    <!-- Top Block: first post -->
+                    <div class="col-lg-6 col-12">
+                        <div class="SpecialEventTop">
+                            <a href="<?php the_permalink(); ?>">
+                                <div class="DImgZoomBlock .medium-video-icon">
+                                    <picture>
+                                        <?php if ( has_post_thumbnail() ) : ?>
+                                            <?php the_post_thumbnail( 'medium', array(
+                                                'class' => 'img-fluid img100',
+                                                'alt'   => get_the_title(),
+                                                'title' => get_the_title()
+                                            ) ); ?>
+                                        <?php else: ?>
+                                            <img src="https://samakal.com/media/common/img-300x169.jpg" class="img-fluid img100" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
+                                        <?php endif; ?>
+                                    </picture>
+                                    <div class="card-video-img"></div>
+                                </div>
+                                <div class="Desc">
+                                    <h2 class="Title FW700">
+                                        <span class="subHeading"><?php echo $shoulder_text; ?> / </span>
+                                        <?php the_title(); ?>
+                                    </h2>
+                                    <div class="Brief">
+                                        <p><?php echo wp_trim_words( get_the_excerpt(), 30 ); ?></p>
                                     </div>
-                                    <div class="Desc">
-                                        <h2 class="Title FW700"><span class="subHeading">মশক নিধন / </span>ওষুধ নিয়ে প্রশ্ন, কার্যকারিতা পরীক্ষা হবে</h2>
-                                        <div class="Brief">
-                                            <p>ঢাকার দুই সিটি করপোরেশনে ব্যবহৃত মশক নিধন ওষুধ কার্যকারিতা হারিয়েছে— দীর্ঘদিনের এমন অভিযোগের প্রেক্ষাপটে মজুত ও ব্যবহৃত ওষুধের কার্যকারিতা সরেজমিন যাচাইয়ের উদ্যোগ নেওয়া</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-12">
-                            <div class="SpecialEventList">
-                                <a href="https://samakal.com/economics/article/340079/নগদকে-ব্যক্তিখাতে-ছাড়ার-বিষয়টি-সরকারের-নীতির-ওপর-নির্ভর-করবে">
-                                    <div class="row">
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/ahsan-h-choudhury-1771933431.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="নগদকে ব্যক্তিখাতে ছাড়ার বিষয়টি সরকারের নীতির ওপর নির্ভর করবে" title="নগদকে ব্যক্তিখাতে ছাড়ার বিষয়টি সরকারের নীতির ওপর নির্ভর করবে"
-                                                        class="img-fluid img100">
-                                                </picture>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <div class="CatNameSP">অর্থনীতি</div>
-                                                <h2 class="Title FW700"><span class="subHeading">ব্যারিস্টার আরমানকে জানালেন গভর্নর / </span>নগদকে ব্যক্তিখাতে ছাড়ার বিষয়টি সরকারের নীতির ওপর নির্ভর করবে</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="SpecialEventList">
-                                <a href="https://samakal.com/bangladesh/article/340108/সোহরাওয়ার্দী-উদ্যানে-শিক্ষার্থী-সংবাদকর্মীদের-মারধর-৪-পুলিশ-সদস্য-প্রত্যাহার">
-                                    <div class="row">
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/shohoraa-1771946696.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="সোহরাওয়ার্দী উদ্যানে শিক্ষার্থী-সংবাদকর্মীদের মারধর, ৪ পুলিশ সদস্য প্রত্যাহার" title="সোহরাওয়ার্দী উদ্যানে শিক্ষার্থী-সংবাদকর্মীদের মারধর, ৪ পুলিশ সদস্য প্রত্যাহার"
-                                                        class="img-fluid img100">
-                                                </picture>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <div class="CatNameSP">বাংলাদেশ</div>
-                                                <h2 class="Title FW700">সোহরাওয়ার্দী উদ্যানে শিক্ষার্থী-সংবাদকর্মীদের মারধর, ৪ পুলিশ সদস্য প্রত্যাহার</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="SpecialEventList">
-                                <a href="https://samakal.com/bangladesh/article/340112/ভিক্ষুকের-মোবাইল-ব্যাংকিং-নম্বর-দিয়ে-হাতিয়ে-নেওয়া-হয়-লাখ-লাখ-টাকা">
-                                    <div class="row">
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/9-1771947490.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="ভিক্ষুকের মোবাইল ব্যাংকিং নম্বর দিয়ে হাতিয়ে নেওয়া হয় লাখ লাখ টাকা" title="ভিক্ষুকের মোবাইল ব্যাংকিং নম্বর দিয়ে হাতিয়ে নেওয়া হয় লাখ লাখ টাকা"
-                                                        class="img-fluid img100">
-                                                </picture>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <div class="CatNameSP">বাংলাদেশ</div>
-                                                <h2 class="Title FW700">ভিক্ষুকের মোবাইল ব্যাংকিং নম্বর দিয়ে হাতিয়ে নেওয়া হয় লাখ লাখ টাকা</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                </div>
+
+                <?php else : ?>
+                    <!-- List Block: next posts -->
+                    <div class="col-lg-6 col-12">
+                        <div class="SpecialEventList">
+                            <a href="<?php the_permalink(); ?>">
+                                <div class="row">
+                                    <div class="col-lg-5 col-5">
+                                        <div class="DImgZoomBlock">
+                                            <picture>
+                                                <?php if ( has_post_thumbnail() ) : ?>
+                                                    <?php the_post_thumbnail( 'medium', array(
+                                                        'class' => 'img-fluid img100',
+                                                        'alt'   => get_the_title(),
+                                                        'title' => get_the_title()
+                                                    ) ); ?>
+                                                <?php else: ?>
+                                                    <img src="https://samakal.com/media/common/img-300x169.jpg" class="img-fluid img100" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
+                                                <?php endif; ?>
+                                            </picture>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-7">
+                                        <div class="Desc">
+                                            <div class="CatNameSP"><?php echo esc_html($first_cat_name); ?></div>
+                                            <h2 class="Title FW700">
+                                                <span class="subHeading"><?php echo $shoulder_text; ?></span>
+                                                <?php the_title(); ?>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
+                <?php endwhile; wp_reset_postdata(); ?>
+
+            </div>
+        </div>
+    <?php endif; 
+endif; 
+?>
                 <div class="col-12 MobileShow">
                     <div class="d-flex justify-content-center mt-3">
                         <!-- Advertisement -->
