@@ -311,9 +311,7 @@ function theme_customize_register( $wp_customize ) {
         'description' => __( 'Customize Home page settings here.' ),
     ) );
 
-}
-add_action( 'customize_register', 'theme_customize_register' );
-
+    
 $wp_customize->add_setting( 'lead_sidebar_category', array(
     'default'           => '',
     'sanitize_callback' => 'absint',
@@ -329,3 +327,6 @@ $wp_customize->add_control( 'lead_sidebar_category', array(
         'term_id'
     ),
 ) );
+
+}
+add_action( 'customize_register', 'theme_customize_register' );
