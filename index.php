@@ -1202,7 +1202,7 @@ if ( $lead_sidebar_cat_id ) :
                         <div class="row">
                             <div class="col-lg-7 col-7">
                                 <div class="Desc">
-                                    <p class="WriterName"><i class="fa fa-edit" aria-hidden="true"></i> <?php echo esc_html(get_post_meta(get_the_ID(), '_post_shoulder', true)); ?></p>
+                                    <p class="WriterName"><i class="fa fa-edit" aria-hidden="true"></i> <?php echo esc_html(get_post_meta(get_the_ID(), 'post_reporter', true)); ?></p>
                                     <h2 class="Title">
                                         <span class="subHeading"><?php echo esc_html(get_post_meta(get_the_ID(), '_post_shoulder', true)); ?></span>
                                         <?php the_title(); ?>
