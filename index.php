@@ -1243,7 +1243,7 @@ endif;
         <section class="container">
             <div class="row">
             <?php 
-$after_lead_cat_id = get_theme_mod('after_lead_category'); // your customizer field
+$after_lead_cat_id = get_theme_mod('after_lead'); // your customizer field
 
 if ( $after_lead_cat_id ) :
 
