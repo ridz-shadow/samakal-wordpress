@@ -11,14 +11,14 @@ function custom_logo_setup() {
 }
 add_action( 'after_setup_theme', 'custom_logo_setup' );
 
-function mytheme_customize_register($wp_customize) {
+function customize_register($wp_customize) {
     $wp_customize->add_setting('location', array(
         'default'           => 'ঢাকা',
         'sanitize_callback' => 'sanitize_text_field',
     ));
 
     $wp_customize->add_control('location_control', array(
-        'label'    => __('Location', 'mytheme'),
+        'label'    => __('Location'),
         'section'  => 'title_tagline',
         'settings' => 'location',
         'type'     => 'text',
@@ -30,7 +30,7 @@ function mytheme_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_control('site_title_bn_control', array(
-        'label'    => __('Site Title (বাংলা)', 'mytheme'),
+        'label'    => __('Site Title (বাংলা)'),
         'section'  => 'title_tagline',
         'settings' => 'site_title_bn',
         'type'     => 'text',
@@ -238,7 +238,7 @@ function mytheme_customize_register($wp_customize) {
     ) );
 
 }
-add_action('customize_register', 'mytheme_customize_register');
+add_action('customize_register', 'customize_register');
 
 add_action('edit_form_after_title', function($post) {
     $shoulder = get_post_meta($post->ID, '_post_shoulder', true);
@@ -289,11 +289,43 @@ add_action('save_post', function($post_id) {
     }
 });
 
-function mytheme_register_menus() {
+function register_menus() {
     register_nav_menus( array(
-        'main_menu'   => __( 'Main Menu', 'mytheme' ),
-        'mega_menu'   => __( 'Mega Menu', 'mytheme' ),
-        'footer_menu' => __( 'Footer Menu', 'mytheme' ),
+        'main_menu'   => __( 'Main Menu' ),
+        'mega_menu'   => __( 'Mega Menu' ),
+        'footer_menu' => __( 'Footer Menu' ),
     ) );
 }
-add_action( 'after_setup_theme', 'mytheme_register_menus' );
+add_action( 'after_setup_theme', 'register_menus' );
+
+
+
+
+
+
+function theme_customize_register( $wp_customize ) {
+
+    $wp_customize->add_section( 'home_section', array(
+        'title'       => __( 'Home' ),
+        'priority'    => 30,
+        'description' => __( 'Customize Home page settings here.' ),
+    ) );
+
+}
+add_action( 'customize_register', 'theme_customize_register' );
+
+$wp_customize->add_setting( 'lead_sidebar_category', array(
+    'default'           => '',
+    'sanitize_callback' => 'absint',
+) );
+
+$wp_customize->add_control( 'lead_sidebar_category', array(
+    'label'    => 'Lead Sidebar Category',
+    'section'  => 'home_section',
+    'type'     => 'select',
+    'choices'  => wp_list_pluck(
+        get_categories( array( 'hide_empty' => false ) ),
+        'name',
+        'term_id'
+    ),
+) );
