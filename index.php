@@ -1204,7 +1204,12 @@ if ( $lead_sidebar_cat_id ) :
                                 <div class="Desc">
                                     <p class="WriterName"><i class="fa fa-edit" aria-hidden="true"></i> <?php echo esc_html(get_post_meta(get_the_ID(), 'post_reporter', true)); ?></p>
                                     <h2 class="Title">
-                                        <span class="subHeading"><?php echo esc_html(get_post_meta(get_the_ID(), '_post_shoulder', true)); ?></span>
+                                        <span class="subHeading"><?php 
+$shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true );
+if ( $shoulder ) {
+    echo esc_html( $shoulder ) . ' / ';
+}
+?></span>
                                         <?php the_title(); ?>
                                     </h2>
                                 </div>
