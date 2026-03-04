@@ -1143,20 +1143,20 @@ endif;
         </div>
         <section class="container">
             <div class="row">
-                <?php 
-                    $after_lead_id = get_theme_mod('after_lead');
-                    if ( $after_lead_id ) :
-
-                    $after_lead_query = new WP_Query( array(
-                        'cat'            => $after_lead_id,
-                        'posts_per_page' => 4,
-                    ) );
-                    if ( $after_lead_query->have_posts() ) : 
-                ?>
                 <div class="col-lg-8 col-12">
-                <a href="<?php echo esc_url( get_category_link( $after_lead_id ) ); ?>">
-                    <h2 class="SectionName"><?php echo esc_html( get_cat_name( $after_lead_id ) ); ?></h2>
-                </a>
+                    <?php 
+                        $after_lead_id = get_theme_mod('after_lead');
+                        if ( $after_lead_id ) :
+
+                        $after_lead_query = new WP_Query( array(
+                            'cat'            => $after_lead_id,
+                            'posts_per_page' => 4,
+                        ) );
+                        if ( $after_lead_query->have_posts() ) : 
+                    ?>
+                    <a href="<?php echo esc_url( get_category_link( $after_lead_id ) ); ?>">
+                        <h2 class="SectionName"><?php echo esc_html( get_cat_name( $after_lead_id ) ); ?></h2>
+                    </a>
                     <div class="row">
                         <div class="col-lg-6 col-12">
                             <?php 
@@ -1213,14 +1213,20 @@ endif;
                             <?php endif; endwhile; wp_reset_postdata(); ?>
                         </div>
                     </div>
+                    <?php endif; endif; ?>
                 </div>
-                <?php endif; endif; ?>
                 <div class="col-12 MobileShow">
                     <div class="d-flex justify-content-center mt-3">
                         <!-- Advertisement -->
                     </div>
                 </div>
                 <div class="col-lg-4 col-12">
+                    <?php 
+                        $latest_query = new WP_Query( array(
+                            'posts_per_page' => 15,
+                        ) );
+                        if ( $latest_query->have_posts() ) : 
+                    ?>
                     <div class="DLatestNewsSec">
                         <a href="/latest/news">
                             <div class="DTitleStyle">
@@ -1229,129 +1235,25 @@ endif;
                         </a>
                         <div class="DLatestNewsList">
                             <ul>
+                                <?php 
+                                    $count = 0;
+                                    while ( $after_lead_query->have_posts() ) : $after_lead_query->the_post();
+                                    $count++;
+                                    if ( $count < 16 ) : 
+                                ?>
                                 <li>
-                                    <a href="https://samakal.com/bangladesh/article/340205/ঋণখেলাপি-ও-দ্বৈত-নাগরিকদের-প্রতিদ্বন্দ্বিতার-সুযোগ-নির্বাচনে-উল্লেখযোগ্য-ব্যর্থতা">
+                                    <a href="<?php the_permalink(); ?>">
                                         <div class="d-flex  align-items-center">
-                                            <div class="d-flex h-100 align-items-center"><span class="Counter">১.</span></div>
-                                            <p class="Title">ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা</p>
+                                            <div class="d-flex h-100 align-items-center"><span class="Counter"><?php echo $count; ?>.</span></div>
+                                            <p class="Title"><?php the_title(); ?></p>
                                         </div>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="https://samakal.com/bangladesh/article/340204/পুলিশ-মহাপরিদর্শকের-দায়িত্ব-গ্রহণ-করলেন-আলী-হোসেন-ফকির">
-                                        <div class="d-flex  align-items-center">
-                                            <div class="d-flex h-100 align-items-center"><span class="Counter">২.</span></div>
-                                            <p class="Title">পুলিশ মহাপরিদর্শকের দায়িত্ব গ্রহণ করলেন আলী হোসেন ফকির</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://samakal.com/lifestyle/article/340203/ইফতারে-স্বস্তির-পানীয়">
-                                        <div class="d-flex  align-items-center">
-                                            <div class="d-flex h-100 align-items-center"><span class="Counter">৩.</span></div>
-                                            <p class="Title">ইফতারে স্বস্তির পানীয়</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://samakal.com/bangladesh/article/340202/জুনিয়র-বৃত্তি-পরীক্ষার-ফল-দুপুরে-জানা-যাবে-যেভাবে">
-                                        <div class="d-flex  align-items-center">
-                                            <div class="d-flex h-100 align-items-center"><span class="Counter">৪.</span></div>
-                                            <p class="Title">জুনিয়র বৃত্তি পরীক্ষার ফল দুপুরে, জানা যাবে যেভাবে</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://samakal.com/economics/article/340201/ভারতে-আরও-একটি-শাখা-খোলার-অনুমোদন-পেল-এবি-ব্যাংক">
-                                        <div class="d-flex  align-items-center">
-                                            <div class="d-flex h-100 align-items-center"><span class="Counter">৫.</span></div>
-                                            <p class="Title">ভারতে আরও একটি শাখা খোলার অনুমোদন পেল এবি ব্যাংক</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://samakal.com/bangladesh/article/340200/প্রতিরক্ষা-চুক্তির-সুষ্ঠু-বাস্তবায়ন-করা-হবে">
-                                        <div class="d-flex  align-items-center">
-                                            <div class="d-flex h-100 align-items-center"><span class="Counter">৬.</span></div>
-                                            <p class="Title">প্রতিরক্ষা চুক্তির সুষ্ঠু বাস্তবায়ন করা হবে</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://samakal.com/capital/article/340199/গান-নৃত্য-কবিতায়-ভাষাশহীদদের-স্মরণ">
-                                        <div class="d-flex  align-items-center">
-                                            <div class="d-flex h-100 align-items-center"><span class="Counter">৭.</span></div>
-                                            <p class="Title">গান-নৃত্য-কবিতায় ভাষাশহীদদের স্মরণ</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://samakal.com/bangladesh/article/340198/সময়ের-পরীক্ষায়-উত্তীর্ণ-অবিসংবাদিত-নেতা-তারেক-রহমান">
-                                        <div class="d-flex  align-items-center">
-                                            <div class="d-flex h-100 align-items-center"><span class="Counter">৮.</span></div>
-                                            <p class="Title">সময়ের পরীক্ষায় উত্তীর্ণ অবিসংবাদিত নেতা তারেক রহমান</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://samakal.com/whole-country/article/340197/ছেলেকে-মালয়েশিয়া-পাঠাতে-গিয়ে-সর্বস্বান্ত-এক-বাবা">
-                                        <div class="d-flex  align-items-center">
-                                            <div class="d-flex h-100 align-items-center"><span class="Counter">৯.</span></div>
-                                            <p class="Title">ছেলেকে মালয়েশিয়া পাঠাতে গিয়ে সর্বস্বান্ত এক বাবা</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://samakal.com/whole-country/article/340196/ফুটপাতে-দোকান-সড়কজুড়ে-অটোরিকশা-দুর্ভোগ-চরমে">
-                                        <div class="d-flex  align-items-center">
-                                            <div class="d-flex h-100 align-items-center"><span class="Counter">১০.</span></div>
-                                            <p class="Title">ফুটপাতে দোকান, সড়কজুড়ে অটোরিকশা, দুর্ভোগ চরমে</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://samakal.com/whole-country/article/340195/হেঁটে-যাওয়ার-দুর্ভোগ-ঘুচেছে-বন্দির-স্বজনদের">
-                                        <div class="d-flex  align-items-center">
-                                            <div class="d-flex h-100 align-items-center"><span class="Counter">১১.</span></div>
-                                            <p class="Title">হেঁটে যাওয়ার দুর্ভোগ ঘুচেছে বন্দির স্বজনদের</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://samakal.com/whole-country/article/340194/এসআইয়ের-গাড়িতে-ধারালো-অস্ত্র-ও-ওয়াকিটকি-গ্রেপ্তার-২">
-                                        <div class="d-flex  align-items-center">
-                                            <div class="d-flex h-100 align-items-center"><span class="Counter">১২.</span></div>
-                                            <p class="Title">এসআইয়ের গাড়িতে ধারালো অস্ত্র ও ওয়াকিটকি, গ্রেপ্তার ২</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://samakal.com/whole-country/article/340193/‘ব্যালটে-কথা-রেখেছে-জনগণ-এবার-পালা-আমাদের’">
-                                        <div class="d-flex  align-items-center">
-                                            <div class="d-flex h-100 align-items-center"><span class="Counter">১৩.</span></div>
-                                            <p class="Title">‘ব্যালটে কথা রেখেছে জনগণ এবার পালা আমাদের’</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://samakal.com/whole-country/article/340192/চিলাই-নদীর-রাবার-ড্যাম-ক্ষতিগ্রস্ত-হুমকির-মুখে-বোরো-ফসল">
-                                        <div class="d-flex  align-items-center">
-                                            <div class="d-flex h-100 align-items-center"><span class="Counter">১৪.</span></div>
-                                            <p class="Title">চিলাই নদীর রাবার ড্যাম ক্ষতিগ্রস্ত হুমকির মুখে বোরো ফসল</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://samakal.com/whole-country/article/340191/সিলেট-নগরীর-টনে-টনে-বর্জ্য-যাচ্ছে-সুরমায়">
-                                        <div class="d-flex  align-items-center">
-                                            <div class="d-flex h-100 align-items-center"><span class="Counter">১৫.</span></div>
-                                            <p class="Title">সিলেট নগরীর টনে টনে বর্জ্য যাচ্ছে সুরমায়</p>
-                                        </div>
-                                    </a>
-                                </li>
+                                <?php endif; endwhile; wp_reset_postdata(); ?>
                             </ul>
                         </div>
                     </div>
+                    <?php endif; endif; ?>
                 </div>
             </div>
         </section>
