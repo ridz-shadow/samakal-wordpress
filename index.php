@@ -1244,7 +1244,7 @@ endif;
                                 <li>
                                     <a href="<?php the_permalink(); ?>">
                                         <div class="d-flex  align-items-center">
-                                            <div class="d-flex h-100 align-items-center"><span class="Counter"><?php echo $count; ?>.</span></div>
+                                            <div class="d-flex h-100 align-items-center"><span class="Counter"><?php echo str_replace(['0','1','2','3','4','5','6','7','8','9'], ['০','১','২','৩','৪','৫','৬','৭','৮','৯'], $count); ?>.</span></div>
                                             <p class="Title"><?php the_title(); ?></p>
                                         </div>
                                     </a>
