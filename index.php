@@ -1149,19 +1149,19 @@ $after_lead_id = get_theme_mod('after_lead'); // Get selected category
 if ( $after_lead_id ) :
 
     // Fetch latest 2 posts from that category
-    $lead_sidebar_query = new WP_Query( array(
+    $after_lead_query = new WP_Query( array(
         'cat'            => $after_lead_id,
         'posts_per_page' => 2,
     ) ); ?>
-    if ( $lead_sidebar_query->have_posts() ) : ?>
+    if ( $after_lead_query->have_posts() ) : ?>
                 <div class="col-lg-8 col-12">
-                <a href="<?php echo esc_url( get_category_link( $lead_sidebar_cat_id ) ); ?>">
-                    <h2 class="SectionName"><?php echo esc_html( get_cat_name( $lead_sidebar_cat_id ) ); ?></h2>
+                <a href="<?php echo esc_url( get_category_link( $after_lead_id ) ); ?>">
+                    <h2 class="SectionName"><?php echo esc_html( get_cat_name( $after_lead_id ) ); ?></h2>
                 </a>
                     <div class="row">
                         <div class="col-lg-6 col-12">
                             <?php $count = 0;
-        while ( $lead_sidebar_query->have_posts() ) : $lead_sidebar_query->the_post();
+        while ( $after_lead_query->have_posts() ) : $after_lead_query->the_post();
             $count++;
             if ( $count === 1 ) : ?>
                             <div class="SpecialEventTop">
