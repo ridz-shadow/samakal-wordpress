@@ -1282,7 +1282,7 @@ endif;
 
                         $category_1_query = new WP_Query( array(
                             'cat'            => $category_1_id,
-                            'posts_per_page' => 4,
+                            'posts_per_page' => 5,
                         ) );
                         if ( $category_1_query->have_posts() ) : 
                     ?>
