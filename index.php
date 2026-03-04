@@ -1157,13 +1157,13 @@ endif;
                     <h2 class="SectionName"><?php echo esc_html( get_cat_name( $after_lead_id ) ); ?></h2>
                 </a>
                     <div class="row">
+                        <?php 
+                            $count = 0;
+                            while ( $after_lead_query->have_posts() ) : $after_lead_query->the_post();
+                            $count++;
+                        ?>
                         <div class="col-lg-6 col-12">
-                            <?php 
-                                $count = 0;
-                                while ( $after_lead_query->have_posts() ) : $after_lead_query->the_post();
-                                $count++;
-                                if ( $count === 1 ) : 
-                            ?>
+                            <?php if ( $count === 1 ) : ?>
                             <div class="SpecialEventTop">
                                 <a href="<?php the_permalink(); ?>">
                                     <div class="DImgZoomBlock .medium-video-icon">
@@ -1180,15 +1180,10 @@ endif;
                                     </div>
                                 </a>
                             </div>
-                            <?php break; endif; endwhile; wp_reset_postdata(); ?>
+                            <?php endif; ?>
                         </div>
                         <div class="col-lg-6 col-12">
-                            <?php 
-                                $count = 0;
-                                while ( $after_lead_query->have_posts() ) : $after_lead_query->the_post();
-                                $count++;
-                                if ( $count > 1 && $count < 5 ) : 
-                            ?>
+                            <?php if ( $count > 1 && $count < 5 ) : ?>
                             <div class="SpecialEventList">
                                 <a href="<?php the_permalink(); ?>">
                                     <div class="row">
@@ -1209,8 +1204,9 @@ endif;
                                     </div>
                                 </a>
                             </div>
-                            <?php break; endif; endwhile; wp_reset_postdata(); ?>
+                            <?php endif; ?>
                         </div>
+                        <?php endwhile; wp_reset_postdata(); ?>
                     </div>
                 </div>
                 <?php endif; endif; ?>
