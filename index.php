@@ -1253,7 +1253,7 @@ endif;
                             </ul>
                         </div>
                     </div>
-                    <?php endif; endif; ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </section>
