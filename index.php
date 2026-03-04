@@ -1149,7 +1149,7 @@ endif;
 
                 $after_lead_query = new WP_Query( array(
                     'cat'            => $after_lead_id,
-                    'posts_per_page' => 2,
+                    'posts_per_page' => 4,
                 ) );
                 if ( $after_lead_query->have_posts() ) : ?>
                 <div class="col-lg-8 col-12">
@@ -1183,13 +1183,19 @@ endif;
                             <?php break; endif; endwhile; wp_reset_postdata(); ?>
                         </div>
                         <div class="col-lg-6 col-12">
+                            <?php 
+                                $count = 0;
+                                while ( $after_lead_query->have_posts() ) : $after_lead_query->the_post();
+                                $count++;
+                                if ( $count > 1 && $count < 5 ) : 
+                            ?>
                             <div class="SpecialEventList">
-                                <a href="https://samakal.com/economics/article/340079/নগদকে-ব্যক্তিখাতে-ছাড়ার-বিষয়টি-সরকারের-নীতির-ওপর-নির্ভর-করবে">
+                                <a href="<?php the_permalink(); ?>">
                                     <div class="row">
                                         <div class="col-lg-5 col-5">
                                             <div class="DImgZoomBlock">
                                                 <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/ahsan-h-choudhury-1771933431.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="নগদকে ব্যক্তিখাতে ছাড়ার বিষয়টি সরকারের নীতির ওপর নির্ভর করবে" title="নগদকে ব্যক্তিখাতে ছাড়ার বিষয়টি সরকারের নীতির ওপর নির্ভর করবে"
+                                                    <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"
                                                         class="img-fluid img100">
                                                 </picture>
                                             </div>
@@ -1197,52 +1203,13 @@ endif;
                                         <div class="col-lg-7 col-7">
                                             <div class="Desc">
                                                 <div class="CatNameSP">অর্থনীতি</div>
-                                                <h2 class="Title FW700"><span class="subHeading">ব্যারিস্টার আরমানকে জানালেন গভর্নর / </span>নগদকে ব্যক্তিখাতে ছাড়ার বিষয়টি সরকারের নীতির ওপর নির্ভর করবে</h2>
+                                                <h2 class="Title FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
                             </div>
-                            <div class="SpecialEventList">
-                                <a href="https://samakal.com/bangladesh/article/340108/সোহরাওয়ার্দী-উদ্যানে-শিক্ষার্থী-সংবাদকর্মীদের-মারধর-৪-পুলিশ-সদস্য-প্রত্যাহার">
-                                    <div class="row">
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/shohoraa-1771946696.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="সোহরাওয়ার্দী উদ্যানে শিক্ষার্থী-সংবাদকর্মীদের মারধর, ৪ পুলিশ সদস্য প্রত্যাহার" title="সোহরাওয়ার্দী উদ্যানে শিক্ষার্থী-সংবাদকর্মীদের মারধর, ৪ পুলিশ সদস্য প্রত্যাহার"
-                                                        class="img-fluid img100">
-                                                </picture>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <div class="CatNameSP">বাংলাদেশ</div>
-                                                <h2 class="Title FW700">সোহরাওয়ার্দী উদ্যানে শিক্ষার্থী-সংবাদকর্মীদের মারধর, ৪ পুলিশ সদস্য প্রত্যাহার</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="SpecialEventList">
-                                <a href="https://samakal.com/bangladesh/article/340112/ভিক্ষুকের-মোবাইল-ব্যাংকিং-নম্বর-দিয়ে-হাতিয়ে-নেওয়া-হয়-লাখ-লাখ-টাকা">
-                                    <div class="row">
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/9-1771947490.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="ভিক্ষুকের মোবাইল ব্যাংকিং নম্বর দিয়ে হাতিয়ে নেওয়া হয় লাখ লাখ টাকা" title="ভিক্ষুকের মোবাইল ব্যাংকিং নম্বর দিয়ে হাতিয়ে নেওয়া হয় লাখ লাখ টাকা"
-                                                        class="img-fluid img100">
-                                                </picture>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <div class="CatNameSP">বাংলাদেশ</div>
-                                                <h2 class="Title FW700">ভিক্ষুকের মোবাইল ব্যাংকিং নম্বর দিয়ে হাতিয়ে নেওয়া হয় লাখ লাখ টাকা</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                            <?php break; endif; endwhile; wp_reset_postdata(); ?>
                         </div>
                     </div>
                 </div>
