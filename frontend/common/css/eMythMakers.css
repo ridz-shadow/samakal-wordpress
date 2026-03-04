@@ -39,11 +39,11 @@ a {
 
 a:hover {
     text-decoration: none;
-    color: #f9c802;
+    color: #c2272d;
 }
 
 a:hover .Title {
-    color: #f9c802;
+    color: #c2272d;
 }
 
 p {
@@ -182,7 +182,7 @@ picture img {
 
 .SectionName {
     margin: 18px 0;
-    border-left: 6px solid #f9c802;
+    border-left: 6px solid #c2272d;
     padding-left: 10px;
     color: #606060;
     font-size: 25px;
@@ -194,7 +194,7 @@ picture img {
     color: #333;
     font-size: 25px;
     text-align: center;
-    text-decoration: underline #f9c802;
+    text-decoration: underline #c2272d;
     text-underline-offset: 6px;
     text-decoration-thickness: 3px;
 }
@@ -389,7 +389,7 @@ span.publishTime {
 
 .HeaderVersionBtn a:hover {
     background: #f0f0f0;
-    color: #f9c802;
+    color: #c2272d;
 }
 
 .DHeaderTop2 {
@@ -429,7 +429,7 @@ span.publishTime {
 }
 
 .DHeaderNav .navbar-light .navbar-nav .nav-link:hover {
-    color: #f9c802;
+    color: #c2272d;
 }
 
 .DHeaderNav .navbar-light .navbar-nav .nav-link i {
@@ -454,7 +454,7 @@ span.publishTime {
 
 .DHeaderNav .dropdown-item:focus,
 .dropdown-item:hover {
-    color: #f9c802;
+    color: #c2272d;
     text-decoration: none;
     background: #555;
 }
@@ -482,7 +482,7 @@ span.publishTime {
     margin-top: 0;
     min-width: 1260px;
     background: #f0f0f0 !important;
-    border-bottom: 3px solid #f9c802;
+    border-bottom: 3px solid #c2272d;
 }
 
 .DHeaderNav .megamenu .col-lg-3 {
@@ -568,7 +568,7 @@ span.publishTime {
 .TopMenu .menu-left, .menu-right{cursor:pointer;color:#0d4676;font-size:18px;width:25px;}
 .TopMenu .menu-left{padding-left:5px;}
 .TopMenu .fa-w-11{font-size:14px;width:15px;}
-.TopMenu .menu-search a{color:#f9c802;font-size:20px;}
+.TopMenu .menu-search a{color:#c2272d;font-size:20px;}
 .TopMenu .mr-auto.LogoDate{position:relative;}
 .TopMenu .DLogoMobile img{height:auto;width:230px;padding:5px 0;}
 .TopMenu .mr-auto.LogoDate span{position:absolute;width:100%;left:0;bottom:-19px;color:#0d4676;font-size:13px;text-align:center;font-family:'PT Serif';}
@@ -614,7 +614,7 @@ span.publishTime {
 }
 
 /*.MobileMenuShow{display:none;}
-.MobileMenu{z-index:9999;top:80px;left:0;overflow:scroll;position:fixed;max-height:90vh;width:100%;background:#f9c802;}
+.MobileMenu{z-index:9999;top:80px;left:0;overflow:scroll;position:fixed;max-height:90vh;width:100%;background:#c2272d;}
 .MobileMenu .LiveViewMenu{position:relative;padding-bottom:20px;}
 .MobileMenuTop ul{list-style:none;padding-left:0px;margin:0;}
 .MobileMenuTop ul li a{color:#fff;padding:13px 0 0 10px;display:block;font-size:15px;}
@@ -677,7 +677,7 @@ span.publishTime {
     width: 380px;
     background: #ddd !important;
     padding: 8px 0;
-    border-top: 2px solid #f9c802;
+    border-top: 2px solid #c2272d;
 }
 
 .search_block:before {
@@ -685,7 +685,7 @@ span.publishTime {
     position: absolute;
     top: -30px;
     right: 40px;
-    border-color: transparent transparent #f9c802;
+    border-color: transparent transparent #c2272d;
     border-style: solid;
     border-width: 14px 12px;
 }
@@ -819,7 +819,7 @@ a.close-search {
     border: 0px solid #ccc;
     font-weight: 400;
     font-size: 17px;
-    background: #f9c802;
+    background: #c2272d;
     color: #fff;
 }
 
@@ -871,7 +871,7 @@ a.close-search {
 .TopMenu .menu-left,
 .menu-right {
     cursor: pointer;
-    color: #f9c802;
+    color: #c2272d;
     font-size: 18px;
     width: 28.5px;
 }
@@ -881,8 +881,8 @@ a.close-search {
     line-height: 13px;
     border-radius: 1px;
     padding: 5px 5px;
-    background: #f9c802;
-    border: 1px solid #f9c802;
+    background: #c2272d;
+    border: 1px solid #c2272d;
     letter-spacing: .2px;
 }
 
@@ -1227,7 +1227,7 @@ address {
 }
 
 .DHomeTopLead:hover .Title {
-    color: #f9c802;
+    color: #c2272d;
 }
 
 .DHomeTopLead .Desc .Brief p {
@@ -1332,7 +1332,7 @@ address {
 }
 
 .DHomeLeadList3:hover .Title {
-    color: #f9c802;
+    color: #c2272d;
 }
 
 .DHomeLeadList3 picture img {
@@ -1384,18 +1384,18 @@ address {
 /* .DLeadNews{width:100%;position:relative;border-bottom:1px solid #e2e2e2;margin-bottom:15px;}
 .DLeadNews .Desc{padding:5px 0 15px 0;}
 .DLeadNews .Desc .Title{font-size:28px;line-height:38px;color:#333;font-weight:700;margin-top:5px;}
-.DLeadNews:hover .Title{color:#f9c802;}
+.DLeadNews:hover .Title{color:#c2272d;}
 .DLeadNews .Desc .Brief p{-webkit-line-clamp:3;color:#555;font-size:16px;line-height:24px;margin-top:7px;}
 .PublishTime{color:#777;font-size:14px;}
 
 .DLeadNewsList3{width:100%;position:relative;}
 .DLeadNewsList3 .Desc{}
 .DLeadNewsList3 .Desc .Title{font-size:18px;line-height:25px;color:#333;font-weight:600;margin-top:5px;}
-.DLeadNewsList3:hover .Title{color:#f9c802;}
+.DLeadNewsList3:hover .Title{color:#c2272d;}
 .DLeadNewsList3 .Desc .Brief p{-webkit-line-clamp:2;color:#555;font-size:16px;line-height:24px;margin-top:7px;} */
 
 .DTitleStyle {
-    border-top: 2px solid #f9c802;
+    border-top: 2px solid #c2272d;
     border-bottom: 1px solid #ebebeb;
     margin-bottom: 5px;
 }
@@ -1410,7 +1410,7 @@ address {
 .DTitleStyle h3 i {
     font-size: 16px;
     margin-right: 7px;
-    color: #f9c802;
+    color: #c2272d;
 }
 
 .DQuickPostNews ul {
@@ -1563,7 +1563,7 @@ address {
 }
 
 .leadTop3-wrap:hover .Title2 {
-    color: #f9c802;
+    color: #c2272d;
 }
 
 .leadTop3-wrap:hover img {
@@ -1626,7 +1626,7 @@ address {
 }
 
 .DTitleStyle {
-    border-top: 2px solid #f9c802;
+    border-top: 2px solid #c2272d;
     border-bottom: 1px solid #ccc;
     margin-bottom: 5px;
 }
@@ -1641,7 +1641,7 @@ address {
 .DTitleStyle h3 i {
     font-size: 16px;
     margin-right: 7px;
-    color: #f9c802;
+    color: #c2272d;
 }
 
 .DLatestNewsList {
@@ -1666,7 +1666,7 @@ address {
 /*.DLatestNewsList ul li span {width:35px;font-size:30px;float:left;padding-right:5px;color:#db9641;}*/
 
 .DLatestNewsList .Counter {
-    color: #f9c802;
+    color: #c2272d;
     font-size: 30px;
     font-weight: 700;
     line-height: 42px;
@@ -2099,7 +2099,7 @@ address {
 
 .DCatStyle5List .WriterName {
     margin-top: 5px;
-    color: #f9c802;
+    color: #c2272d;
     font-style: italic;
     font-size: 14px;
 }
@@ -2833,7 +2833,7 @@ address {
 }
 
 .DCatLead:hover .DCatLeadTitle h1 {
-    color: #f9c802;
+    color: #c2272d;
 }
 
 .DCatLead:hover picture img {
@@ -2931,7 +2931,7 @@ address {
 }
 
 .read-more-btn a {
-    background: #f9c802;
+    background: #c2272d;
     color: #000;
     padding: 10px 30px;
     display: inline-block;
@@ -2961,7 +2961,7 @@ address {
 }
 
 .Catcards:hover h3 {
-    color: #f9c802;
+    color: #c2272d;
 }
 
 .Catcards span.publishTime {
@@ -3029,7 +3029,7 @@ address {
 }
 
 .CatListNews:hover .CatListhead h3 {
-    color: #f9c802;
+    color: #c2272d;
     line-height: 1.6;
 }
 
@@ -3148,7 +3148,7 @@ address {
 }
 
 .CatNewsListContent:hover .Title2 {
-    color: #f9c802;
+    color: #c2272d;
 }
 
 /* details-page */
@@ -3163,7 +3163,7 @@ address {
 
 .DsubHead {
     margin-bottom: 10px;
-    color: #f9c802;
+    color: #c2272d;
     font-size: 18px;
 }
 
@@ -3275,7 +3275,7 @@ address {
 }
 
 .DlastNews-list .dLastNewsText h5:hover {
-    color: #f9c802;
+    color: #c2272d;
 }
 
 .dlastHead {
@@ -3387,7 +3387,7 @@ address {
 }
 
 .Discuss-card:hover h3 {
-    color: #f9c802;
+    color: #c2272d;
 }
 
 .Discuss-card h3 {
@@ -3412,7 +3412,7 @@ address {
 .CatNameSP {
     margin-bottom: 5px;
     font-size: 16px;
-    color: #f9c802;
+    color: #c2272d;
 }
 
 .DTextZoom {
@@ -3552,7 +3552,7 @@ div.dNewsDesc blockquote::before {
 }
 
 .ButtonBG {
-    background: #f9c802;
+    background: #c2272d;
     border-radius: 0;
     border: none;
     color: #fff;
