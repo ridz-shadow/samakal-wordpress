@@ -1181,7 +1181,7 @@ endif;
                                     </div>
                                 </a>
                             </div>
-                            <?php break; endif; endwhile; wp_reset_postdata(); ?>
+                            <?php endif; endwhile; wp_reset_postdata(); ?>
                         </div>
                         <div class="col-lg-6 col-12">
                             <?php 
