@@ -1245,7 +1245,7 @@ endif;
                                     <a href="<?php the_permalink(); ?>">
                                         <div class="d-flex  align-items-center">
                                             <div class="d-flex h-100 align-items-center"><span class="Counter"><?php echo str_replace(['0','1','2','3','4','5','6','7','8','9'], ['০','১','২','৩','৪','৫','৬','৭','৮','৯'], $count); ?>.</span></div>
-                                            <p class="Title"><?php the_title(); ?></p>
+                                            <p class="Title"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></p>
                                         </div>
                                     </a>
                                 </li>
@@ -1352,119 +1352,78 @@ endif;
                     </div>
                 </div>
                 <div class="col-lg-6 col-12 Capital">
-                    <a href="/capital">
-                        <h2 class="SectionName"> রাজধানী </h2>
+                    <?php 
+                        $home_category_id = get_theme_mod('category_2');
+                        if ( $home_category_id ) :
+
+                        $home_category_query = new WP_Query( array(
+                            'cat'            => $home_category_id,
+                            'posts_per_page' => 5,
+                        ) );
+                        if ( $home_category_query->have_posts() ) : 
+                    ?>
+                    <a href="<?php echo esc_url( get_category_link( $home_category_id ) ); ?>">
+                        <h2 class="SectionName"><?php echo esc_html( get_cat_name( $home_category_id ) ); ?></h2>
                     </a>
+                    <?php 
+                        $count = 0;
+                        while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                        $count++;
+                        if ( $count === 1 ) : 
+                    ?>
                     <div class="WritersSectionTop">
-                        <a href="https://samakal.com/capital/article/340199/গান-নৃত্য-কবিতায়-ভাষাশহীদদের-স্মরণ">
+                        <a href="<?php the_permalink(); ?>">
                             <div class="row">
                                 <div class="col-lg-6 col-12">
                                     <div class="DImgZoomBlock ">
-                                        <picture> <img data-src="https://samakal.com/media/imgAll/2026February/untitled-11-1771988140.jpg" src="https://samakal.com/media/common/img-400x250.jpg" alt="গান-নৃত্য-কবিতায় ভাষাশহীদদের স্মরণ" title="গান-নৃত্য-কবিতায় ভাষাশহীদদের স্মরণ"
+                                        <picture> <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-400x250.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"
                                                 class="img-fluid img100"></picture>
 
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-12">
                                     <div class="Desc">
-                                        <h2 class="Title FW700"><span class="subHeading">শহীদ মিনারে অমর একুশের অনুষ্ঠানমালা / </span>গান-নৃত্য-কবিতায় ভাষাশহীদদের স্মরণ</h2>
+                                        <h2 class="Title FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                         <div class="Brief">
-                                            <p>মহান শহীদ দিবস ও আন্তর্জাতিক মাতৃভাষা দিবস উপলক্ষে গণসংগীত সমন্বয় পরিষদের আয়োজনে কেন্দ্রীয় শহীদ মিনারে অমর একুশের অনুষ্ঠানমালা অনুষ্ঠিত হয়েছে। গতকাল মঙ্গলবার বিকেল ৪টা থেকে</p>
+                                            <p><?php the_excerpt(); ?></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
+                    <?php endif; endwhile; wp_reset_postdata(); ?>
                     <div class="row">
+                        <?php 
+                            $count = 0;
+                            while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                            $count++;
+                            if ( $count > 1 && $count < 6 ) : 
+                        ?>
                         <div class="col-lg-6 col-12 d-flex">
                             <div class="DCategory6NewsList MT-25">
-                                <a href="https://samakal.com/capital/article/340157/অমর-একুশে-বইমেলা-শুরু-কাল" class="align-self-stretch">
+                                <a href="<?php the_permalink(); ?>" class="align-self-stretch">
                                     <div class="row">
                                         <div class="col-lg-5 col-5">
                                             <div class="DImgZoomBlock ">
                                                 <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771983781.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="অমর একুশে বইমেলা শুরু কাল" title="অমর একুশে বইমেলা শুরু কাল" class="img-fluid img100">
+                                                    <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="img-fluid img100">
                                                 </picture>
 
                                             </div>
                                         </div>
                                         <div class="col-lg-7 col-7">
                                             <div class="Desc">
-                                                <h2 class="Title FW700"><span class="subHeading">উদ্বোধন করবেন প্রধানমন্ত্রী / </span>অমর একুশে বইমেলা শুরু কাল</h2>
+                                                <h2 class="Title FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-12 d-flex">
-                            <div class="DCategory6NewsList MT-25">
-                                <a href="https://samakal.com/capital/article/340104/সোহরাওয়ার্দী-উদ্যানে-পুলিশি-হামলার-বিরুদ্ধে-ব্যবস্থার-দাবিতে-বিক্ষোভ" class="align-self-stretch">
-                                    <div class="row">
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/bikshov-1771945089.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="সোহরাওয়ার্দী উদ্যানে পুলিশি হামলার বিরুদ্ধে ব্যবস্থার দাবিতে বিক্ষোভ" title="সোহরাওয়ার্দী উদ্যানে পুলিশি হামলার বিরুদ্ধে ব্যবস্থার দাবিতে বিক্ষোভ"
-                                                        class="img-fluid img100">
-                                                </picture>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700">সোহরাওয়ার্দী উদ্যানে পুলিশি হামলার বিরুদ্ধে ব্যবস্থার দাবিতে বিক্ষোভ</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-12 d-flex">
-                            <div class="DCategory6NewsList MT-25">
-                                <a href="https://samakal.com/capital/article/340097/উপাচার্য-ট্রেজারার-বদল-হলে-জবি-থেকেই-নিয়োগের-দাবি-শিক্ষক-সমিতির" class="align-self-stretch">
-                                    <div class="row">
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/jogonnath-1771941162.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="উপাচার্য-ট্রেজারার বদল হলে জবি থেকেই নিয়োগের দাবি শিক্ষক সমিতির" title="উপাচার্য-ট্রেজারার বদল হলে জবি থেকেই নিয়োগের দাবি শিক্ষক সমিতির"
-                                                        class="img-fluid img100">
-                                                </picture>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700">উপাচার্য-ট্রেজারার বদল হলে জবি থেকেই নিয়োগের দাবি শিক্ষক সমিতির</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-12 d-flex">
-                            <div class="DCategory6NewsList MT-25">
-                                <a href="https://samakal.com/capital/article/340063/বহুমাত্রিক-বাংলাদেশের-প্রত্যয়ে-শুরু-হচ্ছে-অমর-একুশে-বইমেলা" class="align-self-stretch">
-                                    <div class="row">
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/book-1771926040.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="বহুমাত্রিক বাংলাদেশের প্রত্যয়ে শুরু হচ্ছে অমর একুশে বইমেলা" title="বহুমাত্রিক বাংলাদেশের প্রত্যয়ে শুরু হচ্ছে অমর একুশে বইমেলা"
-                                                        class="img-fluid img100">
-                                                </picture>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700">বহুমাত্রিক বাংলাদেশের প্রত্যয়ে শুরু হচ্ছে অমর একুশে বইমেলা</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        <?php endif; endwhile; wp_reset_postdata(); ?>
                     </div>
+                    <?php endif; endif; ?>
                 </div>
             </div>
         </section>
