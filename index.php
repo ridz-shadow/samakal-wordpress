@@ -1518,131 +1518,66 @@ endif;
             </div>
         </div>
         <div class="DVideoSecBG">
+            <?php 
+                $home_category_id = get_theme_mod('category_4');
+                if ( $home_category_id ) :
+
+                $home_category_query = new WP_Query( array(
+                    'cat'            => $home_category_id,
+                    'posts_per_page' => 11,
+                ) );
+                if ( $home_category_query->have_posts() ) : 
+            ?>
             <div class="container">
                 <div class="SectionTitle SpTitle">
-                    <a href="/video-gallery">
-                        <h3>ভিডিও</h3>
+                    <a href="<?php echo esc_url( get_category_link( $home_category_id ) ); ?>">
+                        <h3><?php echo esc_html( get_cat_name( $home_category_id ) ); ?></h3>
                     </a>
                 </div>
                 <div class="DVideoGallery">
                     <div class="row">
+                        <?php 
+                            $count = 0;
+                            while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                            $count++;
+                            if ( $count < 4 ) : 
+                        ?>
                         <div class="col-lg-4 col-12 d-flex">
                             <div class="DTopVideo2 align-self-stretch">
-                                <a href="https://samakal.com/video-gallery/bangladesh/1682">
+                                <a href="<?php the_permalink(); ?>">
                                     <div class="DImgBlock">
-                                        <picture><img src="https://img.youtube.com/vi/RZcWCX7F0ag/maxresdefault.jpg" alt="'একুশের চেতনা সারা পৃথিবীব্যাপী ছড়িয়ে পড়ুক'" title="'একুশের চেতনা সারা পৃথিবীব্যাপী ছড়িয়ে পড়ুক'"></picture>
+                                        <picture><img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"></picture>
                                         <div class="card-video-img transition"></div>
                                     </div>
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-12 d-flex">
-                            <div class="DTopVideo2 align-self-stretch">
-                                <a href="https://samakal.com/video-gallery/bangladesh/1679">
-                                    <div class="DImgBlock">
-                                        <picture><img src="https://img.youtube.com/vi/5oWlY24MQJI/maxresdefault.jpg" alt="চির প্রেরণার অমর একুশে ফেব্রুয়ারি আজ" title="চির প্রেরণার অমর একুশে ফেব্রুয়ারি আজ"></picture>
-                                        <div class="card-video-img transition"></div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-12 d-flex">
-                            <div class="DTopVideo2 align-self-stretch">
-                                <a href="https://samakal.com/video-gallery/bangladesh/1681">
-                                    <div class="DImgBlock">
-                                        <picture><img src="https://img.youtube.com/vi/VLIbrFo04jg/maxresdefault.jpg" alt="প্রথমবারের মতো শহীদ মিনারে শ্রদ্ধা জানালেন জামায়াত আমির" title="প্রথমবারের মতো শহীদ মিনারে শ্রদ্ধা জানালেন জামায়াত আমির"></picture>
-                                        <div class="card-video-img transition"></div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        <?php endif; endwhile; wp_reset_postdata(); ?>
                     </div>
                     <div class="VideoSlider">
                         <div class="row">
+                            <?php 
+                                $count = 0;
+                                while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                $count++;
+                                if ( $count > 3 && $count < 12 ) : 
+                            ?>
                             <div class="col-lg-3 col-6 mb-4">
                                 <div class="DVideoGalleryTop3List">
-                                    <a href="https://samakal.com/video-gallery/bangladesh/1678">
+                                    <a href="<?php the_permalink(); ?>">
                                         <div class="DImgBlock">
-                                            <img src="https://img.youtube.com/vi/rkmf3fAYaKU/maxresdefault.jpg" alt="'প্রতিটা দল যেন বাধাহীনভাবে প্রতিবছর ফুল দিতে পারে'" title="'প্রতিটা দল যেন বাধাহীনভাবে প্রতিবছর ফুল দিতে পারে'" class="img-fluid">
+                                            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="img-fluid">
                                             <div class="card-video-img transition"></div>
                                         </div>
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-6 mb-4">
-                                <div class="DVideoGalleryTop3List">
-                                    <a href="https://samakal.com/video-gallery/bangladesh/1680">
-                                        <div class="DImgBlock">
-                                            <img src="https://img.youtube.com/vi/KPzCXqN8Ofk/maxresdefault.jpg" alt="মন্ত্রিসভার সদস্যদের নিয়ে শহীদ মিনারে তারেক রহমানের শ্রদ্ধা" title="মন্ত্রিসভার সদস্যদের নিয়ে শহীদ মিনারে তারেক রহমানের শ্রদ্ধা" class="img-fluid">
-                                            <div class="card-video-img transition"></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-6 mb-4">
-                                <div class="DVideoGalleryTop3List">
-                                    <a href="https://samakal.com/video-gallery/bangladesh/1677">
-                                        <div class="DImgBlock">
-                                            <img src="https://img.youtube.com/vi/HqogE84MiRY/maxresdefault.jpg" alt="ছাত্রশিবিরের গুপ্ত রাজনীতির বাস্তবতা বিশ্বের কোথাও নেই: ছাত্রদল সভাপতি" title="ছাত্রশিবিরের গুপ্ত রাজনীতির বাস্তবতা বিশ্বের কোথাও নেই: ছাত্রদল সভাপতি" class="img-fluid">
-                                            <div class="card-video-img transition"></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-6 mb-4">
-                                <div class="DVideoGalleryTop3List">
-                                    <a href="https://samakal.com/video-gallery/bangladesh/1676">
-                                        <div class="DImgBlock">
-                                            <img src="https://img.youtube.com/vi/GeexTeYuh18/maxresdefault.jpg" alt="মির্জা আব্বাসের শপথ স্থগিত চেয়ে ইসিতে নাসীরুদ্দীন পাটওয়ারীর আবেদন" title="মির্জা আব্বাসের শপথ স্থগিত চেয়ে ইসিতে নাসীরুদ্দীন পাটওয়ারীর আবেদন" class="img-fluid">
-                                            <div class="card-video-img transition"></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-6 mb-4">
-                                <div class="DVideoGalleryTop3List">
-                                    <a href="https://samakal.com/video-gallery/bangladesh/1675">
-                                        <div class="DImgBlock">
-                                            <img src="https://img.youtube.com/vi/vkwt8VFYL0g/maxresdefault.jpg" alt="কঠিন চ্যালেঞ্জ নিয়ে আমাদের দায়িত্ব গ্রহণ করতে হবে: এ্যানি" title="কঠিন চ্যালেঞ্জ নিয়ে আমাদের দায়িত্ব গ্রহণ করতে হবে: এ্যানি" class="img-fluid">
-                                            <div class="card-video-img transition"></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-6 mb-4">
-                                <div class="DVideoGalleryTop3List">
-                                    <a href="https://samakal.com/video-gallery/bangladesh/1674">
-                                        <div class="DImgBlock">
-                                            <img src="https://img.youtube.com/vi/4sHSlINsQSo/maxresdefault.jpg" alt="তারেক রহমানের আসনে কেমন হলো নির্বাচন?" title="তারেক রহমানের আসনে কেমন হলো নির্বাচন?" class="img-fluid">
-                                            <div class="card-video-img transition"></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-6 mb-4">
-                                <div class="DVideoGalleryTop3List">
-                                    <a href="https://samakal.com/video-gallery/bangladesh/1673">
-                                        <div class="DImgBlock">
-                                            <img src="https://img.youtube.com/vi/2j-tvXSxgX0/maxresdefault.jpg" alt="মির্জা আব্বাস-পাটওয়ারীর আসনে কেমন হলো নির্বাচন" title="মির্জা আব্বাস-পাটওয়ারীর আসনে কেমন হলো নির্বাচন" class="img-fluid">
-                                            <div class="card-video-img transition"></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-6 mb-4">
-                                <div class="DVideoGalleryTop3List">
-                                    <a href="https://samakal.com/video-gallery/bangladesh/1672">
-                                        <div class="DImgBlock">
-                                            <img src="https://img.youtube.com/vi/v28GKQHOD6Q/maxresdefault.jpg" alt="এবারের নির্বাচনে নারী ভোটার কি বেশি ছিল?" title="এবারের নির্বাচনে নারী ভোটার কি বেশি ছিল?" class="img-fluid">
-                                            <div class="card-video-img transition"></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                            <?php endif; endwhile; wp_reset_postdata(); ?>
                         </div>
                     </div>
                 </div>
             </div>
+            <?php endif; endif; ?>
         </div>
         <div class="container">
             <div class="row MobileShow">
@@ -1656,72 +1591,52 @@ endif;
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 border-right-inner1 MT-25">
+                    <?php 
+                        $home_category_id = get_theme_mod('category_5');
+                        if ( $home_category_id ) :
+
+                        $home_category_query = new WP_Query( array(
+                            'cat'            => $home_category_id,
+                            'posts_per_page' => 3,
+                        ) );
+                        if ( $home_category_query->have_posts() ) : 
+                    ?>
                     <div class="SectionTitle">
-                        <a href="/bangladesh">
-                            <h3>বাংলাদেশ</h3>
+                        <a href="<?php echo esc_url( get_category_link( $home_category_id ) ); ?>">
+                            <h3><?php echo esc_html( get_cat_name( $home_category_id ) ); ?></h3>
                         </a>
                     </div>
                     <div class="DBangladesh">
                         <div class="row">
+                            <?php 
+                                $count = 0;
+                                while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                $count++;
+                                if ( $count < 4 ) : 
+                            ?>
                             <div class="col-lg-4 d-flex">
                                 <div class="DBangladeshList align-self-stretch">
-                                    <a href="https://samakal.com/bangladesh/article/340205/ঋণখেলাপি-ও-দ্বৈত-নাগরিকদের-প্রতিদ্বন্দ্বিতার-সুযোগ-নির্বাচনে-উল্লেখযোগ্য-ব্যর্থতা">
+                                    <a href="<?php the_permalink(); ?>">
                                         <div class="row">
                                             <div class="col-lg-12 col-5">
                                                 <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/sujon-1772002167.jpg" alt="ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা" src="https://samakal.com/media/common/img-300x169.jpg" title="ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা"
+                                                    <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" title="<?php the_title(); ?>"
                                                         class="img-fluid">
                                                 </picture>
                                             </div>
                                             <div class="col-lg-12 col-7">
                                                 <div class="Desc">
-                                                    <h3 class="Title"><span class="subHeading">সুজনের পর্যবেক্ষণ / </span>ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা</h3>
+                                                    <h3 class="Title"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h3>
                                                 </div>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-lg-4 d-flex">
-                                <div class="DBangladeshList align-self-stretch">
-                                    <a href="https://samakal.com/bangladesh/article/340204/পুলিশ-মহাপরিদর্শকের-দায়িত্ব-গ্রহণ-করলেন-আলী-হোসেন-ফকির">
-                                        <div class="row">
-                                            <div class="col-lg-12 col-5">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/police-igp-1772001363.jpg" alt="পুলিশ মহাপরিদর্শকের দায়িত্ব গ্রহণ করলেন আলী হোসেন ফকির" src="https://samakal.com/media/common/img-300x169.jpg" title="পুলিশ মহাপরিদর্শকের দায়িত্ব গ্রহণ করলেন আলী হোসেন ফকির"
-                                                        class="img-fluid">
-                                                </picture>
-                                            </div>
-                                            <div class="col-lg-12 col-7">
-                                                <div class="Desc">
-                                                    <h3 class="Title">পুলিশ মহাপরিদর্শকের দায়িত্ব গ্রহণ করলেন আলী হোসেন ফকির</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 d-flex">
-                                <div class="DBangladeshList align-self-stretch">
-                                    <a href="https://samakal.com/bangladesh/article/340184/শুল্ক-নিয়ে-বৈশ্বিক-বাণিজ্যে-অনিশ্চয়তা-আরও-বাড়ল">
-                                        <div class="row">
-                                            <div class="col-lg-12 col-5">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771986775.jpg" alt="শুল্ক নিয়ে বৈশ্বিক বাণিজ্যে অনিশ্চয়তা আরও বাড়ল" src="https://samakal.com/media/common/img-300x169.jpg" title="শুল্ক নিয়ে বৈশ্বিক বাণিজ্যে অনিশ্চয়তা আরও বাড়ল"
-                                                        class="img-fluid">
-                                                </picture>
-                                            </div>
-                                            <div class="col-lg-12 col-7">
-                                                <div class="Desc">
-                                                    <h3 class="Title">শুল্ক নিয়ে বৈশ্বিক বাণিজ্যে অনিশ্চয়তা আরও বাড়ল</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                            <?php endif; endwhile; wp_reset_postdata(); ?>
                         </div>
                     </div>
+                    <?php endif; endif; ?>
                 </div>
                 <div class="col-lg-3 MT-25">
                     <div class="SectionTitle">
