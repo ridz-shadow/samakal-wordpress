@@ -1203,7 +1203,7 @@ endif;
                                         </div>
                                         <div class="col-lg-7 col-7">
                                             <div class="Desc">
-                                                <div class="CatNameSP">অর্থনীতি</div>
+                                                <div class="CatNameSP"><?php echo ($cats = get_the_category()) ? esc_html($cats[0]->name) : ''; ?></div>
                                                 <h2 class="Title FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                             </div>
                                         </div>
