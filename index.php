@@ -1144,26 +1144,26 @@ endif;
         <section class="container">
             <div class="row">
             <?php 
-$after_lead_id = get_theme_mod('after_lead'); // Get selected category
+                $after_lead_id = get_theme_mod('after_lead');
+                if ( $after_lead_id ) :
 
-if ( $after_lead_id ) :
-
-    // Fetch latest 2 posts from that category
-    $after_lead_query = new WP_Query( array(
-        'cat'            => $after_lead_id,
-        'posts_per_page' => 2,
-    ) ); ?>
-    if ( $after_lead_query->have_posts() ) : ?>
+                $after_lead_query = new WP_Query( array(
+                    'cat'            => $after_lead_id,
+                    'posts_per_page' => 2,
+                ) );
+                if ( $after_lead_query->have_posts() ) : ?>
                 <div class="col-lg-8 col-12">
                 <a href="<?php echo esc_url( get_category_link( $after_lead_id ) ); ?>">
                     <h2 class="SectionName"><?php echo esc_html( get_cat_name( $after_lead_id ) ); ?></h2>
                 </a>
                     <div class="row">
                         <div class="col-lg-6 col-12">
-                            <?php $count = 0;
-        while ( $after_lead_query->have_posts() ) : $after_lead_query->the_post();
-            $count++;
-            if ( $count === 1 ) : ?>
+                            <?php 
+                                $count = 0;
+                                while ( $after_lead_query->have_posts() ) : $after_lead_query->the_post();
+                                $count++;
+                                if ( $count === 1 ) : 
+                            ?>
                             <div class="SpecialEventTop">
                                 <a href="<?php the_permalink(); ?>">
                                     <div class="DImgZoomBlock .medium-video-icon">
@@ -1173,23 +1173,14 @@ if ( $after_lead_id ) :
                                         <div class="card-video-img"></div>
                                     </div>
                                     <div class="Desc">
-                                        <h2 class="Title FW700"><span class="subHeading"><?php 
-$shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true );
-if ( $shoulder ) {
-    echo esc_html( $shoulder ) . ' / ';
-}
-?></span><?php the_title(); ?></h2>
+                                        <h2 class="Title FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                         <div class="Brief">
                                             <p><?php the_excerpt(); ?></p>
                                         </div>
                                     </div>
                                 </a>
                             </div>
-                            <?php 
-                break; // Stop the loop after the third post
-            endif;
-        endwhile; 
-        wp_reset_postdata(); ?>
+                            <?php break; endif; endwhile; wp_reset_postdata(); ?>
                         </div>
                         <div class="col-lg-6 col-12">
                             <div class="SpecialEventList">
@@ -1255,9 +1246,7 @@ if ( $shoulder ) {
                         </div>
                     </div>
                 </div>
-                <?php endif; 
-endif; 
-?>
+                <?php endif; endif; ?>
                 <div class="col-12 MobileShow">
                     <div class="d-flex justify-content-center mt-3">
                         <!-- Advertisement -->
