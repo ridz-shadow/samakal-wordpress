@@ -1286,14 +1286,14 @@ endif;
                         ) );
                         if ( $category_1_query->have_posts() ) : 
                     ?>
-                    <a href="<?php echo esc_url( get_category_link( $after_lead_id ) ); ?>">
-                        <h2 class="SectionName"> <?php echo esc_html( get_cat_name( $after_lead_id ) ); ?> </h2>
+                    <a href="<?php echo esc_url( get_category_link( $category_1_id ) ); ?>">
+                        <h2 class="SectionName"> <?php echo esc_html( get_cat_name( $category_1_id ) ); ?> </h2>
                     </a>
                     <div class="row">
                         <div class="col-lg-6 col-12">
                             <?php 
                                 $count = 0;
-                                while ( $after_lead_query->have_posts() ) : $after_lead_query->the_post();
+                                while ( $category_1_query->have_posts() ) : $category_1_query->the_post();
                                 $count++;
                                 if ( $count === 1 ) : 
                             ?>
@@ -1317,7 +1317,7 @@ endif;
                         <div class="col-lg-6 col-12">
                             <?php 
                                 $count = 0;
-                                while ( $after_lead_query->have_posts() ) : $after_lead_query->the_post();
+                                while ( $category_1_query->have_posts() ) : $category_1_query->the_post();
                                 $count++;
                                 if ( $count > 1 && $count < 6 ) : 
                             ?>
