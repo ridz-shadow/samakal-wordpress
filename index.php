@@ -1437,151 +1437,76 @@ endif;
             </div>
         </div>
         <section class="container MT-60">
-            <a href="/sports">
-                <h2 class="SectionName">খেলা</h2>
+            <?php 
+                $home_category_id = get_theme_mod('category_3');
+                if ( $home_category_id ) :
+
+                $home_category_query = new WP_Query( array(
+                    'cat'            => $home_category_id,
+                    'posts_per_page' => 7,
+                ) );
+                if ( $home_category_query->have_posts() ) : 
+            ?>
+            <a href="<?php echo esc_url( get_category_link( $home_category_id ) ); ?>">
+                <h2 class="SectionName"><?php echo esc_html( get_cat_name( $home_category_id ) ); ?></h2>
             </a>
             <div class="row">
                 <div class="col-lg-5 col-12">
+                    <?php 
+                        $count = 0;
+                        while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                        $count++;
+                        if ( $count === 1 ) : 
+                    ?>
                     <div class="DSportsTopNews">
-                        <a href="https://samakal.com/sports/article/340089/টস-জিতে-ব্যাটিংয়ে-পাকিস্তান-ফিরলেন-শাহিন-আফ্রিদি">
+                        <a href="<?php the_permalink(); ?>">
                             <div class="DImgZoomBlock">
-                                <picture> <img data-src="https://samakal.com/media/imgAll/2026February/eng-pak-1771939089.jpg" src="https://samakal.com/media/common/img-400x250.jpg" alt="টস জিতে ব্যাটিংয়ে পাকিস্তান, ফিরলেন শাহিন আফ্রিদি" title="টস জিতে ব্যাটিংয়ে পাকিস্তান, ফিরলেন শাহিন আফ্রিদি"
+                                <picture> <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-400x250.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"
                                         class="img-fluid img100"> </picture>
                             </div>
                             <div class="Desc">
-                                <h2 class="Title FW700">টস জিতে ব্যাটিংয়ে পাকিস্তান, ফিরলেন শাহিন আফ্রিদি</h2>
+                                <h2 class="Title FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                 <div class="Brief">
-                                    <p>টি-টোয়েন্টি বিশ্বকাপের সুপার এইটে নিজেদের গুরুত্বপূর্ণ ম্যাচে ইংল্যান্ডের বিপক্ষে টস জিতে আগে ব্যাটিংয়ের সিদ্ধান্ত নিয়েছে পাকিস্তান</p>
+                                    <p><?php the_excerpt(); ?></p>
                                 </div>
                             </div>
                         </a>
                     </div>
+                    <?php endif; endwhile; wp_reset_postdata(); ?>
                 </div>
                 <div class="col-lg-7 col-12 order-lg-first">
                     <div class="row">
+                        <?php 
+                            $count = 0;
+                            while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                            $count++;
+                            if ( $count > 1 && $count < 8 ) : 
+                        ?>
                         <div class="col-lg-4 col-12 d-flex">
                             <div class="DSportsList align-self-stretch">
-                                <a href="https://samakal.com/sports/article/340101/বিশ্বকাপে-বাংলাদেশের-পতাকা-নিয়ে-যাবে-শাহ-সিমেন্ট-ও-হামজার-নাম্বার-ওয়ান-ফ্যানরা">
+                                <a href="<?php the_permalink(); ?>">
                                     <div class="row">
                                         <div class="col-lg-12 col-5">
                                             <div class="DImgZoomBlock ">
-                                                <picture> <img data-src="https://samakal.com/media/imgAll/2026February/SM/hamza-1771942827.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="বিশ্বকাপে বাংলাদেশের পতাকা নিয়ে যাবে শাহ সিমেন্ট ও হামজার নাম্বার ওয়ান ফ্যানরা"
-                                                        title="বিশ্বকাপে বাংলাদেশের পতাকা নিয়ে যাবে শাহ সিমেন্ট ও হামজার নাম্বার ওয়ান ফ্যানরা" class="img-fluid img100"></picture>
+                                                <picture> <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>"
+                                                        title="<?php the_title(); ?>" class="img-fluid img100"></picture>
 
                                             </div>
                                         </div>
                                         <div class="col-lg-12 col-7">
                                             <div class="Desc">
-                                                <h2 class="Title FW700">বিশ্বকাপে বাংলাদেশের পতাকা নিয়ে যাবে শাহ সিমেন্ট ও হামজার নাম্বার ওয়ান ফ্যানরা</h2>
+                                                <h2 class="Title FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-12 d-flex">
-                            <div class="DSportsList align-self-stretch">
-                                <a href="https://samakal.com/sports/article/340088/স্বাগতিকদের-বাড়তি-সুবিধা-দিতে-বিশ্বকাপের-মাঝপথে-সূচি-বদলাল-আইসিসি">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture> <img data-src="https://samakal.com/media/imgAll/2026February/SM/sl-1771938188.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="স্বাগতিকদের বাড়তি সুবিধা দিতে বিশ্বকাপের মাঝপথে সূচি বদলাল আইসিসি"
-                                                        title="স্বাগতিকদের বাড়তি সুবিধা দিতে বিশ্বকাপের মাঝপথে সূচি বদলাল আইসিসি" class="img-fluid img100"></picture>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700">স্বাগতিকদের বাড়তি সুবিধা দিতে বিশ্বকাপের মাঝপথে সূচি বদলাল আইসিসি</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-12 d-flex">
-                            <div class="DSportsList align-self-stretch">
-                                <a href="https://samakal.com/sports/article/340073/শচীনকে-আউট-দেয়ার-২২-বছর-পর-আম্পায়ারের-ভুল-স্বীকার">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture> <img data-src="https://samakal.com/media/imgAll/2026February/SM/sachin-1771931231.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="শচীনকে আউট দেয়ার ২২ বছর পর আম্পায়ারের ভুল স্বীকার" title="শচীনকে আউট দেয়ার ২২ বছর পর আম্পায়ারের ভুল স্বীকার"
-                                                        class="img-fluid img100"></picture>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700">শচীনকে আউট দেয়ার ২২ বছর পর আম্পায়ারের ভুল স্বীকার</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-12 d-flex">
-                            <div class="DSportsList align-self-stretch">
-                                <a href="https://samakal.com/sports/article/340060/নারী-বিশ্বকাপের-সূচি-প্রকাশ-বাংলাদেশের-ম্যাচ-কবে-কখন">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture> <img data-src="https://samakal.com/media/imgAll/2026February/SM/bd-t20-1771924237.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="নারী বিশ্বকাপের সূচি প্রকাশ, বাংলাদেশের ম্যাচ কবে-কখন" title="নারী বিশ্বকাপের সূচি প্রকাশ, বাংলাদেশের ম্যাচ কবে-কখন"
-                                                        class="img-fluid img100"></picture>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700">নারী বিশ্বকাপের সূচি প্রকাশ, বাংলাদেশের ম্যাচ কবে-কখন</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-12 d-flex">
-                            <div class="DSportsList align-self-stretch">
-                                <a href="https://samakal.com/sports/article/340052/পাকিস্তানের-সেমির-আশায়-কি-ফের-বাধা-হয়ে-দাঁড়াবে-বৃষ্টি-">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture> <img data-src="https://samakal.com/media/imgAll/2026February/SM/eng-pak-1771919289.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="পাকিস্তানের সেমির আশায় কি ফের বাধা হয়ে দাঁড়াবে বৃষ্টি?"
-                                                        title="পাকিস্তানের সেমির আশায় কি ফের বাধা হয়ে দাঁড়াবে বৃষ্টি?" class="img-fluid img100"></picture>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700">পাকিস্তানের সেমির আশায় কি ফের বাধা হয়ে দাঁড়াবে বৃষ্টি?</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-12 d-flex">
-                            <div class="DSportsList align-self-stretch">
-                                <a href="https://samakal.com/sports/article/340048/এক-বছরের-রিপোর্ট-চেয়েছেন-ক্রীড়া-প্রতিমন্ত্রী">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture> <img data-src="https://samakal.com/media/imgAll/2026February/SM/aminul-2-1771916507.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="এক বছরের রিপোর্ট চেয়েছেন ক্রীড়া প্রতিমন্ত্রী" title="এক বছরের রিপোর্ট চেয়েছেন ক্রীড়া প্রতিমন্ত্রী"
-                                                        class="img-fluid img100"></picture>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700">এক বছরের রিপোর্ট চেয়েছেন ক্রীড়া প্রতিমন্ত্রী</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        <?php endif; endwhile; wp_reset_postdata(); ?>
                     </div>
                 </div>
             </div>
+            <?php endif; endif; ?>
         </section>
         <div class="container">
             <div class="row MobileShow">
