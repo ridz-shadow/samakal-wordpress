@@ -494,88 +494,6 @@
     src="https://www.facebook.com/tr?id=226625765941679&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Facebook Pixel Code -->
-
-    <!-- google adsense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-9442091006829624",
-            enable_page_level_ads: true
-        });
-    </script>
-
-    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        window.googletag = window.googletag || {
-            cmd: []
-        };
-        googletag.cmd.push(function() {
-            googletag.defineSlot('/21871422770/LeaderBoard', [970, 90], 'div-gpt-ad-1697882782854-0').addService(
-                googletag.pubads());
-            googletag.defineSlot('/21871422770/DH_R1', [300, 250], 'div-gpt-ad-1697883068904-0').addService(
-                googletag.pubads());
-            // googletag.defineSlot('/21871422770/DH_B1', [970, 250], 'div-gpt-ad-1697883206439-0').addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/DH_Banner2', [970, 90], 'div-gpt-ad-1765289091499-0').addService(
-                googletag.pubads());
-            googletag.defineSlot('/21871422770/DH_B2', [
-                [970, 90],
-                [728, 90]
-            ], 'div-gpt-ad-1697883321914-0').addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/afterBangladesh', [
-                [970, 90],
-                [728, 90]
-            ], 'div-gpt-ad-1697883463136-0').addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/beforeBenodon', [300, 250], 'div-gpt-ad-1697883649760-0').addService(
-                googletag.pubads());
-            googletag.defineSlot('/21871422770/beforeBinodon2', [300, 250], 'div-gpt-ad-1697883760018-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/beforeBinodon3', [300, 250], 'div-gpt-ad-1697883966593-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/Binodon_corner', [300, 250], 'div-gpt-ad-1697884069966-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/BeforeSports', [
-                [728, 90],
-                [970, 250]
-            ], 'div-gpt-ad-1697884211332-0').addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/SportsCorner', [300, 250], 'div-gpt-ad-1697884322633-0').addService(
-                googletag.pubads());
-            googletag.defineSlot('/21871422770/beforeOrthoniti', [
-                [970, 90],
-                [728, 90]
-            ], 'div-gpt-ad-1697884469859-0').addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/Rajniti', [300, 250], 'div-gpt-ad-1697884691760-0').addService(
-                googletag.pubads());
-            googletag.defineSlot('/21871422770/Leaderboard_320x100', [320, 100], 'div-gpt-ad-1698671137958-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/after_lead', [300, 250], 'div-gpt-ad-1698671524935-0').addService(
-                googletag.pubads());
-            googletag.defineSlot('/21871422770/before_sompadokio', [300, 250], 'div-gpt-ad-1698671912449-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/before_sorboses', [300, 250], 'div-gpt-ad-1698672272990-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/before_motamot', [300, 250], 'div-gpt-ad-1698672412698-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/before_bangladesh', [300, 250], 'div-gpt-ad-1698672638942-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/before_antorjatik', [300, 250], 'div-gpt-ad-1698672996464-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/before_rajniti2', [300, 250], 'div-gpt-ad-1711253878395-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/Before_Rajdhani2', [300, 250], 'div-gpt-ad-1711253999422-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/samakal_ad8_660x440', [660, 440], 'div-gpt-ad-1699508004765-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/samakal_ad9_320x480', [320, 480], 'div-gpt-ad-1699508366444-0')
-                .addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/970x90', [970, 90], 'div-gpt-ad-1707909172890-0').addService(
-                googletag.pubads());
-            googletag.defineSlot('/21871422770/320x50home', [320, 100], 'div-gpt-ad-1748845278096-0').addService(
-                googletag.pubads());
-            googletag.pubads().enableSingleRequest();
-            googletag.enableServices();
-        });
-    </script>
-
 </head>
 
 <body>
@@ -865,28 +783,14 @@ if ( isset( $locations[ $menu_name ] ) ) {
             <div class="row MobileHide">
                 <div class="col-12">
                     <div class="d-flex justify-content-center mt-3">
-                        <!-- /21871422770/LeaderBoard -->
-                        <div id='div-gpt-ad-1697882782854-0' style='min-width: 970px; min-height: 90px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1697882782854-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                 </div>
             </div>
             <div class="row MobileShow">
                 <div class="col-12">
                     <div class="d-flex justify-content-center mt-3">
-                        <!-- /21871422770/Leaderboard_320x100 -->
-                        <div id='div-gpt-ad-1698671137958-0' style='min-width: 320px; min-height: 100px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1698671137958-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                 </div>
             </div>
@@ -1092,14 +996,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
                             </div>
                             <div class="col-12 MobileShow">
                                 <div class="d-flex justify-content-center mt-3">
-                                    <!-- /21871422770/after_lead -->
-                                    <div id='div-gpt-ad-1698671524935-0' style='min-width: 300px; min-height: 250px;'>
-                                        <script type="text/javascript">
-                                            googletag.cmd.push(function() {
-                                                googletag.display('div-gpt-ad-1698671524935-0');
-                                            });
-                                        </script>
-                                    </div>
+                                    <!-- Advertisement -->
                                 </div>
                             </div>
                         </div>
@@ -1474,14 +1371,7 @@ endif;
         <div class="row MobileShow">
             <div class="col-12">
                 <div class="d-flex justify-content-center mt-3">
-                    <!-- /21871422770/before_rajniti2 -->
-                    <div id='div-gpt-ad-1711253878395-0' style='min-width: 300px; min-height: 250px;'>
-                        <script type="text/javascript">
-                            googletag.cmd.push(function() {
-                                googletag.display('div-gpt-ad-1711253878395-0');
-                            });
-                        </script>
-                    </div>
+                    <!-- Advertisement -->
                 </div>
             </div>
         </div>
@@ -1598,14 +1488,7 @@ endif;
                 <div class="row MobileShow">
                     <div class="col-12">
                         <div class="d-flex justify-content-center mt-3">
-                            <!-- /21871422770/Before_Rajdhani2 -->
-                            <div id='div-gpt-ad-1711253999422-0' style='min-width: 300px; min-height: 250px;'>
-                                <script type="text/javascript">
-                                    googletag.cmd.push(function() {
-                                        googletag.display('div-gpt-ad-1711253999422-0');
-                                    });
-                                </script>
-                            </div>
+                            <!-- Advertisement -->
                         </div>
                     </div>
                 </div>
@@ -2157,28 +2040,14 @@ endif;
             </div>
             <div class="col-12">
                 <div class="d-flex justify-content-center">
-                    <!-- /21871422770/afterBangladesh -->
-                    <div id='div-gpt-ad-1697883463136-0' style='min-width: 728px; min-height: 90px;'>
-                        <script type="text/javascript">
-                            googletag.cmd.push(function() {
-                                googletag.display('div-gpt-ad-1697883463136-0');
-                            });
-                        </script>
-                    </div>
+                    <!-- Advertisement -->
                 </div>
             </div>
         </div>
         <div class="row mt-5 MobileShow">
             <div class="col-12">
                 <div class="d-flex justify-content-center">
-                    <!-- /21871422770/before_antorjatik -->
-                    <div id='div-gpt-ad-1698672996464-0' style='min-width: 300px; min-height: 250px;'>
-                        <script type="text/javascript">
-                            googletag.cmd.push(function() {
-                                googletag.display('div-gpt-ad-1698672996464-0');
-                            });
-                        </script>
-                    </div>
+                    <!-- Advertisement -->
                 </div>
             </div>
         </div>
@@ -3560,23 +3429,11 @@ endif;
                 <div class="Main_Main_Content">
                     <!-- Desktop Ad -->
                     <div class="AdvertClass MobileHide text-center">
-                        <div id='div-gpt-ad-1707909172890-0' style='min-width: 970px; min-height: 90px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1707909172890-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                     <!-- Mobile Ad -->
                     <div class="AdvertClass MobileShow text-center">
-                        <div id='div-gpt-ad-1748845278096-0' style='min-width: 320px; min-height: 100px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1748845278096-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                 </div>
             </div>
@@ -3638,27 +3495,6 @@ foreach ($menu_items as $item): ?>
     </footer>
     <div id="back_to_top" class="back_to_top on"><span class="go_up"><i class="fa-solid fa-arrow-up"></i></span></div>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script type="text/javascript">
-        // Footer Sticky Ads
-        jQuery(document).ready(function() {
-            // Close button functionality
-            jQuery('#T4Tutorials_UP11_Close').click(function() {
-                jQuery('#T4Tutorials_UP11').hide();
-            });
-
-            // Ensure ads are loaded only for visible containers
-            if (jQuery('.MobileHide').is(':visible')) {
-                googletag.cmd.push(function() {
-                    googletag.display('div-gpt-ad-1707909172890-0');
-                });
-            }
-            if (jQuery('.MobileShow').is(':visible')) {
-                googletag.cmd.push(function() {
-                    googletag.display('div-gpt-ad-1748845278096-0');
-                });
-            }
-        });
-    </script>
     <script type="text/javascript">
         $(window).load(function() {
             $("main img").each(function(index) {
