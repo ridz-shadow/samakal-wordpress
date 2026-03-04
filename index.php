@@ -1143,27 +1143,28 @@ endif;
         </div>
         <section class="container">
             <div class="row">
-            <?php 
-                $after_lead_id = get_theme_mod('after_lead');
-                if ( $after_lead_id ) :
+                <?php 
+                    $after_lead_id = get_theme_mod('after_lead');
+                    if ( $after_lead_id ) :
 
-                $after_lead_query = new WP_Query( array(
-                    'cat'            => $after_lead_id,
-                    'posts_per_page' => 4,
-                ) );
-                if ( $after_lead_query->have_posts() ) : ?>
+                    $after_lead_query = new WP_Query( array(
+                        'cat'            => $after_lead_id,
+                        'posts_per_page' => 4,
+                    ) );
+                    if ( $after_lead_query->have_posts() ) : 
+                ?>
                 <div class="col-lg-8 col-12">
                 <a href="<?php echo esc_url( get_category_link( $after_lead_id ) ); ?>">
                     <h2 class="SectionName"><?php echo esc_html( get_cat_name( $after_lead_id ) ); ?></h2>
                 </a>
                     <div class="row">
-                        <?php 
-                            $count = 0;
-                            while ( $after_lead_query->have_posts() ) : $after_lead_query->the_post();
-                            $count++;
-                        ?>
                         <div class="col-lg-6 col-12">
-                            <?php if ( $count === 1 ) : ?>
+                            <?php 
+                                $count = 0;
+                                while ( $after_lead_query->have_posts() ) : $after_lead_query->the_post();
+                                $count++;
+                                if ( $count === 1 ) : 
+                            ?>
                             <div class="SpecialEventTop">
                                 <a href="<?php the_permalink(); ?>">
                                     <div class="DImgZoomBlock .medium-video-icon">
@@ -1180,10 +1181,15 @@ endif;
                                     </div>
                                 </a>
                             </div>
-                            <?php endif; ?>
+                            <?php break; endif; endwhile; wp_reset_postdata(); ?>
                         </div>
                         <div class="col-lg-6 col-12">
-                            <?php if ( $count > 1 && $count < 5 ) : ?>
+                            <?php 
+                                $count = 0;
+                                while ( $after_lead_query->have_posts() ) : $after_lead_query->the_post();
+                                $count++;
+                                if ( $count > 1 && $count < 5 ) : 
+                            ?>
                             <div class="SpecialEventList">
                                 <a href="<?php the_permalink(); ?>">
                                     <div class="row">
@@ -1204,9 +1210,8 @@ endif;
                                     </div>
                                 </a>
                             </div>
-                            <?php endif; ?>
+                            <?php break; endif; endwhile; wp_reset_postdata(); ?>
                         </div>
-                        <?php endwhile; wp_reset_postdata(); ?>
                     </div>
                 </div>
                 <?php endif; endif; ?>
