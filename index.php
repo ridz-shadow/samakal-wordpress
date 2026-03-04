@@ -1210,7 +1210,7 @@ endif;
                                     </div>
                                 </a>
                             </div>
-                            <?php break; endif; endwhile; wp_reset_postdata(); ?>
+                            <?php endif; endwhile; wp_reset_postdata(); ?>
                         </div>
                     </div>
                 </div>
