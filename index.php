@@ -1167,7 +1167,7 @@ endif;
                             <div class="SpecialEventTop">
                                 <a href="<?php the_permalink(); ?>">
                                     <div class="DImgZoomBlock .medium-video-icon">
-                                        <picture> <img data-src="https://samakal.com/media/imgAll/2026February/untitled-11-1771986965.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="ওষুধ নিয়ে প্রশ্ন, কার্যকারিতা পরীক্ষা হবে" title="ওষুধ নিয়ে প্রশ্ন, কার্যকারিতা পরীক্ষা হবে"
+                                        <picture> <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"
                                                 class="img-fluid img100">
                                         </picture>
                                         <div class="card-video-img"></div>
