@@ -1174,7 +1174,7 @@ endif;
                                         <div class="card-video-img"></div>
                                     </div>
                                     <div class="Desc">
-                                        <h2 class="Title FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
+                                        <h2 class="Title FW700"><span class="subHeading fw-bold"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                         <div class="Brief">
                                             <p><?php the_excerpt(); ?></p>
                                         </div>
@@ -1305,7 +1305,7 @@ endif;
 
                                     </div>
                                     <div class="Desc">
-                                        <h2 class="Title FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
+                                        <h2 class="Title FW700"><span class="subHeading fw-bold"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                         <div class="Brief">
                                             <p><?php the_excerpt(); ?></p>
                                         </div>
