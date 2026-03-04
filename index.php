@@ -1276,103 +1276,73 @@ endif;
         <section class="container MT-60">
             <div class="row">
                 <div class="col-lg-6 col-12 Politics">
-                    <a href="/politics">
-                        <h2 class="SectionName"> রাজনীতি </h2>
+                    <?php 
+                        $category_1_id = get_theme_mod('category_1');
+                        if ( $category_1_id ) :
+
+                        $category_1_query = new WP_Query( array(
+                            'cat'            => $category_1_id,
+                            'posts_per_page' => 4,
+                        ) );
+                        if ( $category_1_query->have_posts() ) : 
+                    ?>
+                    <a href="<?php echo esc_url( get_category_link( $after_lead_id ) ); ?>">
+                        <h2 class="SectionName"> <?php echo esc_html( get_cat_name( $after_lead_id ) ); ?> </h2>
                     </a>
                     <div class="row">
                         <div class="col-lg-6 col-12">
+                            <?php 
+                                $count = 0;
+                                while ( $after_lead_query->have_posts() ) : $after_lead_query->the_post();
+                                $count++;
+                                if ( $count === 1 ) : 
+                            ?>
                             <div class="DCategory4Top">
-                                <a href="https://samakal.com/politics/article/340102/আ-লীগের-অফিস-খোলায়-জামায়াতের-উদ্বেগ ">
+                                <a href="<?php the_permalink(); ?>">
                                     <div class="DImgZoomBlock ">
-                                        <picture> <img data-src="https://samakal.com/media/imgAll/2026February/jamayat-1771944379.jpg" src="https://samakal.com/media/common/img-400x250.jpg" alt="আ.লীগের অফিস খোলায় জামায়াতের উদ্বেগ " title="আ.লীগের অফিস খোলায় জামায়াতের উদ্বেগ "
+                                        <picture> <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-400x250.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"
                                                 class="img-fluid img100"> </picture>
 
                                     </div>
                                     <div class="Desc">
-                                        <h2 class="Title FW700">আ.লীগের অফিস খোলায় জামায়াতের উদ্বেগ </h2>
+                                        <h2 class="Title FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                         <div class="Brief">
-                                            <p>বিভিন্নস্থানে কার্যক্রম নিষিদ্ধ আওয়ামী লীগের অফিস খোলায় উদ্বেগ প্রকাশ করেছে জামায়াতে ইসলামী। মঙ্গলবার বিবৃতিতে দলের সহকারী সেক্রেটারি জেনারেল এহসানুল মাহবুব জুবায়ের বিবৃতিতে বলেছেন, আওয়ামী লীগ নিষিদ্ধ দল। তাদের
-                                                রাজনৈতিক কার্যক্রম পরিচালনার বৈধ এখতিয়ার নেই।</p>
+                                            <p><?php the_excerpt(); ?></p>
                                         </div>
                                     </div>
                                 </a>
                             </div>
+                            <?php endif; endwhile; wp_reset_postdata(); ?>
                         </div>
                         <div class="col-lg-6 col-12">
+                            <?php 
+                                $count = 0;
+                                while ( $after_lead_query->have_posts() ) : $after_lead_query->the_post();
+                                $count++;
+                                if ( $count > 1 && $count < 6 ) : 
+                            ?>
                             <div class="DCategory5NewsList">
-                                <a href="https://samakal.com/politics/article/340056/প্রতিহিংসা-নয়-বহুদলীয়-গণতন্ত্রে-বিশ্বাস-করে-বিএনপি:-মঈন-খান">
+                                <a href="<?php the_permalink(); ?>">
                                     <div class="row">
                                         <div class="col-lg-7 col-7">
                                             <div class="Desc">
-                                                <h2 class="Title FW700">প্রতিহিংসা নয়, বহুদলীয় গণতন্ত্রে বিশ্বাস করে বিএনপি: মঈন খান</h2>
+                                                <h2 class="Title FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                             </div>
                                         </div>
                                         <div class="col-lg-5 col-5">
                                             <div class="DImgZoomBlock ">
-                                                <picture> <img data-src="https://samakal.com/media/imgAll/2026February/SM/moin-khan-1771920471.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="প্রতিহিংসা নয়, বহুদলীয় গণতন্ত্রে বিশ্বাস করে বিএনপি: মঈন খান"
-                                                        title="প্রতিহিংসা নয়, বহুদলীয় গণতন্ত্রে বিশ্বাস করে বিএনপি: মঈন খান" class="img-fluid img100"></picture>
+                                                <picture> <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>"
+                                                        title="<?php the_title(); ?>" class="img-fluid img100"></picture>
 
                                             </div>
                                         </div>
                                     </div>
                                 </a>
                             </div>
-                            <div class="DCategory5NewsList">
-                                <a href="https://samakal.com/politics/article/340028/নির্বাচন-রাজনৈতিক-অনিশ্চয়তা-কমালেও-ঝুঁকি-রয়ে-গেছে">
-                                    <div class="row">
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700">নির্বাচন রাজনৈতিক অনিশ্চয়তা কমালেও ঝুঁকি রয়ে গেছে</h2>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture> <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771901697.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="নির্বাচন রাজনৈতিক অনিশ্চয়তা কমালেও ঝুঁকি রয়ে গেছে"
-                                                        title="নির্বাচন রাজনৈতিক অনিশ্চয়তা কমালেও ঝুঁকি রয়ে গেছে" class="img-fluid img100"></picture>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="DCategory5NewsList">
-                                <a href="https://samakal.com/politics/article/340000/প্রশাসক-আসছেন-কাউন্সিলর-না-থাকায়-ভোগান্তি-যাবে-না">
-                                    <div class="row">
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700"><span class="subHeading">সিটি করপোরেশন / </span>প্রশাসক আসছেন, কাউন্সিলর না থাকায় ভোগান্তি যাবে না</h2>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture> <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771898936.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="প্রশাসক আসছেন, কাউন্সিলর না থাকায় ভোগান্তি যাবে না"
-                                                        title="প্রশাসক আসছেন, কাউন্সিলর না থাকায় ভোগান্তি যাবে না" class="img-fluid img100"></picture>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="DCategory5NewsList">
-                                <a href="https://samakal.com/politics/article/339978/আ-লীগের-কার্যালয়-খোলা-আইনিভাবে-দেখা-হবে:-মির্জা-ফখরুল">
-                                    <div class="row">
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700">আ.লীগের কার্যালয় খোলা আইনিভাবে দেখা হবে: মির্জা ফখরুল</h2>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture> <img data-src="https://samakal.com/media/imgAll/2026February/SM/10-1771879793.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="আ.লীগের কার্যালয় খোলা আইনিভাবে দেখা হবে: মির্জা ফখরুল" title="আ.লীগের কার্যালয় খোলা আইনিভাবে দেখা হবে: মির্জা ফখরুল"
-                                                        class="img-fluid img100"></picture>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                            <?php endif; endwhile; wp_reset_postdata(); ?>
                         </div>
                     </div>
+                    <?php endif; endif; ?>
                 </div>
                 <div class="row MobileShow">
                     <div class="col-12">
