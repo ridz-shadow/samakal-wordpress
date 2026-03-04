@@ -1237,7 +1237,7 @@ endif;
                             <ul>
                                 <?php 
                                     $count = 0;
-                                    while ( $after_lead_query->have_posts() ) : $after_lead_query->the_post();
+                                    while ( $latest_query->have_posts() ) : $latest_query->the_post();
                                     $count++;
                                     if ( $count < 16 ) : 
                                 ?>
