@@ -1143,12 +1143,29 @@ endif;
         </div>
         <section class="container">
             <div class="row">
+            <?php 
+$after_lead_id = get_theme_mod('after_lead'); // Get selected category
+
+if ( $after_lead_id ) :
+
+    // Fetch latest 2 posts from that category
+    $lead_sidebar_query = new WP_Query( array(
+        'cat'            => $after_lead_id,
+        'posts_per_page' => 2,
+    ) ); ?>
+    if ( $lead_sidebar_query->have_posts() ) : ?>
                 <div class="col-lg-8 col-12">
-                    <h2 class="SectionName">নির্বাচিত</h2>
+                <a href="<?php echo esc_url( get_category_link( $lead_sidebar_cat_id ) ); ?>">
+                    <h2 class="SectionName"><?php echo esc_html( get_cat_name( $lead_sidebar_cat_id ) ); ?></h2>
+                </a>
                     <div class="row">
                         <div class="col-lg-6 col-12">
+                            <?php $count = 0;
+        while ( $lead_sidebar_query->have_posts() ) : $lead_sidebar_query->the_post();
+            $count++;
+            if ( $count === 1 ) : ?>
                             <div class="SpecialEventTop">
-                                <a href="https://samakal.com/bangladesh/article/340186/ওষুধ-নিয়ে-প্রশ্ন-কার্যকারিতা-পরীক্ষা-হবে">
+                                <a href="<?php the_permalink(); ?>">
                                     <div class="DImgZoomBlock .medium-video-icon">
                                         <picture> <img data-src="https://samakal.com/media/imgAll/2026February/untitled-11-1771986965.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="ওষুধ নিয়ে প্রশ্ন, কার্যকারিতা পরীক্ষা হবে" title="ওষুধ নিয়ে প্রশ্ন, কার্যকারিতা পরীক্ষা হবে"
                                                 class="img-fluid img100">
@@ -1156,13 +1173,23 @@ endif;
                                         <div class="card-video-img"></div>
                                     </div>
                                     <div class="Desc">
-                                        <h2 class="Title FW700"><span class="subHeading">মশক নিধন / </span>ওষুধ নিয়ে প্রশ্ন, কার্যকারিতা পরীক্ষা হবে</h2>
+                                        <h2 class="Title FW700"><span class="subHeading"><?php 
+$shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true );
+if ( $shoulder ) {
+    echo esc_html( $shoulder ) . ' / ';
+}
+?></span><?php the_title(); ?></h2>
                                         <div class="Brief">
-                                            <p>ঢাকার দুই সিটি করপোরেশনে ব্যবহৃত মশক নিধন ওষুধ কার্যকারিতা হারিয়েছে— দীর্ঘদিনের এমন অভিযোগের প্রেক্ষাপটে মজুত ও ব্যবহৃত ওষুধের কার্যকারিতা সরেজমিন যাচাইয়ের উদ্যোগ নেওয়া</p>
+                                            <p><?php the_excerpt(); ?></p>
                                         </div>
                                     </div>
                                 </a>
                             </div>
+                            <?php 
+                break; // Stop the loop after the third post
+            endif;
+        endwhile; 
+        wp_reset_postdata(); ?>
                         </div>
                         <div class="col-lg-6 col-12">
                             <div class="SpecialEventList">
@@ -1228,6 +1255,9 @@ endif;
                         </div>
                     </div>
                 </div>
+                <?php endif; 
+endif; 
+?>
                 <div class="col-12 MobileShow">
                     <div class="d-flex justify-content-center mt-3">
                         <!-- Advertisement -->
