@@ -2197,107 +2197,107 @@ endif;
                     </div>
                 </div>
                 <?php endif; endif; ?>
+                <?php 
+                    $home_category_id = get_theme_mod('category_12');
+                    if ( $home_category_id ) :
+
+                    $home_category_query = new WP_Query( array(
+                        'cat'            => $home_category_id,
+                        'posts_per_page' => 4,
+                    ) );
+                    if ( $home_category_query->have_posts() ) : 
+                ?>
                 <div class="SectionTitle mt-3">
-                    <a href="/sub/entertainment-photostory">
-                        <h3>বিনোদনের ছবি</h3>
+                    <a href="<?php echo esc_url( get_category_link( $home_category_id ) ); ?>">
+                        <h3><?php echo esc_html( get_cat_name( $home_category_id ) ); ?></h3>
                     </a>
                 </div>
                 <div class="PhotoSliderSec">
                     <div class="row">
+                        <?php 
+                            $count = 0;
+                            while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                            $count++;
+                            if ( $count < 5 ) : 
+                        ?>
                         <div class="col-lg-3 col-6 d-flex">
                             <div class="DPhotoSliderList align-self-stretch">
-                                <a href="https://samakal.com/entertainment-photostory/article/338522/ভালোবাসা-দিবসে-স্বামীর-সঙ্গে-৭-ছবিতে-মিম">
+                                <a href="<?php the_permalink(); ?>">
                                     <div class="DImgBlock">
-                                        <img data-src="https://samakal.com/media/imgAll/2026February/SM/878-1771071230.jpg" src="https://samakal.com/media/common/img-400x250.jpg" alt="ভালোবাসা দিবসে স্বামীর সঙ্গে ৭ ছবিতে মিম" title="ভালোবাসা দিবসে স্বামীর সঙ্গে ৭ ছবিতে মিম" class="img-fluid">
+                                        <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-400x250.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="img-fluid">
                                         <div class="video-icon"><i class="fas fa-image"></i></div>
                                     </div>
                                     <div class="Desc">
-                                        <h2 class="Title">ভালোবাসা দিবসে স্বামীর সঙ্গে ৭ ছবিতে মিম</h2>
+                                        <h2 class="Title"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                     </div>
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-6 d-flex">
-                            <div class="DPhotoSliderList align-self-stretch">
-                                <a href="https://samakal.com/entertainment-photostory/article/338177/ওমর-সানী-থেকে-অপু-বাঁধন-সাফা-ভোট-দিয়ে-কে-কী-বললেন">
-                                    <div class="DImgBlock">
-                                        <img data-src="https://samakal.com/media/imgAll/2026February/SM/a-r-rahman-21-1770900356.jpg" src="https://samakal.com/media/common/img-400x250.jpg" alt="ওমর সানী থেকে অপু-বাঁধন-সাফা, ভোট দিয়ে কে কী বললেন" title="ওমর সানী থেকে অপু-বাঁধন-সাফা, ভোট দিয়ে কে কী বললেন"
-                                            class="img-fluid">
-                                        <div class="video-icon"><i class="fas fa-image"></i></div>
-                                    </div>
-                                    <div class="Desc">
-                                        <h2 class="Title">ওমর সানী থেকে অপু-বাঁধন-সাফা, ভোট দিয়ে কে কী বললেন</h2>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6 d-flex">
-                            <div class="DPhotoSliderList align-self-stretch">
-                                <a href="https://samakal.com/entertainment-photostory/article/338162/ভোটের-ছবি-প্রকাশ-করে-কী-বললেন-১২-তারকা">
-                                    <div class="DImgBlock">
-                                        <img data-src="https://samakal.com/media/imgAll/2026February/SM/a-r-rahman-20-1770897536.jpg" src="https://samakal.com/media/common/img-400x250.jpg" alt="ভোটের ছবি প্রকাশ করে কী বললেন ১২ তারকা" title="ভোটের ছবি প্রকাশ করে কী বললেন ১২ তারকা" class="img-fluid">
-                                        <div class="video-icon"><i class="fas fa-image"></i></div>
-                                    </div>
-                                    <div class="Desc">
-                                        <h2 class="Title">ভোটের ছবি প্রকাশ করে কী বললেন ১২ তারকা</h2>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6 d-flex">
-                            <div class="DPhotoSliderList align-self-stretch">
-                                <a href="https://samakal.com/entertainment-photostory/article/338112/ভোট-দিয়ে-তারকারা-কে-কী-বললেন">
-                                    <div class="DImgBlock">
-                                        <img data-src="https://samakal.com/media/imgAll/2026February/SM/a-r-rahman-19-1770887269.jpg" src="https://samakal.com/media/common/img-400x250.jpg" alt="ভোট দিয়ে তারকারা কে কী বললেন" title="ভোট দিয়ে তারকারা কে কী বললেন" class="img-fluid">
-                                        <div class="video-icon"><i class="fas fa-image"></i></div>
-                                    </div>
-                                    <div class="Desc">
-                                        <h2 class="Title">ভোট দিয়ে তারকারা কে কী বললেন</h2>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        <?php endif; endwhile; wp_reset_postdata(); ?>
                     </div>
                 </div>
+                <?php endif; endif; ?>
             </div>
         </div>
         <section class="container MT-60">
             <div class="row">
                 <div class="col-lg-6 col-12 Politics">
-                    <a href="/technology">
-                        <h2 class="SectionName"> প্রযুক্তি প্রতিদিন </h2>
+                    <?php 
+                        $home_category_id = get_theme_mod('category_13');
+                        if ( $home_category_id ) :
+
+                        $home_category_query = new WP_Query( array(
+                            'cat'            => $home_category_id,
+                            'posts_per_page' => 5,
+                        ) );
+                        if ( $home_category_query->have_posts() ) : 
+                    ?>
+                    <a href="<?php echo esc_url( get_category_link( $home_category_id ) ); ?>">
+                        <h2 class="SectionName"><?php echo esc_html( get_cat_name( $home_category_id ) ); ?></h2>
                     </a>
                     <div class="row">
                         <div class="col-lg-6 col-12">
+                            <?php 
+                                $count = 0;
+                                while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                $count++;
+                                if ( $count === 1 ) : 
+                            ?>
                             <div class="DCategory4Top">
-                                <a href="https://samakal.com/technology/article/339963/দেশে-সাশ্রয়ী-বাজেটের-স্মার্ট-২০-মডেলের-ফোন-আনল-ইনফিনিক্স">
+                                <a href="<?php the_permalink(); ?>">
                                     <div class="DImgZoomBlock ">
-                                        <picture> <img data-src="https://samakal.com/media/imgAll/2026February/infinis-1771863339.jpg" src="https://samakal.com/media/common/img-400x250.jpg" alt="দেশে সাশ্রয়ী বাজেটের স্মার্ট ২০ মডেলের ফোন আনল ইনফিনিক্স" title="দেশে সাশ্রয়ী বাজেটের স্মার্ট ২০ মডেলের ফোন আনল ইনফিনিক্স"
+                                        <picture> <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-400x250.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"
                                                 class="img-fluid img100"> </picture>
 
                                     </div>
                                     <div class="Desc">
-                                        <h2 class="Title FW700">দেশে সাশ্রয়ী বাজেটের স্মার্ট ২০ মডেলের ফোন আনল ইনফিনিক্স</h2>
+                                        <h2 class="Title FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                         <div class="Brief">
-                                            <p>ইনফিনিক্স দেশে আনুষ্ঠানিকভাবে উন্মোচন করেছে তাদের নতুন স্মার্টফোন ‘ইনফিনিক্স স্মার্ট ২০’। স্মার্টফোনটি এন্ট্রি-লেভেল সেগমেন্টে যুক্ত করেছে আধুনিক ভয়েসপ্রিন্ট নয়েজ রিডাকশন প্রযুক্তি, যা পরিষ্কার ভয়েস কল নিশ্চিত
-                                                করতে বিশেষভাবে তৈরি।</p>
+                                            <p><?php the_excerpt(); ?></p>
                                         </div>
                                     </div>
                                 </a>
                             </div>
+                            <?php endif; endwhile; wp_reset_postdata(); ?>
                         </div>
                         <div class="col-lg-6 col-12">
+                            <?php 
+                                $count = 0;
+                                while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                $count++;
+                                if ( $count > 1 && $count < 6 ) : 
+                            ?>
                             <div class="DCategory5NewsList">
-                                <a href="https://samakal.com/technology/article/339676/সাব-সি-সংযোগ-তৈরি-করবে-গুগল">
+                                <a href="<?php the_permalink(); ?>">
                                     <div class="row">
                                         <div class="col-lg-7 col-7">
                                             <div class="Desc">
-                                                <h2 class="Title FW700">সাব-সি সংযোগ তৈরি করবে গুগল</h2>
+                                                <h2 class="Title FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                             </div>
                                         </div>
                                         <div class="col-lg-5 col-5">
                                             <div class="DImgZoomBlock ">
-                                                <picture> <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771723777.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="সাব-সি সংযোগ তৈরি করবে গুগল" title="সাব-সি সংযোগ তৈরি করবে গুগল"
+                                                <picture> <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"
                                                         class="img-fluid img100"></picture>
 
                                             </div>
@@ -2305,62 +2305,10 @@ endif;
                                     </div>
                                 </a>
                             </div>
-                            <div class="DCategory5NewsList">
-                                <a href="https://samakal.com/technology/article/339675/ব্রাউজিং-তথ্য-এড়াতে-যা-করবেন">
-                                    <div class="row">
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700">ব্রাউজিং তথ্য এড়াতে যা করবেন</h2>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture> <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771725609.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="ব্রাউজিং তথ্য এড়াতে যা করবেন" title="ব্রাউজিং তথ্য এড়াতে যা করবেন"
-                                                        class="img-fluid img100"></picture>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="DCategory5NewsList">
-                                <a href="https://samakal.com/technology/article/339271/আবার-ইউটিউব-পরিষেবা-ব্যাহত">
-                                    <div class="row">
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700">আবার ইউটিউব পরিষেবা ব্যাহত</h2>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture> <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771465796.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="আবার ইউটিউব পরিষেবা ব্যাহত" title="আবার ইউটিউব পরিষেবা ব্যাহত"
-                                                        class="img-fluid img100"></picture>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="DCategory5NewsList">
-                                <a href="https://samakal.com/technology/article/339270/উন্মুক্ত-ওয়াইফাই-এড়িয়ে-চলা">
-                                    <div class="row">
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700">উন্মুক্ত ওয়াইফাই এড়িয়ে চলা</h2>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture> <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771465747.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="উন্মুক্ত ওয়াইফাই এড়িয়ে চলা" title="উন্মুক্ত ওয়াইফাই এড়িয়ে চলা"
-                                                        class="img-fluid img100"></picture>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                            <?php endif; endwhile; wp_reset_postdata(); ?>
                         </div>
                     </div>
+                    <?php endif; endif; ?>
                 </div>
                 <div class="col-lg-6 col-12 Capital">
                     <a href="/techlife">
