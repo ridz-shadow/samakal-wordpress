@@ -1782,6 +1782,21 @@ endif;
                     <?php endif; endif; ?>
                 </div>
                 <div class="col-lg-3 col-12">
+                    <?php 
+                        $popular_query = new WP_Query( array(
+                            'post_type'      => 'post',
+                            'posts_per_page' => 4,
+                            'meta_key'       => 'post_views_count',
+                            'orderby'        => 'meta_value_num',
+                            'order'          => 'DESC',
+                            'date_query'     => array(
+                                array(
+                                    'after' => '7 days ago'
+                                )
+                            )                        
+                        ) );
+                        if ( $popular_query->have_posts() ) : 
+                    ?>
                     <div class="DPopularSec">
                         <div class="SectionTitle">
                             <a href="">
@@ -1789,72 +1804,32 @@ endif;
                             </a>
                         </div>
                         <div class="DPopularNews">
+                            <?php 
+                                $count = 0;
+                                while ( $popular_query->have_posts() ) : $popular_query->the_post();
+                                $count++;
+                                if ( $count < 5 ) : 
+                            ?>
                             <div class="DPopularNewsList">
-                                <a href="https://samakal.com/bangladesh/article/340131/সোহরাওয়ার্দী-উদ্যানে-পুলিশের-তল্লাশি-মারধর-নিয়ে-প্রশ্ন">
+                                <a href="<?php the_permalink(); ?>">
                                     <div class="row">
                                         <div class="col-lg-5 col-5 ">
                                             <picture>
-                                                <img data-src="https://samakal.com/media/imgAll/2026February/THUMB/police-1771965944.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="সোহরাওয়ার্দী উদ্যানে পুলিশের তল্লাশি-মারধর নিয়ে প্রশ্ন" title="সোহরাওয়ার্দী উদ্যানে পুলিশের তল্লাশি-মারধর নিয়ে প্রশ্ন"
+                                                <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"
                                                     class="img-fluid leadMedia">
                                             </picture>
 
                                         </div>
                                         <div class="col-lg-7 col-7">
-                                            <h5 class="Title TitleSM">সোহরাওয়ার্দী উদ্যানে পুলিশের তল্লাশি-মারধর নিয়ে প্রশ্ন</h5>
+                                            <h5 class="Title TitleSM"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h5>
                                         </div>
                                     </div>
                                 </a>
                             </div>
-                            <div class="DPopularNewsList">
-                                <a href="https://samakal.com/bangladesh/article/340202/জুনিয়র-বৃত্তি-পরীক্ষার-ফল-দুপুরে-জানা-যাবে-যেভাবে">
-                                    <div class="row">
-                                        <div class="col-lg-5 col-5 ">
-                                            <picture>
-                                                <img data-src="https://samakal.com/media/imgAll/2026February/THUMB/junior-scholarship-1771996776.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="জুনিয়র বৃত্তি পরীক্ষার ফল দুপুরে, জানা যাবে যেভাবে" title="জুনিয়র বৃত্তি পরীক্ষার ফল দুপুরে, জানা যাবে যেভাবে"
-                                                    class="img-fluid leadMedia">
-                                            </picture>
-
-                                        </div>
-                                        <div class="col-lg-7 col-7">
-                                            <h5 class="Title TitleSM">জুনিয়র বৃত্তি পরীক্ষার ফল দুপুরে, জানা যাবে যেভাবে</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="DPopularNewsList">
-                                <a href="https://samakal.com/international/article/340130/অনড়-রাশিয়ায়-বৈশ্বিক-ভারসাম্যে-বদল-নিরাপত্তায়-ভাঙন">
-                                    <div class="row">
-                                        <div class="col-lg-5 col-5 ">
-                                            <picture>
-                                                <img data-src="https://samakal.com/media/imgAll/2026February/THUMB/ucrain-russia-1771964013.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="অনড় রাশিয়ায় বৈশ্বিক ভারসাম্যে বদল, নিরাপত্তায় ভাঙন" title="অনড় রাশিয়ায় বৈশ্বিক ভারসাম্যে বদল, নিরাপত্তায় ভাঙন"
-                                                    class="img-fluid leadMedia">
-                                            </picture>
-
-                                        </div>
-                                        <div class="col-lg-7 col-7">
-                                            <h5 class="Title TitleSM">অনড় রাশিয়ায় বৈশ্বিক ভারসাম্যে বদল, নিরাপত্তায় ভাঙন</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="DPopularNewsList">
-                                <a href="https://samakal.com/economics/article/340201/ভারতে-আরও-একটি-শাখা-খোলার-অনুমোদন-পেল-এবি-ব্যাংক">
-                                    <div class="row">
-                                        <div class="col-lg-5 col-5 ">
-                                            <picture>
-                                                <img data-src="https://samakal.com/media/imgAll/2026February/THUMB/ab-bank-1771992094.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="ভারতে আরও একটি শাখা খোলার অনুমোদন পেল এবি ব্যাংক" title="ভারতে আরও একটি শাখা খোলার অনুমোদন পেল এবি ব্যাংক"
-                                                    class="img-fluid leadMedia">
-                                            </picture>
-
-                                        </div>
-                                        <div class="col-lg-7 col-7">
-                                            <h5 class="Title TitleSM">ভারতে আরও একটি শাখা খোলার অনুমোদন পেল এবি ব্যাংক</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                            <?php endif; endwhile; wp_reset_postdata(); ?>
                         </div>
                     </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

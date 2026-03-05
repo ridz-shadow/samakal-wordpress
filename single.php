@@ -363,6 +363,7 @@
 </head>
 
 <body>
+    <?php set_post_views(get_the_ID()); ?>
     <header>
         <div class="DHeaderTop2 MobileHide">
             <div class="container">
