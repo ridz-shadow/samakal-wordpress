@@ -919,17 +919,17 @@ if ( isset( $locations[ $menu_name ] ) ) {
                                 ?>
                                 <div class="col-lg-4 d-flex border-right-inner">
                                     <div class="leadTop3-wrap align-self-stretch">
-                                        <a href="https://samakal.com/bangladesh/article/340187/স্বজনদের-ধারণা-ছিল-রিজিয়া-বেঁচে-নেই">
+                                        <a href="<?php the_permalink(); ?>">
                                             <div class="row">
                                                 <div class="col-lg-12 col-5 medium-video-icon">
                                                     <picture>
-                                                        <img class="img-fluid img100" data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771987061.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="স্বজনদের ধারণা ছিল রিজিয়া বেঁচে নেই" title="স্বজনদের ধারণা ছিল রিজিয়া বেঁচে নেই">
+                                                        <img class="img-fluid img100" data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
                                                     </picture>
 
                                                 </div>
                                                 <div class="col-lg-12 col-7">
                                                     <div class="Desc">
-                                                        <h3 class="Title2">স্বজনদের ধারণা ছিল রিজিয়া বেঁচে নেই</h3>
+                                                        <h3 class="Title2"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h3>
                                                     </div>
                                                 </div>
                                             </div>
