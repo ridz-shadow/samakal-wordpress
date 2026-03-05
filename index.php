@@ -1779,6 +1779,7 @@ endif;
                             </div>
                         </div>
                     </div>
+                    <?php endif; endif; ?>
                 </div>
                 <div class="col-lg-3 col-12">
                     <div class="DPopularSec">
