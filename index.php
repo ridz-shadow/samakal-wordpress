@@ -953,59 +953,51 @@ if ( isset( $locations[ $menu_name ] ) ) {
                             <iframe src="https://widget.crictimes.org" style="width:100%;height:76%;position:absolute;bottom:0;left:0;right:0;border:none;padding:9px" frameborder="0" scrolling="no"></iframe>
                         </div>
                         <?php 
-$lead_sidebar_cat_id = get_theme_mod('lead_sidebar_category'); // Get selected category
+                            $home_category_id = get_theme_mod('lead_sidebar_category');
+                            if ( $home_category_id ) :
 
-if ( $lead_sidebar_cat_id ) :
-
-    // Fetch latest 2 posts from that category
-    $lead_sidebar_query = new WP_Query( array(
-        'cat'            => $lead_sidebar_cat_id,
-        'posts_per_page' => 2,
-    ) );
-
-    if ( $lead_sidebar_query->have_posts() ) : ?>
-        <div class="DEditorsPicksSec mt-3">
-            <div class="DTitleStyle">
-                <a href="<?php echo esc_url( get_category_link( $lead_sidebar_cat_id ) ); ?>">
-                    <h3><i class="fa-solid fa-circle-half-stroke"></i><?php echo esc_html( get_cat_name( $lead_sidebar_cat_id ) ); ?></h3>
-                </a>
-            </div>
-
-            <?php while ( $lead_sidebar_query->have_posts() ) : $lead_sidebar_query->the_post(); ?>
-                <div class="DEditorialListItem">
-                    <a href="<?php the_permalink(); ?>">
-                        <div class="row">
-                            <div class="col-lg-7 col-7">
-                                <div class="Desc">
-                                    <p class="WriterName"><i class="fa fa-edit" aria-hidden="true"></i> <?php echo esc_html(get_post_meta(get_the_ID(), 'post_reporter', true)); ?></p>
-                                    <h2 class="Title">
-                                        <span class="subHeading"><?php 
-$shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true );
-if ( $shoulder ) {
-    echo esc_html( $shoulder ) . ' / ';
-}
-?></span>
-                                        <?php the_title(); ?>
-                                    </h2>
-                                </div>
+                            $home_category_query = new WP_Query( array(
+                                'cat'            => $home_category_id,
+                                'posts_per_page' => 2,
+                            ) );
+                            if ( $home_category_query->have_posts() ) : 
+                        ?>
+                        <div class="DEditorsPicksSec mt-3">
+                            <div class="DTitleStyle">
+                                <a href="<?php echo esc_url( get_category_link( $home_category_id ) ); ?>">
+                                    <h3><i class="fa-solid fa-circle-half-stroke"></i><?php echo esc_html( get_cat_name( $home_category_id ) ); ?></h3>
+                                </a>
                             </div>
-                            <div class="col-lg-5 col-5">
-                                <picture>
-                                    <?php if ( has_post_thumbnail() ) : ?>
-                                        <?php the_post_thumbnail( 'medium', array( 'class' => 'img-fluid img100 ImgRatio', 'alt' => get_the_title(), 'title' => get_the_title() ) ); ?>
-                                    <?php else: ?>
-                                        <img src="https://samakal.com/media/common/img-300x169.jpg" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="img-fluid img100 ImgRatio">
-                                    <?php endif; ?>
-                                </picture>
+                            <?php 
+                                $count = 0;
+                                while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                $count++;
+                                if ( $count < 3 ) : 
+                            ?>
+                            <div class="DEditorialListItem">
+                                <a href="<?php the_permalink(); ?>">
+                                    <div class="row">
+                                        <div class="col-lg-7 col-7">
+                                            <div class="Desc">
+                                                <p class="WriterName"><i class="fa fa-edit" aria-hidden="true"></i><?php echo esc_html(get_post_meta(get_the_ID(), 'post_reporter', true)); ?></p>
+                                                <h2 class="Title"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-5 ">
+                                            <picture>
+                                                <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>"
+                                                    src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>"
+                                                    alt="<?php the_title(); ?>"
+                                                    title="<?php the_title(); ?>"
+                                                    class="img-fluid img100 ImgRatio">
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
+                            <?php endif; endwhile; wp_reset_postdata(); ?>
                         </div>
-                    </a>
-                </div>
-            <?php endwhile; wp_reset_postdata(); ?>
-        </div>
-    <?php endif; 
-endif; 
-?>
+                         <?php endif; endif; ?>
                     </div>
                 </div>
             </div>
