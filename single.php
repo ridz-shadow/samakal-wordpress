@@ -364,7 +364,6 @@
 
 <body>
     <?php set_post_views(get_the_ID()); ?>
-    <?php echo get_post_meta(get_the_ID(), 'post_views_count', true); ?>
     <header>
         <div class="DHeaderTop2 MobileHide">
             <div class="container">

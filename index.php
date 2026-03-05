@@ -1789,11 +1789,11 @@ endif;
                             'meta_key'       => 'post_views_count',
                             'orderby'        => 'meta_value_num',
                             'order'          => 'DESC',
-                            // 'date_query'     => array(
-                            //     array(
-                            //         'after' => '7 days ago'
-                            //     )
-                            // )                        
+                            'date_query'     => array(
+                                array(
+                                    'after' => '7 days ago'
+                                )
+                            )                        
                         ) );
                         if ( $popular_query->have_posts() ) : 
                     ?>
