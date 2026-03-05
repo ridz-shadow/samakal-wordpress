@@ -491,43 +491,59 @@
         <div class="container">
             <div class="category-area">
                 <div class="heading-title">
-                    <a href="https://samakal.com/bangladesh">
-                        <h1>বাংলাদেশ</h1>
+                    <a href="<?php echo get_category_link(get_queried_object_id()); ?>">
+                        <h1><?php single_cat_title(); ?></h1>
                     </a>
-                    <input class="d-none" id="catSlug" value="bangladesh">
-                    <input class="d-none" id="posCatID" value="340205,340204,340185,340202,340179">
+                    <input class="d-none" id="catSlug" value="<?php echo get_queried_object()->slug; ?>">
+                    <input class="d-none" id="posCatID" value="<?php echo get_queried_object_id(); ?>">
                 </div>
-                <div class="sub-category-area">
-                    <ul class="sub-category">
-                        <li class="sub-list"><a href="https://samakal.com/bangladesh/education">শিক্ষা</a>
-                        </li>
-                        <li class="sub-list"><a href="https://samakal.com/bangladesh/law-justice">আইন ও বিচার</a>
-                        </li>
-                        <li class="sub-list"><a href="https://samakal.com/bangladesh/health-bangladesh">স্বাস্থ্য</a>
-                        </li>
-                        <li class="sub-list"><a href="https://samakal.com/bangladesh/agriculture">কৃষি</a>
-                        </li>
-                        <li class="sub-list"><a href="https://samakal.com/bangladesh/bangladesh-others">অন্যান্য</a>
-                        </li>
-                        <li class="sub-list"><a href="https://samakal.com/bangladesh/parliament">সংসদ</a>
-                        </li>
-                        <li class="sub-list"><a href="https://samakal.com/bangladesh/atmosphere">পরিবেশ</a>
-                        </li>
-                        <li class="sub-list"><a href="https://samakal.com/bangladesh/grounds">লড়াইয়ের মঞ্চ</a>
-                        </li>
-                    </ul>
-                </div>
+                <?php
+                    $current_cat = get_queried_object();
 
+                    $subcategories = get_categories( array(
+                        'child_of'   => $current_cat->term_id,
+                        'hide_empty' => false
+                    ) );
+
+                    if ( $subcategories ) {
+                        echo '<div class="sub-category-area"><ul class="sub-category">';
+                        foreach ( $subcategories as $subcategory ) {
+                            // Get subcategory link
+                            $link = get_category_link( $subcategory->term_id );
+                            echo '<li class="sub-list">';
+                            echo '<a href="' . esc_url( $link ) . '">' . esc_html( $subcategory->name ) . '</a>';
+                            echo '</li>';
+                        }
+                        echo '</ul></div>';
+                    }
+                ?>
+
+                <?php 
+                    $category_id = get_queried_object_id();
+                    if ( $category_id ) :
+
+                    $category_query = new WP_Query( array(
+                        'cat'            => $category_id,
+                        'posts_per_page' => 5,
+                    ) );
+                    if ( $category_query->have_posts() ) : 
+                ?>
+                <?php 
+                    $count = 0;
+                    while ( $category_query->have_posts() ) : $category_query->the_post();
+                    $count++;
+                    if ( $count === 1 ) : 
+                ?>
                 <div class="category-lead">
                     <div class="row">
                         <div class="col-md-9">
                             <div class="DCatLead">
-                                <a href="https://samakal.com/bangladesh/article/340205/%E0%A6%8B%E0%A6%A3%E0%A6%96%E0%A7%87%E0%A6%B2%E0%A6%BE%E0%A6%AA%E0%A6%BF-%E0%A6%93-%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A7%88%E0%A6%A4-%E0%A6%A8%E0%A6%BE%E0%A6%97%E0%A6%B0%E0%A6%BF%E0%A6%95%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%8D%E0%A6%AC%E0%A6%BF%E0%A6%A4%E0%A6%BE%E0%A6%B0-%E0%A6%B8%E0%A7%81%E0%A6%AF%E0%A7%8B%E0%A6%97-%E0%A6%A8%E0%A6%BF%E0%A6%B0%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%9A%E0%A6%A8%E0%A7%87-%E0%A6%89%E0%A6%B2%E0%A7%8D%E0%A6%B2%E0%A7%87%E0%A6%96%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%AF-%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%B0%E0%A7%8D%E0%A6%A5%E0%A6%A4%E0%A6%BE">
+                                <a href="<?php the_permalink(); ?>">
                                     <div class="row">
                                         <div class="col-md-7">
                                             <div class="img-box ">
                                                 <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/sujon-1772002167.jpg" src="https://samakal.com/media/common/image-800x450.jpg" alt="ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা" title="ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা"
+                                                    <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/image-800x450.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"
                                                         class="img-fluid img100 rounded">
                                                 </picture>
                                             </div>
@@ -535,15 +551,11 @@
                                         </div>
                                         <div class="col-md-5 ">
                                             <div class="DCatLeadTitle">
-                                                <h1>
-                                                    <span class="subHeading">সুজনের পর্যবেক্ষণ
-                                                            / </span> ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা
-                                                </h1>
-                                                <p class="CatDesc">অভিযুক্ত ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগকে ত্রয়োদশ জাতীয় সংসদ নির্বাচনের সবচেয়ে উল্লেখযোগ্য ব্যর্থতা হিসেবে চিহ্নিত করেছে সুশাসনের জন্য নাগরিক (সুজন)। সংগঠনটি বলেছে, অন্তত ৪৫ জন ঋণখেলাপি
-                                                    প্রার্থী, কোনো কোনো ক্ষেত্রে উচ্চ আদালতের স্থগিতাদেশ নিয়ে এবারের নির্বাচনে অংশগ্রহণের সুযোগ পেয়েছেন।</p>
+                                                <h1><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h1>
+                                                <p class="CatDesc"><?php the_excerpt(); ?></p>
                                             </div>
                                             <span class="publishTime">আপডেটঃ
-                                                ২৫ ফেব্রুয়ারি ২০২৬ | ১২:৪৯</span>
+                                            <?php echo str_replace(['0','1','2','3','4','5','6','7','8','9'], ['০','১','২','৩','৪','৫','৬','৭','৮','৯'], get_the_date('d').' '.strtr(get_the_date('F'), ['January'=>'জানুয়ারি','February'=>'ফেব্রুয়ারি','March'=>'মার্চ','April'=>'এপ্রিল','May'=>'মে','June'=>'জুন','July'=>'জুলাই','August'=>'আগস্ট','September'=>'সেপ্টেম্বর','October'=>'অক্টোবর','November'=>'নভেম্বর','December'=>'ডিসেম্বর']).' '.str_replace(['0','1','2','3','4','5','6','7','8','9'], ['০','১','২','৩','৪','৫','৬','৭','৮','৯'], get_the_date('Y').' | '.get_the_date('H:i'))); ?></span>
                                         </div>
                                     </div>
                                 </a>
@@ -580,85 +592,34 @@
                         </div>
                     </div>
                 </div>
+                <?php endif; endwhile; wp_reset_postdata(); ?>
                 <!-- category cards -->
                 <div class="category-card-area">
                     <div class="row">
+                        <?php 
+                            $count = 0;
+                            while ( $category_query->have_posts() ) : $category_query->the_post();
+                            $count++;
+                            if ( $count > 1 && $count < 6) : 
+                        ?>
                         <div class="col-md-3 d-flex">
                             <div class="Catcards align-items-stretch">
-                                <a href="https://samakal.com/bangladesh/article/340204/%E0%A6%AA%E0%A7%81%E0%A6%B2%E0%A6%BF%E0%A6%B6-%E0%A6%AE%E0%A6%B9%E0%A6%BE%E0%A6%AA%E0%A6%B0%E0%A6%BF%E0%A6%A6%E0%A6%B0%E0%A7%8D%E0%A6%B6%E0%A6%95%E0%A7%87%E0%A6%B0-%E0%A6%A6%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A6%BF%E0%A6%A4%E0%A7%8D%E0%A6%AC-%E0%A6%97%E0%A7%8D%E0%A6%B0%E0%A6%B9%E0%A6%A3-%E0%A6%95%E0%A6%B0%E0%A6%B2%E0%A7%87%E0%A6%A8-%E0%A6%86%E0%A6%B2%E0%A7%80-%E0%A6%B9%E0%A7%8B%E0%A6%B8%E0%A7%87%E0%A6%A8-%E0%A6%AB%E0%A6%95%E0%A6%BF%E0%A6%B0">
+                                <a href="<?php the_permalink(); ?>">
                                     <div class="img-box ">
                                         <picture>
-                                            <img data-src="https://samakal.com/media/imgAll/2026February/SM/police-igp-1772001363.jpg" src="https://samakal.com/media/common/img-400x250.jpg" alt="পুলিশ মহাপরিদর্শকের দায়িত্ব গ্রহণ করলেন আলী হোসেন ফকির" title="পুলিশ মহাপরিদর্শকের দায়িত্ব গ্রহণ করলেন আলী হোসেন ফকির"
+                                            <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-400x250.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"
                                                 class="img-fluid img100">
                                         </picture>
                                     </div>
                                     <div class="CatCardTitle">
-                                        <h3>
-                                            পুলিশ মহাপরিদর্শকের দায়িত্ব গ্রহণ করলেন আলী হোসেন ফকির
-                                        </h3>
+                                        <h3><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h3>
                                     </div>
                                     <span class="publishTime">আপডেটঃ
-                                        ২৫ ফেব্রুয়ারি ২০২৬ | ১২:৩৬</span>
+                                    <?php echo str_replace(['0','1','2','3','4','5','6','7','8','9'], ['০','১','২','৩','৪','৫','৬','৭','৮','৯'], get_the_date('d').' '.strtr(get_the_date('F'), ['January'=>'জানুয়ারি','February'=>'ফেব্রুয়ারি','March'=>'মার্চ','April'=>'এপ্রিল','May'=>'মে','June'=>'জুন','July'=>'জুলাই','August'=>'আগস্ট','September'=>'সেপ্টেম্বর','October'=>'অক্টোবর','November'=>'নভেম্বর','December'=>'ডিসেম্বর']).' '.str_replace(['0','1','2','3','4','5','6','7','8','9'], ['০','১','২','৩','৪','৫','৬','৭','৮','৯'], get_the_date('Y').' | '.get_the_date('H:i'))); ?></span>
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-3 d-flex">
-                            <div class="Catcards align-items-stretch">
-                                <a href="https://samakal.com/bangladesh/article/340185/%E0%A6%B8%E0%A6%BE%E0%A6%B0%E0%A7%87%E0%A6%B0-%E0%A6%AC%E0%A6%BE%E0%A7%9C%E0%A6%A4%E0%A6%BF-%E0%A6%A6%E0%A6%B0-%E0%A6%9A%E0%A6%BE%E0%A6%AA%E0%A7%87-%E0%A6%95%E0%A7%83%E0%A6%B7%E0%A6%95-%E0%A6%9D%E0%A7%81%E0%A6%81%E0%A6%95%E0%A6%BF%E0%A6%A4%E0%A7%87-%E0%A6%96%E0%A6%BE%E0%A6%A6%E0%A7%8D%E0%A6%AF-%E0%A6%A8%E0%A6%BF%E0%A6%B0%E0%A6%BE%E0%A6%AA%E0%A6%A4%E0%A7%8D%E0%A6%A4%E0%A6%BE">
-                                    <div class="img-box ">
-                                        <picture>
-                                            <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771986880.jpg" src="https://samakal.com/media/common/img-400x250.jpg" alt="সারের বাড়তি দর, চাপে কৃষক ঝুঁকিতে খাদ্য নিরাপত্তা" title="সারের বাড়তি দর, চাপে কৃষক ঝুঁকিতে খাদ্য নিরাপত্তা"
-                                                class="img-fluid img100">
-                                        </picture>
-                                    </div>
-                                    <div class="CatCardTitle">
-                                        <h3>
-                                            সারের বাড়তি দর, চাপে কৃষক ঝুঁকিতে খাদ্য নিরাপত্তা
-                                        </h3>
-                                    </div>
-                                    <span class="publishTime">আপডেটঃ
-                                        ২৫ ফেব্রুয়ারি ২০২৬ | ০৮:৪৩</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 d-flex">
-                            <div class="Catcards align-items-stretch">
-                                <a href="https://samakal.com/bangladesh/article/340202/%E0%A6%9C%E0%A7%81%E0%A6%A8%E0%A6%BF%E0%A7%9F%E0%A6%B0-%E0%A6%AC%E0%A7%83%E0%A6%A4%E0%A7%8D%E0%A6%A4%E0%A6%BF-%E0%A6%AA%E0%A6%B0%E0%A7%80%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE%E0%A6%B0-%E0%A6%AB%E0%A6%B2-%E0%A6%A6%E0%A7%81%E0%A6%AA%E0%A7%81%E0%A6%B0%E0%A7%87-%E0%A6%9C%E0%A6%BE%E0%A6%A8%E0%A6%BE-%E0%A6%AF%E0%A6%BE%E0%A6%AC%E0%A7%87-%E0%A6%AF%E0%A7%87%E0%A6%AD%E0%A6%BE%E0%A6%AC%E0%A7%87">
-                                    <div class="img-box ">
-                                        <picture>
-                                            <img data-src="https://samakal.com/media/imgAll/2026February/SM/junior-scholarship-1771996776.jpg" src="https://samakal.com/media/common/img-400x250.jpg" alt="জুনিয়র বৃত্তি পরীক্ষার ফল দুপুরে, জানা যাবে যেভাবে" title="জুনিয়র বৃত্তি পরীক্ষার ফল দুপুরে, জানা যাবে যেভাবে"
-                                                class="img-fluid img100">
-                                        </picture>
-                                    </div>
-                                    <div class="CatCardTitle">
-                                        <h3>
-                                            জুনিয়র বৃত্তি পরীক্ষার ফল দুপুরে, জানা যাবে যেভাবে
-                                        </h3>
-                                    </div>
-                                    <span class="publishTime">আপডেটঃ
-                                        ২৫ ফেব্রুয়ারি ২০২৬ | ১২:১৮</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 d-flex">
-                            <div class="Catcards align-items-stretch">
-                                <a href="https://samakal.com/bangladesh/article/340179/%E0%A6%86%E0%A6%B8%E0%A6%BE%E0%A6%AE%E0%A6%BF-%E0%A6%B9%E0%A6%9A%E0%A7%8D%E0%A6%9B%E0%A7%87%E0%A6%A8-%E0%A6%B6%E0%A7%87%E0%A6%96-%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%BF%E0%A6%A8%E0%A6%BE-%E0%A6%A8%E0%A6%A4%E0%A7%81%E0%A6%A8-%E0%A6%A4%E0%A6%A6%E0%A6%A8%E0%A7%8D%E0%A6%A4-%E0%A6%B9%E0%A6%AC%E0%A7%87">
-                                    <div class="img-box ">
-                                        <picture>
-                                            <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771986160.jpg" src="https://samakal.com/media/common/img-400x250.jpg" alt="আসামি হচ্ছেন শেখ হাসিনা, নতুন তদন্ত হবে" title="আসামি হচ্ছেন শেখ হাসিনা, নতুন তদন্ত হবে" class="img-fluid img100">
-                                        </picture>
-                                    </div>
-                                    <div class="CatCardTitle">
-                                        <h3>
-                                            <span class="subHeading">পিলখানা হত্যাকাণ্ডের ১৭ বছর / </span> আসামি হচ্ছেন শেখ হাসিনা, নতুন তদন্ত হবে
-                                        </h3>
-                                    </div>
-                                    <span class="publishTime">আপডেটঃ
-                                        ২৫ ফেব্রুয়ারি ২০২৬ | ১১:৪২</span>
-                                </a>
-                            </div>
-                        </div>
-
+                        <?php endif; endwhile; wp_reset_postdata(); ?>
                     </div>
                 </div>
                 <!-- category cards end -->
@@ -711,226 +672,35 @@
                         </div>
                         <div class="col-lg-6" id="categoryContentList">
                             <div id="data-wrapper">
+                                <?php 
+                                    $count = 0;
+                                    while ( $category_query->have_posts() ) : $category_query->the_post();
+                                    $count++;
+                                    if ( $count > 5 && $count < 16) : 
+                                ?>
                                 <div class="CatListNews">
-                                    <a href="https://samakal.com/bangladesh/article/340200/%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%B0%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE-%E0%A6%9A%E0%A7%81%E0%A6%95%E0%A7%8D%E0%A6%A4%E0%A6%BF%E0%A6%B0-%E0%A6%B8%E0%A7%81%E0%A6%B7%E0%A7%8D%E0%A6%A0%E0%A7%81-%E0%A6%AC%E0%A6%BE%E0%A6%B8%E0%A7%8D%E0%A6%A4%E0%A6%AC%E0%A6%BE%E0%A7%9F%E0%A6%A8-%E0%A6%95%E0%A6%B0%E0%A6%BE-%E0%A6%B9%E0%A6%AC%E0%A7%87">
+                                    <a href="<?php the_permalink(); ?>">
                                         <div class="row d-flex justify-content-end">
                                             <div class="col-md-6 col-6">
                                                 <div class="CatListhead">
-                                                    <h3> <span class="subHeading">পররাষ্ট্রমন্ত্রীর সঙ্গে জাপানের রাষ্ট্রদূতের সাক্ষাৎ / </span> প্রতিরক্ষা চুক্তির সুষ্ঠু বাস্তবায়ন করা হবে</h3>
+                                                    <h3><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h3>
                                                 </div>
                                                 <div class="ListDesc">
-                                                    <p>বাংলাদেশ ও জাপানের মধ্যে বিগত অন্তর্বর্তী সরকারের শেষ মুহূর্তে করা প্রতিরক্ষা ও অর্থনৈতিক সহযোগিতা-সংক্রান্ত চুক্তির সুষ্ঠু বাস্তবায়ন নিশ্চিত করা হয়েছে। গতকাল মঙ্গলবার পররাষ্ট্রমন্ত্রী খলিলুর</p>
+                                                    <p><?php the_excerpt(); ?></p>
                                                 </div>
-                                                <span class="publishTime">আপডেটঃ ২৫ ফেব্রুয়ারি ২০২৬ | ১২:১৯</span>
+                                                <span class="publishTime">আপডেটঃ <?php echo str_replace(['0','1','2','3','4','5','6','7','8','9'], ['০','১','২','৩','৪','৫','৬','৭','৮','৯'], get_the_date('d').' '.strtr(get_the_date('F'), ['January'=>'জানুয়ারি','February'=>'ফেব্রুয়ারি','March'=>'মার্চ','April'=>'এপ্রিল','May'=>'মে','June'=>'জুন','July'=>'জুলাই','August'=>'আগস্ট','September'=>'সেপ্টেম্বর','October'=>'অক্টোবর','November'=>'নভেম্বর','December'=>'ডিসেম্বর']).' '.str_replace(['0','1','2','3','4','5','6','7','8','9'], ['০','১','২','৩','৪','৫','৬','৭','৮','৯'], get_the_date('Y').' | '.get_the_date('H:i'))); ?></span>
                                             </div>
                                             <div class="col-md-6 col-6">
                                                 <div class="img-box ">
                                                     <picture>
-                                                        <img src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771988260.jpg" alt="প্রতিরক্ষা চুক্তির সুষ্ঠু  বাস্তবায়ন করা হবে" title="প্রতিরক্ষা চুক্তির সুষ্ঠু  বাস্তবায়ন করা হবে" class="img-fluid img100 rounded">
+                                                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="img-fluid img100 rounded">
                                                     </picture>
                                                 </div>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="CatListNews">
-                                    <a href="https://samakal.com/bangladesh/article/340198/%E0%A6%B8%E0%A6%AE%E0%A7%9F%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A6%B0%E0%A7%80%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE%E0%A7%9F-%E0%A6%89%E0%A6%A4%E0%A7%8D%E0%A6%A4%E0%A7%80%E0%A6%B0%E0%A7%8D%E0%A6%A3-%E0%A6%85%E0%A6%AC%E0%A6%BF%E0%A6%B8%E0%A6%82%E0%A6%AC%E0%A6%BE%E0%A6%A6%E0%A6%BF%E0%A6%A4-%E0%A6%A8%E0%A7%87%E0%A6%A4%E0%A6%BE-%E0%A6%A4%E0%A6%BE%E0%A6%B0%E0%A7%87%E0%A6%95-%E0%A6%B0%E0%A6%B9%E0%A6%AE%E0%A6%BE%E0%A6%A8">
-                                        <div class="row d-flex justify-content-end">
-                                            <div class="col-md-6 col-6">
-                                                <div class="CatListhead">
-                                                    <h3> <span class="subHeading">অনুষ্ঠানে তথ্যমন্ত্রী / </span> সময়ের পরীক্ষায় উত্তীর্ণ অবিসংবাদিত নেতা তারেক রহমান</h3>
-                                                </div>
-                                                <div class="ListDesc">
-                                                    <p>তথ্য ও সম্প্রচারমন্ত্রী জহির উদ্দিন স্বপন বলেছেন, প্রধানমন্ত্রী তারেক রহমান বিভিন্ন প্রতিকূলতা ও চ্যালেঞ্জ মোকাবিলা করে সময়ের পরীক্ষায় উত্তীর্ণ হয়ে এখন জনতার অবিসংবাদিত নেতায় পরিণত হয়েছেন।</p>
-                                                </div>
-                                                <span class="publishTime">আপডেটঃ ২৫ ফেব্রুয়ারি ২০২৬ | ০৮:৫৩</span>
-                                            </div>
-                                            <div class="col-md-6 col-6">
-                                                <div class="img-box ">
-                                                    <picture>
-                                                        <img src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771988036.jpg" alt="সময়ের পরীক্ষায় উত্তীর্ণ অবিসংবাদিত নেতা তারেক রহমান" title="সময়ের পরীক্ষায় উত্তীর্ণ অবিসংবাদিত নেতা তারেক রহমান" class="img-fluid img100 rounded">
-                                                    </picture>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="CatListNews">
-                                    <a href="https://samakal.com/bangladesh/article/340188/%E0%A6%AC%E0%A6%BF%E0%A6%A6%E0%A7%8D%E0%A6%AF%E0%A7%81%E0%A7%8E-%E0%A6%9A%E0%A7%81%E0%A6%95%E0%A7%8D%E0%A6%A4%E0%A6%BF%E0%A6%97%E0%A7%81%E0%A6%B2%E0%A7%8B-%E0%A6%B8%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%AC%E0%A6%AD%E0%A7%8C%E0%A6%AE%E0%A6%A4%E0%A7%8D%E0%A6%AC%E0%A7%87%E0%A6%B0-%E0%A6%9C%E0%A6%A8%E0%A7%8D%E0%A6%AF-%E0%A6%B9%E0%A7%81%E0%A6%AE%E0%A6%95%E0%A6%BF">
-                                        <div class="row d-flex justify-content-end">
-                                            <div class="col-md-6 col-6">
-                                                <div class="CatListhead">
-                                                    <h3> <span class="subHeading">সাংবাদিকদের বিদ্যুৎমন্ত্রী / </span> বিদ্যুৎ চুক্তিগুলো সার্বভৌমত্বের জন্য হুমকি</h3>
-                                                </div>
-                                                <div class="ListDesc">
-                                                    <p>আওয়ামী লীগ সরকারের সময় ভারতসহ বিদেশি ও বেসরকারি খাতের সঙ্গে করা বিদ্যুৎ ক্রয় চুক্তিগুলো দেশের স্বাধীনতা ও সার্বভৌমত্বের জন্য মারাত্মক হুমকি বলে মনে করছেন বিদ্যুৎ, জ্বালানি ও খনিজ</p>
-                                                </div>
-                                                <span class="publishTime">আপডেটঃ ২৫ ফেব্রুয়ারি ২০২৬ | ০৯:১৫</span>
-                                            </div>
-                                            <div class="col-md-6 col-6">
-                                                <div class="img-box ">
-                                                    <picture>
-                                                        <img src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771987158.jpg" alt="বিদ্যুৎ চুক্তিগুলো  সার্বভৌমত্বের জন্য হুমকি" title="বিদ্যুৎ চুক্তিগুলো  সার্বভৌমত্বের জন্য হুমকি" class="img-fluid img100 rounded">
-                                                    </picture>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="CatListNews">
-                                    <a href="https://samakal.com/bangladesh/article/340187/%E0%A6%B8%E0%A7%8D%E0%A6%AC%E0%A6%9C%E0%A6%A8%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%A7%E0%A6%BE%E0%A6%B0%E0%A6%A3%E0%A6%BE-%E0%A6%9B%E0%A6%BF%E0%A6%B2-%E0%A6%B0%E0%A6%BF%E0%A6%9C%E0%A6%BF%E0%A7%9F%E0%A6%BE-%E0%A6%AC%E0%A7%87%E0%A6%81%E0%A6%9A%E0%A7%87-%E0%A6%A8%E0%A7%87%E0%A6%87">
-                                        <div class="row d-flex justify-content-end">
-                                            <div class="col-md-6 col-6">
-                                                <div class="CatListhead">
-                                                    <h3> স্বজনদের ধারণা ছিল রিজিয়া বেঁচে নেই</h3>
-                                                </div>
-                                                <div class="ListDesc">
-                                                    <p>সৌদি আরব থেকে দেশে ফেরত আসা রিজিয়া বেগম অবশেষে পরিবারের কাছে ফিরলেন। তাঁর তিন সন্তান ফিরে পেল তাদের মাকে। সৌদি আরব থেকে ফেরত পাঠানোর পর মানসিক ভারসাম্যহীন অবস্থায়</p>
-                                                </div>
-                                                <span class="publishTime">আপডেটঃ ২৫ ফেব্রুয়ারি ২০২৬ | ০৯:১৪</span>
-                                            </div>
-                                            <div class="col-md-6 col-6">
-                                                <div class="img-box ">
-                                                    <picture>
-                                                        <img src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771987061.jpg" alt="স্বজনদের ধারণা ছিল রিজিয়া বেঁচে নেই" title="স্বজনদের ধারণা ছিল রিজিয়া বেঁচে নেই" class="img-fluid img100 rounded">
-                                                    </picture>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="CatListNews">
-                                    <a href="https://samakal.com/bangladesh/article/340186/%E0%A6%93%E0%A6%B7%E0%A7%81%E0%A6%A7-%E0%A6%A8%E0%A6%BF%E0%A7%9F%E0%A7%87-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%B6%E0%A7%8D%E0%A6%A8-%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%AF%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A6%BF%E0%A6%A4%E0%A6%BE-%E0%A6%AA%E0%A6%B0%E0%A7%80%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE-%E0%A6%B9%E0%A6%AC%E0%A7%87">
-                                        <div class="row d-flex justify-content-end">
-                                            <div class="col-md-6 col-6">
-                                                <div class="CatListhead">
-                                                    <h3> <span class="subHeading">মশক নিধন / </span> ওষুধ নিয়ে প্রশ্ন, কার্যকারিতা পরীক্ষা হবে</h3>
-                                                </div>
-                                                <div class="ListDesc">
-                                                    <p>ঢাকার দুই সিটি করপোরেশনে ব্যবহৃত মশক নিধন ওষুধ কার্যকারিতা হারিয়েছে— দীর্ঘদিনের এমন অভিযোগের প্রেক্ষাপটে মজুত ও ব্যবহৃত ওষুধের কার্যকারিতা সরেজমিন যাচাইয়ের উদ্যোগ নেওয়া</p>
-                                                </div>
-                                                <span class="publishTime">আপডেটঃ ২৫ ফেব্রুয়ারি ২০২৬ | ০৯:১৬</span>
-                                            </div>
-                                            <div class="col-md-6 col-6">
-                                                <div class="img-box ">
-                                                    <picture>
-                                                        <img src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771986965.jpg" alt="ওষুধ নিয়ে প্রশ্ন, কার্যকারিতা পরীক্ষা হবে" title="ওষুধ নিয়ে প্রশ্ন, কার্যকারিতা পরীক্ষা হবে" class="img-fluid img100 rounded">
-                                                    </picture>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="CatListNews">
-                                    <a href="https://samakal.com/bangladesh/article/340184/%E0%A6%B6%E0%A7%81%E0%A6%B2%E0%A7%8D%E0%A6%95-%E0%A6%A8%E0%A6%BF%E0%A7%9F%E0%A7%87-%E0%A6%AC%E0%A7%88%E0%A6%B6%E0%A7%8D%E0%A6%AC%E0%A6%BF%E0%A6%95-%E0%A6%AC%E0%A6%BE%E0%A6%A3%E0%A6%BF%E0%A6%9C%E0%A7%8D%E0%A6%AF%E0%A7%87-%E0%A6%85%E0%A6%A8%E0%A6%BF%E0%A6%B6%E0%A7%8D%E0%A6%9A%E0%A7%9F%E0%A6%A4%E0%A6%BE-%E0%A6%86%E0%A6%B0%E0%A6%93-%E0%A6%AC%E0%A6%BE%E0%A7%9C%E0%A6%B2">
-                                        <div class="row d-flex justify-content-end">
-                                            <div class="col-md-6 col-6">
-                                                <div class="CatListhead">
-                                                    <h3> শুল্ক নিয়ে বৈশ্বিক বাণিজ্যে অনিশ্চয়তা আরও বাড়ল</h3>
-                                                </div>
-                                                <div class="ListDesc">
-                                                    <p>যুক্তরাষ্ট্রের ক্ষণে ক্ষণে পাল্টানো শুল্কনীতির কারণে বৈশ্বিক বাণিজ্যে অনিশ্চয়তা আরও বেড়েছে। যেসব দেশ যুক্তরাষ্ট্রের সঙ্গে স্বাক্ষরিত বাণিজ্যচুক্তি কার্যকর করা থেকে পিছিয়ে যাওয়ার চেষ্টা করবে, সেসব</p>
-                                                </div>
-                                                <span class="publishTime">আপডেটঃ ২৫ ফেব্রুয়ারি ২০২৬ | ১২:৩৪</span>
-                                            </div>
-                                            <div class="col-md-6 col-6">
-                                                <div class="img-box ">
-                                                    <picture>
-                                                        <img src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771986775.jpg" alt="শুল্ক নিয়ে বৈশ্বিক বাণিজ্যে অনিশ্চয়তা আরও বাড়ল" title="শুল্ক নিয়ে বৈশ্বিক বাণিজ্যে অনিশ্চয়তা আরও বাড়ল" class="img-fluid img100 rounded">
-                                                    </picture>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="CatListNews">
-                                    <a href="https://samakal.com/bangladesh/article/340181/%E0%A6%A6%E0%A7%87%E0%A6%B6%E0%A7%87-%E0%A6%86%E0%A6%9F-%E0%A6%AC%E0%A6%9B%E0%A6%B0%E0%A7%87-%E0%A6%A8%E0%A6%A4%E0%A7%81%E0%A6%A8-%E0%A7%A7%E0%A7%A8-%E0%A6%AE%E0%A6%BE%E0%A6%A6%E0%A6%95">
-                                        <div class="row d-flex justify-content-end">
-                                            <div class="col-md-6 col-6">
-                                                <div class="CatListhead">
-                                                    <h3> দেশে আট বছরে নতুন ১২ মাদক</h3>
-                                                </div>
-                                                <div class="ListDesc">
-                                                    <p>দেশে বিভিন্ন সময়ে নতুন নতুন মাদক নিয়ে এসেছে চোরাকারবারিরা। সবচেয়ে বেশি নতুন মাদক এসেছে গত আট বছরে। এই সময়ে দেশে ১২ ধরনের নতুন মাদক প্রবেশ করেছে। এ ছাড়া নতুন আঙ্গিকে</p>
-                                                </div>
-                                                <span class="publishTime">আপডেটঃ ২৫ ফেব্রুয়ারি ২০২৬ | ১২:২০</span>
-                                            </div>
-                                            <div class="col-md-6 col-6">
-                                                <div class="img-box ">
-                                                    <picture>
-                                                        <img src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771986532.jpg" alt="দেশে আট বছরে নতুন ১২ মাদক" title="দেশে আট বছরে নতুন ১২ মাদক" class="img-fluid img100 rounded">
-                                                    </picture>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="CatListNews">
-                                    <a href="https://samakal.com/bangladesh/article/340180/%E0%A6%9A%E0%A6%9F%E0%A7%8D%E0%A6%9F%E0%A6%97%E0%A7%8D%E0%A6%B0%E0%A6%BE%E0%A6%AE%E0%A7%87-%E0%A6%97%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%B8-%E0%A6%B2%E0%A6%BF%E0%A6%95%E0%A7%87%E0%A6%9C-%E0%A6%A5%E0%A7%87%E0%A6%95%E0%A7%87-%E0%A7%AC-%E0%A6%AC%E0%A6%9B%E0%A6%B0%E0%A7%87-%E0%A7%AE%E0%A7%A6%E0%A7%A6-%E0%A6%86%E0%A6%97%E0%A7%81%E0%A6%A8-%E0%A6%AC%E0%A6%BF%E0%A6%B8%E0%A7%8D%E0%A6%AB%E0%A7%8B%E0%A6%B0%E0%A6%A3">
-                                        <div class="row d-flex justify-content-end">
-                                            <div class="col-md-6 col-6">
-                                                <div class="CatListhead">
-                                                    <h3> চট্টগ্রামে গ্যাস লিকেজ থেকে ৬ বছরে ৮০০ আগুন-বিস্ফোরণ</h3>
-                                                </div>
-                                                <div class="ListDesc">
-                                                    <p>চট্টগ্রাম বিভাগে গত ছয় বছরে গ্যাসলাইন লিকেজে আট শতাধিক অগ্নিকাণ্ড ঘটেছে বলে জানিয়েছে ফায়ার সার্ভিস। তবে এসব ঘটনায় কতজন প্রাণ হারিয়েছেন, সেই হিসাব নেই কারও কাছে। প্রতিটি বড়</p>
-                                                </div>
-                                                <span class="publishTime">আপডেটঃ ২৫ ফেব্রুয়ারি ২০২৬ | ১০:২৭</span>
-                                            </div>
-                                            <div class="col-md-6 col-6">
-                                                <div class="img-box ">
-                                                    <picture>
-                                                        <img src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771986378.jpg" alt="চট্টগ্রামে গ্যাস লিকেজ থেকে ৬ বছরে ৮০০ আগুন-বিস্ফোরণ" title="চট্টগ্রামে গ্যাস লিকেজ থেকে ৬ বছরে ৮০০ আগুন-বিস্ফোরণ" class="img-fluid img100 rounded">
-                                                    </picture>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="CatListNews">
-                                    <a href="https://samakal.com/bangladesh/article/340166/%E0%A6%9C%E0%A7%81%E0%A6%A8%E0%A6%BF%E0%A7%9F%E0%A6%B0-%E0%A6%AC%E0%A7%83%E0%A6%A4%E0%A7%8D%E0%A6%A4%E0%A6%BF-%E0%A6%AA%E0%A6%BE%E0%A6%9A%E0%A7%8D%E0%A6%9B%E0%A7%87-%E0%A7%AA%E0%A7%AB-%E0%A7%A8%E0%A7%A6%E0%A7%A6-%E0%A6%B6%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A5%E0%A7%80-%E0%A6%AB%E0%A6%B2-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B6-%E0%A6%86%E0%A6%9C">
-                                        <div class="row d-flex justify-content-end">
-                                            <div class="col-md-6 col-6">
-                                                <div class="CatListhead">
-                                                    <h3> জুনিয়র বৃত্তি পাচ্ছে ৪৫,২০০ শিক্ষার্থী, ফল প্রকাশ আজ</h3>
-                                                </div>
-                                                <div class="ListDesc">
-                                                    <p>দীর্ঘ ১৭ বছর পর অনুষ্ঠিত জুনিয়র বৃত্তি পরীক্ষার ফল আজ বুধবার প্রকাশ করা হতে পারে। এবার দুই ক্যাটেগরি মিলিয়ে ৪৫ হাজার ২০০ শিক্ষার্থীকে বৃত্তি দেওয়ার জন্য নির্বাচিত করা হবে।</p>
-                                                </div>
-                                                <span class="publishTime">আপডেটঃ ২৫ ফেব্রুয়ারি ২০২৬ | ১১:১০</span>
-                                            </div>
-                                            <div class="col-md-6 col-6">
-                                                <div class="img-box ">
-                                                    <picture>
-                                                        <img src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771984897.jpg" alt="জুনিয়র বৃত্তি পাচ্ছে ৪৫,২০০ শিক্ষার্থী, ফল প্রকাশ আজ" title="জুনিয়র বৃত্তি পাচ্ছে ৪৫,২০০ শিক্ষার্থী, ফল প্রকাশ আজ" class="img-fluid img100 rounded">
-                                                    </picture>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="CatListNews">
-                                    <a href="https://samakal.com/bangladesh/article/340165/%E0%A6%B8%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A5%E0%A6%AE-%E0%A7%A7%E0%A7%A6%E0%A7%A6-%E0%A6%A6%E0%A6%BF%E0%A6%A8%E0%A7%87%E0%A6%87-%E0%A6%9C%E0%A6%A8%E0%A6%97%E0%A6%A3%E0%A7%87%E0%A6%B0-%E0%A6%86%E0%A6%B8%E0%A7%8D%E0%A6%A5%E0%A6%BE-%E0%A6%AB%E0%A7%87%E0%A6%B0%E0%A6%BE%E0%A6%A4%E0%A7%87-%E0%A6%B9%E0%A6%AC%E0%A7%87">
-                                        <div class="row d-flex justify-content-end">
-                                            <div class="col-md-6 col-6">
-                                                <div class="CatListhead">
-                                                    <h3> সরকারের প্রথম ১০০ দিনেই জনগণের আস্থা ফেরাতে হবে</h3>
-                                                </div>
-                                                <div class="ListDesc">
-                                                    <p>নতুন সরকারের প্রথম ১০০ দিনে জনগণের আস্থা পুনরুদ্ধার করতে হবে বলে মনে করছেন বিশিষ্টজন। তারা বলছেন, গণঅভ্যুত্থানের পর দেশে ডানপন্থার উত্থান ঘটেছে। নির্বাচন তা আরেক ধাপ এগিয়ে</p>
-                                                </div>
-                                                <span class="publishTime">আপডেটঃ ২৫ ফেব্রুয়ারি ২০২৬ | ০৭:৫৮</span>
-                                            </div>
-                                            <div class="col-md-6 col-6">
-                                                <div class="img-box ">
-                                                    <picture>
-                                                        <img src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771984732.jpg" alt="সরকারের প্রথম ১০০ দিনেই জনগণের আস্থা ফেরাতে হবে" title="সরকারের প্রথম ১০০ দিনেই জনগণের আস্থা ফেরাতে হবে" class="img-fluid img100 rounded">
-                                                    </picture>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+                                <?php endif; endwhile; wp_reset_postdata(); ?>
                             </div>
                             <div class="auto-load text-center" style="display: none;">
                                 <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="60" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
@@ -969,6 +739,7 @@
                 </div>
 
                 <!-- category subnews  end -->
+                <?php endif; endif; ?>
             </div>
         </div>
     </main>
