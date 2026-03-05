@@ -311,6 +311,24 @@ function theme_customize_register( $wp_customize ) {
         'description' => __( 'Customize Home page settings here.' ),
     ) );
 
+
+    
+$wp_customize->add_setting( 'lead', array(
+    'default'           => '',
+    'sanitize_callback' => 'absint',
+) );
+
+$wp_customize->add_control( 'lead', array(
+    'label'    => 'Lead',
+    'section'  => 'home_section',
+    'type'     => 'select',
+    'choices'  => wp_list_pluck(
+        get_categories( array( 'hide_empty' => false ) ),
+        'name',
+        'term_id'
+    ),
+) );
+
     
 $wp_customize->add_setting( 'lead_sidebar_category', array(
     'default'           => '',

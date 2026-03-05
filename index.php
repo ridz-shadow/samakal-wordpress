@@ -797,16 +797,32 @@ if ( isset( $locations[ $menu_name ] ) ) {
             <div class="DTopNewsSection mt-5">
                 <div class="row">
                     <div class="col-lg-9">
+                        <?php 
+                            $home_category_id = get_theme_mod('lead');
+                            if ( $home_category_id ) :
+
+                            $home_category_query = new WP_Query( array(
+                                'cat'            => $home_category_id,
+                                'posts_per_page' => 5,
+                            ) );
+                            if ( $home_category_query->have_posts() ) : 
+                        ?>
                         <div class="row">
 
                             <div class="col-lg-8 col-12 border-right-inner mt-3">
+                                <?php 
+                                    $count = 0;
+                                    while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                    $count++;
+                                    if ( $count === 1 ) : 
+                                ?>
                                 <div class="DHomeTopLead">
-                                    <a href="https://samakal.com/bangladesh/article/340205/ঋণখেলাপি-ও-দ্বৈত-নাগরিকদের-প্রতিদ্বন্দ্বিতার-সুযোগ-নির্বাচনে-উল্লেখযোগ্য-ব্যর্থতা">
+                                    <a href="<?php the_permalink(); ?>">
                                         <div class="row">
                                             <div class="col-lg-7">
                                                 <div class="DImgZoomBlock">
                                                     <picture>
-                                                        <img src="https://samakal.com/media/imgAll/2026February/sujon-1772002167.jpg" alt="ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা" title="ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা"
+                                                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"
                                                             class="img-fluid img100">
                                                     </picture>
 
@@ -814,184 +830,77 @@ if ( isset( $locations[ $menu_name ] ) ) {
                                             </div>
                                             <div class="col-lg-5 order-lg-first">
                                                 <div class="Desc">
-                                                    <h1 class="Title"><span class="subHeading fw-bold">সুজনের পর্যবেক্ষণ / </span>ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগ নির্বাচনে উল্লেখযোগ্য ব্যর্থতা</h1>
+                                                    <h1 class="Title"><span class="subHeading fw-bold"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h1>
                                                     <div class="Brief">
-                                                        <p>অভিযুক্ত ঋণখেলাপি ও দ্বৈত নাগরিকদের প্রতিদ্বন্দ্বিতার সুযোগকে ত্রয়োদশ জাতীয় সংসদ নির্বাচনের সবচেয়ে উল্লেখযোগ্য ব্যর্থতা হিসেবে চিহ্নিত করেছে সুশাসনের জন্য নাগরিক (সুজন)। সংগঠনটি বলেছে, অন্তত ৪৫ জন
-                                                            ঋণখেলাপি প্রার্থী, কোনো কোনো ক্ষেত্রে উচ্চ আদালতের স্থগিতাদেশ নিয়ে এবারের নির্বাচনে অংশগ্রহণের সুযোগ পেয়েছেন।</p>
+                                                        <p><?php the_excerpt(); ?></p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
+                                <?php endif; endwhile; wp_reset_postdata(); ?>
                                 <div class="DHomeLeadList3Sec">
                                     <div class="row">
+                                        <?php 
+                                            $count = 0;
+                                            while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                            $count++;
+                                            if ( $count > 1 && $count < 6 ) : 
+                                        ?>
                                         <div class="col-lg-6 col-12 d-flex border-right-inner">
                                             <div class="DHomeLeadList3 align-self-stretch">
-                                                <a href="https://samakal.com/bangladesh/article/340204/পুলিশ-মহাপরিদর্শকের-দায়িত্ব-গ্রহণ-করলেন-আলী-হোসেন-ফকির">
+                                                <a href="<?php the_permalink(); ?>">
                                                     <div class="row">
                                                         <div class="col-lg-5 col-5">
                                                             <div class="DImgZoomBlock">
                                                                 <picture>
-                                                                    <img src="https://samakal.com/media/imgAll/2026February/SM/police-igp-1772001363.jpg" alt="পুলিশ মহাপরিদর্শকের দায়িত্ব গ্রহণ করলেন আলী হোসেন ফকির" title="পুলিশ মহাপরিদর্শকের দায়িত্ব গ্রহণ করলেন আলী হোসেন ফকির" class="img-fluid img100">
+                                                                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="img-fluid img100">
                                                                 </picture>
 
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-7 col-7">
                                                             <div class="Desc">
-                                                                <h3 class="Title">পুলিশ মহাপরিদর্শকের দায়িত্ব গ্রহণ করলেন আলী হোসেন ফকির</h3>
+                                                                <h3 class="Title"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h3>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </a>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 col-12 d-flex border-right-inner">
-                                            <div class="DHomeLeadList3 align-self-stretch">
-                                                <a href="https://samakal.com/bangladesh/article/340179/আসামি-হচ্ছেন-শেখ-হাসিনা-নতুন-তদন্ত-হবে">
-                                                    <div class="row">
-                                                        <div class="col-lg-5 col-5">
-                                                            <div class="DImgZoomBlock">
-                                                                <picture>
-                                                                    <img src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771986160.jpg" alt="আসামি হচ্ছেন শেখ হাসিনা, নতুন তদন্ত হবে" title="আসামি হচ্ছেন শেখ হাসিনা, নতুন তদন্ত হবে" class="img-fluid img100">
-                                                                </picture>
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-7 col-7">
-                                                            <div class="Desc">
-                                                                <h3 class="Title"><span class="subHeading">পিলখানা হত্যাকাণ্ডের ১৭ বছর / </span>আসামি হচ্ছেন শেখ হাসিনা, নতুন তদন্ত হবে</h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-12 d-flex border-right-inner">
-                                            <div class="DHomeLeadList3 align-self-stretch">
-                                                <a href="https://samakal.com/international/article/340130/অনড়-রাশিয়ায়-বৈশ্বিক-ভারসাম্যে-বদল-নিরাপত্তায়-ভাঙন">
-                                                    <div class="row">
-                                                        <div class="col-lg-5 col-5">
-                                                            <div class="DImgZoomBlock">
-                                                                <picture>
-                                                                    <img src="https://samakal.com/media/imgAll/2026February/SM/ucrain-russia-1771964013.jpg" alt="অনড় রাশিয়ায় বৈশ্বিক ভারসাম্যে বদল, নিরাপত্তায় ভাঙন" title="অনড় রাশিয়ায় বৈশ্বিক ভারসাম্যে বদল, নিরাপত্তায় ভাঙন" class="img-fluid img100">
-                                                                </picture>
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-7 col-7">
-                                                            <div class="Desc">
-                                                                <h3 class="Title"><span class="subHeading">পাঁচ বছরে ইউক্রেন যুদ্ধ / </span>অনড় রাশিয়ায় বৈশ্বিক ভারসাম্যে বদল, নিরাপত্তায় ভাঙন</h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-12 d-flex border-right-inner">
-                                            <div class="DHomeLeadList3 align-self-stretch">
-                                                <a href="https://samakal.com/bangladesh/article/340180/চট্টগ্রামে-গ্যাস-লিকেজ-থেকে-৬-বছরে-৮০০-আগুন-বিস্ফোরণ">
-                                                    <div class="row">
-                                                        <div class="col-lg-5 col-5">
-                                                            <div class="DImgZoomBlock">
-                                                                <picture>
-                                                                    <img src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771986378.jpg" alt="চট্টগ্রামে গ্যাস লিকেজ থেকে ৬ বছরে ৮০০ আগুন-বিস্ফোরণ" title="চট্টগ্রামে গ্যাস লিকেজ থেকে ৬ বছরে ৮০০ আগুন-বিস্ফোরণ" class="img-fluid img100">
-                                                                </picture>
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-7 col-7">
-                                                            <div class="Desc">
-                                                                <h3 class="Title">চট্টগ্রামে গ্যাস লিকেজ থেকে ৬ বছরে ৮০০ আগুন-বিস্ফোরণ</h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
+                                        <?php endif; endwhile; wp_reset_postdata(); ?>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-12 mt-3 border-right-inner">
                                 <div class="DTopLeadNews2">
+                                    <?php 
+                                        $count = 0;
+                                        while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                        $count++;
+                                        if ( $count > 5 && $count < 10 ) : 
+                                    ?>
                                     <div class="DHomeLeadList3 align-self-stretch">
-                                        <a href="https://samakal.com/bangladesh/article/340184/শুল্ক-নিয়ে-বৈশ্বিক-বাণিজ্যে-অনিশ্চয়তা-আরও-বাড়ল">
+                                        <a href="<?php the_permalink(); ?>">
                                             <div class="row">
                                                 <div class="col-lg-7 col-7">
                                                     <div class="Desc">
-                                                        <h3 class="Title">শুল্ক নিয়ে বৈশ্বিক বাণিজ্যে অনিশ্চয়তা আরও বাড়ল</h3>
+                                                        <h3 class="Title"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h3>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-5 col-5">
                                                     <div class="DImgZoomBlock">
                                                         <picture>
-                                                            <img src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771986775.jpg" alt="শুল্ক নিয়ে বৈশ্বিক বাণিজ্যে অনিশ্চয়তা আরও বাড়ল" title="শুল্ক নিয়ে বৈশ্বিক বাণিজ্যে অনিশ্চয়তা আরও বাড়ল" class="img-fluid img100">
+                                                            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="img-fluid img100">
                                                         </picture>
-
                                                     </div>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="DHomeLeadList3 align-self-stretch">
-                                        <a href="https://samakal.com/bangladesh/article/340202/জুনিয়র-বৃত্তি-পরীক্ষার-ফল-দুপুরে-জানা-যাবে-যেভাবে">
-                                            <div class="row">
-                                                <div class="col-lg-7 col-7">
-                                                    <div class="Desc">
-                                                        <h3 class="Title">জুনিয়র বৃত্তি পরীক্ষার ফল দুপুরে, জানা যাবে যেভাবে</h3>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5 col-5">
-                                                    <div class="DImgZoomBlock">
-                                                        <picture>
-                                                            <img src="https://samakal.com/media/imgAll/2026February/SM/junior-scholarship-1771996776.jpg" alt="জুনিয়র বৃত্তি পরীক্ষার ফল দুপুরে, জানা যাবে যেভাবে" title="জুনিয়র বৃত্তি পরীক্ষার ফল দুপুরে, জানা যাবে যেভাবে" class="img-fluid img100">
-                                                        </picture>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="DHomeLeadList3 align-self-stretch">
-                                        <a href="https://samakal.com/bangladesh/article/340181/দেশে-আট-বছরে-নতুন-১২-মাদক">
-                                            <div class="row">
-                                                <div class="col-lg-7 col-7">
-                                                    <div class="Desc">
-                                                        <h3 class="Title">দেশে আট বছরে নতুন ১২ মাদক</h3>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5 col-5">
-                                                    <div class="DImgZoomBlock">
-                                                        <picture>
-                                                            <img src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771986532.jpg" alt="দেশে আট বছরে নতুন ১২ মাদক" title="দেশে আট বছরে নতুন ১২ মাদক" class="img-fluid img100">
-                                                        </picture>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="DHomeLeadList3 align-self-stretch">
-                                        <a href="https://samakal.com/bangladesh/article/340185/সারের-বাড়তি-দর-চাপে-কৃষক-ঝুঁকিতে-খাদ্য-নিরাপত্তা">
-                                            <div class="row">
-                                                <div class="col-lg-7 col-7">
-                                                    <div class="Desc">
-                                                        <h3 class="Title">সারের বাড়তি দর, চাপে কৃষক ঝুঁকিতে খাদ্য নিরাপত্তা</h3>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5 col-5">
-                                                    <div class="DImgZoomBlock">
-                                                        <picture>
-                                                            <img src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771986880.jpg" alt="সারের বাড়তি দর, চাপে কৃষক ঝুঁকিতে খাদ্য নিরাপত্তা" title="সারের বাড়তি দর, চাপে কৃষক ঝুঁকিতে খাদ্য নিরাপত্তা" class="img-fluid img100">
-                                                        </picture>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
+                                    <?php endif; endwhile; wp_reset_postdata(); ?>
                                 </div>
                             </div>
                             <div class="col-12 MobileShow">
@@ -1002,7 +911,12 @@ if ( isset( $locations[ $menu_name ] ) ) {
                         </div>
                         <div class="leadTop3 mt-2">
                             <div class="row">
-
+                                <?php 
+                                    $count = 0;
+                                    while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                    $count++;
+                                    if ( $count > 9 && $count < 13 ) : 
+                                ?>
                                 <div class="col-lg-4 d-flex border-right-inner">
                                     <div class="leadTop3-wrap align-self-stretch">
                                         <a href="https://samakal.com/bangladesh/article/340187/স্বজনদের-ধারণা-ছিল-রিজিয়া-বেঁচে-নেই">
@@ -1022,46 +936,10 @@ if ( isset( $locations[ $menu_name ] ) ) {
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 d-flex border-right-inner">
-                                    <div class="leadTop3-wrap align-self-stretch">
-                                        <a href="https://samakal.com/bangladesh/article/340131/সোহরাওয়ার্দী-উদ্যানে-পুলিশের-তল্লাশি-মারধর-নিয়ে-প্রশ্ন">
-                                            <div class="row">
-                                                <div class="col-lg-12 col-5 medium-video-icon">
-                                                    <picture>
-                                                        <img class="img-fluid img100" data-src="https://samakal.com/media/imgAll/2026February/SM/police-1771965944.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="সোহরাওয়ার্দী উদ্যানে পুলিশের তল্লাশি-মারধর নিয়ে প্রশ্ন" title="সোহরাওয়ার্দী উদ্যানে পুলিশের তল্লাশি-মারধর নিয়ে প্রশ্ন">
-                                                    </picture>
-
-                                                </div>
-                                                <div class="col-lg-12 col-7">
-                                                    <div class="Desc">
-                                                        <h3 class="Title2"><span class="subHeading">শিক্ষার্থীদের ওপর হামলা / </span>সোহরাওয়ার্দী উদ্যানে পুলিশের তল্লাশি-মারধর নিয়ে প্রশ্ন</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 d-flex border-right-inner">
-                                    <div class="leadTop3-wrap align-self-stretch">
-                                        <a href="https://samakal.com/bangladesh/article/340115/রুগ্ন-ও-বন্ধ-শিল্প-কারখানা-পুনরায়-চালুর-উদ্যোগ-নিতে-প্রধানমন্ত্রীর-নির্দেশ">
-                                            <div class="row">
-                                                <div class="col-lg-12 col-5 medium-video-icon">
-                                                    <picture>
-                                                        <img class="img-fluid img100" data-src="https://samakal.com/media/imgAll/2026February/SM/tarek-1771948496.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="রুগ্ন ও বন্ধ শিল্প কারখানা পুনরায় চালুর উদ্যোগ নিতে প্রধানমন্ত্রীর নির্দেশ" title="রুগ্ন ও বন্ধ শিল্প কারখানা পুনরায় চালুর উদ্যোগ নিতে প্রধানমন্ত্রীর নির্দেশ">
-                                                    </picture>
-
-                                                </div>
-                                                <div class="col-lg-12 col-7">
-                                                    <div class="Desc">
-                                                        <h3 class="Title2">রুগ্ন ও বন্ধ শিল্প কারখানা পুনরায় চালুর উদ্যোগ নিতে প্রধানমন্ত্রীর নির্দেশ</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
+                                <?php endif; endwhile; wp_reset_postdata(); ?>
                             </div>
                         </div>
+                        <?php endif; endif; ?>
                     </div>
                     <div class="col-lg-3 col-12 mt-3">
                         <div class="DRightSideAdd MobileHide">
