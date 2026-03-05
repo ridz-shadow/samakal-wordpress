@@ -188,40 +188,71 @@
 </head>
 
 <body>
-    <header>
+<header>
         <div class="DHeaderTop2 MobileHide">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 d-flex align-items-center">
-                        <div class="DateTimeBn">
-                            <p class="date"><i class="fa-solid fa-location-dot"></i> ঢাকা <i class="fa-sharp fa-solid fa-calendar-days"></i> বুধবার, ২৫ ফেব্রুয়ারি ২০২৬
+                    <div class="DateTimeBn">
+                            <p class="date"><i class="fa-solid fa-location-dot"></i> <?php echo esc_html(get_theme_mod('namedlocation', 'ঢাকা')); ?> <i class="fa-sharp fa-solid fa-calendar-days"></i> <?php echo strtr(strftime('%A, %d %B %Y'), ['Saturday'=>'শনিবার','Sunday'=>'রবিবার','Monday'=>'সোমবার','Tuesday'=>'মঙ্গলবার','Wednesday'=>'বুধবার','Thursday'=>'বৃহস্পতিবার','Friday'=>'শুক্রবার','January'=>'জানুয়ারি','February'=>'ফেব্রুয়ারি','March'=>'মার্চ','April'=>'এপ্রিল','May'=>'মে','June'=>'জুন','July'=>'জুলাই','August'=>'আগস্ট','September'=>'সেপ্টেম্বর','October'=>'অক্টোবর','November'=>'নভেম্বর','December'=>'ডিসেম্বর','0'=>'০','1'=>'১','2'=>'২','3'=>'৩','4'=>'৪','5'=>'৫','6'=>'৬','7'=>'৭','8'=>'৮','9'=>'৯']); ?>
                             </p>
 
                         </div>
                     </div>
                     <div class="col-lg-4 col-12 d-flex justify-content-center align-items-center">
-                        <div class="DLogo">
-                            <a href="https://samakal.com" class="DLogo" rel="home"><img src="https://samakal.com/frontend/media/common/logo.png" title="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS" alt="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS" class="img-fluid img100"></a>
+                    <div class="DLogo">
+                            <a href="<?php echo esc_url( home_url('/') ); ?>" class="DLogo" rel="home"><img src="<?php echo esc_url( ( function_exists('get_custom_logo') && has_custom_logo() ) ? wp_get_attachment_image_url( get_theme_mod('custom_logo'), 'full' ) : get_template_directory_uri() . '/images/logo.png' ); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" class="img-fluid img100"></a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-12 d-flex justify-content-end align-items-center">
                         <div class="row">
                             <div class="col-sm-12 m-auto">
-                                <div class="SocialSearch">
+                            <div class="SocialSearch">
                                     <div class="HeaderTopSocial">
                                         <div class="DSocialLink d-inline-block">
                                             <ul>
-                                                <li><a href="https://www.facebook.com/TheDailySamakal" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                                <li><a href="https://x.com/samakaltw" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                                <li><a href="https://www.linkedin.com/company/samakal" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                                <li><a href="https://www.youtube.com/@SamakalNews" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
-                                                <li><a href="https://www.instagram.com/daily_samakal/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                                                <li><a href="https://www.whatsapp.com/channel/0029VaQQR53KLaHr01KVgG3X" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                            <?php 
+    $social_platforms = array(
+        'facebook'  => 'fa-facebook-f',
+        'twitter'   => 'fa-x-twitter',
+        'linkedin'  => 'fa-linkedin-in',
+        'youtube'   => 'fa-youtube',
+        'instagram' => 'fa-instagram',
+        'whatsapp'  => 'fa-whatsapp',
+    );
+
+    foreach ( $social_platforms as $platform => $icon_class ) :
+        $url = get_theme_mod( "social_{$platform}_url" ); // get URL from customizer
+        if ( $url ) : ?>
+            <li>
+                <a href="<?php echo esc_url( $url ); ?>" target="_blank">
+                    <i class="fa-brands <?php echo esc_attr( $icon_class ); ?>"></i>
+                </a>
+            </li>
+        <?php endif;
+    endforeach;
+    ?>
                                             </ul>
                                         </div>
                                         <div class="HeaderVersionBtn d-inline-block">
-                                            <a href="https://epaper.samakal.com/" target="_blank">ই-পেপার</a>
-                                            <a href="https://en.samakal.com/" target="_blank">English</a>
+                                        <?php 
+    $btn1_label = get_theme_mod( 'header_button_1_label', '' );
+    $btn1_url   = get_theme_mod( 'header_button_1_url', '' );
+
+    $btn2_label = get_theme_mod( 'header_button_2_label', '' );
+    $btn2_url   = get_theme_mod( 'header_button_2_url', '' );
+
+    if ( $btn1_label && $btn1_url ) : ?>
+        <a href="<?php echo esc_url( $btn1_url ); ?>" target="_blank">
+            <?php echo esc_html( $btn1_label ); ?>
+        </a>
+    <?php endif; ?>
+
+    <?php if ( $btn2_label && $btn2_url ) : ?>
+        <a href="<?php echo esc_url( $btn2_url ); ?>" target="_blank">
+            <?php echo esc_html( $btn2_label ); ?>
+        </a>
+    <?php endif; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -234,9 +265,9 @@
         <div class="search_block Hide">
             <div class="container">
                 <div class="col-lg p-0">
-                    <form action="https://samakal.com/search" method="get" role="form">
+                    <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" role="form">
                         <div class="search_logo display-flex">
-                            <input type="text" name="q" placeholder="এখানে খুঁজুন...">
+                            <input type="text" name="s" placeholder="এখানে খুঁজুন...">
                             <button><i class="fa-solid fa-magnifying-glass"></i></button>
                             <a href="" class="close-search"><i class="fa-solid fa-xmark"></i></a>
                         </div>
@@ -248,99 +279,78 @@
             <div class="DHeaderNav">
                 <div class="container">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <a href="https://samakal.com" class="StickyLogo" rel="home">
-                        <img src="https://samakal.com/frontend/media/common/logo.png" title="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS" alt="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS" class="img-fluid img100">
+                        <a href="<?php echo esc_url( home_url('/') ); ?>" class="StickyLogo" rel="home">
+                        <img src="<?php echo esc_url( ( function_exists('get_custom_logo') && has_custom_logo() ) ? wp_get_attachment_image_url( get_theme_mod('custom_logo'), 'full' ) : get_template_directory_uri() . '/images/logo.png' ); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" class="img-fluid img100">
                     </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav">
-                                <li class="nav-item HomeBtn"><a class="nav-link" href="/latest/news">সর্বশেষ</a></li>
-                                <li class="nav-item HomeBtn"><a class="nav-link" href="/bangladesh">বাংলাদেশ</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/politics">রাজনীতি</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/economics">অর্থনীতি</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/international">বিশ্ব</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/sports">খেলা</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/entertainment">বিনোদন</a></li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="/whole-country" id="navbarDropdown" role="button" data-hover="dropdown" aria-expanded="false"> সারাদেশ </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="https://samakal.com/divisions/dhaka">ঢাকা</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="https://samakal.com/divisions/chattogram">চট্টগ্রাম</a></li>
-                                        <li><a class="dropdown-item" href="https://samakal.com/divisions/rajshahi">রাজশাহী</a></li>
-                                        <li><a class="dropdown-item" href="https://samakal.com/divisions/khulna">খুলনা</a></li>
-                                        <li><a class="dropdown-item" href="https://samakal.com/divisions/barishal">বরিশাল</a></li>
-                                        <li><a class="dropdown-item" href="https://samakal.com/divisions/sylhet">সিলেট</a></li>
-                                        <li><a class="dropdown-item" href="https://samakal.com/divisions/rangpur">রংপুর</a></li>
-                                        <li><a class="dropdown-item" href="https://samakal.com/divisions/mymensingh">ময়মনসিংহ</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item"><a class="nav-link" href="/crime">অপরাধ</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/opinion">মতামত</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/capital">রাজধানী</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/lifestyle">লাইফস্টাইল</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/feature/shoili">শৈলী</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/video-gallery">ভিডিও</a></li>
+                                <?php
+$menu_name = 'main_menu';
+$locations = get_nav_menu_locations();
+
+if ( isset( $locations[ $menu_name ] ) ) {
+    $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+    $menu_items = wp_get_nav_menu_items( $menu->term_id );
+
+    // Organize items by parent
+    $items_by_parent = array();
+    foreach ( $menu_items as $item ) {
+        $items_by_parent[ $item->menu_item_parent ][] = $item;
+    }
+
+    // Loop through top-level items
+    if ( ! empty( $items_by_parent[0] ) ) {
+        foreach ( $items_by_parent[0] as $parent_item ) {
+            $children = isset( $items_by_parent[ $parent_item->ID ] ) ? $items_by_parent[ $parent_item->ID ] : array();
+
+            if ( $children ) {
+                echo '<li class="nav-item dropdown">';
+                echo '<a class="nav-link dropdown-toggle" href="' . esc_url( $children[0]->url ) . '" id="navbarDropdown' . $parent_item->ID . '" role="button" data-hover="dropdown" aria-expanded="false">' . esc_html( $parent_item->title ) . '</a>';
+                echo '<ul class="dropdown-menu" aria-labelledby="navbarDropdown' . $parent_item->ID . '">';
+                foreach ( $children as $child ) {
+                    echo '<li><a class="dropdown-item" href="' . esc_url( $child->url ) . '">' . esc_html( $child->title ) . '</a></li>';
+                }
+                echo '</ul>';
+                echo '</li>';
+            } else {
+                echo '<li class="nav-item"><a class="nav-link" href="' . esc_url( $parent_item->url ) . '">' . esc_html( $parent_item->title ) . '</a></li>';
+            }
+        }
+    }
+}
+?>
                                 <li class="nav-item dropdown has-megamenu">
                                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">অন্যান্য</a>
-                                    <div class="dropdown-menu megamenu" role="menu">
-                                        <div class="row w-100 ">
-                                            <div class="col-md-3" style="flex: 0 0 20%;max-width: 20%;">
-                                                <ul class="nav flex-column">
-                                                    <li><a class="dropdown-item" href="/sub/chaturango">চতুরঙ্গ</a></li>
-                                                    <li><a class="dropdown-item" href="/sub/womensday">নারী দিবস</a></li>
-                                                    <li><a class="dropdown-item" href="/sahitto-o-sangskriti">সাহিত্য ও
-                                                        সংস্কৃতি</a></li>
-                                                    <li><a class="dropdown-item" href="/photogallery">ছবি</a></li>
-                                                    <li><a class="dropdown-item" href="/probas">প্রবাস</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3" style="flex: 0 0 20%;max-width: 20%;">
-                                                <ul class="nav flex-column">
-                                                    <li><a class="dropdown-item" href="/life-struggle">জীবন সংগ্রাম</a>
-                                                    </li>
-                                                    <li><a class="dropdown-item" href="/travel">ভ্রমণ</a></li>
-                                                    <li><a class="dropdown-item" href="/feature">ফিচার</a></li>
-                                                    <li><a class="dropdown-item" href="/sub/education">শিক্ষা</a></li>
-                                                    <li><a class="dropdown-item" href="/special-samakal">বিশেষ সমকাল</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3" style="flex: 0 0 20%;max-width: 20%;">
-                                                <ul class="nav flex-column">
-                                                    <li><a class="dropdown-item" href="/economics/industry-trade">শিল্প-বাণিজ্য</a></li>
-                                                    <li><a class="dropdown-item" href="/interview">সাক্ষাৎকার</a></li>
-                                                    <li><a class="dropdown-item" href="/technology">প্রযুক্তি</a></li>
-                                                    <li><a class="dropdown-item" href="/priyochattogram">প্রিয়
-                                                        চট্টগ্রাম</a></li>
-                                                    <li><a class="dropdown-item" href="/feature/kaler-kheya">কালের
-                                                        খেয়া</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3" style="flex: 0 0 20%;max-width: 20%;">
-                                                <ul class="nav flex-column">
-                                                    <li><a class="dropdown-item" href="/sub/stock-market">শেয়ারবাজার</a>
-                                                    </li>
-                                                    <li><a class="dropdown-item" href="/samakal-investigation">সমকাল
-                                                        অনুসন্ধান</a></li>
-                                                    <li><a class="dropdown-item" href="/offbit">অফবিট</a></li>
-                                                    <li><a class="dropdown-item" href="/archive">আর্কাইভ</a></li>
+                                    <?php
+$menu_name = 'mega_menu';
+$locations = get_nav_menu_locations();
+$menu = wp_get_nav_menu_object($locations[$menu_name]);
+$menu_items = wp_get_nav_menu_items($menu->term_id);
 
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3" style="flex: 0 0 20%;max-width: 20%;">
-                                                <ul class="nav flex-column">
-                                                    <li><a class="dropdown-item" href="/opinion">মতামত</a></li>
-                                                    <li><a class="dropdown-item" href="/chakri">চাকরি </a></li>
-                                                    <li><a class="dropdown-item" href="/shilpomoncho">শিল্পমঞ্চ</a></li>
-                                                    <li><a class="dropdown-item" href="/special-ayojon">বিশেষ আয়োজন</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+$columns = 5; // number of columns you want
+$chunks = array_chunk($menu_items, ceil(count($menu_items)/$columns));
+?>
+
+<div class="dropdown-menu megamenu" role="menu">
+    <div class="row w-100">
+        <?php foreach ($chunks as $column): ?>
+            <div class="col-md-3" style="flex: 0 0 20%; max-width: 20%;">
+                <ul class="nav flex-column">
+                    <?php foreach ($column as $item): ?>
+                        <li>
+                            <a class="dropdown-item" href="<?php echo esc_url($item->url); ?>">
+                                <?php echo esc_html($item->title); ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
                         </div>
                         </li>
                         <li class="nav-item menu-search">
@@ -355,8 +365,8 @@
         </div>
         <div id="myHeader2">
             <div id="mobile-nav" class="MobileMenu MobileShow">
-                <div class="DMLogo d-flex h-100 align-items-center justify-content-center"><a href="https://samakal.com"><img src="https://samakal.com/frontend/media/common/logo.png" title="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS" alt="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS" class="img-fluid img100"></a></div>
-                <div class="d-flex  align-items-center justify-content-start"><span onclick="if (!window.__cfRLUnblockHandlers) return false; myMenuBtnChng()" id="menu-button" class="menu-button fas fa-bars" data-cf-modified-fbf5bdf69b9d48c82ad294f4-=""></span></div>
+                <div class="DMLogo d-flex h-100 align-items-center justify-content-center"><a href="<?php echo esc_url( home_url('/') ); ?>"><img src="<?php echo esc_url( ( function_exists('get_custom_logo') && has_custom_logo() ) ? wp_get_attachment_image_url( get_theme_mod('custom_logo'), 'full' ) : get_template_directory_uri() . '/images/logo.png' ); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" class="img-fluid img100"></a></div>
+                <div class="d-flex  align-items-center justify-content-start"><span onclick="if (!window.__cfRLUnblockHandlers) return false; myMenuBtnChng()" id="menu-button" class="menu-button fas fa-bars" data-cf-modified-308d0d4576f1f362b9bffb9b-=""></span></div>
                 <div class=" d-flex h-100 align-items-center justify-content-end">
                     <div class="menu-search">
                         <a class="nav-link-search" href="">
@@ -367,12 +377,9 @@
                 <div class="search_block Hide">
                     <div class="container">
                         <div class="col-xl p-0">
-                            <form name="frmSearch" action="https://www.google.com" target="_blank" method="get">
+                            <form name="frmSearch" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
                                 <div class="search_logo display-flex">
-                                    <input type="hidden" name="cx" value="d540ac00b35dc4da6">
-                                    <input type="hidden" name="gsc.sort" value="date">
-                                    <input type="hidden" name="ie" value="utf-8">
-                                    <input type="text" name="q" id="search" class="form-control" value="" placeholder="অনুসন্ধান করুন">
+                                    <input type="text" name="s" id="search" class="form-control" value="" placeholder="অনুসন্ধান করুন">
                                     <button><i class="fa fa-search"></i></button>
                                     <a href="" class="close-search"><i class="fa fa-times"></i></a>
                                 </div>
@@ -385,72 +392,79 @@
                         <div class="MobileDateArea">
                             <p class="date">
                                 <i class="fa fa-calendar" aria-hidden="true"></i>
-                                <span>বুধবার, ২৫ ফেব্রুয়ারি ২০২৬</span>
+                                <span><?php echo strtr(strftime('%A, %d %B %Y'), ['Saturday'=>'শনিবার','Sunday'=>'রবিবার','Monday'=>'সোমবার','Tuesday'=>'মঙ্গলবার','Wednesday'=>'বুধবার','Thursday'=>'বৃহস্পতিবার','Friday'=>'শুক্রবার','January'=>'জানুয়ারি','February'=>'ফেব্রুয়ারি','March'=>'মার্চ','April'=>'এপ্রিল','May'=>'মে','June'=>'জুন','July'=>'জুলাই','August'=>'আগস্ট','September'=>'সেপ্টেম্বর','October'=>'অক্টোবর','November'=>'নভেম্বর','December'=>'ডিসেম্বর','0'=>'০','1'=>'১','2'=>'২','3'=>'৩','4'=>'৪','5'=>'৫','6'=>'৬','7'=>'৭','8'=>'৮','9'=>'৯']); ?></span>
                             </p>
                         </div>
                     </li>
                     <li>
                         <div class="MobileDateArea">
                             <div class="MobileTopBtn">
-                                <a href="https://en.samakal.com/" target="_blank">English</a>
-                                <a href="#">লাইভ</a>
-                                <a href="https://epaper.samakal.com/" target="_blank">ই-পেপার</a>
+                           <?php if ( $btn1_label && $btn1_url ) : ?>
+        <a href="<?php echo esc_url( $btn1_url ); ?>" target="_blank">
+            <?php echo esc_html( $btn1_label ); ?>
+        </a>
+    <?php endif; ?>
+
+    <?php if ( $btn2_label && $btn2_url ) : ?>
+        <a href="<?php echo esc_url( $btn2_url ); ?>" target="_blank">
+            <?php echo esc_html( $btn2_label ); ?>
+        </a>
+    <?php endif; ?>
+
+<?php if ( $btn3_label && $btn3_url ) : ?>
+    <a href="<?php echo esc_url( $btn3_url ); ?>" target="_blank">
+        <?php echo esc_html( $btn3_label ); ?>
+    </a>
+<?php endif; ?>
+
                             </div>
                         </div>
                     </li>
 
-                    <li><a href="/latest/news">সর্বশেষ</a></li>
-                    <li><a href="/bangladesh">বাংলাদেশ</a></li>
-                    <li><a href="/politics">রাজনীতি</a></li>
-                    <li><a href="/economics">অর্থনীতি</a></li>
-                    <li><a href="/international">বিশ্ব</a></li>
-                    <li><a href="/sports">খেলা</a></li>
-                    <li><a href="/entertainment">বিনোদন</a></li>
-                    <li class="parent">
-                        <a href="/whole-country">সারাদেশ</a>
-                        <ul class="SubMenuM">
-                            <li><a href="https://samakal.com/divisions/dhaka">ঢাকা</a></li>
-                            <li><a href="https://samakal.com/divisions/chattogram">চট্টগ্রাম</a></li>
-                            <li><a href="https://samakal.com/divisions/rajshahi">রাজশাহী</a></li>
-                            <li><a href="https://samakal.com/divisions/khulna">খুলনা</a></li>
-                            <li><a href="https://samakal.com/divisions/barishal">বরিশাল</a></li>
-                            <li><a href="https://samakal.com/divisions/sylhet">সিলেট</a></li>
-                            <li><a href="https://samakal.com/divisions/rangpur">রংপুর</a></li>
-                            <li><a href="https://samakal.com/divisions/mymensingh">ময়মনসিংহ</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="/crime">অপরাধ</a></li>
-                    <li><a href="/techlife">টেকলাইফ</a></li>
-                    <li><a href="/capital">রাজধানী</a></li>
-                    <li><a href="/lifestyle">লাইফস্টাইল</a></li>
-                    <li><a href="/feature/shoili">শৈলী</a></li>
-                    <li><a href="/feature/kaler-kheya">কালের খেয়া</a></li>
+
+                    <?php
+$menu_name = 'main_menu';
+$locations = get_nav_menu_locations();
+
+if ( isset( $locations[ $menu_name ] ) ) {
+    $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+    $menu_items = wp_get_nav_menu_items( $menu->term_id );
+
+    // Organize items by parent
+    $items_by_parent = array();
+    foreach ( $menu_items as $item ) {
+        $items_by_parent[ $item->menu_item_parent ][] = $item;
+    }
+
+    // Loop through top-level items
+    if ( ! empty( $items_by_parent[0] ) ) {
+        foreach ( $items_by_parent[0] as $parent_item ) {
+            $children = isset( $items_by_parent[ $parent_item->ID ] ) ? $items_by_parent[ $parent_item->ID ] : array();
+
+            if ( $children ) {
+                echo '<li class="parent">';
+                echo '<a href="' . esc_url( $children[0]->url ) . '">' . esc_html( $parent_item->title ) . '</a>';
+                echo '<ul class="SubMenuM">';
+                foreach ( $children as $child ) {
+                    echo '<li><a href="' . esc_url( $child->url ) . '">' . esc_html( $child->title ) . '</a></li>';
+                }
+                echo '</ul>';
+                echo '</li>';
+            } else {
+                echo '<li><a href="' . esc_url( $parent_item->url ) . '">' . esc_html( $parent_item->title ) . '</a></li>';
+            }
+        }
+    }
+}
+?>
                     <li class="parent">
                         <a href="#">অন্যান্য</a>
                         <ul class="SubMenuM">
-                            <li><a href="/sub/chaturango">চতুরঙ্গ</a></li>
-                            <li><a href="/sub/womensday">নারী দিবস</a></li>
-                            <li><a href="/sahitto-o-sangskriti">সাহিত্য ও সংস্কৃতি </a></li>
-                            <li><a href="/life-struggle">জীবন সংগ্রাম</a></li>
-                            <li><a href="/travel">ভ্রমণ</a></li>
-                            <li><a href="/feature">ফিচার</a></li>
-                            <li><a href="/probas">প্রবাস</a></li>
-                            <li><a href="/sub/industry-trade/">শিল্প-বাণিজ্য</a></li>
-                            <li><a href="/interview">সাক্ষাৎকার</a></li>
-                            <li><a href="/technology">প্রযুক্তি</a></li>
-                            <li><a href="/sub/stock-market">শেয়ারবাজার</a></li>
-                            <li><a href="/sub/education">শিক্ষা</a></li>
-                            <li><a href="/samakal-investigation">সমকাল অনুসন্ধান</a></li>
-                            <li><a href="/opinion">মতামত</a></li>
-                            <li><a href="/chakri">চাকরি</a></li>
-                            <li><a href="/shilpomoncho">শিল্পমঞ্চ</a></li>
-                            <li><a href="/special-ayojon">বিশেষ আয়োজন</a></li>
-                            <li><a href="/special-samakal">বিশেষ সমকাল</a></li>
+                        <?php foreach ($menu_items as $item): ?>
+                            <li><a href="<?php echo esc_url($item->url); ?>"><?php echo esc_html($item->title); ?></a></li>
+                        <?php endforeach; ?>
                         </ul>
                     </li>
-                    <li><a href="/photogallery">ছবি</a></li>
-                    <li><a href="/video-gallery">ভিডিও</a></li>
-                    <li><a href="/archive">আর্কাইভ</a></li>
                 </ul>
             </div>
         </div>
@@ -750,16 +764,15 @@
             <div class="row">
                 <div class="footerTopSection">
                     <ul>
-                        <li><a href="/special-ayojon">বিশেষ আয়োজন</a></li>
-                        <li><a href="/sub/kaler-kheya">কালের খেয়া</a></li>
-                        <li><a href="#">ফেসবুক লাইভ</a></li>
-                        <li><a href="/advertise">বিজ্ঞাপন মূল্য তালিকা</a></li>
-                        <li><a href="/converter" target="_blank">ইউনিকোড কনভার্টার</a></li>
-                        <li><a href="/feature">ফিচার</a></li>
-                        <li><a href="/archive">আর্কাইভ</a></li>
-                        <li><a href="/photogallery">ছবি</a></li>
-                        <li><a href="/video-gallery">ভিডিও</a></li>
-                        <li><a href="https://epaper.samakal.com/">ই-পেপার</a></li>
+                    <?php
+                        $menu_name = 'footer_menu';
+                        $locations = get_nav_menu_locations();
+                        $menu = wp_get_nav_menu_object($locations[$menu_name]);
+                        $menu_items = wp_get_nav_menu_items($menu->term_id);
+                        foreach ($menu_items as $item): 
+                    ?>
+                        <li><a href="<?php echo esc_url($item->url); ?>"><?php echo esc_html($item->title); ?></a></li>
+                    <?php endforeach; ?>
                     </ul>
                 </div>
                 <div class="footerMiddleSection">
@@ -767,37 +780,30 @@
                         <div class="col-lg-4 col-12">
                             <p><a href="/privacy">PRIVACY POLICY</a></p>
                             <p><a href="/terms">TERMS OF USE</a></p>
-                            <p><a href="/">SAMAKAL ALL RIGHTS RESERVED</a></p>
+                            <p><a href="/"><?php echo strtoupper( get_bloginfo('name') ); ?> ALL RIGHTS RESERVED</a></p>
                         </div>
                         <div class="col-lg-4 col-12">
-                            <h5>সম্পাদক : শাহেদ মুহাম্মদ আলী</h5>
-                            <h5>প্রকাশক : আবুল কালাম আজাদ</h5>
-                            <p>ফোন : <a href="tel:55029832-38">৫৫০২৯৮৩২-৩৮</a></p>
-                            <p>বিজ্ঞাপন : <a href="tel:+8801714080378">+৮৮০১৭১৪০৮০৩৭৮</a></p>
-                            <p>ই-মেইল: <a href="mailto:samakalad@gmail.com">samakalad@gmail.com</a>,
-                                <a href="mailto:marketingonline@samakal.com">marketingonline@samakal.com</a>
-                            </p>
-                            <address>টাইমস মিডিয়া ভবন (৫ম তলা), ৩৮৭ তেজগাঁও শিল্প এলাকা, ঢাকা - ১২০৮</address>
+                            <?php echo wp_kses_post( get_theme_mod('editorsline') ); ?>
                         </div>
                         <div class="col-lg-4 col-12">
-                            <h2 class="FSocialHeadLine">ফলো করুন <span>সমকাল</span>-এর খবর</h2>
+                            <h2 class="FSocialHeadLine">ফলো করুন <span><?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></span>-এর খবর</h2>
                             <div class="FSocialShare">
                                 <ul>
-                                    <li><a href="https://www.facebook.com/TheDailySamakal" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="https://twitter.com/samakaltw" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="https://www.linkedin.com/company/samakal" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_facebook_url")); ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_twitter_url")); ?>" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_linkedin_url")); ?>" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                                     </li>
-                                    <li><a href="https://www.youtube.com/channel/UCnetEdV8EwzGn36f3pq50ZA?sub_confirmation=1" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
-                                    <li><a href="https://www.instagram.com/daily_samakal/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_youtube_url")); ?>?sub_confirmation=1" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_instagram_url")); ?>" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
                                 </ul>
                             </div>
                             <a href="" class="Flogo" rel="home">
-                            <img src="https://samakal.com/frontend/media/common/logo.png"
-                                title="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS"
-                                alt="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS" class="img-fluid img100">
+                            <img src="<?php echo esc_url( ( function_exists('get_custom_logo') && has_custom_logo() ) ? wp_get_attachment_image_url( get_theme_mod('custom_logo'), 'full' ) : get_template_directory_uri() . '/images/logo.png' ); ?>"
+                                title="<?php the_title(); ?>"
+                                alt="<?php the_title(); ?>" class="img-fluid img100">
                         </a>
-                            <h2 class="FCopyRight">© ২০০৫ - ২০২৬ <a href="https://samakal.com">সমকাল</a> কর্তৃক সর্বসত্ব ® সংরক্ষিত</h2>
-                            <p class="d-none"><a href="https://www.emythmakers.com/" rel="nofollow" target="_blank">উন্নয়নে ইমিথমেকারস.কম</a></p>
+                            <h2 class="FCopyRight">© ২০০৫ - ২০২৬ <a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></a> কর্তৃক সর্বসত্ব ® সংরক্ষিত</h2>
+                            <p class="d-none"><a href="<?php echo esc_url( home_url('/') ); ?>" rel="nofollow" target="_blank">উন্নয়নে <?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></a></p>
                         </div>
                     </div>
                 </div>
