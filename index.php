@@ -803,7 +803,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
 
                             $home_category_query = new WP_Query( array(
                                 'cat'            => $home_category_id,
-                                'posts_per_page' => 5,
+                                'posts_per_page' => 12,
                             ) );
                             if ( $home_category_query->have_posts() ) : 
                         ?>
