@@ -1845,283 +1845,212 @@ endif;
         <section class="container MT-20">
             <div class="row">
                 <div class="col-lg-6 col-12">
-                    <a href="/health-tips">
-                        <h2 class="SectionName">স্বাস্থ্যকথা </h2>
+                    <?php 
+                        $home_category_id = get_theme_mod('category_8');
+                        if ( $home_category_id ) :
+
+                        $home_category_query = new WP_Query( array(
+                            'cat'            => $home_category_id,
+                            'posts_per_page' => 5,
+                        ) );
+                        if ( $home_category_query->have_posts() ) : 
+                    ?>
+                    <a href="<?php echo esc_url( get_category_link( $home_category_id ) ); ?>">
+                        <h2 class="SectionName"><?php echo esc_html( get_cat_name( $home_category_id ) ); ?></h2>
                     </a>
                     <div class="DHealthCatStyle">
-                        <a href="https://samakal.com/health-tips/article/339833/রক্তচাপ-নিয়ন্ত্রণে-বৈজ্ঞানিক-শরীরচর্চার-নির্দেশিকা">
+                        <?php 
+                            $count = 0;
+                            while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                            $count++;
+                            if ( $count === 1 ) : 
+                        ?>
+                        <a href="<?php the_permalink(); ?>">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="DImgZoomBlock ">
-                                        <picture><img data-src="https://samakal.com/media/imgAll/2026February/untitled-4-1771807677.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="রক্তচাপ নিয়ন্ত্রণে বৈজ্ঞানিক শরীরচর্চার নির্দেশিকা" title="রক্তচাপ নিয়ন্ত্রণে বৈজ্ঞানিক শরীরচর্চার নির্দেশিকা"
+                                        <picture><img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"
                                                 class="img-fluid img100"></picture>
                                     </div>
 
                                 </div>
                                 <div class="col-lg-6 order-lg-first">
                                     <div class="Desc">
-                                        <h2 class="Title">রক্তচাপ নিয়ন্ত্রণে বৈজ্ঞানিক শরীরচর্চার নির্দেশিকা</h2>
+                                        <h2 class="Title"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                         <div class="Brief">
-                                            <p>উচ্চ রক্তচাপ বা হাইপার টেনশন আধুনিক জীবনযাত্রার একটি বড় সমস্যা। চিকিৎসকের পরামর্শে ওষুধ সেবনের পাশাপাশি সুনির্দিষ্ট ব্যায়ামের মাধ্যমে রক্তচাপ নিয়ন্ত্রণে  রাখা সম্ভব।</p>
+                                            <p><?php the_excerpt(); ?></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </a>
+                        <?php endif; endwhile; wp_reset_postdata(); ?>
                     </div>
                     <div class="DHealthCatStyleSec">
                         <div class="row">
+                            <?php 
+                                $count = 0;
+                                while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                $count++;
+                                if ( $count > 1 && $count < 6 ) : 
+                            ?>
                             <div class="col-lg-6 col-12 d-flex">
                                 <div class="DHealthCatList4 align-self-stretch">
-                                    <a href="https://samakal.com/health-tips/article/338788/হৃদরোগ-প্রতিরোধে-জীবনযাত্রার-পরিবর্তনের-গুরুত্ব">
+                                    <a href="<?php the_permalink(); ?>">
                                         <div class="row">
                                             <div class="col-lg-5 col-5">
                                                 <div class="DImgZoomBlock ">
-                                                    <picture><img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-6-1771209936.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="হৃদরোগ প্রতিরোধে জীবনযাত্রার পরিবর্তনের গুরুত্ব"
-                                                            title="হৃদরোগ প্রতিরোধে জীবনযাত্রার পরিবর্তনের গুরুত্ব" class="img-fluid img100"></picture>
+                                                    <picture><img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>"
+                                                            title="<?php the_title(); ?>" class="img-fluid img100"></picture>
 
                                                 </div>
                                             </div>
                                             <div class="col-lg-7 col-7">
                                                 <div class="Desc">
-                                                    <h3 class="Title">হৃদরোগ প্রতিরোধে জীবনযাত্রার পরিবর্তনের গুরুত্ব</h3>
+                                                    <h3 class="Title"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h3>
                                                 </div>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-12 d-flex">
-                                <div class="DHealthCatList4 align-self-stretch">
-                                    <a href="https://samakal.com/health-tips/article/337299/অস্টিওপোরোসিস-প্রতিরোধে-কী-করবেন">
-                                        <div class="row">
-                                            <div class="col-lg-5 col-5">
-                                                <div class="DImgZoomBlock ">
-                                                    <picture><img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-6-1770600918.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="অস্টিওপোরোসিস প্রতিরোধে কী করবেন" title="অস্টিওপোরোসিস প্রতিরোধে কী করবেন"
-                                                            class="img-fluid img100"></picture>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-7 col-7">
-                                                <div class="Desc">
-                                                    <h3 class="Title">অস্টিওপোরোসিস প্রতিরোধে কী করবেন</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-12 d-flex">
-                                <div class="DHealthCatList4 align-self-stretch">
-                                    <a href="https://samakal.com/health-tips/article/337058/স্ট্রোকের-আগাম-সতর্কতা-ও-দ্রুত-চিকিৎসায়-গুরুত্ব">
-                                        <div class="row">
-                                            <div class="col-lg-5 col-5">
-                                                <div class="DImgZoomBlock ">
-                                                    <picture><img data-src="https://samakal.com/media/imgAll/2026February/SM/stroke-1770443211.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="স্ট্রোকের আগাম সতর্কতা ও দ্রুত চিকিৎসায় গুরুত্ব" title="স্ট্রোকের আগাম সতর্কতা ও দ্রুত চিকিৎসায় গুরুত্ব"
-                                                            class="img-fluid img100"></picture>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-7 col-7">
-                                                <div class="Desc">
-                                                    <h3 class="Title">স্ট্রোকের আগাম সতর্কতা ও দ্রুত চিকিৎসায় গুরুত্ব</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-12 d-flex">
-                                <div class="DHealthCatList4 align-self-stretch">
-                                    <a href="https://samakal.com/health-tips/article/336379/কম্পিউটার-ব্যবহারকারীদের-চোখের-যত্ন">
-                                        <div class="row">
-                                            <div class="col-lg-5 col-5">
-                                                <div class="DImgZoomBlock ">
-                                                    <picture><img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-10-1770007804.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="কম্পিউটার ব্যবহারকারীদের চোখের যত্ন" title="কম্পিউটার ব্যবহারকারীদের চোখের যত্ন"
-                                                            class="img-fluid img100"></picture>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-7 col-7">
-                                                <div class="Desc">
-                                                    <h3 class="Title">কম্পিউটার ব্যবহারকারীদের চোখের যত্ন</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                            <?php endif; endwhile; wp_reset_postdata(); ?>
                         </div>
                     </div>
+                    <?php endif; endif; ?>
                 </div>
                 <div class="col-lg-6 col-12">
-                    <a href="/sub/doctorbari">
-                        <h2 class="SectionName">ডাক্তারবাড়ি </h2>
+                    <?php 
+                        $home_category_id = get_theme_mod('category_9');
+                        if ( $home_category_id ) :
+
+                        $home_category_query = new WP_Query( array(
+                            'cat'            => $home_category_id,
+                            'posts_per_page' => 5,
+                        ) );
+                        if ( $home_category_query->have_posts() ) : 
+                    ?>
+                    <a href="<?php echo esc_url( get_category_link( $home_category_id ) ); ?>">
+                        <h2 class="SectionName"><?php echo esc_html( get_cat_name( $home_category_id ) ); ?></h2>
                     </a>
                     <div class="DHealthCatStyle">
-                        <a href="https://samakal.com/doctorbari/article/339999/রোজায়-অতিরিক্ত-ভাজাপোড়া-নয়">
+                        <?php 
+                            $count = 0;
+                            while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                            $count++;
+                            if ( $count === 1 ) : 
+                        ?>
+                        <a href="<?php the_permalink(); ?>">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="DImgZoomBlock ">
-                                        <picture><img data-src="https://samakal.com/media/imgAll/2026February/untitled-11-1771898782.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="রোজায় অতিরিক্ত ভাজাপোড়া নয়" title="রোজায় অতিরিক্ত ভাজাপোড়া নয়"
+                                        <picture><img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"
                                                 class="img-fluid img100"></picture>
 
                                     </div>
                                 </div>
                                 <div class="col-lg-6 order-lg-first">
                                     <div class="Desc">
-                                        <h2 class="Title">রোজায় অতিরিক্ত ভাজাপোড়া নয়</h2>
+                                        <h2 class="Title"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                         <div class="Brief">
-                                            <p>রোজা আত্মসংযমের শিক্ষা দিলেও খাদ্যাভ্যাসে অসচেতনতা থাকলে নানা শারীরিক জটিলতা দেখা দিতে পারে। বিশেষ করে ফেব্রুয়ারির শেষের দিকে তাপপ্রবাহে দীর্ঘ সময় পানিশূন্য অবস্থায় থাকা শরীরের</p>
+                                            <p><?php the_excerpt(); ?></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </a>
+                        <?php endif; endwhile; wp_reset_postdata(); ?>
                     </div>
                     <div class="DHealthCatStyleSec">
                         <div class="row">
+                            <?php 
+                                $count = 0;
+                                while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                $count++;
+                                if ( $count > 1 && $count < 6 ) : 
+                            ?>
                             <div class="col-lg-6 col-12 d-flex">
                                 <div class="DHealthCatList4 align-self-stretch">
-                                    <a href="https://samakal.com/doctorbari/article/339998/চোখ-লাফানো-একটা-অস্বস্তিকর-সমস্যা">
+                                    <a href="<?php the_permalink(); ?>">
                                         <div class="row">
                                             <div class="col-lg-5 col-5">
                                                 <div class="DImgZoomBlock ">
-                                                    <picture><img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771898551.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="চোখ লাফানো, একটা অস্বস্তিকর সমস্যা" title="চোখ লাফানো, একটা অস্বস্তিকর সমস্যা"
+                                                    <picture><img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"
                                                             class="img-fluid img100"></picture>
 
                                                 </div>
                                             </div>
                                             <div class="col-lg-7 col-7">
                                                 <div class="Desc">
-                                                    <h3 class="Title">চোখ লাফানো, একটা অস্বস্তিকর সমস্যা</h3>
+                                                    <h3 class="Title"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h3>
                                                 </div>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-12 d-flex">
-                                <div class="DHealthCatList4 align-self-stretch">
-                                    <a href="https://samakal.com/doctorbari/article/339997/রোজা-রেখে-ডায়াবেটিস-পরীক্ষা-করবেন-কেন">
-                                        <div class="row">
-                                            <div class="col-lg-5 col-5">
-                                                <div class="DImgZoomBlock ">
-                                                    <picture><img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771898484.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="রোজা রেখে ডায়াবেটিস পরীক্ষা করবেন কেন" title="রোজা রেখে ডায়াবেটিস পরীক্ষা করবেন কেন"
-                                                            class="img-fluid img100"></picture>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-7 col-7">
-                                                <div class="Desc">
-                                                    <h3 class="Title">রোজা রেখে ডায়াবেটিস পরীক্ষা করবেন কেন</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-12 d-flex">
-                                <div class="DHealthCatList4 align-self-stretch">
-                                    <a href="https://samakal.com/doctorbari/article/339996/কীভাবে-বুঝবেন-আপনার-ফ্যাটি-লিভার">
-                                        <div class="row">
-                                            <div class="col-lg-5 col-5">
-                                                <div class="DImgZoomBlock ">
-                                                    <picture><img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771898386.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="কীভাবে বুঝবেন আপনার ফ্যাটি লিভার" title="কীভাবে বুঝবেন আপনার ফ্যাটি লিভার"
-                                                            class="img-fluid img100"></picture>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-7 col-7">
-                                                <div class="Desc">
-                                                    <h3 class="Title">কীভাবে বুঝবেন আপনার ফ্যাটি লিভার</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-12 d-flex">
-                                <div class="DHealthCatList4 align-self-stretch">
-                                    <a href="https://samakal.com/doctorbari/article/338962/রোজায়-ডায়াবেটিক-রোগীদের-প্রস্তুতি">
-                                        <div class="row">
-                                            <div class="col-lg-5 col-5">
-                                                <div class="DImgZoomBlock ">
-                                                    <picture><img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771293045.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="রোজায় ডায়াবেটিক রোগীদের প্রস্তুতি" title="রোজায় ডায়াবেটিক রোগীদের প্রস্তুতি"
-                                                            class="img-fluid img100"></picture>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-7 col-7">
-                                                <div class="Desc">
-                                                    <h3 class="Title">রোজায় ডায়াবেটিক রোগীদের প্রস্তুতি</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                            <?php endif; endwhile; wp_reset_postdata(); ?>
                         </div>
                     </div>
+                    <?php endif; endif; ?>
                 </div>
             </div>
         </section>
         <section class="SpecialSectionBG MT-60">
+            <?php 
+                $home_category_id = get_theme_mod('category_10');
+                if ( $home_category_id ) :
+
+                $home_category_query = new WP_Query( array(
+                    'cat'            => $home_category_id,
+                    'posts_per_page' => 5,
+                ) );
+                if ( $home_category_query->have_posts() ) : 
+            ?>
             <div class="container">
-                <a href="/economics">
-                    <h2 class="SectionName2"> অর্থনীতি </h2>
+                <a href="<?php echo esc_url( get_category_link( $home_category_id ) ); ?>">
+                    <h2 class="SectionName2"><?php echo esc_html( get_cat_name( $home_category_id ) ); ?></h2>
                 </a>
                 <div class="SpecialSection2">
                     <div class="row">
+                        <?php 
+                            $count = 0;
+                            while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                            $count++;
+                            if ( $count < 3 ) : 
+                        ?>
                         <div class="col-lg-4 col-sm-12 border-right-inner2">
                             <div class="DEconomicsTop">
-                                <a href="https://samakal.com/economics/article/340201/ভারতে-আরও-একটি-শাখা-খোলার-অনুমোদন-পেল-এবি-ব্যাংক">
+                                <a href="<?php the_permalink(); ?>">
                                     <div class="Imgresize ">
-                                        <picture><img data-src="https://samakal.com/media/imgAll/2026February/ab-bank-1771992094.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="ভারতে আরও একটি শাখা খোলার অনুমোদন পেল এবি ব্যাংক" title="ভারতে আরও একটি শাখা খোলার অনুমোদন পেল এবি ব্যাংক"
+                                        <picture><img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"
                                                 class="img-fluid img100"></picture>
 
                                     </div>
                                     <div class="Desc">
-                                        <h3 class="Title">ভারতে আরও একটি শাখা খোলার অনুমোদন পেল এবি ব্যাংক</h3>
+                                        <h3 class="Title"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h3>
                                         <div class="Brief">
-                                            <p>ভারতে আরও একটি শাখা খোলার অনুমোদন পেল বেসরকারি খাতের এবি ব্যাংক। এবারের শাখাটি খোলা হবে ভারতের কলকাতায়। এর আগে ১৯৯৬ সাল থেকে এবি ব্যাংক মুম্বাইয়ে একটি শাখার মাধ্যমে সেবা দিয়ে আসছে। সংশ্লিষ্ট সূত্রে এ তথ্য জানা
-                                                গেছে।</p>
+                                            <p><?php the_excerpt(); ?></p>
                                         </div>
                                     </div>
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-12 border-right-inner2">
-                            <div class="DEconomicsTop">
-                                <a href="https://samakal.com/economics/article/340184/শুল্ক-নিয়ে-বৈশ্বিক-বাণিজ্যে-অনিশ্চয়তা-আরও-বাড়ল">
-                                    <div class="DImgBlock">
-                                        <div class="Imgresize">
-                                            <picture>
-                                                <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771986775.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="শুল্ক নিয়ে বৈশ্বিক বাণিজ্যে অনিশ্চয়তা আরও বাড়ল" title="শুল্ক নিয়ে বৈশ্বিক বাণিজ্যে অনিশ্চয়তা আরও বাড়ল"
-                                                    class="img-fluid img100">
-                                            </picture>
-
-                                        </div>
-                                    </div>
-                                    <div class="DetailsBlock">
-                                        <div class="Desc">
-                                            <h3 class="Title">শুল্ক নিয়ে বৈশ্বিক বাণিজ্যে অনিশ্চয়তা আরও বাড়ল</h3>
-                                            <div class="Brief">
-                                                <p> যুক্তরাষ্ট্রের ক্ষণে ক্ষণে পাল্টানো শুল্কনীতির কারণে বৈশ্বিক বাণিজ্যে অনিশ্চয়তা আরও বেড়েছে। যেসব দেশ যুক্তরাষ্ট্রের সঙ্গে স্বাক্ষরিত বাণিজ্যচুক্তি কার্যকর করা থেকে পিছিয়ে যাওয়ার চেষ্টা করবে, সেসব </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        <?php endif; endwhile; wp_reset_postdata(); ?>
                         <div class="col-lg-4 col-sm-12">
                             <div class="DEconomicsList">
+                                <?php 
+                                    $count = 0;
+                                    while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                    $count++;
+                                    if ( $count > 2 && $count < 6 ) : 
+                                ?>
                                 <div class="DEconomicsListItem">
-                                    <a href="https://samakal.com/economics/article/340156/ঈদে-বেতন-পরিশোধে-১৪-হাজার-কোটি-টাকা-চায়-পোশাক-খাত">
+                                    <a href="<?php the_permalink(); ?>">
                                         <div class="DImgBlock">
                                             <div class="Imgresize ">
                                                 <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771983639.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="ঈদে বেতন পরিশোধে ১৪ হাজার কোটি টাকা চায় পোশাক খাত" title="ঈদে বেতন পরিশোধে ১৪ হাজার কোটি টাকা চায় পোশাক খাত"
+                                                    <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"
                                                         class="img-fluid img100">
                                                 </picture>
 
@@ -2129,50 +2058,18 @@ endif;
                                         </div>
                                         <div class="DetailsBlock">
                                             <div class="Desc">
-                                                <h3 class="Title"><span class="subHeading">গভর্নরের সঙ্গে বিজিএমইএর বৈঠক / </span>ঈদে বেতন পরিশোধে ১৪ হাজার কোটি টাকা চায় পোশাক খাত</h3>
+                                                <h3 class="Title"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h3>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="DEconomicsListItem">
-                                    <a href="https://samakal.com/economics/article/340155/রিটার্ন-জমার-সময়-আরও-বাড়তে-পারে">
-                                        <div class="DImgBlock">
-                                            <div class="Imgresize ">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771983538.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="রিটার্ন জমার সময় আরও বাড়তে পারে" title="রিটার্ন জমার সময় আরও বাড়তে পারে" class="img-fluid img100">
-                                                </picture>
-
-                                            </div>
-                                        </div>
-                                        <div class="DetailsBlock">
-                                            <div class="Desc">
-                                                <h3 class="Title">রিটার্ন জমার সময় আরও বাড়তে পারে</h3>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="DEconomicsListItem">
-                                    <a href="https://samakal.com/economics/article/340154/৩৯-মাস-পর-৩৫-বিলিয়ন-ডলার-ছাড়াল-রিজার্ভ">
-                                        <div class="DImgBlock">
-                                            <div class="Imgresize ">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/21-1771983475.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="৩৯ মাস পর ৩৫ বিলিয়ন ডলার ছাড়াল রিজার্ভ" title="৩৯ মাস পর ৩৫ বিলিয়ন ডলার ছাড়াল রিজার্ভ" class="img-fluid img100">
-                                                </picture>
-
-                                            </div>
-                                        </div>
-                                        <div class="DetailsBlock">
-                                            <div class="Desc">
-                                                <h3 class="Title">৩৯ মাস পর ৩৫ বিলিয়ন ডলার ছাড়াল রিজার্ভ</h3>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+                                <?php endif; endwhile; wp_reset_postdata(); ?>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <?php endif; endif; ?>
         </section>
         <div class="container">
             <div class="row MobileHide">
@@ -2195,129 +2092,101 @@ endif;
         </div>
         <div class="EntertainmentBG">
             <div class="container">
+                <?php 
+                    $home_category_id = get_theme_mod('category_11');
+                    if ( $home_category_id ) :
+
+                    $home_category_query = new WP_Query( array(
+                        'cat'            => $home_category_id,
+                        'posts_per_page' => 7,
+                    ) );
+                    if ( $home_category_query->have_posts() ) : 
+                ?>
                 <div class="SectionTitle">
-                    <a href="/entertainment">
-                        <h3>বিনোদন</h3>
+                    <a href="<?php echo esc_url( get_category_link( $home_category_id ) ); ?>">
+                        <h3><?php echo esc_html( get_cat_name( $home_category_id ) ); ?></h3>
                     </a>
                 </div>
                 <div class="DEntertainment">
                     <div class="row">
                         <div class="col-lg-8 col-12 border-right-inner1">
+                            <?php 
+                                $count = 0;
+                                while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                $count++;
+                                if ( $count === 1 ) : 
+                            ?>
                             <div class="DEntertainmentTop">
-                                <a href="https://samakal.com/entertainment/article/340106/সাতবারের-‘মিস্টার-ইন্ডিয়া’-খেতাবজয়ী-মায়াঙ্ক-মারা-গেছেন">
+                                <a href="<?php the_permalink(); ?>">
                                     <div class="row">
                                         <div class="col-lg-8 col-12">
                                             <picture>
-                                                <img data-src="https://samakal.com/media/imgAll/2026February/mayank-pawar-1-1771945415.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="সাতবারের ‘মিস্টার ইন্ডিয়া’ খেতাবজয়ী মায়াঙ্ক মারা গেছেন" title="সাতবারের ‘মিস্টার ইন্ডিয়া’ খেতাবজয়ী মায়াঙ্ক মারা গেছেন"
+                                                <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"
                                                     class="img-fluid">
                                             </picture>
                                         </div>
                                         <div class="col-lg-4 col-12">
                                             <div class="Desc">
-                                                <h3 class="Title BGTitle FW700">সাতবারের ‘মিস্টার ইন্ডিয়া’ খেতাবজয়ী মায়াঙ্ক মারা গেছেন</h3>
+                                                <h3 class="Title BGTitle FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h3>
                                                 <div class="Brief">
-                                                    <p>এমটিভির জনপ্রিয় রিয়েলিটি শো ‘স্প্লিটসভিলা’-এর পরিচিত মুখ ও সাতবারের ‘মিস্টার ইন্ডিয়া’ খেতাবজয়ী ফিটনেস তারকা মায়াঙ্ক পাওয়ার মারা গেছেন। ৩৭ বছর বয়সে সোমবার তিনি শেষ নিশ্বাস ত্যাগ করেন।</p>
+                                                    <p><?php the_excerpt(); ?></p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
                             </div>
+                            <?php endif; endwhile; wp_reset_postdata(); ?>
                             <div class="DEnterTop2">
                                 <div class="row">
+                                    <?php 
+                                        $count = 0;
+                                        while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                        $count++;
+                                        if ( $count > 1 && $count < 5 ) : 
+                                    ?>
                                     <div class="col-lg-4 col-12 d-flex">
                                         <div class="DEnterList2 align-self-stretch">
-                                            <a href="https://samakal.com/entertainment/article/340096/তিন-মাস-পর-দাম্পত্য-জীবন-নিয়ে-অকপট-সামান্থা">
+                                            <a href="<?php the_permalink(); ?>">
                                                 <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/samantha-1771940451.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="তিন মাস পর দাম্পত্য জীবন নিয়ে অকপট সামান্থা" title="তিন মাস পর দাম্পত্য জীবন নিয়ে অকপট সামান্থা" class="img-fluid">
+                                                    <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="img-fluid">
                                                 </picture>
                                                 <div class="Desc">
-                                                    <h2 class="Title">তিন মাস পর দাম্পত্য জীবন নিয়ে অকপট সামান্থা</h2>
+                                                    <h2 class="Title"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                                 </div>
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-12 d-flex">
-                                        <div class="DEnterList2 align-self-stretch">
-                                            <a href="https://samakal.com/entertainment/article/340083/জামিন-পেয়ে-নোবেল-বললেন-‘মানুষ-মাত্রই-ভুল’">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/nobel-1771934266.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="জামিন পেয়ে নোবেল বললেন, ‘মানুষ মাত্রই ভুল’" title="জামিন পেয়ে নোবেল বললেন, ‘মানুষ মাত্রই ভুল’" class="img-fluid">
-                                                </picture>
-                                                <div class="Desc">
-                                                    <h2 class="Title">জামিন পেয়ে নোবেল বললেন, ‘মানুষ মাত্রই ভুল’</h2>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-12 d-flex">
-                                        <div class="DEnterList2 align-self-stretch">
-                                            <a href="https://samakal.com/entertainment/article/340064/‘হুদাই-ক্ষমতার-অপব্যবহার-করেন-বলে-আপনাদের-ওপর-মানুষের-বিশ্বাস-নষ্ট-হয়’">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/zwp21-1771926967.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="‘হুদাই ক্ষমতার অপব্যবহার করেন বলে আপনাদের ওপর মানুষের বিশ্বাস নষ্ট হয়’" title="‘হুদাই ক্ষমতার অপব্যবহার করেন বলে আপনাদের ওপর মানুষের বিশ্বাস নষ্ট হয়’"
-                                                        class="img-fluid">
-                                                </picture>
-                                                <div class="Desc">
-                                                    <h2 class="Title">‘হুদাই ক্ষমতার অপব্যবহার করেন বলে আপনাদের ওপর মানুষের বিশ্বাস নষ্ট হয়’</h2>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
+                                    <?php endif; endwhile; wp_reset_postdata(); ?>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-12">
                             <div class="DEntertainmentList">
+                                <?php 
+                                    $count = 0;
+                                    while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                    $count++;
+                                    if ( $count > 4 && $count < 8 ) : 
+                                ?>
                                 <div class="DEntertainmentListItem">
-                                    <a href="https://samakal.com/entertainment/article/340070/স্নিগ্ধা-বললেন-অতীত-নিয়ে-পড়ে-থাকতে-চাই-না">
+                                    <a href="<?php the_permalink(); ?>">
                                         <div class="row">
                                             <div class="col-lg-5 col-5">
                                                 <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/THUMB/6363-1771929232.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="স্নিগ্ধা বললেন, অতীত নিয়ে পড়ে থাকতে চাই না" alt="স্নিগ্ধা বললেন, অতীত নিয়ে পড়ে থাকতে চাই না" title="স্নিগ্ধা বললেন, অতীত নিয়ে পড়ে থাকতে চাই না"
+                                                    <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"
                                                         class="img-fluid">
                                                 </picture>
                                             </div>
                                             <div class="col-lg-7 col-7">
                                                 <div class="Desc">
-                                                    <h2 class="Title"><span class="subHeading">নারীর সংগ্রামের গল্পে অভিষেক / </span>স্নিগ্ধা বললেন, অতীত নিয়ে পড়ে থাকতে চাই না</h2>
+                                                    <h2 class="Title"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                                 </div>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="DEntertainmentListItem">
-                                    <a href="https://samakal.com/entertainment/article/340055/রাজকীয়-আবহে-প্রাক্‌-বিয়ের-অনুষ্ঠান-শুরু-ছবি-শেয়ার-করলেন-‘বিরোশ’">
-                                        <div class="row">
-                                            <div class="col-lg-5 col-5">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/THUMB/87-1771920443.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="রাজকীয় আবহে প্রাক্‌-বিয়ের অনুষ্ঠান শুরু, ছবি শেয়ার করলেন ‘বিরোশ’" alt="রাজকীয় আবহে প্রাক্‌-বিয়ের অনুষ্ঠান শুরু, ছবি শেয়ার করলেন ‘বিরোশ’"
-                                                        title="রাজকীয় আবহে প্রাক্‌-বিয়ের অনুষ্ঠান শুরু, ছবি শেয়ার করলেন ‘বিরোশ’" class="img-fluid">
-                                                </picture>
-                                            </div>
-                                            <div class="col-lg-7 col-7">
-                                                <div class="Desc">
-                                                    <h2 class="Title">রাজকীয় আবহে প্রাক্‌-বিয়ের অনুষ্ঠান শুরু, ছবি শেয়ার করলেন ‘বিরোশ’</h2>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="DEntertainmentListItem">
-                                    <a href="https://samakal.com/entertainment/article/340061/বিমানবন্দরে-আমার-লাগেজে-অবৈধ-কিছু-পাওয়ার-প্রশ্নই-ওঠে-না:-মেহজাবীন">
-                                        <div class="row">
-                                            <div class="col-lg-5 col-5">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/THUMB/mehzabin21-1771924453.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="বিমানবন্দরে আমার লাগেজে অবৈধ কিছু পাওয়ার প্রশ্নই ওঠে না: মেহজাবীন" alt="বিমানবন্দরে আমার লাগেজে অবৈধ কিছু পাওয়ার প্রশ্নই ওঠে না: মেহজাবীন"
-                                                        title="বিমানবন্দরে আমার লাগেজে অবৈধ কিছু পাওয়ার প্রশ্নই ওঠে না: মেহজাবীন" class="img-fluid">
-                                                </picture>
-                                            </div>
-                                            <div class="col-lg-7 col-7">
-                                                <div class="Desc">
-                                                    <h2 class="Title">বিমানবন্দরে আমার লাগেজে অবৈধ কিছু পাওয়ার প্রশ্নই ওঠে না: মেহজাবীন</h2>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+                                <?php endif; endwhile; wp_reset_postdata(); ?>
                             </div>
                             <div class="DRightSideAdd mt-3 MobileHide">
                                 <a href="">
@@ -2327,6 +2196,7 @@ endif;
                         </div>
                     </div>
                 </div>
+                <?php endif; endif; ?>
                 <div class="SectionTitle mt-3">
                     <a href="/sub/entertainment-photostory">
                         <h3>বিনোদনের ছবি</h3>
