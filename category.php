@@ -524,7 +524,7 @@
 
                     $category_query = new WP_Query( array(
                         'cat'            => $category_id,
-                        'posts_per_page' => 5,
+                        'posts_per_page' => 15,
                     ) );
                     if ( $category_query->have_posts() ) : 
                 ?>
