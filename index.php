@@ -2311,116 +2311,77 @@ endif;
                     <?php endif; endif; ?>
                 </div>
                 <div class="col-lg-6 col-12 Capital">
-                    <a href="/techlife">
-                        <h2 class="SectionName"> টেকলাইফ </h2>
+                    <?php 
+                        $home_category_id = get_theme_mod('category_14');
+                        if ( $home_category_id ) :
+
+                        $home_category_query = new WP_Query( array(
+                            'cat'            => $home_category_id,
+                            'posts_per_page' => 5,
+                        ) );
+                        if ( $home_category_query->have_posts() ) : 
+                    ?>
+                    <a href="<?php echo esc_url( get_category_link( $home_category_id ) ); ?>">
+                        <h2 class="SectionName"><?php echo esc_html( get_cat_name( $home_category_id ) ); ?></h2>
                     </a>
                     <div class="WritersSectionTop">
-                        <a href="https://samakal.com/techlife/article/339888/ভবিষ্যতের-৭-চ্যালেঞ্জ">
+                        <?php 
+                            $count = 0;
+                            while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                            $count++;
+                            if ( $count === 1 ) : 
+                        ?>
+                        <a href="<?php the_permalink(); ?>">
                             <div class="row">
                                 <div class="col-lg-6 col-12">
                                     <div class="DImgZoomBlock ">
-                                        <picture> <img data-src="https://samakal.com/media/imgAll/2026February/ai-1771832262.jpg" src="https://samakal.com/media/common/img-400x250.jpg" alt="ভবিষ্যতের ৭ চ্যালেঞ্জ" title="ভবিষ্যতের ৭ চ্যালেঞ্জ" class="img-fluid img100"></picture>
+                                        <picture> <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-400x250.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="img-fluid img100"></picture>
 
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-12">
                                     <div class="Desc">
-                                        <h2 class="Title FW700"><span class="subHeading">কৃত্রিম বুদ্ধিমত্তা / </span>ভবিষ্যতের ৭ চ্যালেঞ্জ</h2>
+                                        <h2 class="Title FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                         <div class="Brief">
-                                            <p>কৃত্রিম বুদ্ধিমত্তা এখন সারাবিশ্বের শিক্ষা, প্রযুক্তি, অর্থনীতি ও সমাজের কেন্দ্রে জায়গা করে নিয়েছে। বিশ্বের কয়েকটি দেশ এখন জেনারেটিভ এআই গবেষণায় বিলিয়ন ডলার বিনিয়োগ করেছে। ইতোমধ্যে বিশ্বের কয়েকটি দেশের সরকার
-                                                স্কুল থেকে এআই শিক্ষা প্রচলনের পরিকল্পনা করছে।  </p>
+                                            <p><?php the_excerpt(); ?></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </a>
+                        <?php endif; endwhile; wp_reset_postdata(); ?>
                     </div>
                     <div class="row">
+                        <?php 
+                            $count = 0;
+                            while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                            $count++;
+                            if ( $count > 1 && $count < 6 ) : 
+                        ?>
                         <div class="col-lg-6 col-12 d-flex">
                             <div class="DCategory6NewsList MT-25">
-                                <a href="https://samakal.com/techlife/article/339887/অ্যাপ-নিয়ে-দুই-পরাশক্তির-তর্ক" class="align-self-stretch">
+                                <a href="<?php the_permalink(); ?>" class="align-self-stretch">
                                     <div class="row">
                                         <div class="col-lg-5 col-5">
                                             <div class="DImgZoomBlock ">
                                                 <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/usa-rasia2-1771832152.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="অ্যাপ নিয়ে দুই পরাশক্তির তর্ক" title="অ্যাপ নিয়ে দুই পরাশক্তির তর্ক" class="img-fluid img100">
+                                                    <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="img-fluid img100">
                                                 </picture>
 
                                             </div>
                                         </div>
                                         <div class="col-lg-7 col-7">
                                             <div class="Desc">
-                                                <h2 class="Title FW700">অ্যাপ নিয়ে দুই পরাশক্তির তর্ক</h2>
+                                                <h2 class="Title FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-12 d-flex">
-                            <div class="DCategory6NewsList MT-25">
-                                <a href="https://samakal.com/techlife/article/339886/মাঝেমধ্যে-আপডেট-সমস্যার-কারণ" class="align-self-stretch">
-                                    <div class="row">
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/metatif-1771832070.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="মাঝেমধ্যে আপডেট সমস্যার কারণ" title="মাঝেমধ্যে আপডেট সমস্যার কারণ" class="img-fluid img100">
-                                                </picture>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700"><span class="subHeading">মেটা গাইডলাইন / </span>মাঝেমধ্যে আপডেট সমস্যার কারণ</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-12 d-flex">
-                            <div class="DCategory6NewsList MT-25">
-                                <a href="https://samakal.com/techlife/article/339885/বার্তালাপে-স্বল্প-দূরত্বে-বিকল্প-যোগাযোগ" class="align-self-stretch">
-                                    <div class="row">
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/smart-20-1771831982.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="বার্তালাপে স্বল্প দূরত্বে বিকল্প যোগাযোগ" title="বার্তালাপে স্বল্প দূরত্বে বিকল্প যোগাযোগ" class="img-fluid img100">
-                                                </picture>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700"><span class="subHeading">মেটা গাইডলাইন / </span>বার্তালাপে স্বল্প দূরত্বে বিকল্প যোগাযোগ</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-12 d-flex">
-                            <div class="DCategory6NewsList MT-25">
-                                <a href="https://samakal.com/techlife/article/339884/ফিচারে-যেসব-সুবিধা-নবায়ন-করবে-গুগল" class="align-self-stretch">
-                                    <div class="row">
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/google-1771831842.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="ফিচারে যেসব সুবিধা নবায়ন করবে গুগল" title="ফিচারে যেসব সুবিধা নবায়ন করবে গুগল" class="img-fluid img100">
-                                                </picture>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700">ফিচারে যেসব সুবিধা নবায়ন করবে গুগল</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        <?php endif; endwhile; wp_reset_postdata(); ?>
                     </div>
+                    <?php endif; endif; ?>
                 </div>
             </div>
         </section>
@@ -2428,114 +2389,77 @@ endif;
             <div class="DLifestyleSec">
                 <div class="row">
                     <div class="col-lg-9 border-right-inner1">
+                        <?php 
+                            $home_category_id = get_theme_mod('category_15');
+                            if ( $home_category_id ) :
+
+                            $home_category_query = new WP_Query( array(
+                                'cat'            => $home_category_id,
+                                'posts_per_page' => 6,
+                            ) );
+                            if ( $home_category_query->have_posts() ) : 
+                        ?>
                         <div class="SectionTitle">
-                            <a href="/lifestyle">
-                                <h3>লাইফস্টাইল</h3>
+                            <a href="<?php echo esc_url( get_category_link( $home_category_id ) ); ?>">
+                                <h3><?php echo esc_html( get_cat_name( $home_category_id ) ); ?></h3>
                             </a>
                         </div>
                         <div class="DLifestyle">
                             <div class="row">
                                 <div class="col-md-9">
+                                    <?php 
+                                        $count = 0;
+                                        while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                        $count++;
+                                        if ( $count === 1 ) : 
+                                    ?>
                                     <div class="DLifestyleTop1">
-                                        <a href="https://samakal.com/lifestyle/article/340203/ইফতারে-স্বস্তির-পানীয়">
+                                        <a href="<?php the_permalink(); ?>">
                                             <div class="row">
                                                 <div class="col-md-8 ">
                                                     <picture>
-                                                        <img data-src="https://samakal.com/media/imgAll/2026February/pic-1-1772001348.jpg" src="https://samakal.com/media/common/img-400x250.jpg" alt="ইফতারে স্বস্তির পানীয়" title="ইফতারে স্বস্তির পানীয়" class="img-fluid">
+                                                        <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-400x250.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="img-fluid">
                                                     </picture>
 
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="Desc">
-                                                        <h3 class="Title BGTitle FW700">ইফতারে স্বস্তির পানীয়</h3>
+                                                        <h3 class="Title BGTitle FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h3>
                                                         <div class="Brief">
-                                                            <p>চলছে রমজান মাস। সারাদিন না খেয়ে থাকার কারণে অনেক সময় পানিশূন্যতার সমস্যা দেখা দেয়। সেই সমস্যা যাতে শরীরের সার্বিক সুস্থতায় উপর প্রভাব না ফেলে সেজন্য রোজা ভাঙার পরে শুধু পানি নয়, কিছু বিশেষ ধরনের
-                                                                শরবত খাওয়া যেতে পারে।</p>
+                                                            <p><?php the_excerpt(); ?></p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
+                                    <?php endif; endwhile; wp_reset_postdata(); ?>
                                 </div>
+                                <?php 
+                                    $count = 0;
+                                    while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                    $count++;
+                                    if ( $count > 1 && $count < 7 ) : 
+                                ?>
                                 <div class="col-md-3 d-flex">
                                     <div class="DLifestyleTop2 align-self-stretch">
-                                        <a href="https://samakal.com/lifestyle/article/340054/ইফতারে-তরমুজের-শরবত">
+                                        <a href="<?php the_permalink(); ?>">
                                             <div class="">
                                                 <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/pic-3-1771920087.jpg" src="https://samakal.com/media/common/img-400x250.jpg" alt="ইফতারে তরমুজের শরবত" title="ইফতারে তরমুজের শরবত" class="img-fluid">
+                                                    <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-400x250.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="img-fluid">
                                                 </picture>
 
                                             </div>
                                             <div class="Desc">
-                                                <h3 class="Title">ইফতারে তরমুজের শরবত</h3>
+                                                <h3 class="Title"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h3>
                                             </div>
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col-md-3 d-flex col-6">
-                                    <div class="DLifestyleTop2 align-self-stretch">
-                                        <a href="https://samakal.com/lifestyle/article/340044/রোজায়-কোন-ফল-কীভাবে-খাবেন">
-                                            <div class="">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/pic-2-1771915782.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="রোজায় কোন ফল ,কীভাবে খাবেন" title="রোজায় কোন ফল ,কীভাবে খাবেন" class="img-fluid">
-                                                </picture>
-
-                                            </div>
-                                            <div class="Desc">
-                                                <h3 class="Title">রোজায় কোন ফল ,কীভাবে খাবেন</h3>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 d-flex col-6">
-                                    <div class="DLifestyleTop2 align-self-stretch">
-                                        <a href="https://samakal.com/lifestyle/article/340040/বাড়িতে-পেঁয়াজ-রসুনের-পাউডার-তৈরি-করবেন-যেভাবে">
-                                            <div class="">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/pic-1-1771913900.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="বাড়িতে পেঁয়াজ-রসুনের পাউডার তৈরি করবেন যেভাবে" title="বাড়িতে পেঁয়াজ-রসুনের পাউডার তৈরি করবেন যেভাবে" class="img-fluid">
-                                                </picture>
-
-                                            </div>
-                                            <div class="Desc">
-                                                <h3 class="Title">বাড়িতে পেঁয়াজ-রসুনের পাউডার তৈরি করবেন যেভাবে</h3>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 d-flex col-6">
-                                    <div class="DLifestyleTop2 align-self-stretch">
-                                        <a href="https://samakal.com/lifestyle/article/339903/ইফতারে-ডিমের-ফিঙ্গার">
-                                            <div class="">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/pic-1-1771835875.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="ইফতারে ডিমের ফিঙ্গার" title="ইফতারে ডিমের ফিঙ্গার" class="img-fluid">
-                                                </picture>
-
-                                            </div>
-                                            <div class="Desc">
-                                                <h3 class="Title">ইফতারে ডিমের ফিঙ্গার</h3>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 d-flex col-6">
-                                    <div class="DLifestyleTop2 align-self-stretch">
-                                        <a href="https://samakal.com/lifestyle/article/339770/ইফতারের-পর-অ্যাসিডিটি-হয়-যা-করবেন ">
-                                            <div class="">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/acidity-1771756475.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="ইফতারের পর অ্যাসিডিটি হয়? যা করবেন " title="ইফতারের পর অ্যাসিডিটি হয়? যা করবেন " class="img-fluid">
-                                                </picture>
-
-                                            </div>
-                                            <div class="Desc">
-                                                <h3 class="Title">ইফতারের পর অ্যাসিডিটি হয়? যা করবেন </h3>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
+                                <?php endif; endwhile; wp_reset_postdata(); ?>
                             </div>
                         </div>
-
+                        <?php endif; endif; ?>
                     </div>
                     <div class="col-lg-3">
                         <div class="DPrayer skeleton">
@@ -2586,37 +2510,60 @@ endif;
         <section class="container MT-60">
             <div class="row">
                 <div class="col-lg-6 col-12 Politics">
-                    <a href="/sub/kaler-kheya">
-                        <h2 class="SectionName">কালের খেয়া</h2>
+                    <?php 
+                        $home_category_id = get_theme_mod('category_16');
+                        if ( $home_category_id ) :
+
+                        $home_category_query = new WP_Query( array(
+                            'cat'            => $home_category_id,
+                            'posts_per_page' => 4,
+                        ) );
+                        if ( $home_category_query->have_posts() ) : 
+                    ?>
+                    <a href="<?php echo esc_url( get_category_link( $home_category_id ) ); ?>">
+                        <h2 class="SectionName"><?php echo esc_html( get_cat_name( $home_category_id ) ); ?></h2>
                     </a>
                     <div class="row">
                         <div class="col-lg-6 col-12">
+                            <?php 
+                                $count = 0;
+                                while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                $count++;
+                                if ( $count === 1 ) : 
+                            ?>
                             <div class="DCategory4Top">
-                                <a href="https://samakal.com/kaler-kheya/article/339415/মোহমুগ্ধতা">
+                                <a href="<?php the_permalink(); ?>">
                                     <div class="DImgZoomBlock ">
                                         <picture>
-                                            <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771553250.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="মোহমুগ্ধতা" title="মোহমুগ্ধতা" class="img-fluid img100">
+                                            <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="img-fluid img100">
                                         </picture>
                                     </div>
                                     <div class="Desc">
-                                        <h2 class="Title FW700"><span class="subHeading">পথ  চেয়ে আর কালগুনে / </span>মোহমুগ্ধতা</h2>
+                                        <h2 class="Title FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                     </div>
                                 </a>
                             </div>
+                            <?php endif; endwhile; wp_reset_postdata(); ?>
                         </div>
                         <div class="col-lg-6 col-12">
+                            <?php 
+                                $count = 0;
+                                while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                $count++;
+                                if ( $count > 1 && $count < 5 ) : 
+                            ?>
                             <div class="DCategory5NewsList">
-                                <a href="https://samakal.com/kaler-kheya/article/339414/অপেক্ষার-নাম-হয়তো-রেনারভিও">
+                                <a href="<?php the_permalink(); ?>">
                                     <div class="row">
                                         <div class="col-lg-7 col-7">
                                             <div class="Desc">
-                                                <h2 class="Title FW700"><span class="subHeading">প্রচ্ছদ / </span>অপেক্ষার নাম হয়তো রেনারভিও</h2>
+                                                <h2 class="Title FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                             </div>
                                         </div>
                                         <div class="col-lg-5 col-5">
                                             <div class="DImgZoomBlock ">
                                                 <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/kalerkheya-1771553151.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="অপেক্ষার নাম হয়তো রেনারভিও" title="অপেক্ষার নাম হয়তো রেনারভিও" class="img-fluid img100">
+                                                    <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="img-fluid img100">
                                                 </picture>
 
                                             </div>
@@ -2624,81 +2571,68 @@ endif;
                                     </div>
                                 </a>
                             </div>
-                            <div class="DCategory5NewsList">
-                                <a href="https://samakal.com/kaler-kheya/article/339413/পূর্বী-নদীর-বাতিঘর">
-                                    <div class="row">
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700"><span class="subHeading">ধারাবাহিক / </span>পূর্বী নদীর বাতিঘর</h2>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771553102.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="পূর্বী নদীর বাতিঘর" title="পূর্বী নদীর বাতিঘর" class="img-fluid img100">
-                                                </picture>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="DCategory5NewsList">
-                                <a href="https://samakal.com/kaler-kheya/article/339412/কুঁড়েঘরে-বইগুলো-জড়ো-হয়েছিল">
-                                    <div class="row">
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700">কুঁড়েঘরে বইগুলো জড়ো হয়েছিল</h2>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771552937.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="কুঁড়েঘরে বইগুলো জড়ো হয়েছিল" title="কুঁড়েঘরে বইগুলো জড়ো হয়েছিল" class="img-fluid img100">
-                                                </picture>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                            <?php endif; endwhile; wp_reset_postdata(); ?>
                         </div>
 
                     </div>
+                    <?php endif; endif; ?>
                 </div>
                 <div class="col-lg-6 col-12 Politics">
-                    <a href="/crime">
-                        <h2 class="SectionName"> অপরাধ </h2>
+                    <?php 
+                        $home_category_id = get_theme_mod('category_17');
+                        if ( $home_category_id ) :
+
+                        $home_category_query = new WP_Query( array(
+                            'cat'            => $home_category_id,
+                            'posts_per_page' => 4,
+                        ) );
+                        if ( $home_category_query->have_posts() ) : 
+                    ?>
+                    <a href="<?php echo esc_url( get_category_link( $home_category_id ) ); ?>">
+                        <h2 class="SectionName"><?php echo esc_html( get_cat_name( $home_category_id ) ); ?></h2>
                     </a>
                     <div class="row">
                         <div class="col-lg-6 col-12">
+                            <?php 
+                                $count = 0;
+                                while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                $count++;
+                                if ( $count === 1 ) : 
+                            ?>
                             <div class="DCategory4Top">
-                                <a href="https://samakal.com/crime/article/340181/দেশে-আট-বছরে-নতুন-১২-মাদক">
+                                <a href="<?php the_permalink(); ?>">
                                     <div class="DImgZoomBlock ">
                                         <picture>
-                                            <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-11-1771986532.jpg" src="https://samakal.com/media/common/img-400x250.jpg" alt="দেশে আট বছরে নতুন ১২ মাদক" title="দেশে আট বছরে নতুন ১২ মাদক" class="img-fluid img100">
+                                            <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-400x250.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="img-fluid img100">
                                         </picture>
 
                                     </div>
                                     <div class="Desc">
-                                        <h2 class="Title FW700">দেশে আট বছরে নতুন ১২ মাদক</h2>
+                                        <h2 class="Title FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                     </div>
                                 </a>
                             </div>
+                            <?php endif; endwhile; wp_reset_postdata(); ?>
                         </div>
                         <div class="col-lg-6 col-12">
+                            <?php 
+                                $count = 0;
+                                while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                $count++;
+                                if ( $count > 1 && $count < 5 ) : 
+                            ?>
                             <div class="DCategory5NewsList">
-                                <a href="https://samakal.com/crime/article/339954/মোহাম্মদপুরে-‘সমন্বয়ককে’-কোপাল-দুর্বৃত্তরা">
+                                <a href="<?php the_permalink(); ?>">
                                     <div class="row">
                                         <div class="col-lg-7 col-7">
                                             <div class="Desc">
-                                                <h2 class="Title FW700">মোহাম্মদপুরে ‘সমন্বয়ককে’ কোপাল দুর্বৃত্তরা</h2>
+                                                <h2 class="Title FW700"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h2>
                                             </div>
                                         </div>
                                         <div class="col-lg-5 col-5">
                                             <div class="DImgZoomBlock ">
                                                 <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/mohammadpur-1771858052.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="মোহাম্মদপুরে ‘সমন্বয়ককে’ কোপাল দুর্বৃত্তরা" title="মোহাম্মদপুরে ‘সমন্বয়ককে’ কোপাল দুর্বৃত্তরা" class="img-fluid img100">
+                                                    <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="img-fluid img100">
                                                 </picture>
 
                                             </div>
@@ -2706,148 +2640,89 @@ endif;
                                     </div>
                                 </a>
                             </div>
-                            <div class="DCategory5NewsList">
-                                <a href="https://samakal.com/crime/article/339864/অপরাধ-করলেই-গ্রেপ্তার-অনুমতি-লাগবে-না">
-                                    <div class="row">
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700">অপরাধ করলেই গ্রেপ্তার, অনুমতি লাগবে না</h2>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/untitled-31-1771827552.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="অপরাধ করলেই গ্রেপ্তার, অনুমতি লাগবে না" title="অপরাধ করলেই গ্রেপ্তার, অনুমতি লাগবে না" class="img-fluid img100">
-                                                </picture>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="DCategory5NewsList">
-                                <a href="https://samakal.com/crime/article/339590/হারবাল-উদ্যোক্তা-থেকে-ইয়াবা-মিনিল্যাবের-মালিক">
-                                    <div class="row">
-                                        <div class="col-lg-7 col-7">
-                                            <div class="Desc">
-                                                <h2 class="Title FW700">হারবাল উদ্যোক্তা থেকে ইয়াবা মিনিল্যাবের মালিক</h2>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5 col-5">
-                                            <div class="DImgZoomBlock ">
-                                                <picture>
-                                                    <img data-src="https://samakal.com/media/imgAll/2026February/SM/yeaba-1771656231.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="হারবাল উদ্যোক্তা থেকে ইয়াবা মিনিল্যাবের মালিক" title="হারবাল উদ্যোক্তা থেকে ইয়াবা মিনিল্যাবের মালিক" class="img-fluid img100">
-                                                </picture>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                            <?php endif; endwhile; wp_reset_postdata(); ?>
                         </div>
                     </div>
+                    <?php endif; endif; ?>
                 </div>
             </div>
         </section>
         <section class="video-area">
             <div class="container">
+                <?php 
+                    $home_category_id = get_theme_mod('category_18');
+                    if ( $home_category_id ) :
+
+                    $home_category_query = new WP_Query( array(
+                        'cat'            => $home_category_id,
+                        'posts_per_page' => 5,
+                    ) );
+                    if ( $home_category_query->have_posts() ) : 
+                ?>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="SectionTitle mb-3 mt-4">
-                            <a href="/photogallery">
-                                <h3>ফটোগ্যালারি</h3>
+                            <a href="<?php echo esc_url( get_category_link( $home_category_id ) ); ?>">
+                                <h3><?php echo esc_html( get_cat_name( $home_category_id ) ); ?></h3>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
+                        <?php 
+                            $count = 0;
+                            while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                            $count++;
+                            if ( $count === 1 ) : 
+                        ?>
                         <div class="video-big">
-                            <a href="https://samakal.com/photogallery/article/338184/ছবিতে-ভোটকেন্দ্রে-সংঘর্ষ-অনিয়ম">
+                            <a href="<?php the_permalink(); ?>">
                                 <div class="video-img-wrap">
                                     <div class="video-overlay"></div>
                                     <picture>
-                                        <img class="img-fluid w-100 h-100" data-src="https://samakal.com/media/imgAll/2026February/rajsahee-1770904652.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="মান-অভিমান শেষ, দুবাই যাচ্ছেন রাজ-পরী" title="মান-অভিমান শেষ, দুবাই যাচ্ছেন রাজ-পরী">
+                                        <img class="img-fluid w-100 h-100" data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
                                     </picture>
                                 </div>
                                 <div class="Desc">
-                                    <h3 class="Title2">ছবিতে ভোটকেন্দ্রে সংঘর্ষ-অনিয়ম</h3>
+                                    <h3 class="Title2"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h3>
                                 </div>
                                 <div class="video-icon"><i class="fas fa-image"></i></div>
                             </a>
                         </div>
+                        <?php endif; endwhile; wp_reset_postdata(); ?>
                     </div>
                     <div class="col-lg-6">
                         <div class="video-middel">
                             <div class="row gx-2">
+                                <?php 
+                                    $count = 0;
+                                    while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                    $count++;
+                                    if ( $count > 1 && $count < 6 ) : 
+                                ?>
                                 <div class="col-lg-6">
                                     <div class="video-middel-items">
-                                        <a href="https://samakal.com/photogallery/article/338172/ভোট-দেওয়ার-পর-উচ্ছ্বাস">
+                                        <a href="<?php the_permalink(); ?>">
                                             <div class="video-img-wrap">
                                                 <div class="video-overlay"></div>
                                                 <picture>
-                                                    <img class="img-fluid w-100 h-100" data-src="https://samakal.com/media/imgAll/2026February/SM/mamun-2-1770900813.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="ভোট দেওয়ার পর উচ্ছ্বাস" title="ভোট দেওয়ার পর উচ্ছ্বাস">
+                                                    <img class="img-fluid w-100 h-100" data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
                                                 </picture>
                                             </div>
                                             <div class="Desc">
-                                                <h3 class="Title2">ভোট দেওয়ার পর উচ্ছ্বাস</h3>
+                                                <h3 class="Title2"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h3>
                                             </div>
                                             <div class="video-icon"><i class="fas fa-image"></i></div>
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="video-middel-items">
-                                        <a href="https://samakal.com/photogallery/article/332691/মাদুরো-পরবর্তী-ভেনেজুয়েলায়-যা-চলছে-দেখুন-ছবিতে">
-                                            <div class="video-img-wrap">
-                                                <div class="video-overlay"></div>
-                                                <picture>
-                                                    <img class="img-fluid w-100 h-100" data-src="https://samakal.com/media/imgAll/2026January/SM/image-2026-01-06t171403289-1767700282.png" src="https://samakal.com/media/common/img-300x169.jpg" alt="মাদুরো পরবর্তী ভেনেজুয়েলায় যা চলছে, দেখুন ছবিতে" title="মাদুরো পরবর্তী ভেনেজুয়েলায় যা চলছে, দেখুন ছবিতে">
-                                                </picture>
-                                            </div>
-                                            <div class="Desc">
-                                                <h3 class="Title2">মাদুরো পরবর্তী ভেনেজুয়েলায় যা চলছে, দেখুন ছবিতে</h3>
-                                            </div>
-                                            <div class="video-icon"><i class="fas fa-image"></i></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="video-middel-items">
-                                        <a href="https://samakal.com/photogallery/article/331082/দেশে-দেশে-বড়দিন-উদযাপনের-নানা-মুহূর্ত-দেখুন-ছবিতে">
-                                            <div class="video-img-wrap">
-                                                <div class="video-overlay"></div>
-                                                <picture>
-                                                    <img class="img-fluid w-100 h-100" data-src="https://samakal.com/media/imgAll/2025December/SM/image-2025-12-25t181026154-1766667030.png" src="https://samakal.com/media/common/img-300x169.jpg" alt="দেশে দেশে বড়দিন উদযাপনের নানা মুহূর্ত দেখুন ছবিতে" title="দেশে দেশে বড়দিন উদযাপনের নানা মুহূর্ত দেখুন ছবিতে">
-                                                </picture>
-                                            </div>
-                                            <div class="Desc">
-                                                <h3 class="Title2">দেশে দেশে বড়দিন উদযাপনের নানা মুহূর্ত দেখুন ছবিতে</h3>
-                                            </div>
-                                            <div class="video-icon"><i class="fas fa-image"></i></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="video-middel-items">
-                                        <a href="https://samakal.com/photogallery/article/330352/ছবিতে-শরিফ-ওসমান-হাদির-জানাজা-ও-দাফন">
-                                            <div class="video-img-wrap">
-                                                <div class="video-overlay"></div>
-                                                <picture>
-                                                    <img class="img-fluid w-100 h-100" data-src="https://samakal.com/media/imgAll/2025December/SM/89-1766231129.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="ছবিতে শরিফ ওসমান হাদির জানাজা ও দাফন" title="ছবিতে শরিফ ওসমান হাদির জানাজা ও দাফন">
-                                                </picture>
-                                            </div>
-                                            <div class="Desc">
-                                                <h3 class="Title2">ছবিতে শরিফ ওসমান হাদির জানাজা ও দাফন</h3>
-                                            </div>
-                                            <div class="video-icon"><i class="fas fa-image"></i></div>
-                                        </a>
-                                    </div>
-                                </div>
+                                <?php endif; endwhile; wp_reset_postdata(); ?>
                             </div>
                         </div>
                     </div>
                 </div>
+                <?php endif; endif; ?>
             </div>
         </section>
         <div id="T4Tutorials_UP11" class="T4Tutorials">
@@ -2876,13 +2751,14 @@ endif;
                 <div class="footerTopSection">
                     <ul>
                     <?php
-$menu_name = 'footer_menu';
-$locations = get_nav_menu_locations();
-$menu = wp_get_nav_menu_object($locations[$menu_name]);
-$menu_items = wp_get_nav_menu_items($menu->term_id);
-foreach ($menu_items as $item): ?>
+                        $menu_name = 'footer_menu';
+                        $locations = get_nav_menu_locations();
+                        $menu = wp_get_nav_menu_object($locations[$menu_name]);
+                        $menu_items = wp_get_nav_menu_items($menu->term_id);
+                        foreach ($menu_items as $item): 
+                    ?>
                         <li><a href="<?php echo esc_url($item->url); ?>"><?php echo esc_html($item->title); ?></a></li>
-                        <?php endforeach; ?>
+                    <?php endforeach; ?>
                     </ul>
                 </div>
                 <div class="footerMiddleSection">
