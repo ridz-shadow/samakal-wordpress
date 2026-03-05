@@ -1639,61 +1639,46 @@ endif;
                     <?php endif; endif; ?>
                 </div>
                 <div class="col-lg-3 MT-25">
+                    <?php 
+                        $home_category_id = get_theme_mod('category_6');
+                        if ( $home_category_id ) :
+
+                        $home_category_query = new WP_Query( array(
+                            'cat'            => $home_category_id,
+                            'posts_per_page' => 3,
+                        ) );
+                        if ( $home_category_query->have_posts() ) : 
+                    ?>
                     <div class="SectionTitle">
-                        <a href="/chakri">
-                            <h3>চাকরি</h3>
+                        <a href="<?php echo esc_url( get_category_link( $home_category_id ) ); ?>">
+                            <h3><?php echo esc_html( get_cat_name( $home_category_id ) ); ?></h3>
                         </a>
                     </div>
                     <div class="DInvestigation">
+                        <?php 
+                            $count = 0;
+                            while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                            $count++;
+                            if ( $count < 4 ) : 
+                        ?>
                         <div class="DInvestigationList">
-                            <a href="https://samakal.com/chakri/article/337583/৫০তম-বিসিএস-প্রিলির-ফল-প্রকাশ-উত্তীর্ণ-১২৩৮৫">
+                            <a href="<?php the_permalink(); ?>">
                                 <div class="row">
                                     <div class="col-lg-5 col-5 ">
                                         <picture>
-                                            <img data-src="https://samakal.com/media/imgAll/2026February/THUMB/2-1770721047.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="৫০তম বিসিএস প্রিলির ফল প্রকাশ, উত্তীর্ণ ১২৩৮৫" title="৫০তম বিসিএস প্রিলির ফল প্রকাশ, উত্তীর্ণ ১২৩৮৫" class="img-fluid leadMedia">
+                                            <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="img-fluid leadMedia">
                                         </picture>
 
                                     </div>
                                     <div class="col-lg-7 col-7">
-                                        <h5 class="Title TitleSM">৫০তম বিসিএস প্রিলির ফল প্রকাশ, উত্তীর্ণ ১২৩৮৫</h5>
+                                        <h5 class="Title TitleSM"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h5>
                                     </div>
                                 </div>
                             </a>
                         </div>
-                        <div class="DInvestigationList">
-                            <a href="https://samakal.com/chakri/article/332581/৬৭-হাজার-শিক্ষক-নিয়োগের-বিজ্ঞপ্তি-প্রকাশ-আবেদন-শুরু-১০-জানুয়ারি">
-                                <div class="row">
-                                    <div class="col-lg-5 col-5 ">
-                                        <picture>
-                                            <img data-src="https://samakal.com/media/imgAll/2026January/THUMB/9-1767650077.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="৬৭ হাজার শিক্ষক নিয়োগের বিজ্ঞপ্তি প্রকাশ, আবেদন শুরু ১০ জানুয়ারি" title="৬৭ হাজার শিক্ষক নিয়োগের বিজ্ঞপ্তি প্রকাশ, আবেদন শুরু ১০ জানুয়ারি"
-                                                class="img-fluid leadMedia">
-                                        </picture>
-
-                                    </div>
-                                    <div class="col-lg-7 col-7">
-                                        <h5 class="Title TitleSM">৬৭ হাজার শিক্ষক নিয়োগের বিজ্ঞপ্তি প্রকাশ, আবেদন শুরু ১০ জানুয়ারি</h5>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="DInvestigationList">
-                            <a href="https://samakal.com/chakri/article/332416/প্রাথমিকের-সহকারী-শিক্ষক-নিয়োগ-পরীক্ষা-হবে-৯-জানুয়ারি-বিকেলে">
-                                <div class="row">
-                                    <div class="col-lg-5 col-5 ">
-                                        <picture>
-                                            <img data-src="https://samakal.com/media/imgAll/2026January/THUMB/3-1767528221.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="প্রাথমিকের সহকারী শিক্ষক নিয়োগ পরীক্ষা হবে ৯ জানুয়ারি বিকেলে" title="প্রাথমিকের সহকারী শিক্ষক নিয়োগ পরীক্ষা হবে ৯ জানুয়ারি বিকেলে"
-                                                class="img-fluid leadMedia">
-                                        </picture>
-
-                                    </div>
-                                    <div class="col-lg-7 col-7">
-                                        <h5 class="Title TitleSM">প্রাথমিকের সহকারী শিক্ষক নিয়োগ পরীক্ষা হবে ৯ জানুয়ারি বিকেলে</h5>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
+                        <?php endif; endwhile; wp_reset_postdata(); ?>
                     </div>
+                    <?php endif; endif; ?>
                 </div>
             </div>
             <div class="col-12">
@@ -1712,94 +1697,84 @@ endif;
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-12">
+                    <?php 
+                        $home_category_id = get_theme_mod('category_7');
+                        if ( $home_category_id ) :
+
+                        $home_category_query = new WP_Query( array(
+                            'cat'            => $home_category_id,
+                            'posts_per_page' => 8,
+                        ) );
+                        if ( $home_category_query->have_posts() ) : 
+                    ?>
                     <div class="PoliticsSection">
                         <div class="row mb-3">
                             <div class="col-lg-12">
                                 <div class="SectionTitle">
-                                    <h3><a href="/international"><span class="ColorBox"></span>বিশ্ব</a></h3>
+                                    <h3><a href="<?php echo esc_url( get_category_link( $home_category_id ) ); ?>"><span class="ColorBox"></span><?php echo esc_html( get_cat_name( $home_category_id ) ); ?></a></h3>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-6 col-12 border-right-inner rowresize" style="flex:0 0 49%;max-width: 49%;">
+                                <?php 
+                                    $count = 0;
+                                    while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                    $count++;
+                                    if ( $count === 1 ) : 
+                                ?>
                                 <div class="DPoliticsTopNews">
-                                    <a href="https://samakal.com/international/article/340130/অনড়-রাশিয়ায়-বৈশ্বিক-ভারসাম্যে-বদল-নিরাপত্তায়-ভাঙন">
+                                    <a href="<?php the_permalink(); ?>">
                                         <div class="DImgZoomBlock">
-                                            <picture><img data-src="https://samakal.com/media/imgAll/2026February/ucrain-russia-1771964013.jpg" src="https://samakal.com/media/common/img-400x250.jpg" alt="অনড় রাশিয়ায় বৈশ্বিক ভারসাম্যে বদল, নিরাপত্তায় ভাঙন" title="অনড় রাশিয়ায় বৈশ্বিক ভারসাম্যে বদল, নিরাপত্তায় ভাঙন"
+                                            <picture><img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-400x250.jpg"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"
                                                     class="img-fluid img100"></picture>
                                         </div>
                                         <div class="Desc">
-                                            <h3 class="Title"><span class="subHeading">পাঁচ বছরে ইউক্রেন যুদ্ধ / </span>অনড় রাশিয়ায় বৈশ্বিক ভারসাম্যে বদল, নিরাপত্তায় ভাঙন</h3>
+                                            <h3 class="Title"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h3>
                                             <div class="Brief">
-                                                <p>রাশিয়া-ইউক্রেন যুদ্ধ পাঁচ বছরে পা দিয়েছে। ২০২২ সালের ২৪ ফেব্রুয়ারি রুশ প্রেসিডেন্ট ভ্লাদিমির পুতিন ইউক্রেনে সামরিক হস্তক্ষেপ শুরু করেন। মাঝখানে চার বছরের যুদ্ধ রূপ নিয়েছে বৈশ্বিক সংঘাতে। ভেঙে দিয়েছে বৈশ্বিক
-                                                    নিরাপত্তাও। যুদ্ধের প্রকৃতি ও বৈশ্বিক শক্তির ভারসাম্যে এনেছে বদল। বিশ্বনেতারা আগ্রাসী মনোভাবের কারণে রুশ প্রেসিডেন্ট ভ্লাদিমির পুতিনের কড়া সমালোচনা করেছেন। যুক্তরাষ্ট্র আধিপত্যের বাধ্যবাধকতা থেকে সরে
-                                                    আসায় পরিস্থিতি আরও জটিল হয়েছে। চীন ক্রমাগত রাশিয়াকে সহায়তা করছে।</p>
+                                                <p><?php the_excerpt(); ?></p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
+                                <?php endif; endwhile; wp_reset_postdata(); ?>
                             </div>
                             <div class="col-lg-3 col-12 border-right-inner rowresize" style="flex:0 0 21%;max-width: 21%;">
+                                <?php 
+                                    $count = 0;
+                                    while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                    $count++;
+                                    if ( $count > 1 && $count < 4 ) : 
+                                ?>
                                 <div class="DPoliticsTop2News">
-                                    <a href="https://samakal.com/international/article/340122/বিজেপিকে-রেকর্ড-অনুদান-দিল-ভারতের-শীর্ষ-‍গরুর-মাংস-রপ্তানিকারক">
+                                    <a href="<?php the_permalink(); ?>">
                                         <div class="DImgZoomBlock">
-                                            <picture><img data-src="https://samakal.com/media/imgAll/2026February/SM/14-1771951486.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="বিজেপিকে রেকর্ড অনুদান দিল ভারতের শীর্ষ ‍গরুর মাংস রপ্তানিকারক"
-                                                    alt="" title="" class="img-fluid img100"></picture>
+                                            <picture><img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/img-300x169.jpg"); ?>" alt="<?php the_title(); ?>"
+                                                     title="<?php the_title(); ?>" class="img-fluid img100"></picture>
                                         </div>
                                         <div class="Desc">
-                                            <h4 class="Title">বিজেপিকে রেকর্ড অনুদান দিল ভারতের শীর্ষ ‍গরুর মাংস রপ্তানিকারক</h4>
+                                            <h4 class="Title"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h4>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="DPoliticsTop2News">
-                                    <a href="https://samakal.com/international/article/340107/চার-বছরের-যুদ্ধে-১৮-লাখ-হতাহত-রাশিয়া-কতটুকু-ভূখণ্ড-পেল">
-                                        <div class="DImgZoomBlock">
-                                            <picture><img data-src="https://samakal.com/media/imgAll/2026February/SM/image-2026-02-24t210340552-1771945659.jpg" src="https://samakal.com/media/common/img-300x169.jpg" alt="চার বছরের যুদ্ধে ১৮ লাখ হতাহত, রাশিয়া কতটুকু ভূখণ্ড পেল"
-                                                    alt="" title="" class="img-fluid img100"></picture>
-                                        </div>
-                                        <div class="Desc">
-                                            <h4 class="Title">চার বছরের যুদ্ধে ১৮ লাখ হতাহত, রাশিয়া কতটুকু ভূখণ্ড পেল</h4>
-                                        </div>
-                                    </a>
-                                </div>
+                                <?php endif; endwhile; wp_reset_postdata(); ?>
                             </div>
                             <div class="col-lg-4 col-12 rowresize" style="flex:0 0 30%;max-width: 30%;">
                                 <div class="DPoliticsTop3News">
+                                    <?php 
+                                        $count = 0;
+                                        while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                        $count++;
+                                        if ( $count > 3 && $count < 9 ) : 
+                                    ?>
                                     <div class="DPoliticsTop3List">
-                                        <a href="https://samakal.com/international/article/340099/ফের-চালু-হলো-আগরতলা-ঢাকা-কলকাতা-বাস">
+                                        <a href="<?php the_permalink(); ?>">
                                             <div class="Desc">
-                                                <h4 class="Title">ফের চালু হলো আগরতলা-ঢাকা-কলকাতা বাস</h4>
+                                                <h4 class="Title"><span class="subHeading"><?php $shoulder = get_post_meta( get_the_ID(), '_post_shoulder', true ); if ( $shoulder ) { echo esc_html( $shoulder ) . ' / '; } ?></span><?php the_title(); ?></h4>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="DPoliticsTop3List">
-                                        <a href="https://samakal.com/international/article/340090/ট্রাম্পের-‘বাণিজ্য-যুদ্ধ’-এবং-‘খাঁচার-মোরগ’-তত্ত্ব">
-                                            <div class="Desc">
-                                                <h4 class="Title">ট্রাম্পের ‘বাণিজ্য যুদ্ধ’ এবং ‘খাঁচার মোরগ’ তত্ত্ব</h4>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="DPoliticsTop3List">
-                                        <a href="https://samakal.com/international/article/340082/১৫৩-বছরে-এই-প্রথম-ছাপা-হলো-না-‘দ্য-বোস্টন-গ্লোব’">
-                                            <div class="Desc">
-                                                <h4 class="Title">১৫৩ বছরে এই প্রথম ছাপা হলো না ‘দ্য বোস্টন গ্লোব’</h4>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="DPoliticsTop3List">
-                                        <a href="https://samakal.com/international/article/340080/যুক্তরাষ্ট্রে-রেকর্ড-তুষারপাত-৫-হাজারের-বেশি-ফ্লাইট-বাতিল">
-                                            <div class="Desc">
-                                                <h4 class="Title">যুক্তরাষ্ট্রে রেকর্ড তুষারপাত, ৫ হাজারের বেশি ফ্লাইট বাতিল</h4>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="DPoliticsTop3List">
-                                        <a href="https://samakal.com/international/article/340074/চীন-থেকে-জাহাজ-বিধ্বংসী-ক্ষেপণাস্ত্র-কেনার-দ্বারপ্রান্তে-ইরান">
-                                            <div class="Desc">
-                                                <h4 class="Title">চীন থেকে জাহাজ বিধ্বংসী ক্ষেপণাস্ত্র কেনার দ্বারপ্রান্তে ইরান</h4>
-                                            </div>
-                                        </a>
-                                    </div>
+                                    <?php endif; endwhile; wp_reset_postdata(); ?>
                                 </div>
                             </div>
                         </div>
