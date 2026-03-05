@@ -1224,6 +1224,8 @@ endif;
                     <?php 
                         $latest_query = new WP_Query( array(
                             'posts_per_page' => 15,
+                            'orderby' => 'date'
+                            'order' => 'desc',
                         ) );
                         if ( $latest_query->have_posts() ) : 
                     ?>
