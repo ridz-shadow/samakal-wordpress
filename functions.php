@@ -590,6 +590,54 @@ $wp_customize->add_control( 'category_15', array(
     ),
 ) );
 
+$wp_customize->add_setting( 'category_16', array(
+    'default'           => '',
+    'sanitize_callback' => 'absint',
+) );
+
+$wp_customize->add_control( 'category_16', array(
+    'label'    => 'Category 16',
+    'section'  => 'home_section',
+    'type'     => 'select',
+    'choices'  => wp_list_pluck(
+        get_categories( array( 'hide_empty' => false ) ),
+        'name',
+        'term_id'
+    ),
+) );
+
+$wp_customize->add_setting( 'category_17', array(
+    'default'           => '',
+    'sanitize_callback' => 'absint',
+) );
+
+$wp_customize->add_control( 'category_17', array(
+    'label'    => 'Category 17',
+    'section'  => 'home_section',
+    'type'     => 'select',
+    'choices'  => wp_list_pluck(
+        get_categories( array( 'hide_empty' => false ) ),
+        'name',
+        'term_id'
+    ),
+) );
+
+$wp_customize->add_setting( 'category_18', array(
+    'default'           => '',
+    'sanitize_callback' => 'absint',
+) );
+
+$wp_customize->add_control( 'category_18', array(
+    'label'    => 'Category 18',
+    'section'  => 'home_section',
+    'type'     => 'select',
+    'choices'  => wp_list_pluck(
+        get_categories( array( 'hide_empty' => false ) ),
+        'name',
+        'term_id'
+    ),
+) );
+
 }
 add_action( 'customize_register', 'theme_customize_register' );
 
