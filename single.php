@@ -261,13 +261,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . "
-        /frontend/common/css/SolaimanLipi.css"); ?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . "
-        /frontend/common/css/Kiron.css"); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . "/frontend/common/css/SolaimanLipi.css"); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . "/frontend/common/css/Kiron.css"); ?>">
 
-    <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . "
-        /frontend/common/css/eMythMakers.css?t=2"); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . "/frontend/common/css/eMythMakers.css?t=2"); ?>">
 
     <script type="application/ld+json">
         {
@@ -756,7 +753,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
                         <div class="DNewsImg">
                             <img class="img-fluid w-100" id="adf-overlay"
                                 data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
-                                src="<?php echo esc_url(get_template_directory_uri() . " /media/common/thumb-bg.gif");
+                                src="<?php echo esc_url(get_template_directory_uri() . "/media/common/thumb-bg.gif");
                                 ?>" id="adf-overlay" alt="
                             <?php the_title(); ?>"
                             title="
@@ -905,8 +902,7 @@ if ($categories) {
                                                     <div class="col-lg-5 col-5">
                                                         <div class="CatNewsListImg">
                                                             <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>"
-                                                                src="<?php echo esc_url(get_template_directory_uri() . "
-                                                                /media/common/thumb-sm.gif"); ?>" alt="
+                                                                src="<?php echo esc_url(get_template_directory_uri() . "/media/common/thumb-sm.gif"); ?>" alt="
                                                             <?php echo get_the_title(); ?>" title="
                                                             <?php echo get_the_title(); ?>"
                                                             class="img-fluid">
@@ -995,8 +991,7 @@ $latest_news = new WP_Query(array(
                                                 <div class="dLastNewsImg">
                                                     <img class="img-fluid"
                                                         data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>"
-                                                        src="<?php echo esc_url(get_template_directory_uri() . "
-                                                        /media/common/thumb-sm.gif"); ?>" alt="
+                                                        src="<?php echo esc_url(get_template_directory_uri() . "/media/common/thumb-sm.gif"); ?>" alt="
                                                     <?php the_title(); ?>" title="
                                                     <?php the_title(); ?>">
                                                 </div>
@@ -1147,8 +1142,7 @@ foreach ($menu_items as $item): ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"
         type="text/javascript"></script>
-    <script type="text/javascript" src="<?php echo esc_url(get_template_directory_uri() . "
-        /frontend/common/js/eMythMakers.js"); ?>"></script>
+    <script type="text/javascript" src="<?php echo esc_url(get_template_directory_uri() . "/frontend/common/js/eMythMakers.js"); ?>"></script>
     <script type="text/javascript">
         $(function () {
             $("#btnIncrease").click(function () {
