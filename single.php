@@ -4,39 +4,44 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <title><?php the_title(); ?></title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>
+        <?php the_title(); ?>
+    </title>
     <meta http-equiv="refresh" content="">
-    <meta name="author" content="<?php bloginfo("name"); ?>">
-    <meta name="Developer" content="<?php echo esc_attr(wp_get_theme()->get("Author")); ?>">
+    <meta name="author" content="<?php bloginfo(" name"); ?>">
+    <meta name="Developer" content="<?php echo esc_attr(wp_get_theme()->get(" Author")); ?>">
     <meta name="resource-type" content="document">
-    <meta name="contact" content="<?php echo esc_attr(get_option("admin_email")); ?>">
-    <meta name="copyright" content="Copyright (c) <?php echo date("Y"); ?>. All Rights &reg; Reserved by <?php echo esc_url(home_url("/")); ?>">
-    <meta name="google-site-verification" content="<?php echo esc_attr(get_theme_mod("google_site_verification")); ?>" />
+    <meta name="contact" content="<?php echo esc_attr(get_option(" admin_email")); ?>">
+    <meta name="copyright" content="Copyright (c) <?php echo date(" Y"); ?>. All Rights &reg; Reserved by
+    <?php echo esc_url(home_url("/")); ?>">
+    <meta name="google-site-verification" content="<?php echo esc_attr(get_theme_mod(" google_site_verification")); ?>"
+    />
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
     <meta name="googlebot-news" content="index, follow">
     <meta name="msnbot" content="index, follow">
-    <meta property="fb:app_id" content="<?php echo esc_attr(get_theme_mod("fb_app_id")); ?>">
-    <meta property="fb:pages" content="<?php echo esc_attr(get_theme_mod("fb_pages")); ?>">
+    <meta property="fb:app_id" content="<?php echo esc_attr(get_theme_mod(" fb_app_id")); ?>">
+    <meta property="fb:pages" content="<?php echo esc_attr(get_theme_mod(" fb_pages")); ?>">
     <meta name="description" content="<?php echo esc_attr(wp_strip_all_tags(get_the_excerpt())); ?>">
-    <meta name="keywords" content="<?php echo esc_attr(get_post_meta(get_the_ID(), "keywords", true)); ?>">
+    <meta name="keywords" content="<?php echo esc_attr(get_post_meta(get_the_ID(), " keywords", true)); ?>">
     <meta property="og:site_name" content="<?php bloginfo("name"); ?>">
     <meta property="og:title" content="<?php the_title(); ?>">
     <meta property="og:description" content="<?php echo esc_attr(wp_strip_all_tags(get_the_excerpt())); ?>">
     <meta property="og:url" content="<?php echo esc_url(get_permalink()); ?>">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), "full")); ?>">
+    <meta property="og:image" content="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), " full")); ?>">
     <meta property="og:locale" content="en_US">
-    <meta name="twitter:domain" content="<?php echo esc_url(home_url("/")); ?>" />
+    <meta name="twitter:domain" content="<?php echo esc_url(home_url(" /")); ?>" />
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@<?php echo esc_attr(get_theme_mod("twitter_site_handle")); ?>">
+    <meta name="twitter:site" content="@<?php echo esc_attr(get_theme_mod(" twitter_site_handle")); ?>">
     <meta name="twitter:title" content="<?php the_title(); ?>">
     <meta name="twitter:description" content="<?php echo esc_attr(wp_strip_all_tags(get_the_excerpt())); ?>">
     <meta name="twitter:url" content="<?php echo esc_url(get_permalink()); ?>">
-    <meta name="twitter:image" content="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), "full")); ?>">
-    <meta name="twitter:creator" content="@<?php echo esc_attr(get_theme_mod("twitter_site_handle")); ?>">
-    <link rel="image_src" href="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), "full")); ?>">
+    <meta name="twitter:image" content="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), " full")); ?>">
+    <meta name="twitter:creator" content="@<?php echo esc_attr(get_theme_mod(" twitter_site_handle")); ?>">
+    <link rel="image_src" href="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), " full")); ?>">
     <link rel="canonical" href="<?php echo esc_url(get_permalink()); ?>">
     <link type="image/x-icon" rel="shortcut icon" href="<?php echo esc_url(get_site_icon_url()); ?>">
     <link type="image/x-icon" rel="icon" href="<?php echo esc_url(get_site_icon_url()); ?>">
@@ -181,6 +186,7 @@
             .DModalAddSec {
                 margin-top: 100px;
             }
+
             .CrossBtn {
                 font-size: 30px;
                 width: 30px;
@@ -190,13 +196,16 @@
                 right: 0;
                 border-radius: 0;
             }
+
             .dNewsDesc img {
                 width: 100% !important;
             }
+
             .T4Tutorials {
                 height: auto;
                 bottom: 0px;
             }
+
             .T4Tutorials_UP {
                 width: 75%;
                 margin: 0 auto;
@@ -208,6 +217,7 @@
         }
 
         @media (min-width: 992px) {
+
             .DModalAddSec .modal-lg,
             .modal-xl {
                 max-width: max-content;
@@ -245,14 +255,19 @@
         }
     </style>
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . "/frontend/common/css/SolaimanLipi.css"); ?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . "/frontend/common/css/Kiron.css"); ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . "
+        /frontend/common/css/SolaimanLipi.css"); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . "
+        /frontend/common/css/Kiron.css"); ?>">
 
-    <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . "/frontend/common/css/eMythMakers.css?t=2"); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . "
+        /frontend/common/css/eMythMakers.css?t=2"); ?>">
 
     <script type="application/ld+json">
         {
@@ -264,11 +279,15 @@
                     "name": "Home",
                     "item": "<?php echo esc_url( home_url('/') ); ?>"
                 },
+                <?php
+                    $categories = get_the_category();
+                    $category = $categories[0]; 
+                ?>
                 {
                     "@type": "ListItem",
                     "position": 2,
-                    "name": "বাংলাদেশ",
-                    "item": "https://samakal.com/bangladesh"
+                    "name": "<?php echo esc_html($category->name); ?>",
+                    "item": "<?php echo esc_url(get_category_link($category)); ?>"
                 },
                 {
                     "@type": "ListItem",
@@ -285,7 +304,7 @@
             "@type": "NewsArticle",
             "url": "<?php echo esc_url(get_permalink()); ?>",
             "articleBody": "<?php echo esc_attr(wp_strip_all_tags(get_the_excerpt())); ?>",
-            "articleSection": "বাংলাদেশ",
+            "articleSection": "<?php echo esc_html($category->name); ?>",
             "keywords": "",
             "mainEntityOfPage": {
                 "@type": "WebPage",
@@ -299,7 +318,7 @@
                 "height": 800,
                 "width": 450
             },
-            "datePublished": "2026-02-25 12:49:27",
+            "datePublished": "<?php echo get_the_date('Y-m-d') . ' ' . get_the_time('H:i:s'); ?>",
             "dateModified": "",
             "author": {
                 "@type": "Person",
@@ -320,7 +339,8 @@
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo esc_attr(get_theme_mod("ga4_id")); ?>" type="text/javascript"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo esc_attr(get_theme_mod(" ga4_id"));
+        ?>" type="text / javascript"></script>
     <script type="text/javascript">
         window.dataLayer = window.dataLayer || [];
 
@@ -334,9 +354,9 @@
 
     <!-- Facebook Pixel Code -->
     <script type="text/javascript">
-        ! function(f, b, e, v, n, t, s) {
+        ! function (f, b, e, v, n, t, s) {
             if (f.fbq) return;
-            n = f.fbq = function() {
+            n = f.fbq = function () {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
@@ -356,8 +376,9 @@
         fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=<?php echo esc_attr(get_theme_mod("fb_pixel_id")); ?>&ev=PageView&noscript=1"
-    /></noscript>
+            src="https://www.facebook.com/tr?id=<?php echo esc_attr(get_theme_mod(" fb_pixel_id"));
+            ?>&ev=PageView&noscript=1"
+        /></noscript>
     <!-- End Facebook Pixel Code -->
 
 </head>
@@ -370,14 +391,20 @@
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 d-flex align-items-center">
                         <div class="DateTimeBn">
-                            <p class="date"><i class="fa-solid fa-location-dot"></i> <?php echo esc_html(get_theme_mod('namedlocation', 'ঢাকা')); ?> <i class="fa-sharp fa-solid fa-calendar-days"></i> <?php echo strtr(strftime('%A, %d %B %Y'), ['Saturday'=>'শনিবার','Sunday'=>'রবিবার','Monday'=>'সোমবার','Tuesday'=>'মঙ্গলবার','Wednesday'=>'বুধবার','Thursday'=>'বৃহস্পতিবার','Friday'=>'শুক্রবার','January'=>'জানুয়ারি','February'=>'ফেব্রুয়ারি','March'=>'মার্চ','April'=>'এপ্রিল','May'=>'মে','June'=>'জুন','July'=>'জুলাই','August'=>'আগস্ট','September'=>'সেপ্টেম্বর','October'=>'অক্টোবর','November'=>'নভেম্বর','December'=>'ডিসেম্বর','0'=>'০','1'=>'১','2'=>'২','3'=>'৩','4'=>'৪','5'=>'৫','6'=>'৬','7'=>'৭','8'=>'৮','9'=>'৯']); ?>
+                            <p class="date"><i class="fa-solid fa-location-dot"></i>
+                                <?php echo esc_html(get_theme_mod('namedlocation', 'ঢাকা')); ?> <i
+                                    class="fa-sharp fa-solid fa-calendar-days"></i>
+                                <?php echo strtr(strftime('%A, %d %B %Y'), ['Saturday'=>'শনিবার','Sunday'=>'রবিবার','Monday'=>'সোমবার','Tuesday'=>'মঙ্গলবার','Wednesday'=>'বুধবার','Thursday'=>'বৃহস্পতিবার','Friday'=>'শুক্রবার','January'=>'জানুয়ারি','February'=>'ফেব্রুয়ারি','March'=>'মার্চ','April'=>'এপ্রিল','May'=>'মে','June'=>'জুন','July'=>'জুলাই','August'=>'আগস্ট','September'=>'সেপ্টেম্বর','October'=>'অক্টোবর','November'=>'নভেম্বর','December'=>'ডিসেম্বর','0'=>'০','1'=>'১','2'=>'২','3'=>'৩','4'=>'৪','5'=>'৫','6'=>'৬','7'=>'৭','8'=>'৮','9'=>'৯']); ?>
                             </p>
 
                         </div>
                     </div>
                     <div class="col-lg-4 col-12 d-flex justify-content-center align-items-center">
                         <div class="DLogo">
-                            <a href="<?php echo esc_url( home_url('/') ); ?>" class="DLogo" rel="home"><img src="<?php echo esc_url( ( function_exists('get_custom_logo') && has_custom_logo() ) ? wp_get_attachment_image_url( get_theme_mod('custom_logo'), 'full' ) : get_template_directory_uri() . '/images/logo.png' ); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" class="img-fluid img100"></a>
+                            <a href="<?php echo esc_url( home_url('/') ); ?>" class="DLogo" rel="home"><img
+                                    src="<?php echo esc_url( ( function_exists('get_custom_logo') && has_custom_logo() ) ? wp_get_attachment_image_url( get_theme_mod('custom_logo'), 'full' ) : get_template_directory_uri() . '/images/logo.png' ); ?>"
+                                    title="<?php the_title(); ?>" alt="<?php the_title(); ?>"
+                                    class="img-fluid img100"></a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-12 d-flex justify-content-end align-items-center">
@@ -387,7 +414,7 @@
                                     <div class="HeaderTopSocial">
                                         <div class="DSocialLink d-inline-block">
                                             <ul>
-                                            <?php 
+                                                <?php 
     $social_platforms = array(
         'facebook'  => 'fa-facebook-f',
         'twitter'   => 'fa-x-twitter',
@@ -400,18 +427,18 @@
     foreach ( $social_platforms as $platform => $icon_class ) :
         $url = get_theme_mod( "social_{$platform}_url" ); // get URL from customizer
         if ( $url ) : ?>
-            <li>
-                <a href="<?php echo esc_url( $url ); ?>" target="_blank">
-                    <i class="fa-brands <?php echo esc_attr( $icon_class ); ?>"></i>
-                </a>
-            </li>
-        <?php endif;
+                                                <li>
+                                                    <a href="<?php echo esc_url( $url ); ?>" target="_blank">
+                                                        <i class="fa-brands <?php echo esc_attr( $icon_class ); ?>"></i>
+                                                    </a>
+                                                </li>
+                                                <?php endif;
     endforeach;
     ?>
                                             </ul>
                                         </div>
                                         <div class="HeaderVersionBtn d-inline-block">
-                                        <?php 
+                                            <?php 
     $btn1_label = get_theme_mod( 'header_button_1_label', '' );
     $btn1_url   = get_theme_mod( 'header_button_1_url', '' );
 
@@ -419,16 +446,16 @@
     $btn2_url   = get_theme_mod( 'header_button_2_url', '' );
 
     if ( $btn1_label && $btn1_url ) : ?>
-        <a href="<?php echo esc_url( $btn1_url ); ?>" target="_blank">
-            <?php echo esc_html( $btn1_label ); ?>
-        </a>
-    <?php endif; ?>
+                                            <a href="<?php echo esc_url( $btn1_url ); ?>" target="_blank">
+                                                <?php echo esc_html( $btn1_label ); ?>
+                                            </a>
+                                            <?php endif; ?>
 
-    <?php if ( $btn2_label && $btn2_url ) : ?>
-        <a href="<?php echo esc_url( $btn2_url ); ?>" target="_blank">
-            <?php echo esc_html( $btn2_label ); ?>
-        </a>
-    <?php endif; ?>
+                                            <?php if ( $btn2_label && $btn2_url ) : ?>
+                                            <a href="<?php echo esc_url( $btn2_url ); ?>" target="_blank">
+                                                <?php echo esc_html( $btn2_label ); ?>
+                                            </a>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -456,11 +483,14 @@
                 <div class="container">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <a href="<?php echo esc_url( home_url('/') ); ?>" class="StickyLogo" rel="home">
-                        <img src="<?php echo esc_url( ( function_exists('get_custom_logo') && has_custom_logo() ) ? wp_get_attachment_image_url( get_theme_mod('custom_logo'), 'full' ) : get_template_directory_uri() . '/images/logo.png' ); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" class="img-fluid img100">
-                    </a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                            <img src="<?php echo esc_url( ( function_exists('get_custom_logo') && has_custom_logo() ) ? wp_get_attachment_image_url( get_theme_mod('custom_logo'), 'full' ) : get_template_directory_uri() . '/images/logo.png' ); ?>"
+                                title="<?php the_title(); ?>" alt="<?php the_title(); ?>" class="img-fluid img100">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <?php
@@ -510,29 +540,30 @@ $columns = 5; // number of columns you want
 $chunks = array_chunk($menu_items, ceil(count($menu_items)/$columns));
 ?>
 
-<div class="dropdown-menu megamenu" role="menu">
-    <div class="row w-100">
-        <?php foreach ($chunks as $column): ?>
-            <div class="col-md-3" style="flex: 0 0 20%; max-width: 20%;">
-                <ul class="nav flex-column">
-                    <?php foreach ($column as $item): ?>
-                        <li>
-                            <a class="dropdown-item" href="<?php echo esc_url($item->url); ?>">
-                                <?php echo esc_html($item->title); ?>
-                            </a>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-        <?php endforeach; ?>
-    </div>
-</div>
+                                    <div class="dropdown-menu megamenu" role="menu">
+                                        <div class="row w-100">
+                                            <?php foreach ($chunks as $column): ?>
+                                            <div class="col-md-3" style="flex: 0 0 20%; max-width: 20%;">
+                                                <ul class="nav flex-column">
+                                                    <?php foreach ($column as $item): ?>
+                                                    <li>
+                                                        <a class="dropdown-item"
+                                                            href="<?php echo esc_url($item->url); ?>">
+                                                            <?php echo esc_html($item->title); ?>
+                                                        </a>
+                                                    </li>
+                                                    <?php endforeach; ?>
+                                                </ul>
+                                            </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
                         </div>
                         </li>
                         <li class="nav-item menu-search">
                             <a class="nav-link nav-link-search" href="#">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </a>
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </a>
                         </li>
                         </ul>
                 </div>
@@ -541,13 +572,19 @@ $chunks = array_chunk($menu_items, ceil(count($menu_items)/$columns));
         </div>
         <div id="myHeader2">
             <div id="mobile-nav" class="MobileMenu MobileShow">
-                <div class="DMLogo d-flex h-100 align-items-center justify-content-center"><a href="<?php echo esc_url( home_url('/') ); ?>"><img src="<?php echo esc_url( ( function_exists('get_custom_logo') && has_custom_logo() ) ? wp_get_attachment_image_url( get_theme_mod('custom_logo'), 'full' ) : get_template_directory_uri() . '/images/logo.png' ); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" class="img-fluid img100"></a></div>
-                <div class="d-flex  align-items-center justify-content-start"><span onclick="if (!window.__cfRLUnblockHandlers) return false; myMenuBtnChng()" id="menu-button" class="menu-button fas fa-bars" data-cf-modified-308d0d4576f1f362b9bffb9b-=""></span></div>
+                <div class="DMLogo d-flex h-100 align-items-center justify-content-center"><a
+                        href="<?php echo esc_url( home_url('/') ); ?>"><img
+                            src="<?php echo esc_url( ( function_exists('get_custom_logo') && has_custom_logo() ) ? wp_get_attachment_image_url( get_theme_mod('custom_logo'), 'full' ) : get_template_directory_uri() . '/images/logo.png' ); ?>"
+                            title="<?php the_title(); ?>" alt="<?php the_title(); ?>" class="img-fluid img100"></a>
+                </div>
+                <div class="d-flex  align-items-center justify-content-start"><span
+                        onclick="if (!window.__cfRLUnblockHandlers) return false; myMenuBtnChng()" id="menu-button"
+                        class="menu-button fas fa-bars" data-cf-modified-308d0d4576f1f362b9bffb9b-=""></span></div>
                 <div class=" d-flex h-100 align-items-center justify-content-end">
                     <div class="menu-search">
                         <a class="nav-link-search" href="">
-                        <i class="fa fa-search"></i>
-                    </a>
+                            <i class="fa fa-search"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="search_block Hide">
@@ -555,7 +592,8 @@ $chunks = array_chunk($menu_items, ceil(count($menu_items)/$columns));
                         <div class="col-xl p-0">
                             <form name="frmSearch" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
                                 <div class="search_logo display-flex">
-                                    <input type="text" name="s" id="search" class="form-control" value="" placeholder="অনুসন্ধান করুন">
+                                    <input type="text" name="s" id="search" class="form-control" value=""
+                                        placeholder="অনুসন্ধান করুন">
                                     <button><i class="fa fa-search"></i></button>
                                     <a href="" class="close-search"><i class="fa fa-times"></i></a>
                                 </div>
@@ -568,30 +606,32 @@ $chunks = array_chunk($menu_items, ceil(count($menu_items)/$columns));
                         <div class="MobileDateArea">
                             <p class="date">
                                 <i class="fa fa-calendar" aria-hidden="true"></i>
-                                <span><?php echo strtr(strftime('%A, %d %B %Y'), ['Saturday'=>'শনিবার','Sunday'=>'রবিবার','Monday'=>'সোমবার','Tuesday'=>'মঙ্গলবার','Wednesday'=>'বুধবার','Thursday'=>'বৃহস্পতিবার','Friday'=>'শুক্রবার','January'=>'জানুয়ারি','February'=>'ফেব্রুয়ারি','March'=>'মার্চ','April'=>'এপ্রিল','May'=>'মে','June'=>'জুন','July'=>'জুলাই','August'=>'আগস্ট','September'=>'সেপ্টেম্বর','October'=>'অক্টোবর','November'=>'নভেম্বর','December'=>'ডিসেম্বর','0'=>'০','1'=>'১','2'=>'২','3'=>'৩','4'=>'৪','5'=>'৫','6'=>'৬','7'=>'৭','8'=>'৮','9'=>'৯']); ?></span>
+                                <span>
+                                    <?php echo strtr(strftime('%A, %d %B %Y'), ['Saturday'=>'শনিবার','Sunday'=>'রবিবার','Monday'=>'সোমবার','Tuesday'=>'মঙ্গলবার','Wednesday'=>'বুধবার','Thursday'=>'বৃহস্পতিবার','Friday'=>'শুক্রবার','January'=>'জানুয়ারি','February'=>'ফেব্রুয়ারি','March'=>'মার্চ','April'=>'এপ্রিল','May'=>'মে','June'=>'জুন','July'=>'জুলাই','August'=>'আগস্ট','September'=>'সেপ্টেম্বর','October'=>'অক্টোবর','November'=>'নভেম্বর','December'=>'ডিসেম্বর','0'=>'০','1'=>'১','2'=>'২','3'=>'৩','4'=>'৪','5'=>'৫','6'=>'৬','7'=>'৭','8'=>'৮','9'=>'৯']); ?>
+                                </span>
                             </p>
                         </div>
                     </li>
                     <li>
                         <div class="MobileDateArea">
                             <div class="MobileTopBtn">
-                           <?php if ( $btn1_label && $btn1_url ) : ?>
-        <a href="<?php echo esc_url( $btn1_url ); ?>" target="_blank">
-            <?php echo esc_html( $btn1_label ); ?>
-        </a>
-    <?php endif; ?>
+                                <?php if ( $btn1_label && $btn1_url ) : ?>
+                                <a href="<?php echo esc_url( $btn1_url ); ?>" target="_blank">
+                                    <?php echo esc_html( $btn1_label ); ?>
+                                </a>
+                                <?php endif; ?>
 
-    <?php if ( $btn2_label && $btn2_url ) : ?>
-        <a href="<?php echo esc_url( $btn2_url ); ?>" target="_blank">
-            <?php echo esc_html( $btn2_label ); ?>
-        </a>
-    <?php endif; ?>
+                                <?php if ( $btn2_label && $btn2_url ) : ?>
+                                <a href="<?php echo esc_url( $btn2_url ); ?>" target="_blank">
+                                    <?php echo esc_html( $btn2_label ); ?>
+                                </a>
+                                <?php endif; ?>
 
-<?php if ( $btn3_label && $btn3_url ) : ?>
-    <a href="<?php echo esc_url( $btn3_url ); ?>" target="_blank">
-        <?php echo esc_html( $btn3_label ); ?>
-    </a>
-<?php endif; ?>
+                                <?php if ( $btn3_label && $btn3_url ) : ?>
+                                <a href="<?php echo esc_url( $btn3_url ); ?>" target="_blank">
+                                    <?php echo esc_html( $btn3_label ); ?>
+                                </a>
+                                <?php endif; ?>
 
                             </div>
                         </div>
@@ -636,9 +676,11 @@ if ( isset( $locations[ $menu_name ] ) ) {
                     <li class="parent">
                         <a href="#">অন্যান্য</a>
                         <ul class="SubMenuM">
-                        <?php foreach ($menu_items as $item): ?>
-                            <li><a href="<?php echo esc_url($item->url); ?>"><?php echo esc_html($item->title); ?></a></li>
-                        <?php endforeach; ?>
+                            <?php foreach ($menu_items as $item): ?>
+                            <li><a href="<?php echo esc_url($item->url); ?>">
+                                    <?php echo esc_html($item->title); ?>
+                                </a></li>
+                            <?php endforeach; ?>
                         </ul>
                     </li>
                 </ul>
@@ -668,10 +710,11 @@ if ( isset( $locations[ $menu_name ] ) ) {
                     <div class="col-lg-12">
                         <div class="breadcrumb-wrap">
                             <nav aria-label="breadcrumb" class="breadcrumbs large-font">
-                            <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="<?php echo esc_url(home_url('/')); ?>" role="button" tabindex="0"><i class="fas fa-home"></i></a></li>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="<?php echo esc_url(home_url('/')); ?>"
+                                            role="button" tabindex="0"><i class="fas fa-home"></i></a></li>
 
-    <?php
+                                    <?php
     $categories = get_the_category();
     if ($categories) {
         $category = $categories[0]; // take the first category
@@ -684,7 +727,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
         echo '<li class="breadcrumb-item"><a href="'.esc_url(get_category_link($category)).'">'.esc_html($category->name).'</a></li>';
     }
     ?>
-</ol>
+                                </ol>
                             </nav>
                         </div>
                     </div>
@@ -692,9 +735,15 @@ if ( isset( $locations[ $menu_name ] ) ) {
                 <div class="row detailsBodyRowGutter">
                     <div class="col-lg-9">
                         <div class="dheading">
-                            <h2 class="DShoulder"><?php echo esc_html(get_post_meta(get_the_ID(), '_post_shoulder', true)); ?></h2>
-                            <h1><?php the_title(); ?></h1>
-                            <h2 class="DsubHead"><?php echo esc_html(get_post_meta(get_the_ID(), '_post_subHead', true)); ?></h2>
+                            <h2 class="DShoulder">
+                                <?php echo esc_html(get_post_meta(get_the_ID(), '_post_shoulder', true)); ?>
+                            </h2>
+                            <h1>
+                                <?php the_title(); ?>
+                            </h1>
+                            <h2 class="DsubHead">
+                                <?php echo esc_html(get_post_meta(get_the_ID(), '_post_subHead', true)); ?>
+                            </h2>
                         </div>
                         <div class="row MobileShow">
                             <div class="col-12">
@@ -705,9 +754,16 @@ if ( isset( $locations[ $menu_name ] ) ) {
                             </div>
                         </div>
                         <div class="DNewsImg">
-                            <img class="img-fluid w-100" id="adf-overlay" data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/thumb-bg.gif"); ?>" id="adf-overlay" alt="<?php the_title(); ?>"
-                                title="<?php the_title(); ?>">
-                            <p><?php echo esc_html(wp_get_attachment_caption(get_post_thumbnail_id(get_the_ID()))); ?></p>
+                            <img class="img-fluid w-100" id="adf-overlay"
+                                data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
+                                src="<?php echo esc_url(get_template_directory_uri() . " /media/common/thumb-bg.gif");
+                                ?>" id="adf-overlay" alt="
+                            <?php the_title(); ?>"
+                            title="
+                            <?php the_title(); ?>">
+                            <p>
+                                <?php echo esc_html(wp_get_attachment_caption(get_post_thumbnail_id(get_the_ID()))); ?>
+                            </p>
                         </div>
                         <div class="row MobileShow">
                             <div class="col-12">
@@ -721,12 +777,16 @@ if ( isset( $locations[ $menu_name ] ) ) {
                             <div class="col-lg-6 d-flex">
                                 <div class="align-self-stretch justify-content-center">
                                     <div class="writter">
-                                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'post_reporter', true)); ?></p>
+                                        <p>
+                                            <?php echo esc_html(get_post_meta(get_the_ID(), 'post_reporter', true)); ?>
+                                        </p>
                                     </div>
                                     <div class="dateAndTime">
-                                        <p><i class="fa-regular fa-clock"></i> প্রকাশ: <?php 
+                                        <p><i class="fa-regular fa-clock"></i> প্রকাশ:
+                                            <?php 
 echo strtr(get_the_date('d F Y').' | '.get_the_time('H:i'), ['0'=>'০','1'=>'১','2'=>'২','3'=>'৩','4'=>'৪','5'=>'৫','6'=>'৬','7'=>'৭','8'=>'৮','9'=>'৯']);
-?> </p>
+?>
+                                        </p>
                                     </div>
 
                                 </div>
@@ -744,7 +804,8 @@ echo strtr(get_the_date('d F Y').' | '.get_the_time('H:i'), ['0'=>'০','1'=>'�
                                         <a class="a2a_button_email"></a>
                                         <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
                                     </div>
-                                    <script async src="https://static.addtoany.com/menu/page.js" type="text/javascript"></script>
+                                    <script async src="https://static.addtoany.com/menu/page.js"
+                                        type="text/javascript"></script>
                                     <!-- AddToAny END -->
                                 </div>
                             </div>
@@ -756,7 +817,9 @@ echo strtr(get_the_date('d F Y').' | '.get_the_time('H:i'), ['0'=>'০','1'=>'�
                                 </div>
                             </div>
                         </div>
-                        <div class="dNewsDesc" id="contentDetails"><?php the_content(); ?></div>
+                        <div class="dNewsDesc" id="contentDetails">
+                            <?php the_content(); ?>
+                        </div>
                         <div class="DContentAdd">
                             <div class="row mt-3 mb-3 MobileHide">
                                 <div class="col-md-12">
@@ -830,7 +893,7 @@ if ($categories) {
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="CatNewsListWrap">
                                 <div class="row gx-5">
                                     <?php 
@@ -841,14 +904,20 @@ if ($categories) {
                                                 <div class="row">
                                                     <div class="col-lg-5 col-5">
                                                         <div class="CatNewsListImg">
-                                                            <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/thumb-sm.gif"); ?>" alt="<?php echo get_the_title(); ?>" title="<?php echo get_the_title(); ?>"
-                                                                class="img-fluid">
+                                                            <img data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>"
+                                                                src="<?php echo esc_url(get_template_directory_uri() . "
+                                                                /media/common/thumb-sm.gif"); ?>" alt="
+                                                            <?php echo get_the_title(); ?>" title="
+                                                            <?php echo get_the_title(); ?>"
+                                                            class="img-fluid">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-7 col-7">
                                                         <div class="CatNewsLisText">
                                                             <div class="Desc">
-                                                                <h3 class="Title2"><?php echo get_the_title(); ?></h3>
+                                                                <h3 class="Title2">
+                                                                    <?php echo get_the_title(); ?>
+                                                                </h3>
                                                                 <span class="PublishTime"><i
                                                                         class="fa-regular fa-clock"></i>
                                                                     আপডেট
@@ -900,7 +969,7 @@ if ($categories) {
                         <div class="DRightSideAdd mt-4 mb-2 MobileHide">
                             <!-- Advertisement -->
                         </div>
-                        
+
 
                         <div class="DlastNews">
                             <div class="dlastHead">
@@ -909,7 +978,7 @@ if ($categories) {
                                 </a>
                             </div>
                             <div class="dAllListWrap">
-                            <?php
+                                <?php
 $latest_news = new WP_Query(array(
     'posts_per_page' => 8,
     'orderby'        => 'date',
@@ -918,31 +987,38 @@ $latest_news = new WP_Query(array(
 
     while ($latest_news->have_posts()) : $latest_news->the_post(); ?>
 
-    
+
                                 <div class="DlastNews-list">
                                     <a href="<?php echo get_permalink(); ?>">
                                         <div class="row gx-2">
                                             <div class="col-5">
                                                 <div class="dLastNewsImg">
-                                                    <img class="img-fluid" data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" src="<?php echo esc_url(get_template_directory_uri() . "/media/common/thumb-sm.gif"); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
+                                                    <img class="img-fluid"
+                                                        data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>"
+                                                        src="<?php echo esc_url(get_template_directory_uri() . "
+                                                        /media/common/thumb-sm.gif"); ?>" alt="
+                                                    <?php the_title(); ?>" title="
+                                                    <?php the_title(); ?>">
                                                 </div>
                                             </div>
                                             <div class="col-7">
                                                 <div class="dLastNewsText">
-                                                    <h5><?php echo get_the_title(); ?></h5>
+                                                    <h5>
+                                                        <?php echo get_the_title(); ?>
+                                                    </h5>
                                                 </div>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
-                                
-    <?php endwhile;
+
+                                <?php endwhile;
     wp_reset_postdata();
 ?>
                             </div>
                             <div class="DreadMoreBtn">
                                 <a href="<?php echo esc_url( home_url('/latest/news') ); ?>">আরও পড়ুন <i
-                                    class="fas fa-angle-double-right"></i></a>
+                                        class="fas fa-angle-double-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -973,13 +1049,15 @@ $latest_news = new WP_Query(array(
             <div class="row">
                 <div class="footerTopSection">
                     <ul>
-                    <?php
+                        <?php
 $menu_name = 'footer_menu';
 $locations = get_nav_menu_locations();
 $menu = wp_get_nav_menu_object($locations[$menu_name]);
 $menu_items = wp_get_nav_menu_items($menu->term_id);
 foreach ($menu_items as $item): ?>
-                        <li><a href="<?php echo esc_url($item->url); ?>"><?php echo esc_html($item->title); ?></a></li>
+                        <li><a href="<?php echo esc_url($item->url); ?>">
+                                <?php echo esc_html($item->title); ?>
+                            </a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -988,30 +1066,44 @@ foreach ($menu_items as $item): ?>
                         <div class="col-lg-4 col-12">
                             <p><a href="/privacy">PRIVACY POLICY</a></p>
                             <p><a href="/terms">TERMS OF USE</a></p>
-                            <p><a href="/"><?php echo strtoupper( get_bloginfo('name') ); ?> ALL RIGHTS RESERVED</a></p>
+                            <p><a href="/">
+                                    <?php echo strtoupper( get_bloginfo('name') ); ?> ALL RIGHTS RESERVED
+                                </a></p>
                         </div>
                         <div class="col-lg-4 col-12">
                             <?php echo wp_kses_post( get_theme_mod('editorsline') ); ?>
                         </div>
                         <div class="col-lg-4 col-12">
-                            <h2 class="FSocialHeadLine">ফলো করুন <span><?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></span>-এর খবর</h2>
+                            <h2 class="FSocialHeadLine">ফলো করুন <span>
+                                    <?php echo esc_html(get_theme_mod('site_title_bn')); ?>
+                                </span>-এর খবর</h2>
                             <div class="FSocialShare">
                                 <ul>
-                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_facebook_url")); ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_twitter_url")); ?>" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_linkedin_url")); ?>" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod(" social_facebook_url")); ?>"
+                                            target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod(" social_twitter_url")); ?>"
+                                            target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod(" social_linkedin_url")); ?>"
+                                            target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                                     </li>
-                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_youtube_url")); ?>?sub_confirmation=1" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
-                                    <li><a href="<?php echo esc_attr(get_theme_mod("social_instagram_url")); ?>" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod(" social_youtube_url"));
+                                            ?>?sub_confirmation=1" target="_blank"><i
+                                                class="fa-brands fa-youtube"></i></a></li>
+                                    <li><a href="<?php echo esc_attr(get_theme_mod(" social_instagram_url")); ?>"
+                                            target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
                                 </ul>
                             </div>
                             <a href="" class="Flogo" rel="home">
-                            <img src="<?php echo esc_url( ( function_exists('get_custom_logo') && has_custom_logo() ) ? wp_get_attachment_image_url( get_theme_mod('custom_logo'), 'full' ) : get_template_directory_uri() . '/images/logo.png' ); ?>"
-                                title="<?php the_title(); ?>"
-                                alt="<?php the_title(); ?>" class="img-fluid img100">
-                        </a>
-                            <h2 class="FCopyRight">© ২০০৫ - ২০২৬ <a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></a> কর্তৃক সর্বসত্ব ® সংরক্ষিত</h2>
-                            <p class="d-none"><a href="<?php echo esc_url( home_url('/') ); ?>" rel="nofollow" target="_blank">উন্নয়নে <?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></a></p>
+                                <img src="<?php echo esc_url( ( function_exists('get_custom_logo') && has_custom_logo() ) ? wp_get_attachment_image_url( get_theme_mod('custom_logo'), 'full' ) : get_template_directory_uri() . '/images/logo.png' ); ?>"
+                                    title="<?php the_title(); ?>" alt="<?php the_title(); ?>" class="img-fluid img100">
+                            </a>
+                            <h2 class="FCopyRight">© ২০০৫ - ২০২৬ <a href="<?php echo esc_url( home_url('/') ); ?>">
+                                    <?php echo esc_html(get_theme_mod('site_title_bn')); ?>
+                                </a> কর্তৃক সর্বসত্ব ® সংরক্ষিত</h2>
+                            <p class="d-none"><a href="<?php echo esc_url( home_url('/') ); ?>" rel="nofollow"
+                                    target="_blank">উন্নয়নে
+                                    <?php echo esc_html(get_theme_mod('site_title_bn')); ?>
+                                </a></p>
                         </div>
                     </div>
                 </div>
@@ -1025,11 +1117,11 @@ foreach ($menu_items as $item): ?>
     <script type="text/javascript">
         var ContentID = '340205';
         if (ContentID == '239727') {
-            $(document).ready(function() {
-                $(document).on("contextmenu", function(e) {
+            $(document).ready(function () {
+                $(document).on("contextmenu", function (e) {
                     return false;
                 });
-                $('body').on('selectstart dragstart', function(e) {
+                $('body').on('selectstart dragstart', function (e) {
                     e.preventDefault();
                     return false;
                 });
@@ -1038,26 +1130,29 @@ foreach ($menu_items as $item): ?>
     </script>
     <script type="text/javascript">
         // Footer Sticky Ads
-        jQuery(document).ready(function(e) {
-            jQuery('#T4Tutorials_UP11_Close').click(function() {
+        jQuery(document).ready(function (e) {
+            jQuery('#T4Tutorials_UP11_Close').click(function () {
                 jQuery('#T4Tutorials_UP11').hide();
             })
         });
     </script>
     <script type="text/javascript">
-        $(window).load(function() {
-            $("main img").each(function(index) {
+        $(window).load(function () {
+            $("main img").each(function (index) {
                 $(this).attr('src', $(this).attr('data-src'))
             });
         });
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" type="text/javascript"></script>
-    <script type="text/javascript" src="<?php echo esc_url(get_template_directory_uri() . "/frontend/common/js/eMythMakers.js"); ?>"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"
+        type="text/javascript"></script>
+    <script type="text/javascript" src="<?php echo esc_url(get_template_directory_uri() . "
+        /frontend/common/js/eMythMakers.js"); ?>"></script>
     <script type="text/javascript">
-        $(function() {
-            $("#btnIncrease").click(function() {
-                $(".dNewsDesc").children().each(function() {
+        $(function () {
+            $("#btnIncrease").click(function () {
+                $(".dNewsDesc").children().each(function () {
                     var size = parseInt($(this).css("font-size"));
                     size = size + 1 + "px";
                     $(this).css({
@@ -1066,18 +1161,18 @@ foreach ($menu_items as $item): ?>
                 });
             });
         });
-        $(function() {
-            $("#btnOriginal").click(function() {
-                $(".dNewsDesc").children().each(function() {
+        $(function () {
+            $("#btnOriginal").click(function () {
+                $(".dNewsDesc").children().each(function () {
                     $(this).css({
                         'font-size': '20px'
                     });
                 });
             });
         });
-        $(function() {
-            $("#btnDecrease").click(function() {
-                $(".dNewsDesc").children().each(function() {
+        $(function () {
+            $("#btnDecrease").click(function () {
+                $(".dNewsDesc").children().each(function () {
                     var size = parseInt($(this).css("font-size"));
                     size = size - 1 + "px";
                     $(this).css({
@@ -1089,13 +1184,13 @@ foreach ($menu_items as $item): ?>
         $(".DContentAdd").insertAfter($("#contentDetails p:nth-child(2)"));
         $(".DContentAdd2").insertAfter($("#contentDetails p:nth-child(5)"));
         $(".DContentAdd3").insertAfter($("#contentDetails p:nth-child(4)"));
-        $('#contentDetails img').each(function() {
+        $('#contentDetails img').each(function () {
             var float = '';
             var data = $(this).attr('alt');
 
             if ($(this).attr('style')) {
                 var style = $(this).attr('style').split(';');
-                $.each(style, function(index, value) {
+                $.each(style, function (index, value) {
                     if (value.indexOf("float") >= 0) {
                         float = value;
                     }
@@ -1106,7 +1201,7 @@ foreach ($menu_items as $item): ?>
                     $(this).wrap("<div class='dCaption' style='" + float + "'></div>")
                         .parent('.dCaption')
                         .append('<p class="text-justify img-caption">' + data + '</p>');
-                    $(document).ready(function() {
+                    $(document).ready(function () {
                         $("#contentDetails:not(.writer_div)");
                     });
                 } else {

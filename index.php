@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <title>SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS </title>
+    <title><?php echo strtoupper(get_bloginfo("name")); ?> | GET THE LATEST ONLINE BANGLA NEWS </title>
     <meta http-equiv="refresh" content="600">
     <meta name="author" content="<?php bloginfo("name"); ?>">
     <meta name="Developer" content="<?php echo esc_attr(wp_get_theme()->get("Author")); ?>">
@@ -19,39 +19,39 @@
     <meta name="msnbot" content="index, follow">
     <meta property="fb:app_id" content="<?php echo esc_attr(get_theme_mod("fb_app_id")); ?>">
     <meta property="fb:pages" content="<?php echo esc_attr(get_theme_mod("fb_pages")); ?>">
-    <meta name="description" content="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS">
-    <meta name="keywords" content="Samakal, bangla news, current News, bangla newspaper, bangladesh newspaper, online paper, bangladeshi newspaper, bangla news paper, bangladesh newspapers, newspaper, all bangla news paper, bd news paper, news paper, bangladesh news paper, daily, bangla newspaper, daily news paper, bangladeshi news paper, bangla paper, all bangla newspaper, bangladesh news, daily newspaper, অনলাইন, পত্রিকা, বাংলাদেশ, আজকের পত্রিকা, আন্তর্জাতিক, অর্থনীতি, খেলা, বিনোদন, ফিচার, বিজ্ঞান ও প্রযুক্তি, চলচ্চিত্র, ঢালিউড, বলিউড, হলিউড, বাংলা গান, মঞ্চ, টেলিভিশন, কম্পিউটার, মোবাইল ফোন, অটোমোবাইল, মহাকাশ, গেমস, মাল্টিমিডিয়া, রাজনীতি, সরকার, অপরাধ, দুর্নীতি, আইন ও বিচার, পরিবেশ, দুর্ঘটনা, সংসদ, রাজধানী, শেয়ার বাজার, বাণিজ্য, পোশাক শিল্প, ক্রিকেট, ফুটবল, লাইভ স্কোর">
-    <meta property="og:site_name" content="SAMAKAL | সমকাল">
-    <meta property="og:title" content="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS">
-    <meta property="og:description" content="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS">
-    <meta property="og:url" content="https://samakal.com">
+    <meta name="description" content="<?php echo strtoupper(get_bloginfo("name")); ?> | GET THE LATEST ONLINE BANGLA NEWS">
+    <meta name="keywords" content="<?php echo get_bloginfo("name"); ?>, bangla news, current News, bangla newspaper, bangladesh newspaper, online paper, bangladeshi newspaper, bangla news paper, bangladesh newspapers, newspaper, all bangla news paper, bd news paper, news paper, bangladesh news paper, daily, bangla newspaper, daily news paper, bangladeshi news paper, bangla paper, all bangla newspaper, bangladesh news, daily newspaper, অনলাইন, পত্রিকা, বাংলাদেশ, আজকের পত্রিকা, আন্তর্জাতিক, অর্থনীতি, খেলা, বিনোদন, ফিচার, বিজ্ঞান ও প্রযুক্তি, চলচ্চিত্র, ঢালিউড, বলিউড, হলিউড, বাংলা গান, মঞ্চ, টেলিভিশন, কম্পিউটার, মোবাইল ফোন, অটোমোবাইল, মহাকাশ, গেমস, মাল্টিমিডিয়া, রাজনীতি, সরকার, অপরাধ, দুর্নীতি, আইন ও বিচার, পরিবেশ, দুর্ঘটনা, সংসদ, রাজধানী, শেয়ার বাজার, বাণিজ্য, পোশাক শিল্প, ক্রিকেট, ফুটবল, লাইভ স্কোর">
+    <meta property="og:site_name" content="<?php echo strtoupper(get_bloginfo("name")); ?> | <?php echo esc_html(get_theme_mod('site_title_bn')); ?>">
+    <meta property="og:title" content="<?php echo strtoupper(get_bloginfo("name")); ?> | GET THE LATEST ONLINE BANGLA NEWS">
+    <meta property="og:description" content="<?php echo strtoupper(get_bloginfo("name")); ?> | GET THE LATEST ONLINE BANGLA NEWS">
+    <meta property="og:url" content="<?php echo esc_url(home_url("/")); ?>">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://samakal.com/frontend/media/common/logo-fb.png">
+    <meta property="og:image" content="<?php echo esc_url(get_template_directory_uri() . "/frontend/media/common/logo-fb.png"); ?>">
     <meta property="og:locale" content="en_US">
-    <meta name="twitter:domain" content="https://samakal.com" />
+    <meta name="twitter:domain" content="<?php echo esc_url(home_url("/")); ?>" />
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="SAMAKAL | সমকাল">
-    <meta name="twitter:title" content="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS">
-    <meta name="twitter:description" content="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS">
-    <meta name="twitter:image" content="https://samakal.com/frontend/media/common/logo-fb.png">
-    <meta name="twitter:site" content="@samakaltw" />
-    <link rel="image_src" href="https://samakal.com/frontend/media/common/logo-fb.png">
-    <link rel="canonical" href="https://samakal.com">
-    <link type="image/x-icon" rel="shortcut icon" href="https://samakal.com/frontend/media/common/favicon.ico">
-    <link type="image/x-icon" rel="icon" href="https://samakal.com/frontend/media/common/favicon.ico">
-    <link rel="apple-touch-icon" sizes="57x57" href="https://samakal.com/frontend/media/common/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="https://samakal.com/frontend/media/common/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://samakal.com/frontend/media/common/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="https://samakal.com/frontend/media/common/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://samakal.com/frontend/media/common/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="https://samakal.com/frontend/media/common/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="https://samakal.com/frontend/media/common/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="https://samakal.com/frontend/media/common/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://samakal.com/frontend/media/common/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://samakal.com/frontend/media/common/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://samakal.com/frontend/media/common/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="https://samakal.com/frontend/media/common/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://samakal.com/frontend/media/common/favicon/favicon-16x16.png">
+    <meta name="twitter:site" content="<?php echo strtoupper(get_bloginfo("name")); ?> | <?php echo esc_html(get_theme_mod('site_title_bn')); ?>">
+    <meta name="twitter:title" content="<?php echo strtoupper(get_bloginfo("name")); ?> | GET THE LATEST ONLINE BANGLA NEWS">
+    <meta name="twitter:description" content="<?php echo strtoupper(get_bloginfo("name")); ?> | GET THE LATEST ONLINE BANGLA NEWS">
+    <meta name="twitter:image" content="<?php echo esc_url(get_template_directory_uri() . "/frontend/media/common/logo-fb.png"); ?>">
+    <meta name="twitter:site" content="<?php echo esc_attr(get_theme_mod("social_twitter_url")); ?>" />
+    <link rel="image_src" href="<?php echo esc_url(get_template_directory_uri() . "/frontend/media/common/logo-fb.png"); ?>">
+    <link rel="canonical" href="<?php echo esc_url(home_url("/")); ?>">
+    <link type="image/x-icon" rel="shortcut icon" href="<?php echo esc_url(get_site_icon_url()); ?>">
+    <link type="image/x-icon" rel="icon" href="<?php echo esc_url(get_site_icon_url()); ?>">
+    <link rel="apple-touch-icon" sizes="57x57" href="<?php echo esc_url(get_site_icon_url(57)); ?>">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo esc_url(get_site_icon_url(60)); ?>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo esc_url(get_site_icon_url(72)); ?>">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo esc_url(get_site_icon_url(76)); ?>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo esc_url(get_site_icon_url(114)); ?>">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo esc_url(get_site_icon_url(120)); ?>">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo esc_url(get_site_icon_url(144)); ?>">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo esc_url(get_site_icon_url(152)); ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url(get_site_icon_url(180)); ?>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo esc_url(get_site_icon_url(192)); ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url(get_site_icon_url(32)); ?>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo esc_url(get_site_icon_url(96)); ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo esc_url(get_site_icon_url(16)); ?>">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
@@ -367,7 +367,7 @@
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://samakal.com"
+                "item": "<?php echo esc_url(home_url("/")); ?>"
             }]
         }
     </script>
@@ -375,75 +375,51 @@
         {
             "@context": "http://schema.org",
             "@type": "Organization",
-            "name": "সমকাল",
-            "alternateName": "Samakal",
-            "foundingDate": "2005-05-31",
-            "url": "https://samakal.com",
+            "name": "<?php echo esc_html(get_theme_mod('site_title_bn')); ?>",
+            "alternateName": "<?php bloginfo("name"); ?>",
+            "url": "<?php echo esc_url(home_url("/")); ?>",
             "sameAs": [
-                "https://www.facebook.com/TheDailySamakal", "https://twitter.com/samakaltw", "https://www.youtube.com/c/SamakalNews", "https://www.linkedin.com/company/samakal", "https://www.instagram.com/daily_samakal"
+                "<?php echo esc_attr(get_theme_mod(" social_facebook_url")); ?>", "<?php echo esc_attr(get_theme_mod(" social_twitter_url")); ?>", "<?php echo esc_attr(get_theme_mod(" social_youtube_url"));
+                ?>", "<?php echo esc_attr(get_theme_mod(" social_linkedin_url")); ?>", "<?php echo esc_attr(get_theme_mod(" social_instagram_url")); ?>"
             ],
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://samakal.com/frontend/media/common/logo-fb.png"
+                "url": "<?php echo esc_url(get_template_directory_uri() . "/frontend/media/common/logo-fb.png"); ?>"
             },
-            "image": "https://samakal.com/frontend/media/common/logo-fb.png",
-            "contactPoint": [{
-                "@type": "ContactPoint",
-                "telephone": "+88-02-55029832",
-                "contactType": "customer service"
-            }, {
-                "@type": "ContactPoint",
-                "telephone": "+88-02-55029833",
-                "contactType": "customer service"
-            }, {
-                "@type": "ContactPoint",
-                "telephone": "+88-02-55029834",
-                "contactType": "customer service"
-            }, {
-                "@type": "ContactPoint",
-                "telephone": "+88-02-55029835",
-                "contactType": "customer service"
-            }],
+            "image": "<?php echo esc_url(get_template_directory_uri() . "/frontend/media/common/logo-fb.png"); ?>",
             "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://samakal.com/search?q={search_term_string}"
+                "target": "<?php echo esc_url( home_url('/') ); ?>?q={search_term_string}"
             },
-            "email": "mailto:marketingonline@samakal.com",
-            "telephone": "+88-02-55029832-38",
-            "address": {
-                "@type": "PostalAddress",
-                "description": "টাইমস মিডিয়া ভবন (৫ম তলা) | ৩৮৭ তেজগাঁও শিল্প এলাকা, ঢাকা - ১২০৮",
-                "postalCode": "1208"
-            }
         }
     </script>
     <script type="application/ld+json" data-schema="Organization">
         {
             "@type": "Website",
-            "url": "https://samakal.com",
+            "url": "<?php echo esc_url(home_url("/")); ?>",
             "interactivityType": "mixed",
-            "name": "সমকাল",
-            "headline": "SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS!",
-            "keywords": "Samakal, bangla news, current News, bangla newspaper, bangladesh newspaper, online paper, bangladeshi newspaper, bangla news paper, bangladesh newspapers, newspaper, all bangla news paper, bd news paper, news paper, bangladesh news paper, daily, bangla newspaper, daily news paper, bangladeshi news paper, bangla paper, all bangla newspaper, bangladesh news, daily newspaper, অনলাইন, পত্রিকা, বাংলাদেশ, আজকের পত্রিকা, আন্তর্জাতিক, অর্থনীতি, খেলা, বিনোদন, ফিচার, বিজ্ঞান ও প্রযুক্তি, চলচ্চিত্র, ঢালিউড, বলিউড, হলিউড, বাংলা গান, মঞ্চ, টেলিভিশন, কম্পিউটার, মোবাইল ফোন, অটোমোবাইল, মহাকাশ, গেমস, মাল্টিমিডিয়া, রাজনীতি, সরকার, অপরাধ, দুর্নীতি, আইন ও বিচার, পরিবেশ, দুর্ঘটনা, সংসদ, রাজধানী, শেয়ার বাজার, বাণিজ্য, পোশাক শিল্প, ক্রিকেট, ফুটবল, লাইভ স্কোর",
+            "name": "<?php echo esc_html(get_theme_mod('site_title_bn')); ?>",
+            "headline": "<?php echo strtoupper(get_bloginfo("name")); ?> | GET THE LATEST ONLINE BANGLA NEWS!",
+            "keywords": "<?php echo get_bloginfo("name"); ?>, bangla news, current News, bangla newspaper, bangladesh newspaper, online paper, bangladeshi newspaper, bangla news paper, bangladesh newspapers, newspaper, all bangla news paper, bd news paper, news paper, bangladesh news paper, daily, bangla newspaper, daily news paper, bangladeshi news paper, bangla paper, all bangla newspaper, bangladesh news, daily newspaper, অনলাইন, পত্রিকা, বাংলাদেশ, আজকের পত্রিকা, আন্তর্জাতিক, অর্থনীতি, খেলা, বিনোদন, ফিচার, বিজ্ঞান ও প্রযুক্তি, চলচ্চিত্র, ঢালিউড, বলিউড, হলিউড, বাংলা গান, মঞ্চ, টেলিভিশন, কম্পিউটার, মোবাইল ফোন, অটোমোবাইল, মহাকাশ, গেমস, মাল্টিমিডিয়া, রাজনীতি, সরকার, অপরাধ, দুর্নীতি, আইন ও বিচার, পরিবেশ, দুর্ঘটনা, সংসদ, রাজধানী, শেয়ার বাজার, বাণিজ্য, পোশাক শিল্প, ক্রিকেট, ফুটবল, লাইভ স্কোর",
             "copyrightHolder": {
                 "@type": "NewsMediaOrganization",
-                "name": "সমকাল"
+                "name": "<?php echo esc_html(get_theme_mod('site_title_bn')); ?>"
             },
             "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://samakal.com/search?q={q}",
+                "target": ""<?php echo esc_url(home_url("/")); ?>"search?q={q}",
                 "query-input": "required name=q"
             },
             "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "https://samakal.com"
+                "@id": "<?php echo esc_url(home_url("/")); ?>"
             },
             "@context": "http://schema.org"
         }
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XJF1JX4FFL" type="text/javascript"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo esc_attr(get_theme_mod(" ga4_id")); ?>" type="text/javascript"></script>
     <script type="text/javascript">
         window.dataLayer = window.dataLayer || [];
 
@@ -452,20 +428,8 @@
         }
         gtag('js', new Date());
 
-        gtag('config', 'G-XJF1JX4FFL');
+        gtag('config', '<?php echo esc_attr(get_theme_mod(" ga4_id")); ?>');
     </script>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102760953-1" type="text/javascript"></script>
-    <script type="text/javascript">
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-102760953-1');
-    </script>
-
 
     <!-- Facebook Pixel Code -->
     <script type="text/javascript">
@@ -487,11 +451,11 @@
             s.parentNode.insertBefore(t, s)
         }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '226625765941679');
+        fbq('init', '<?php echo esc_attr(get_theme_mod("fb_pixel_id")); ?>');
         fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=226625765941679&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=<?php echo esc_attr(get_theme_mod("fb_pixel_id")); ?>&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Facebook Pixel Code -->
 </head>
@@ -949,8 +913,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
                             <!-- Advertisement -->
                         </div>
                         <div class="position-relative w-100 mt-2">
-                            <img src="https://samakal.com/media/common/beacon.png" alt="beacon" title="beacon" class="img-fluid w-100">
-                            <iframe src="https://widget.crictimes.org" style="width:100%;height:76%;position:absolute;bottom:0;left:0;right:0;border:none;padding:9px" frameborder="0" scrolling="no"></iframe>
+                            <!-- Advertisement -->
                         </div>
                         <?php 
                             $home_category_id = get_theme_mod('lead_sidebar_category');
@@ -2335,42 +2298,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
                     </div>
                     <div class="col-lg-3">
                         <div class="DPrayer skeleton">
-                            <div class="DPrayersBanner">
-                                <a href="#"><img class="img-fluid skeleton img100"
-                                    src="https://samakal.com/frontend/media/common/namaz.png" alt="Namaz"
-                                    title="Namaz"></a>
-                            </div>
-                            <div class="DPrayersTime table-responsive">
-                                <table class="table">
-                                    <tbody>
-                                        <tr>
-                                            <td>ফজর</td>
-                                            <td>০৫:১১ ভোর </td>
-                                        </tr>
-                                        <tr>
-                                            <td>যোহর</td>
-                                            <td>১২:১৫ দুপুর </td>
-                                        </tr>
-                                        <tr>
-                                            <td>আছর</td>
-                                            <td>৪:২০ বিকেল
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>মাগরিব</td>
-                                            <td>৬:০২ সন্ধ্যা
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>ইশা</td>
-                                            <td>৭:১৬ রাত
-                                            </td>
-
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <p>ঢাকা, বুধবার, ২৫ ফেব্রুয়ারি ২০২৬</p>
-                            </div>
+                            <!-- Advertisement -->
                         </div>
                         <div class="DRightSideAdd mt-3">
                             <!-- Advertisement -->
@@ -2644,7 +2572,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
                             <?php echo wp_kses_post( get_theme_mod('editorsline') ); ?>
                         </div>
                         <div class="col-lg-4 col-12">
-                            <h2 class="FSocialHeadLine">ফলো করুন <span><?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></span>-এর খবর</h2>
+                            <h2 class="FSocialHeadLine">ফলো করুন <span><?php echo esc_html(get_theme_mod('site_title_bn')); ?></span>-এর খবর</h2>
                             <div class="FSocialShare">
                                 <ul>
                                     <li><a href="<?php echo esc_attr(get_theme_mod("social_facebook_url")); ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
@@ -2660,8 +2588,8 @@ if ( isset( $locations[ $menu_name ] ) ) {
                                 title="<?php the_title(); ?>"
                                 alt="<?php the_title(); ?>" class="img-fluid img100">
                         </a>
-                            <h2 class="FCopyRight">© ২০০৫ - ২০২৬ <a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></a> কর্তৃক সর্বসত্ব ® সংরক্ষিত</h2>
-                            <p class="d-none"><a href="<?php echo esc_url( home_url('/') ); ?>" rel="nofollow" target="_blank">উন্নয়নে <?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></a></p>
+                            <h2 class="FCopyRight">© ২০০৫ - ২০২৬ <a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo esc_html(get_theme_mod('site_title_bn')); ?></a> কর্তৃক সর্বসত্ব ® সংরক্ষিত</h2>
+                            <p class="d-none"><a href="<?php echo esc_url( home_url('/') ); ?>" rel="nofollow" target="_blank">উন্নয়নে <?php echo esc_html(get_theme_mod('site_title_bn')); ?></a></p>
                         </div>
                     </div>
                 </div>
@@ -2680,7 +2608,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" type="text/javascript"></script>
-    <script type="text/javascript" src="https://samakal.com/frontend/common/js/eMythMakers.js"></script>
+    <script type="text/javascript" src="<?php echo esc_url(get_template_directory_uri() . "/frontend/common/js/eMythMakers.js"); ?>"></script>
 </body>
 
 </html>
