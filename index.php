@@ -767,7 +767,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
                                     $count++;
                                     if ( $count < 11 ) : 
                                 ?>
-                                <a href="<?php the_permalink(); ?>" style="text-decoration: none; color: #333; font-size: 18px; margin-left: 20px;"><?php the_title(); ?></a>
+                                <a href="<?php the_permalink(); ?>" style="text-decoration: none; color: #333; font-size: 18px;"><?php the_title(); ?></a>
                                 <?php if ( $count !== 10) : ?>
                                 <img src="<?php echo esc_url(get_site_icon_url(32)); ?>" style="width: 16px; height: 16px; margin: 0 20px;" alt="icon">
                                 <?php endif; endif; endwhile; wp_reset_postdata(); ?>
