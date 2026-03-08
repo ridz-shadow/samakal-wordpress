@@ -741,33 +741,43 @@ if ( isset( $locations[ $menu_name ] ) ) {
                 </ul>
             </div>
         </div>
+        <?php 
+            $home_category_id = get_theme_mod('ticker');
+            if ( $home_category_id ) :
+
+            $home_category_query = new WP_Query( array(
+                'cat'            => $home_category_id,
+                'posts_per_page' => 10,
+            ) );
+            if ( $home_category_query->have_posts() ) : 
+        ?>
         <div id="myHeader" style="margin-top: 10px;">
             <div class="DHeaderNav" style="border: none;">
                 <div class="container">
                     <div style="display: flex; align-items: center; background: #f9f9f9; height: 40px; border: 1px solid #ddd; font-family: 'SolaimanLipi', Arial, sans-serif; overflow: hidden; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        <div style="background: #c2272d; color:rgb(82, 67, 67); padding: 0 20px; height: 100%; display: flex; align-items: center; font-weight: bold; font-size: 18px; z-index: 10; white-space: nowrap; position: relative; box-shadow: 2px 0 5px rgba(0,0,0,0.1);">
+                        <div style="background: #c2272d; color:rgb(82, 67, 67); padding: 0 20px; height: 100%; color: white; display: flex; align-items: center; font-weight: bold; font-size: 18px; z-index: 10; white-space: nowrap; position: relative; box-shadow: 2px 0 5px rgba(0,0,0,0.1);">
                             সর্বশেষ
                         </div>
 
                         <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();" scrollamount="7" style="height: 100%; line-height: 40px;">
                             <span style="display: inline-flex; align-items: center;">
-                                <a href="https://example.com/news1" style="text-decoration: none; color: #333; font-size: 18px; margin-left: 20px;">আজকের বাজারে সোনার দামে বড় পতন</a>
-                                <img src="https://asianpostbd.com/wp-content/uploads/2024/09/cropped-icon-32x32.png" style="width: 16px; height: 16px; margin: 0 20px;" alt="icon">
-
-                                <a href="https://example.com/news2" style="text-decoration: none; color: #333; font-size: 18px;">বিপিএলের ফাইনালে মুখোমুখি হচ্ছে দুই শক্তিশালী দল</a>
-                                <img src="https://asianpostbd.com/wp-content/uploads/2024/09/cropped-icon-32x32.png" style="width: 16px; height: 16px; margin: 0 20px;" alt="icon">
-
-                                <a href="https://example.com/news3" style="text-decoration: none; color: #333; font-size: 18px;">রাজধানীতে মেট্রোরেলের নতুন স্টেশনের শুভ উদ্বোধন</a>
-                                <img src="https://asianpostbd.com/wp-content/uploads/2024/09/cropped-icon-32x32.png" style="width: 16px; height: 16px; margin: 0 20px;" alt="icon">
-
-                                <a href="https://example.com/news4" style="text-decoration: none; color: #333; font-size: 18px;">আগামীকাল থেকে সারা দেশে তাপমাত্রা বাড়ার সম্ভাবনা</a>
-                                <img src="https://asianpostbd.com/wp-content/uploads/2024/09/cropped-icon-32x32.png" style="width: 16px; height: 16px; margin: 0 20px;" alt="icon">
+                                <?php 
+                                    $count = 0;
+                                    while ( $home_category_query->have_posts() ) : $home_category_query->the_post();
+                                    $count++;
+                                    if ( $count < 11 ) : 
+                                ?>
+                                <a href="<?php the_permalink(); ?>" style="text-decoration: none; color: #333; font-size: 18px; margin-left: 20px;"><?php the_title(); ?></a>
+                                <?php if ( $count !== 10) : ?>
+                                <img src="<?php echo esc_url(get_site_icon_url(32)); ?>" style="width: 16px; height: 16px; margin: 0 20px;" alt="icon">
+                                <?php endif; endif; endwhile; wp_reset_postdata(); ?>
                             </span>
                         </marquee>
                     </div>
                 </div>
             </div>
         </div>
+        <?php endif; endif; ?>
     </header>
     <main>
         <div class="container">

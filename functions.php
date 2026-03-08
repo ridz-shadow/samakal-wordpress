@@ -336,6 +336,22 @@ function theme_customize_register( $wp_customize ) {
 
 
     
+$wp_customize->add_setting( 'ticker', array(
+    'default'           => '',
+    'sanitize_callback' => 'absint',
+) );
+
+$wp_customize->add_control( 'ticker', array(
+    'label'    => 'Ticker',
+    'section'  => 'home_section',
+    'type'     => 'select',
+    'choices'  => wp_list_pluck(
+        get_categories( array( 'hide_empty' => false ) ),
+        'name',
+        'term_id'
+    ),
+) );
+    
 $wp_customize->add_setting( 'lead', array(
     'default'           => '',
     'sanitize_callback' => 'absint',
