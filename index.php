@@ -741,7 +741,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
                 </ul>
             </div>
         </div>
-        <div id="myHeader" style="margin-top: 20px;">
+        <div id="myHeader" style="margin-top: 10px; border: none;">
             <div class="DHeaderNav">
                 <div class="container">
                     <div style="display: flex; align-items: center; background: #f9f9f9; height: 45px; border: 1px solid #ddd; font-family: 'SolaimanLipi', Arial, sans-serif; overflow: hidden; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
