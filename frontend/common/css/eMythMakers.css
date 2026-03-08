@@ -1781,12 +1781,12 @@ address {
     padding: 0 15px 3px 3px;
     display: inline;
     font-size: 22px;
-    border-bottom: 2px solid #F9A038;
+    border-bottom: 2px solid #c2272d;
     font-weight: bold;
 }
 
 .SectionTitle h3 i {
-    color: #F9A038;
+    color: #c2272d;
     font-size: 20px;
     margin-left: 5px;
 }
@@ -3772,7 +3772,7 @@ span.play-btn-big {
     position: absolute;
     top: 40%;
     right: 46%;
-    background: #F9A038;
+    background: #c2272d;
     height: 45px;
     width: 45px;
     border-radius: 50%;
