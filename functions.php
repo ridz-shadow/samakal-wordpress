@@ -271,6 +271,12 @@ add_action('rest_api_init', function () {
         'schema' => null,
     ));
 
+    register_rest_field('post', 'thumbnail_url', array(
+        'get_callback' => function($post) {
+            return get_the_post_thumbnail_url($post['id'], 'medium');
+        },
+        'schema' => null,
+    ));
 });
 
 add_action('after_setup_theme', function() {
