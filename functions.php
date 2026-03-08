@@ -256,6 +256,23 @@ add_action('save_post', function($post_id) {
     }
 });
 
+add_action('rest_api_init', function () {
+    register_rest_field('post', 'shoulder', array(
+        'get_callback' => function($post) {
+            return get_post_meta($post['id'], '_post_shoulder', true);
+        },
+        'schema' => null,
+    ));
+
+    register_rest_field('post', 'subHead', array(
+        'get_callback' => function($post) {
+            return get_post_meta($post['id'], '_post_subHead', true);
+        },
+        'schema' => null,
+    ));
+
+});
+
 add_action('after_setup_theme', function() {
     add_theme_support('post-thumbnails');
 });
