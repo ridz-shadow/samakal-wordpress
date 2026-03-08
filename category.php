@@ -746,7 +746,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
                         let htmlToAppend = '';
 
                         $.each(response, function (index, post) {
-                            html += `<div class="CatListNews">
+                            htmlToAppend += `<div class="CatListNews">
                             <a
                                 href="${post.link}">
                                 <div class="row d-flex justify-content-end">
