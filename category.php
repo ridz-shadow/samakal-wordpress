@@ -424,30 +424,14 @@ if ( isset( $locations[ $menu_name ] ) ) {
             <div class="row MobileHide">
                 <div class="col-12">
                     <div class="d-flex justify-content-center mt-4">
-
-                        <!-- /21871422770/DC_Leaderboard -->
-                        <div id='div-gpt-ad-1699096322549-0' style='min-width: 970px; min-height: 90px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1699096322549-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                 </div>
             </div>
             <div class="row MobileShow">
                 <div class="col-12">
                     <div class="d-flex justify-content-center mt-4">
-
-                        <!-- /21871422770/Leaderboard_3 -->
-                        <div id='div-gpt-ad-1711254530007-0' style='min-width: 320px; min-height: 100px;'>
-                            <script type="text/javascript">
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1711254530007-0');
-                                });
-                            </script>
-                        </div>
+                        <!-- Advertisement -->
                     </div>
                 </div>
             </div>
@@ -528,30 +512,10 @@ if ( isset( $locations[ $menu_name ] ) ) {
 
                         <div class="col-md-3">
                             <div class="DRightSideAdd MobileHide">
-                                <!--<a href="">
-                                <img class="img-100 img-fluid" src="https://samakal.com/frontend/media/Advertisement/300x250 (10).gif">
-                            </a>-->
-                                <!-- /21871422770/DC_R1 -->
-                                <div id='div-gpt-ad-1699096451704-0' style='min-width: 300px; min-height: 250px;'>
-                                    <script type="text/javascript">
-                                        googletag.cmd.push(function() {
-                                            googletag.display('div-gpt-ad-1699096451704-0');
-                                        });
-                                    </script>
-                                </div>
+                                <!-- Advertisement -->
                             </div>
                             <div class="DRightSideAdd MobileShow text-center">
-                                <!--<a href="">
-                                <img class="img-100 img-fluid" src="https://samakal.com/frontend/media/Advertisement/300x250 (10).gif">
-                            </a>-->
-                                <!-- /21871422770/mhr1 -->
-                                <div id='div-gpt-ad-1711254764698-0' style='min-width: 300px; min-height: 250px;'>
-                                    <script type="text/javascript">
-                                        googletag.cmd.push(function() {
-                                            googletag.display('div-gpt-ad-1711254764698-0');
-                                        });
-                                    </script>
-                                </div>
+                                <!-- Advertisement -->
                             </div>
                         </div>
                     </div>
@@ -592,28 +556,12 @@ if ( isset( $locations[ $menu_name ] ) ) {
                 <div class="ad-area d-flex justify-content-center">
                     <div class="row MobileHide">
                         <div class="col-md-12">
-                            <!--<img src="https://samakal.com/frontend/media/Advertisement/728x90 (2).gif" alt="" title="" class="img-fluid img100">-->
-                            <!-- /21871422770/DC_B1 -->
-                            <div id='div-gpt-ad-1699096558962-0' style='min-width: 728px; min-height: 90px;'>
-                                <script type="text/javascript">
-                                    llagoogletag.cmd.push(function() {
-                                        googletag.display('div-gpt-ad-1699096558962-0');
-                                    });
-                                </script>
-                            </div>
+                            <!-- Advertisement -->
                         </div>
                     </div>
                     <div class="row MobileShow">
                         <div class="col-md-12">
-                            <!--<img src="https://samakal.com/frontend/media/Advertisement/728x90 (2).gif" alt="" title="" class="img-fluid img100">-->
-                            <!-- /21871422770/mcr2 -->
-                            <div id='div-gpt-ad-1711254881217-0' style='min-width: 300px; min-height: 250px;'>
-                                <script type="text/javascript">
-                                    googletag.cmd.push(function() {
-                                        googletag.display('div-gpt-ad-1711254881217-0');
-                                    });
-                                </script>
-                            </div>
+                            <!-- Advertisement -->
                         </div>
                     </div>
                 </div>
@@ -624,14 +572,10 @@ if ( isset( $locations[ $menu_name ] ) ) {
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="DRightSideAdd mt-3 mb-4">
-                                <!--<a href="">
-                                <img class="img-100 img-fluid" src="https://samakal.com/frontend/media/Advertisement/dry fish_26th_October.jpg">
-                            </a>-->
+                                <!-- Advertisement -->
                             </div>
                             <div class="DRightSideAdd">
-                                <!--<a href="">
-                                <img class="img-100 img-fluid" src="https://samakal.com/frontend/media/Advertisement/300x250Ad.jpg">
-                            </a>-->
+                                <!-- Advertisement -->
                             </div>
                         </div>
                         <div class="col-lg-6" id="categoryContentList">
@@ -681,22 +625,10 @@ if ( isset( $locations[ $menu_name ] ) ) {
                         </div>
                         <div class="col-lg-3">
                             <div class="DRightSideAdd mt-3 mb-4">
-                                <!--<a href="">
-                                <img class="img-100 img-fluid" src="https://samakal.com/frontend/media/Advertisement/5296_Aug_22_BSRM-Steels-Ltd_FastBuild_GDN_300x250px_Bangla (1).gif">
-                            </a>-->
-                                <!-- /21871422770/DC_Rright1 -->
-                                <div id='div-gpt-ad-1699097504853-0' style='min-width: 300px; min-height: 250px;'>
-                                    <script type="text/javascript">
-                                        googletag.cmd.push(function() {
-                                            googletag.display('div-gpt-ad-1699097504853-0');
-                                        });
-                                    </script>
-                                </div>
+                                <!-- Advertisement -->
                             </div>
                             <div class="DRightSideAdd">
-                                <!--<a href="">
-                                <img class="img-100 img-fluid" src="https://samakal.com/frontend/media/Advertisement/5996_Aug_23_BSRM-Steels-Ltd_Landmark-Inauguration_Dhaka-Elevated-Expressway_GDN_300x250.gif">
-                            </a>-->
+                                <!-- Advertisement -->
                             </div>
                         </div>
                     </div>
@@ -736,7 +668,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
                             <?php echo wp_kses_post( get_theme_mod('editorsline') ); ?>
                         </div>
                         <div class="col-lg-4 col-12">
-                            <h2 class="FSocialHeadLine">ফলো করুন <span><?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></span>-এর খবর</h2>
+                            <h2 class="FSocialHeadLine">ফলো করুন <span><?php echo esc_html(get_theme_mod('site_title_bn')); ?></span>-এর খবর</h2>
                             <div class="FSocialShare">
                                 <ul>
                                     <li><a href="<?php echo esc_attr(get_theme_mod("social_facebook_url")); ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
@@ -752,8 +684,8 @@ if ( isset( $locations[ $menu_name ] ) ) {
                                 title="<?php the_title(); ?>"
                                 alt="<?php the_title(); ?>" class="img-fluid img100">
                         </a>
-                            <h2 class="FCopyRight">© ২০০৫ - ২০২৬ <a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></a> কর্তৃক সর্বসত্ব ® সংরক্ষিত</h2>
-                            <p class="d-none"><a href="<?php echo esc_url( home_url('/') ); ?>" rel="nofollow" target="_blank">উন্নয়নে <?php echo esc_html(get_theme_mod('site_title_bn', 'সমকাল')); ?></a></p>
+                            <h2 class="FCopyRight">© ২০০৫ - ২০২৬ <a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo esc_html(get_theme_mod('site_title_bn')); ?></a> কর্তৃক সর্বসত্ব ® সংরক্ষিত</h2>
+                            <p class="d-none"><a href="<?php echo esc_url( home_url('/') ); ?>" rel="nofollow" target="_blank">উন্নয়নে <?php echo esc_html(get_theme_mod('site_title_bn')); ?></a></p>
                         </div>
                     </div>
                 </div>
@@ -767,7 +699,6 @@ if ( isset( $locations[ $menu_name ] ) ) {
             var slug = $("#catSlug").val();
             var posCatIDs = $("#posCatID").val();
 
-            // var ENDPOINT = "https://samakal.com/cat-load-more?.bangladesh.";
             var ENDPOINT = '/wp-json/wp/v2/posts';
             var redirectUrl = '/archive'
             var page = 1;
@@ -803,8 +734,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
                     })
                     .done(function(response) {
                         isLoading = false;
-                        console.log(response);
-                        if (response.html == '') {
+                        if (response.length < 1) {
                             noError = false;
                             $('.auto-load').html("<a href=" + redirectUrl +
                                 "><small class='btn btn-sm d-inline-block bg-warning mb-4 mt-4'>এই ক্যাটাগরিতে আরও খবর পেতে আর্কাইভ দেখুন</small></a>"
@@ -813,7 +743,34 @@ if ( isset( $locations[ $menu_name ] ) ) {
                             return;
                         }
                         $('.auto-load').hide();
-                        $("#data-wrapper").append(response.html);
+                        let htmlToAppend = '';
+
+                        $.each(response, function (index, post) {
+                            html += `<div class="CatListNews">
+                            <a
+                                href="${post.link}">
+                                <div class="row d-flex justify-content-end">
+                                    <div class="col-md-6 col-6">
+                                        <div class="CatListhead">
+                                        <h3><span class="subHeading">${post.shoulder ? `${post.shoulder} / ` : ''}</span>${post.title.rendered}</h3>
+                                        </div>
+                                        <div class="ListDesc">
+                                        <p>${post.excerpt.rendered.replace(/(<([^>]+)>)/gi, "")}</p>
+                                        </div> <span class="publishTime">আপডেটঃ ${((d)=>`${d.getDate().toString().padStart(2,'0').replace(/\d/g,x=>'০১২৩৪৫৬৭৮৯'[x])} ${['জানুয়ারি','ফেব্রুয়ারি','মার্চ','এপ্রিল','মে','জুন','জুলাই','আগস্ট','সেপ্টেম্বর','অক্টোবর','নভেম্বর','ডিসেম্বর'][d.getMonth()]} ${d.getFullYear().toString().replace(/\d/g,x=>'০১২৩৪৫৬৭৮৯'[x])} | ${d.getHours().toString().padStart(2,'0').replace(/\d/g,x=>'০১২৩৪৫৬৭৮৯'[x])}:${d.getMinutes().toString().padStart(2,'0').replace(/\d/g,x=>'০১২৩৪৫৬৭৮৯'[x])}`)(new Date(post.date))}</span>
+                                    </div>
+                                    <div class="col-md-6 col-6">
+                                        <div class="img-box ">
+                                        <picture> <img src="${post.thumbnail_url}"
+                                                alt="${post.title.rendered}" title="${post.title.rendered}"
+                                                class="img-fluid img100 rounded"> </picture>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>`
+                        });
+                        
+                        $("#data-wrapper").append(htmlToAppend);
                     })
                     .fail(function(jqXHR, ajaxOptions, thrownError) {
                         isLoading = false;
@@ -835,10 +792,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" type="text/javascript"></script>
-    <script type="text/javascript" src="https://samakal.com/frontend/common/js/eMythMakers.js"></script>
-    <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="|49" defer></script>
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"97e9a538c9914fdd98360a02932c1edf","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
-        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="<?php echo esc_url(get_template_directory_uri() . "/frontend/common/js/eMythMakers.js"); ?>"></script>
 </body>
 
 </html>
