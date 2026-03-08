@@ -5,54 +5,54 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <title>বাংলাদেশ বিভাগের সকল খবর - সমকাল </title>
+    <title><?php single_cat_title(); ?> বিভাগের সকল খবর - <?php echo esc_html(get_theme_mod('site_title_bn')); ?></title>
     <meta http-equiv="refresh" content="">
-    <meta name="author" content="SAMAKAL">
-    <meta name="Developer" content="eMythMakers.com">
+    <meta name="author" content="<?php bloginfo("name"); ?>">
+    <meta name="Developer" content="<?php echo esc_attr(wp_get_theme()->get("Author")); ?>">
     <meta name="resource-type" content="document">
-    <meta name="contact" content="news.samakal@gmail.com">
-    <meta name="copyright" content="Copyright (c) 2026. All Rights &reg; Reserved by https://samakal.com/">
-    <meta name="google-site-verification" content="NOzPnUslrJ-pUZ7hpwYRauspSRpKFQLQo82Az4KIqd8" />
+    <meta name="contact" content="<?php echo esc_attr(get_option("admin_email")); ?>">
+    <meta name="copyright" content="Copyright (c) <?php echo date("Y"); ?>. All Rights &reg; Reserved by <?php echo esc_url(home_url("/")); ?>">
+    <meta name="google-site-verification" content="<?php echo esc_attr(get_theme_mod("google_site_verification")); ?>" />
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
     <meta name="googlebot-news" content="index, follow">
     <meta name="msnbot" content="index, follow">
-    <meta property="fb:app_id" content="276108213069474">
-    <meta property="fb:pages" content="351757248257846">
-    <meta name="description" content="বাংলাদেশ বিভাগের সকল খবর - সমকাল">
-    <meta name="keywords" content="SAMAKAL, সমকাল, বাংলাদেশ">
-    <meta property="og:site_name" content="SAMAKAL | সমকাল">
-    <meta property="og:title" content="বাংলাদেশ বিভাগের সকল খবর - সমকাল">
-    <meta property="og:description" content="বাংলাদেশ বিভাগের সকল খবর - সমকাল">
-    <meta property="og:url" content="https://samakal.com/bangladesh">
+    <meta property="fb:app_id" content="<?php echo esc_attr(get_theme_mod("fb_app_id")); ?>">
+    <meta property="fb:pages" content="<?php echo esc_attr(get_theme_mod("fb_pages")); ?>">
+    <meta name="description" content="<?php single_cat_title(); ?> বিভাগের সকল খবর - <?php echo esc_html(get_theme_mod('site_title_bn')); ?>">
+    <meta name="keywords" content="<?php echo strtoupper(get_bloginfo("name")); ?>, <?php echo esc_html(get_theme_mod('site_title_bn')); ?>, <?php single_cat_title(); ?>">
+    <meta property="og:site_name" content="<?php echo strtoupper(get_bloginfo("name")); ?> | <?php echo esc_html(get_theme_mod('site_title_bn')); ?>">
+    <meta property="og:title" content="<?php single_cat_title(); ?> বিভাগের সকল খবর - <?php echo esc_html(get_theme_mod('site_title_bn')); ?>">
+    <meta property="og:description" content="<?php single_cat_title(); ?> বিভাগের সকল খবর - <?php echo esc_html(get_theme_mod('site_title_bn')); ?>">
+    <meta property="og:url" content="<?php echo get_category_link(get_queried_object_id()); ?>">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://samakal.com/frontend/media/common/logo-fb.png">
+    <meta property="og:image" content="<?php echo esc_url(get_template_directory_uri() . "/frontend/media/common/logo-fb.png"); ?>">
     <meta property="og:locale" content="en_US">
-    <meta name="twitter:domain" content="https://samakal.com" />
+    <meta name="twitter:domain" content="<?php echo esc_url(home_url("/")); ?>" />
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="SAMAKAL | সমকাল">
-    <meta name="twitter:title" content="বাংলাদেশ বিভাগের সকল খবর - সমকাল">
-    <meta name="twitter:description" content="বাংলাদেশ বিভাগের সকল খবর - সমকাল">
-    <meta name="twitter:image" content="https://samakal.com/frontend/media/common/logo-fb.png">
-    <meta name="twitter:site" content="@samakaltw" />
+    <meta name="twitter:site" content="<?php echo strtoupper(get_bloginfo("name")); ?> | <?php echo esc_html(get_theme_mod('site_title_bn')); ?>">
+    <meta name="twitter:title" content="<?php single_cat_title(); ?> বিভাগের সকল খবর - <?php echo esc_html(get_theme_mod('site_title_bn')); ?>">
+    <meta name="twitter:description" content="<?php single_cat_title(); ?> বিভাগের সকল খবর - <?php echo esc_html(get_theme_mod('site_title_bn')); ?>">
+    <meta name="twitter:image" content="<?php echo esc_url(get_template_directory_uri() . "/frontend/media/common/logo-fb.png"); ?>">
+    <meta name="twitter:site" content="<?php echo esc_attr(get_theme_mod("social_twitter_url")); ?>" />
 
-    <link rel="image_src" href="https://samakal.com/frontend/media/common/logo-fb.png">
-    <link rel="canonical" href="https://samakal.com/bangladesh">
-    <link type="image/x-icon" rel="shortcut icon" href="https://samakal.com/frontend/media/common/favicon.ico">
-    <link type="image/x-icon" rel="icon" href="https://samakal.com/frontend/media/common/favicon.ico">
-    <link rel="apple-touch-icon" sizes="57x57" href="https://samakal.com/frontend/media/common/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="https://samakal.com/frontend/media/common/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://samakal.com/frontend/media/common/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="https://samakal.com/frontend/media/common/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://samakal.com/frontend/media/common/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="https://samakal.com/frontend/media/common/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="https://samakal.com/frontend/media/common/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="https://samakal.com/frontend/media/common/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://samakal.com/frontend/media/common/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://samakal.com/frontend/media/common/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://samakal.com/frontend/media/common/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="https://samakal.com/frontend/media/common/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://samakal.com/frontend/media/common/favicon/favicon-16x16.png">
+    <link rel="image_src" href="<?php echo esc_url(get_template_directory_uri() . "/frontend/media/common/logo-fb.png"); ?>">
+    <link rel="canonical" href="<?php echo get_category_link(get_queried_object_id()); ?>">
+    <link type="image/x-icon" rel="shortcut icon" href="<?php echo esc_url(get_site_icon_url()); ?>">
+    <link type="image/x-icon" rel="icon" href="<?php echo esc_url(get_site_icon_url()); ?>">
+    <link rel="apple-touch-icon" sizes="57x57" href="<?php echo esc_url(get_site_icon_url(57)); ?>">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo esc_url(get_site_icon_url(60)); ?>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo esc_url(get_site_icon_url(72)); ?>">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo esc_url(get_site_icon_url(76)); ?>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo esc_url(get_site_icon_url(114)); ?>">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo esc_url(get_site_icon_url(120)); ?>">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo esc_url(get_site_icon_url(144)); ?>">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo esc_url(get_site_icon_url(152)); ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url(get_site_icon_url(180)); ?>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo esc_url(get_site_icon_url(192)); ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url(get_site_icon_url(32)); ?>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo esc_url(get_site_icon_url(96)); ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo esc_url(get_site_icon_url(16)); ?>">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
@@ -69,10 +69,10 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" type="text/css" href="https://samakal.com/frontend/common/css/SolaimanLipi.css">
-    <link rel="stylesheet" type="text/css" href="https://samakal.com/frontend/common/css/Kiron.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . "/frontend/common/css/SolaimanLipi.css"); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . "/frontend/common/css/Kiron.css"); ?>">
 
-    <link rel="stylesheet" type="text/css" href="https://samakal.com/frontend/common/css/eMythMakers.css?t=2">
+    <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . "/frontend/common/css/eMythMakers.css?t=2"); ?>">
 
     <script type="application/ld+json">
         {
@@ -82,21 +82,21 @@
                     "@type": "ListItem",
                     "position": 1,
                     "name": "Home",
-                    "item": "https://samakal.com"
+                    "item": "<?php echo esc_url(home_url("/")); ?>"
                 },
                 {
                     "@type": "ListItem",
                     "position": 2,
-                    "name": "বাংলাদেশ",
-                    "item": "https://samakal.com/bangladesh"
+                    "name": "<?php single_cat_title(); ?>",
+                    "item": "<?php echo get_category_link(get_queried_object_id()); ?>"
                 }
             ]
         }
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XJF1JX4FFL" type="fbf5bdf69b9d48c82ad294f4-text/javascript"></script>
-    <script type="fbf5bdf69b9d48c82ad294f4-text/javascript">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo esc_attr(get_theme_mod(" ga4_id")); ?>" type="text/javascript"></script>
+    <script type="text/javascript">
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
@@ -104,23 +104,12 @@
         }
         gtag('js', new Date());
 
-        gtag('config', 'G-XJF1JX4FFL');
-    </script>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102760953-1" type="fbf5bdf69b9d48c82ad294f4-text/javascript"></script>
-    <script type="fbf5bdf69b9d48c82ad294f4-text/javascript">
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-102760953-1');
+        gtag('config', '<?php echo esc_attr(get_theme_mod(" ga4_id")); ?>');
     </script>
 
 
     <!-- Facebook Pixel Code -->
-    <script type="fbf5bdf69b9d48c82ad294f4-text/javascript">
+    <script type="text/javascript">
         ! function(f, b, e, v, n, t, s) {
             if (f.fbq) return;
             n = f.fbq = function() {
@@ -139,52 +128,13 @@
             s.parentNode.insertBefore(t, s)
         }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '226625765941679');
+        fbq('init', '<?php echo esc_attr(get_theme_mod("fb_pixel_id")); ?>');
         fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=226625765941679&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=<?php echo esc_attr(get_theme_mod("fb_pixel_id")); ?>&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Facebook Pixel Code -->
-
-    <!-- google adsense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="fbf5bdf69b9d48c82ad294f4-text/javascript"></script>
-    <script type="fbf5bdf69b9d48c82ad294f4-text/javascript">
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-9442091006829624",
-            enable_page_level_ads: true
-        });
-    </script>
-
-    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" type="fbf5bdf69b9d48c82ad294f4-text/javascript"></script>
-    <script type="fbf5bdf69b9d48c82ad294f4-text/javascript">
-        window.googletag = window.googletag || {
-            cmd: []
-        };
-        googletag.cmd.push(function() {
-            googletag.defineSlot('/21871422770/DC_Leaderboard', [970, 90], 'div-gpt-ad-1699096322549-0').addService(
-                googletag.pubads());
-            googletag.defineSlot('/21871422770/DC_R1', [300, 250], 'div-gpt-ad-1699096451704-0').addService(
-                googletag.pubads());
-            googletag.defineSlot('/21871422770/DC_B1', [
-                [970, 90],
-                [728, 90]
-            ], 'div-gpt-ad-1699096558962-0').addService(googletag.pubads());
-            googletag.defineSlot('/21871422770/DC_Rright1', [300, 250], 'div-gpt-ad-1699097504853-0').addService(
-                googletag.pubads());
-
-            googletag.defineSlot('/21871422770/Leaderboard_3', [320, 100], 'div-gpt-ad-1711254530007-0').addService(
-                googletag.pubads());
-            googletag.defineSlot('/21871422770/mhr1', [300, 250], 'div-gpt-ad-1711254764698-0').addService(googletag
-                .pubads());
-            googletag.defineSlot('/21871422770/mcr2', [300, 250], 'div-gpt-ad-1711254881217-0').addService(googletag
-                .pubads());
-
-            googletag.pubads().enableSingleRequest();
-            googletag.enableServices();
-        });
-    </script>
-
 </head>
 
 <body>
@@ -477,7 +427,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
 
                         <!-- /21871422770/DC_Leaderboard -->
                         <div id='div-gpt-ad-1699096322549-0' style='min-width: 970px; min-height: 90px;'>
-                            <script type="fbf5bdf69b9d48c82ad294f4-text/javascript">
+                            <script type="text/javascript">
                                 googletag.cmd.push(function() {
                                     googletag.display('div-gpt-ad-1699096322549-0');
                                 });
@@ -492,7 +442,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
 
                         <!-- /21871422770/Leaderboard_3 -->
                         <div id='div-gpt-ad-1711254530007-0' style='min-width: 320px; min-height: 100px;'>
-                            <script type="fbf5bdf69b9d48c82ad294f4-text/javascript">
+                            <script type="text/javascript">
                                 googletag.cmd.push(function() {
                                     googletag.display('div-gpt-ad-1711254530007-0');
                                 });
@@ -583,7 +533,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
                             </a>-->
                                 <!-- /21871422770/DC_R1 -->
                                 <div id='div-gpt-ad-1699096451704-0' style='min-width: 300px; min-height: 250px;'>
-                                    <script type="fbf5bdf69b9d48c82ad294f4-text/javascript">
+                                    <script type="text/javascript">
                                         googletag.cmd.push(function() {
                                             googletag.display('div-gpt-ad-1699096451704-0');
                                         });
@@ -596,7 +546,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
                             </a>-->
                                 <!-- /21871422770/mhr1 -->
                                 <div id='div-gpt-ad-1711254764698-0' style='min-width: 300px; min-height: 250px;'>
-                                    <script type="fbf5bdf69b9d48c82ad294f4-text/javascript">
+                                    <script type="text/javascript">
                                         googletag.cmd.push(function() {
                                             googletag.display('div-gpt-ad-1711254764698-0');
                                         });
@@ -645,7 +595,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
                             <!--<img src="https://samakal.com/frontend/media/Advertisement/728x90 (2).gif" alt="" title="" class="img-fluid img100">-->
                             <!-- /21871422770/DC_B1 -->
                             <div id='div-gpt-ad-1699096558962-0' style='min-width: 728px; min-height: 90px;'>
-                                <script type="fbf5bdf69b9d48c82ad294f4-text/javascript">
+                                <script type="text/javascript">
                                     llagoogletag.cmd.push(function() {
                                         googletag.display('div-gpt-ad-1699096558962-0');
                                     });
@@ -658,7 +608,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
                             <!--<img src="https://samakal.com/frontend/media/Advertisement/728x90 (2).gif" alt="" title="" class="img-fluid img100">-->
                             <!-- /21871422770/mcr2 -->
                             <div id='div-gpt-ad-1711254881217-0' style='min-width: 300px; min-height: 250px;'>
-                                <script type="fbf5bdf69b9d48c82ad294f4-text/javascript">
+                                <script type="text/javascript">
                                     googletag.cmd.push(function() {
                                         googletag.display('div-gpt-ad-1711254881217-0');
                                     });
@@ -736,7 +686,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
                             </a>-->
                                 <!-- /21871422770/DC_Rright1 -->
                                 <div id='div-gpt-ad-1699097504853-0' style='min-width: 300px; min-height: 250px;'>
-                                    <script type="fbf5bdf69b9d48c82ad294f4-text/javascript">
+                                    <script type="text/javascript">
                                         googletag.cmd.push(function() {
                                             googletag.display('div-gpt-ad-1699097504853-0');
                                         });
@@ -811,14 +761,14 @@ if ( isset( $locations[ $menu_name ] ) ) {
         </div>
     </footer>
     <div id="back_to_top" class="back_to_top on"><span class="go_up"><i class="fa-solid fa-arrow-up"></i></span></div>
-    <script type="fbf5bdf69b9d48c82ad294f4-text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script type="fbf5bdf69b9d48c82ad294f4-text/javascript">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
         $(document).ready(function() {
             var slug = $("#catSlug").val();
             var posCatIDs = $("#posCatID").val();
 
             // var ENDPOINT = "https://samakal.com/cat-load-more?.bangladesh.";
-            var ENDPOINT = '/cat-load-more';
+            var ENDPOINT = '/wp-json/wp/v2/posts';
             var redirectUrl = '/archive'
             var page = 1;
 
@@ -843,21 +793,17 @@ if ( isset( $locations[ $menu_name ] ) ) {
             function infinteLoadMore(page) {
                 isLoading = true;
                 $.ajax({
-                        url: ENDPOINT + "?page=" + page,
+                        url: ENDPOINT + "?categories=" + posCatIDs + "&page=" + page,
                         datatype: "html",
                         // type: "get",
-                        type: "POST",
-                        data: {
-                            '_token': 'vfIXXQNupXauFEsnesVoyyRKnYKtdslvOoUCLq3m',
-                            'slug': slug,
-                            'posCatIDs': posCatIDs,
-                        },
+                        type: "GET",
                         beforeSend: function() {
                             $('.auto-load').show();
                         }
                     })
                     .done(function(response) {
                         isLoading = false;
+                        console.log(response);
                         if (response.html == '') {
                             noError = false;
                             $('.auto-load').html("<a href=" + redirectUrl +
@@ -879,7 +825,7 @@ if ( isset( $locations[ $menu_name ] ) ) {
 
         });
     </script>
-    <script type="fbf5bdf69b9d48c82ad294f4-text/javascript">
+    <script type="text/javascript">
         $(window).load(function() {
             $("main img").each(function(index) {
                 $(this).attr('src', $(this).attr('data-src'))
@@ -888,9 +834,9 @@ if ( isset( $locations[ $menu_name ] ) ) {
     </script>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" type="fbf5bdf69b9d48c82ad294f4-text/javascript"></script>
-    <script type="fbf5bdf69b9d48c82ad294f4-text/javascript" src="https://samakal.com/frontend/common/js/eMythMakers.js"></script>
-    <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="fbf5bdf69b9d48c82ad294f4-|49" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" type="text/javascript"></script>
+    <script type="text/javascript" src="https://samakal.com/frontend/common/js/eMythMakers.js"></script>
+    <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="|49" defer></script>
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"97e9a538c9914fdd98360a02932c1edf","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
         crossorigin="anonymous"></script>
 </body>
