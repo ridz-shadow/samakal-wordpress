@@ -235,7 +235,7 @@ span.publishTime {
 .news {
     width: 120px;
     position: relative;
-    background: #ff8c00;
+    background: #c2272d;
 }
 
 .news::before {
@@ -247,7 +247,7 @@ span.publishTime {
     height: 0;
     border-style: solid;
     border-width: 8px 0 8px 10px;
-    border-color: transparent transparent transparent #ff8c00;
+    border-color: transparent transparent transparent #c2272d;
     transform: translate(-50%, -50%);
 }
 
@@ -296,7 +296,7 @@ span.publishTime {
     margin-left: 8px;
     margin-right: 8px;
     margin-bottom: -2px;
-    background-color: #ff8c00;
+    background-color: #c2272d;
     display: inline-block
 }
 
@@ -512,7 +512,7 @@ span.publishTime {
 }
 
 .DHeaderNav .navbar-light .navbar-nav .nav-item .dropdown-menu li a:hover {
-    color: #ff8c00;
+    color: #c2272d;
 }
 
 .sticky {
@@ -753,7 +753,7 @@ a.close-search {
 
 .menu-search a {
     font-size: 17px;
-    color: #ff8c00;
+    color: #c2272d;
 }
 
 .search_block {
@@ -1046,14 +1046,14 @@ footer {
 .FheadLine {
     color: #3e3e3e;
     font-size: 22px;
-    text-decoration: underline #ff8c00;
+    text-decoration: underline #c2272d;
     text-underline-offset: 6px;
     text-decoration-thickness: 3px;
 }
 
 .FheadLine span,
 .FSocialHeadLine span {
-    color: #ff8c00;
+    color: #c2272d;
 }
 
 .footerTopSection ul {
@@ -1203,7 +1203,7 @@ address {
     border: 2px solid;
     border-radius: 50%;
     z-index: 999;
-    color: #ff8c00;
+    color: #c2272d;
     display: block;
 }
 
@@ -1454,7 +1454,7 @@ address {
 .DEditorsPicksLead .WriterName {
     font-size: 14px;
     margin: 0;
-    color: #e18b20;
+    color: #c2272d;
     line-height: 16px;
     padding: 5px 0;
 }
@@ -1536,7 +1536,7 @@ address {
 .DEditorialListItem .WriterName {
     font-size: 14px;
     margin: 0;
-    color: #e18b20;
+    color: #c2272d;
     line-height: 16px;
     padding: 5px 0;
 }
@@ -1612,7 +1612,7 @@ address {
 
 .SpecialEventList .CatName {
     font-size: 13px;
-    color: #e18b20;
+    color: #c2272d;
 }
 
 .SpecialEventList .col-7 .Desc .Title {
@@ -1718,7 +1718,7 @@ address {
     background-color: #fff;
     border-color: unset;
     border: unset;
-    border-left: 6px solid #e18b20 !important;
+    border-left: 6px solid #c2272d !important;
     /* background:#dfccb3!important; */
     border-bottom: 1px solid #8b8989 !important;
 }
@@ -1895,7 +1895,7 @@ address {
 .DEntertainmentTop {
     width: 100%;
     background: #FFF;
-    border-bottom: 3px solid #e18b20;
+    border-bottom: 3px solid #c2272d;
     box-shadow: 1px 1px 6px rgb(0 0 0 / 10%);
 }
 
@@ -1953,7 +1953,7 @@ address {
 .DEnterList2 {
     background: #FFF;
     width: 100%;
-    border-bottom: 1px solid #e18b20;
+    border-bottom: 1px solid #c2272d;
     box-shadow: 1px 1px 6px rgb(0 0 0 / 10%);
 }
 
@@ -2333,7 +2333,7 @@ address {
 }
 
 .DPrayersTime {
-    background: #e18b20;
+    background: #c2272d;
     color: #fff;
 }
 
@@ -2346,15 +2346,15 @@ address {
 .DPrayersTime .table {
     margin-bottom: 0;
     background: #fff;
-    border-left: 1px solid #e18b205E;
-    border-right: 1px solid #e18b205E;
+    border-left: 1px solid #c2272d5E;
+    border-right: 1px solid #c2272d5E;
 }
 
 .DPrayersTime .table th {
     padding: 5px 15px;
-    border-bottom: 1px solid #e18b205E;
+    border-bottom: 1px solid #c2272d5E;
     color: #333;
-    border-right: 1px solid #e18b205E;
+    border-right: 1px solid #c2272d5E;
     font-size: 17px;
     border-top: 0 solid #dee2e6;
     text-align: center;
@@ -2362,9 +2362,9 @@ address {
 
 .DPrayersTime .table td {
     padding: 4px 15px 3px;
-    border-bottom: 1px solid #e18b205E;
+    border-bottom: 1px solid #c2272d5E;
     color: #333;
-    border-right: 1px solid #e18b205E;
+    border-right: 1px solid #c2272d5E;
     font-size: 17px;
     border-top: 0 solid #dee2e6;
     text-align: center;
@@ -2607,7 +2607,7 @@ address {
     color: #fff;
     padding: 10px 10px 7px;
     text-align: center;
-    background: #e18b20;
+    background: #c2272d;
     position: absolute;
     z-index: 999;
     width: 46%;
@@ -2679,7 +2679,7 @@ address {
 }
 
 .DPhotoSliderList:hover .video-icon i {
-    color: #ff8c00;
+    color: #c2272d;
 }
 
 /* video-area */
@@ -2734,11 +2734,11 @@ address {
 }
 
 .video-big:hover .Desc .Title2 {
-    color: #ff8c00;
+    color: #c2272d;
 }
 
 .video-big:hover .video-icon i {
-    color: #ff8c00;
+    color: #c2272d;
 }
 
 .video-middel-items {
@@ -2804,11 +2804,11 @@ address {
 }
 
 .video-middel-items:hover .Desc .Title2 {
-    color: #ff8c00;
+    color: #c2272d;
 }
 
 .video-middel-items:hover .video-icon i {
-    color: #ff8c00;
+    color: #c2272d;
 }
 
 .video-middel-items:hover .video-overlay {
@@ -2867,7 +2867,7 @@ address {
     font-size: 32px;
     text-align: start;
     font-weight: 600;
-    color: #ff8c00;
+    color: #c2272d;
     margin-bottom: 10px;
 }
 
@@ -2895,7 +2895,7 @@ address {
 }
 
 .sub-list::before {
-    color: #ff8c00;
+    color: #c2272d;
     content: "\2022";
     padding-right: 5px;
 }
@@ -3098,7 +3098,7 @@ address {
     right: -15px;
     width: 15px;
     height: 15px;
-    background: #ff8c00;
+    background: #c2272d;
     transform: translateY(-50%);
     border-radius: 50%;
 }
@@ -3300,7 +3300,7 @@ address {
     left: -10px;
     width: 10px;
     height: 10px;
-    background: #ff8c00;
+    background: #c2272d;
     transform: translateY(-50%);
     border-radius: 50%;
 }
@@ -3312,7 +3312,7 @@ address {
     right: -10px;
     width: 10px;
     height: 10px;
-    background: #ff8c00;
+    background: #c2272d;
     transform: translateY(-50%);
     border-radius: 50%;
 }
@@ -3331,7 +3331,7 @@ address {
 }
 
 .DreadMoreBtn {
-    border: 1px solid #ff8c00;
+    border: 1px solid #c2272d;
     position: relative;
     margin-top: 20px;
 }
@@ -3346,7 +3346,7 @@ address {
 
 .DreadMoreBtn a>i {
     font-size: 12px;
-    color: #ff8c00;
+    color: #c2272d;
 }
 
 .tagArea {
@@ -3450,7 +3450,7 @@ address {
 }
 
 .DFlowOfEventsTitle {
-    border-bottom: 2px solid #ff8c00;
+    border-bottom: 2px solid #c2272d;
     padding-bottom: 5px;
 }
 
@@ -3496,7 +3496,7 @@ address {
 
 .dNewsDesc blockquote {
     background: #f0f0f0;
-    border-left: 4px solid #ff8c00;
+    border-left: 4px solid #c2272d;
     padding: 38px 20px 25px;
     margin: 40px 0 20px 0;
     position: relative;
@@ -3520,7 +3520,7 @@ div.dNewsDesc blockquote::before {
     margin-left: -40px;
     font-size: 40px;
     font-family: FontAwesome;
-    color: #ff8c00;
+    color: #c2272d;
     display: block;
     width: 70px;
     height: 70px;
@@ -3528,7 +3528,7 @@ div.dNewsDesc blockquote::before {
     line-height: 70px;
     border-radius: 50%;
     text-align: center;
-    border: 1px solid #ff8c00;
+    border: 1px solid #c2272d;
 }
 
 /* Archive Page */
@@ -3602,7 +3602,7 @@ div.dNewsDesc blockquote::before {
 }
 
 .DPhotoGalleryTop:hover .video-icon i {
-    color: #ff8c00;
+    color: #c2272d;
 }
 
 .DPhotoGTop2List {
@@ -3640,7 +3640,7 @@ div.dNewsDesc blockquote::before {
 }
 
 .DPhotoGTop2List:hover .video-icon i {
-    color: #ff8c00;
+    color: #c2272d;
 }
 
 .DPhotoCatTop {
@@ -3685,7 +3685,7 @@ div.dNewsDesc blockquote::before {
 }
 
 .DPhotoCatTop:hover .video-icon i {
-    color: #ff8c00;
+    color: #c2272d;
 }
 
 .DPhotoCatListTop2 {
@@ -3722,7 +3722,7 @@ div.dNewsDesc blockquote::before {
 }
 
 .DPhotoCatListTop2:hover .video-icon i {
-    color: #ff8c00;
+    color: #c2272d;
 }
 
 .DPhotoCatList {
@@ -3759,7 +3759,7 @@ div.dNewsDesc blockquote::before {
 }
 
 .DPhotoCatList:hover .video-icon i {
-    color: #ff8c00;
+    color: #c2272d;
 }
 
 /*=========video-gallery page ==============*/
@@ -3933,7 +3933,7 @@ span.play-btn-big i.fas.fa-play {
 }
 
 .DSinglePageSec {
-    border: 2px solid #e18b20;
+    border: 2px solid #c2272d;
     padding: 30px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -3950,7 +3950,7 @@ span.play-btn-big i.fas.fa-play {
 }
 
 .DSinglePageSec h3 a:hover {
-    color: #e18b20;
+    color: #c2272d;
 }
 
 .DSinglePageSec h4 {
@@ -3974,13 +3974,13 @@ span.play-btn-big i.fas.fa-play {
 }
 
 .DSinglePageSec .btn-primary {
-    background-color: #e18b20;
-    border-color: #e18b20;
+    background-color: #c2272d;
+    border-color: #c2272d;
 }
 
 .DSinglePageSec:hover .btn-primary {
-    background-color: #c66e00;
-    border-color: #c66e00;
+    background-color: #c2272d;
+    border-color: #c2272d;
 }
 
 /* Tag Page */
@@ -3994,7 +3994,7 @@ span.play-btn-big i.fas.fa-play {
     font-size: 30px;
     text-align: start;
     font-weight: 600;
-    color: #ff8c00;
+    color: #c2272d;
     margin-bottom: 10px;
 }
 
@@ -4029,7 +4029,7 @@ span.play-btn-big i.fas.fa-play {
 }
 
 .Errors span {
-    color: #e18b20;
+    color: #c2272d;
     padding: 0 8px;
 }
 
@@ -4059,7 +4059,7 @@ span.play-btn-big i.fas.fa-play {
 }
 
 .division-cat ul .dropdown .dropdown-toggle:hover {
-    color: #ff8c00;
+    color: #c2272d;
 }
 
 .division-cat ul .dropdown-menu {
@@ -4076,7 +4076,7 @@ span.play-btn-big i.fas.fa-play {
 }
 
 .division-cat ul .dropdown-menu li a:hover {
-    color: #ff8c00;
+    color: #c2272d;
 }
 
 .DivisionNewsWrapp {
@@ -4107,7 +4107,7 @@ span.play-btn-big i.fas.fa-play {
     bottom: 0;
     height: 1px;
     width: 100%;
-    border-bottom: 1px solid #ff8c00;
+    border-bottom: 1px solid #c2272d;
 }
 
 .DivisionBody {
