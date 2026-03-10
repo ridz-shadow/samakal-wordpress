@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <title><?php echo strtoupper(get_bloginfo("name")); ?> | GET THE LATEST ONLINE BANGLA NEWS </title>
+    <title><?php echo get_bloginfo("name"); ?> | The Largest and Best Bangla Online News Portal</title>
     <meta http-equiv="refresh" content="600">
     <meta name="author" content="<?php bloginfo("name"); ?>">
     <meta name="Developer" content="<?php echo esc_attr(wp_get_theme()->get("Author")); ?>">

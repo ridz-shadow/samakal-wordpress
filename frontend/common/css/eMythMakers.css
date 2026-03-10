@@ -933,7 +933,7 @@ a.close-search {
 }
 
 #mobile-nav {
-    background-color: #eee;
+    background-color: #fff;
     width: 100%;
     z-index: 1;
     padding: 15px 12px;
@@ -1037,7 +1037,7 @@ a.close-search {
 /* ============== Footer CSS ============== */
 
 footer {
-    background: #d5d5d5;
+    background: #fff;
     padding-top: 30px;
     padding-bottom: 20px;
     border-top: 6px solid #7e7e7e;
