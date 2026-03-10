@@ -1016,7 +1016,7 @@
                                 title="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS"
                                 alt="SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS" class="img-fluid img100">
                         </a>
-                            <h2 class="FCopyRight">© ২০০৫ - ২০২৬ <a href="https://samakal.com">সমকাল</a> কর্তৃক সর্বসত্ব ® সংরক্ষিত</h2>
+                            <h2 class="FCopyRight">© ২০২৩ - ২০২৬ <a href="https://samakal.com">সমকাল</a> কর্তৃক সর্বসত্ব ® সংরক্ষিত</h2>
                             <p class="d-none"><a href="https://www.emythmakers.com/" rel="nofollow" target="_blank">উন্নয়নে ইমিথমেকারস.কম</a></p>
                         </div>
                     </div>
