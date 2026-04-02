@@ -898,8 +898,10 @@ echo strtr(get_the_date('d F Y').' | '.get_the_time('H:i'), ['0'=>'০','1'=>'�
                                 <li>বিষয় :</li>
                                 <?php
                                 $post_tags = get_the_tags();
-                                foreach ( $post_tags as $tag ) {
-                                    echo '<li><a href="'.esc_url(get_tag_link($tag->term_id)).'">'.esc_html($tag->name).'</a></li>';
+                                if ($post_tags) {
+                                    foreach ( $post_tags as $tag ) {
+                                        echo '<li><a href="'.esc_url(get_tag_link($tag->term_id)).'">'.esc_html($tag->name).'</a></li>';
+                                    }
                                 }
                                 ?>
                             </ul>
