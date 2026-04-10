@@ -1099,8 +1099,8 @@ foreach ($menu_items as $item): ?>
                     <div class="row">
                         <div class="col-lg-4 col-12">
                             <p><a href="/privacy">Privacy policy</a></p>
-                            <p><a href="/terms">Terms of use</a></p>
-                            <p><a href="/"><?php echo get_bloginfo('name'); ?> All rights reserved</a></p>
+                            <p><a href="/terms">Terms of Use</a></p>
+                            <p><a href="/"><?php echo get_bloginfo('name'); ?> All Rights Reserved</a></p>
                         </div>
                         <div class="col-lg-4 col-12">
                             <?php echo wp_kses_post( get_theme_mod('editorsline') ); ?>
