@@ -1098,7 +1098,7 @@ foreach ($menu_items as $item): ?>
                 <div class="footerMiddleSection">
                     <div class="row">
                         <div class="col-lg-4 col-12">
-                            <p><a href="/privacy">Privacy policy</a></p>
+                            <p><a href="/privacy">Privacy Policy</a></p>
                             <p><a href="/terms">Terms of Use</a></p>
                             <p><a href="/"><?php echo get_bloginfo('name'); ?> All Rights Reserved</a></p>
                         </div>
