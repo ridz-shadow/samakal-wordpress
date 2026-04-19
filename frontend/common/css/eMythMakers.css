@@ -1062,7 +1062,7 @@ footer {
 .footerTopSection ul {
     list-style-type: none;
     margin-left: -33px;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .footerTopSection ul li {
@@ -1089,7 +1089,7 @@ footer {
 }
 
 .footerTopSection {
-    padding-bottom: 25px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #767676;
 }
 
