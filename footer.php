@@ -25,7 +25,7 @@
                         <?php echo wp_kses_post( get_theme_mod('editorsline') ); ?>
                     </div>
                     <div class="col-lg-4 col-12">
-                        <h2 class="FSocialHeadLine">ফলো করুন <span><?php echo esc_html(get_theme_mod('site_title_bn')); ?></span>-এর খবর</h2>
+                        <!-- <h2 class="FSocialHeadLine">ফলো করুন <span><?php echo esc_html(get_theme_mod('site_title_bn')); ?></span>-এর খবর</h2> -->
                         <div class="FSocialShare">
                             <ul>
                                 <li><a href="<?php echo esc_attr(get_theme_mod("social_facebook_url")); ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
