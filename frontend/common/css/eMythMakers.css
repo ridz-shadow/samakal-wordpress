@@ -1041,7 +1041,7 @@ a.close-search {
 
 footer {
     background: #fff;
-    padding-top: 30px;
+    /* padding-top: 30px; */
     padding-bottom: 20px;
     border-top: 6px solid #7e7e7e;
 }
